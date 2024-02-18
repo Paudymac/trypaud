@@ -1,0 +1,28 @@
+.container {
+  max-width: 80rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+  text-align: center;
+}
+
+.footer {
+  margin: 4rem 0 0 0;
+  padding:1rem 0 0 0;
+  border-top: 1px solid #333;
+}
+
+.footerMenu {
+  list-style-type: none;
+  display: inline;
+  margin: 0 2rem 0 0;
+}
