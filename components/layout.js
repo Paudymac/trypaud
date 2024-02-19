@@ -14,7 +14,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Portfolio site"
         />
         <meta
           property="og:image"
@@ -65,10 +65,9 @@ export default function Layout({ children, home }) {
         </div>
       )}
       <footer className={styles.footer}>
-      <ul><li className={styles.footerMenu}><Link href="/">Linkedin</Link></li>
-          <li className={styles.footerMenu}><Link href="/">Instagram</Link></li>
-          <li className={styles.footerMenu}><Link href="/">X</Link></li>
-          <li className={styles.footerMenu}><Link href="/">Email</Link></li>
+      <ul><li className={styles.footerMenu}><Link href="https://www.linkedin.com/in/padraic-mcateer-2895a8203">Linkedin</Link></li>
+          <li className={styles.footerMenu}><Link href="https://www.instagram.com/trypaud">Instagram</Link></li>
+          <li className={styles.footerMenu}><Link href="mailto: paudy@trypaud.com">Email</Link></li>
       </ul>
 
       </footer>
