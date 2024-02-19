@@ -67,7 +67,7 @@ export default function Layout({ children, home }) {
       <footer className={styles.footer}>
       <ul><li className={styles.footerMenu}><Link href="https://www.linkedin.com/in/padraic-mcateer-2895a8203">Linkedin</Link></li>
           <li className={styles.footerMenu}><Link href="https://www.instagram.com/trypaud">Instagram</Link></li>
-          <li className={styles.footerMenu}><Link href="mailto: paudy@trypaud.com">Email</Link></li>
+          <li className={styles.footerMenu}><Link href="mailto:paudy@trypaud.com">Email</Link></li>
       </ul>
 
       </footer>
