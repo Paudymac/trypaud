@@ -11,6 +11,11 @@ export default function MotionGraphics({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Motion Graphics</h1>
+        <h3>Solaris Showdown Logo</h3>
+        <div className={utilStyles.video}>
+        <video width="560" height="315" controls>
+        <source src="/video/ss-dlc6-logo.mp4" type="video/mp4" />
+        </video></div>
         <h3>Mechwarrior 5 Clans Teaser Trailer</h3>
         <div className={utilStyles.video}>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
@@ -20,7 +25,7 @@ export default function MotionGraphics({ allPostsData }) {
         <iframe width="560" height="315" src="https://www.youtube.com/embed/XfiI-BJnP2I?si=7_CLiuvzMrflRHjj" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
         <br />
-        <h3>Piranha Games Animated Logo</h3>
+        <h3>Piranha Games Logo</h3>
         <div className={utilStyles.video}>
         <video width="560" height="315" controls>
           <source src="/video/piranha-logo-sound.mp4" type="video/mp4" />
