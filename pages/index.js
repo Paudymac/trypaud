@@ -17,6 +17,7 @@ export default function Home({ allPostsData }) {
         <p className={utilStyles.mainMenu}><a href="/motiongraphics">Motion Graphics</a></p>
         <p className={utilStyles.mainMenu}><a href="/illustration">Illustration</a></p>
         <p className={utilStyles.mainMenu}><a href="/print">Print</a></p>
+        <p className={utilStyles.mainMenu}><a href="/miscellaneous">Miscellaneous</a></p>
       </section>
     </Layout>
   );
