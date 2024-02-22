@@ -11,6 +11,8 @@ export default function Logos({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Logos</h1>
+        <h3>Solaris Showdown (MW5 DLC)</h3>
+        <Image className={utilStyles.contentImg} src="/images/logos/ss-logo-example.jpg" width={960} height={540} alt="solaris showdown"/><br/>
         <h3>Colombia College</h3>
         <Image className={utilStyles.contentImg} src="/images/logos/cc-logo-example.jpg" width={960} height={540} alt="Call to arms"/><br/>
         <h3>Smartt</h3>
