@@ -11,7 +11,15 @@ export default function Logos({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Print</h1>
-        <h3>Mechcon 2018</h3>
+        <h3>Mechcon Events</h3>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img1.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img2.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img3.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img4.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img5.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img6.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img7.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img8.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img1.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img2.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img3.jpg" width={960} height={540} alt="mechcon branding"/>
