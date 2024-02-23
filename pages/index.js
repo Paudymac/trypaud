@@ -13,8 +13,9 @@ export default function Home({ allPostsData }) {
       <h2 className={utilStyles.centerText}>Try Again, Try Better.</h2>
       <section className={utilStyles.headingMd}>
         <p className={utilStyles.mainMenu}><a href="/logos">Logos</a></p>
-        <p className={utilStyles.mainMenu}><a href="/ui">User Interfaces</a></p>
-        <p className={utilStyles.mainMenu}><a href="/motiongraphics">Motion Graphics</a></p>
+        <p className={utilStyles.mainMenu}><a href="/branding">Branding</a></p>
+        <p className={utilStyles.mainMenu}><a href="/ui">UI</a></p>
+        <p className={utilStyles.mainMenu}><a href="/animation">Animation</a></p>
         <p className={utilStyles.mainMenu}><a href="/illustration">Illustration</a></p>
         <p className={utilStyles.mainMenu}><a href="/print">Print</a></p>
         <p className={utilStyles.mainMenu}><a href="/miscellaneous">Miscellaneous</a></p>
