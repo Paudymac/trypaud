@@ -4,7 +4,7 @@ import { Barlow } from 'next/font/google'
  
 const barlow = Barlow({
   weight: ['400', '700'],
-   style: ['normal'],
+   style: ['normal','italic'],
   subsets: ['latin'],
 })
 
