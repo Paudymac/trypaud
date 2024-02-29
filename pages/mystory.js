@@ -33,10 +33,13 @@ export default function Logos({ allPostsData }) {
         Since a kid I’ve always been fascinated with the subject of UFOs; hence I’ve placed a UFO in the logo for my personal brand. 
         Bill spoke about this topic profusely in his act. One of the great things about Bill’s comedy which sets him apart from other great comics even George Carlin or Lenny Bruce, was his ability to teach you things you didn’t already know. It was a learning experience. For example: consuming magic mushrooms and UFO’s appearing was something I garnered from his act. 
         No other person to the best of knowledge, at least for me, had stated this so openly. This planted a seed to bloom later when I made the move to Vancouver. </p>
-            <h3>Creativity & Discipline</h3>
+        <h3>Creativity & Discipline</h3>
         <p>Being bullied teaches you two things: you need to stand up for yourself and you need to need to develop a strong personality on the inside. 
         Practicing martial arts from a young age instilled in me the courage to overcome obstacles. Competing in Martial Arts tournaments taught me how to dig deep and keep pushing even when you’re losing. 
         Performing stand-up comedy taught me trying to make a room full of stranger’s laugh with your own material is harder than fighting any opponent in any martial arts contest. However, in a way the obstacle is always the same: you and your emotions.</p>
+        <p>Design is an emotional endeavour. Controlling your ego is an important aspect. It’s prevents you and others from feeling hurt. This requires discipline. If you lack confidence in what you’re doing the chances you create something exceptional is small. If the people your designing for aren’t emotional engaged with the project the probability you create something successful is diminished. Every project has an ok that’s good enough benchmark. You don’t always need to reinvent the wheel. However, I believe innovation within the brief should always be the goal.</p>
+        <h3>My Creative Process</h3>
+        <p>There are many ways to skin a cat. Thankfully I’ve never skinned a cat. That’s kind of disgusting, but I can definitely infer it’s meaning in relation to design. From building websites to designing logos many paths exist to achieve a desired outcome. I prefer a flexible approach to a design process with an ability to add complexity when needed. An agreed upon structure between team members or myself and a client, CEO or project manager, prior to a project commencing is best practice.</p>
         <h3>The Trip</h3>
     
         <a href="/">home</a>
