@@ -14,9 +14,9 @@ export default function Logos({ allPostsData }) {
         <h1>My Story</h1>
         <h3>Influences</h3>
         <p>The two biggest influences on my early life have been my mom and dad. Even now they help me allot. I’ve been fortunate to get two good ones. My dad taught me how to work hard. My mom taught me how to be a good person. A strength and kindness skill set. This helped me growing up as I didn’t really fit in. 
-        Even now I still don’t.</p>
+        Even now I still don’t. I'm often reminded of the Kafka quote:</p>
         <p><i>"I was ashamed of myself when I realized life was a costume party and I attended with my real face."</i></p>
-        <p>Some friends have even enquired if I thought I’m on the spectrum, I just think I’m honest. I’ve don’t have a stomach for lies. I’ve never had the heard mindset. The need to assimilate into a group. I’ve never understood people who want to fit in at the expense of their individuality. 
+        <p>If you're honest I think life can be challenging. I’ve don’t have a stomach for lies. I’ve never had the heard mindset. The need to assimilate into a group. I’ve never understood people who want to fit in at the expense of their individuality. 
         This I believe is my real talent, allowing me to develop an imagination and creative outlook. </p>
         <p>In the comedy of Bill Hicks, I discovered a kindred spirit. I think Rant in E-Minor is a work of art up there with da Vinci’s Mona Lisa or Mozarts 5th Concerto. I honestly feel if he was still around we’d be friends. 
         A conceit of mine I’ll admit. I consider Bill a prophet, speaking in the prophetic tradition of oppression albeit through comedy rather than hymned platformed oratories like Martin Luther King. The stage was his pulpit.</p>
