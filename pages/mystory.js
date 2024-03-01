@@ -14,7 +14,7 @@ export default function Logos({ allPostsData }) {
         <h1>My Story</h1>
         <h3>Influences</h3>
         <p>The two biggest influences on my early life have been my mom and dad. Even now they help me allot. I’ve been fortunate to get two good ones. My dad taught me how to work hard. My mom taught me how to be a good person. A strength and kindness skill set. This helped me growing up as I didn’t really fit in. 
-        Even now I still don’t. My friends are always telling me “Paudy put your mask on, whatever you do don’t be yourself”. Remember what Kafka said:</p>
+        Even now I still don’t.</p>
         <p><i>"I was ashamed of myself when I realized life was a costume party and I attended with my real face."</i></p>
         <p>Some friends have even enquired if I thought I’m on the spectrum, I just think I’m honest. I’ve don’t have a stomach for lies. I’ve never had the heard mindset. The need to assimilate into a group. I’ve never understood people who want to fit in at the expense of their individuality. 
         This I believe is my real talent, allowing me to develop an imagination and creative outlook. </p>
