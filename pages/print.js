@@ -29,7 +29,7 @@ export default function Logos({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img7.jpg" width={960} height={540} alt="mechcon branding"/>
         <br/>
         </section>
-        <a href="/">home</a>
+       <a href="/">&larr; home</a>
       </Layout>
     );
 }
