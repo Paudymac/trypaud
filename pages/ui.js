@@ -11,26 +11,23 @@ export default function Websites({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>User Interfaces</h1>        
-        <h3>Mechwarrior 5</h3>
-        <a href="#">Launch</a>
+        <h3>Mechwarrior 5 <a className={utilStyles.launch} href="https://mw5mercs.com">Launch</a></h3>
         <Image className={utilStyles.contentImg} src="/images/ui/mw5-site-example.jpg" width={960} height={540} alt="mw5 site"/><br/>
-        <h3>Piranha Games</h3>
-        <a href="#">Launch</a>
+        <h3>Piranha Games  <a className={utilStyles.launch} href="https://piranhagames.com/">Launch</a></h3>
         <Image className={utilStyles.contentImg} src="/images/ui/piranhagames-site-example.jpg" width={960} height={540} alt="mw5 site"/><br/>
-        <h3>Mechcon</h3>
-        <a href="#">Launch</a>
-        <Image className={utilStyles.contentImg} src="/images/ui/mechcon-site-example.jpg" width={960} height={540} alt="mw5 site"/><br/>
+        <h3>Mechcon <a className={utilStyles.launch} href="https://mechwarrior.com/mechcon">Launch</a></h3>
+        <Image className={utilStyles.contentImg} src="/images/ui/mechcon-site-example.jpg" width={960} height={540} alt="mechcon site"/><br/>
         <h3>MWO Product Pages</h3>
-        <a href="#">Launch</a>
+        <h4>MWO Legends <a className={utilStyles.launch} href="https://mwomercs.com/legends/spitfire">Launch</a></h4>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-legends-spitfire.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <a href="#">Launch</a>
+        <h4>Longbow <a className={utilStyles.launch} href="https://mwomercs.com/longbow">Launch</a></h4>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-longbow.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <a href="#">Launch</a>
+        <h4>Warhammer IIC <a className={utilStyles.launch} href="https://mwomercs.com/warhammeriic">Launch</a></h4>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-warhammeriic.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <a href="#">Launch</a>
+        <h4>Civil War Escalation <a className={utilStyles.launch} href="https://mwomercs.com/civil-war-escalation">Launch</a></h4>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-civil-war-escalation.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <a href="/">home</a>
         </section>
+        <a href="/">&larr; home</a>
       </Layout>
     );
 }

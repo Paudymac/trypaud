@@ -15,8 +15,9 @@ export default function Logos({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/itsJustAride.jpg" width={960} height={540} alt="mw5 art"/><br/>
         <h3>Hicks II</h3>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/wheredoyouthink.jpg" width={960} height={540} alt="mwo legends art"/><br/>
-        <a href="/">home</a>
+        
         </section>
+        <a href="/">&larr; home</a>
       </Layout>
     );
 }

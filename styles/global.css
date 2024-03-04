@@ -17,8 +17,12 @@ body {
     sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  color: black;
+  color: #333;
   background-color: white;
+}
+
+h1, h2, h3 {
+  color: #383838;
 }
 
 * {

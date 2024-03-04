@@ -16,8 +16,8 @@ export default function Logos({ allPostsData }) {
         <h3>Smartt: Styleguide</h3>
         <embed src="/images/branding/Styleguide_PM_V6.pdf" width="1280px" height="800px"  className={utilStyles.pdf}/>
         <br/>
-        <a href="/">home</a>
         </section>
+        <a href="/">&larr; home</a>
       </Layout>
     );
 }
