@@ -16,7 +16,7 @@ export default function Home({ allPostsData }) {
       <p>Hello, I’m Paudy,</p>
       <p>A designer of things heralding from Ireland.</p>
 
-      <p>Design is part of the fabric to my character; 
+      <p>Design is part of the fabric of my character; 
       graphic design, interaction design, logos, layout, branding, animation, UI, development, storytelling I dig it all.</p>
      
       <p>To find out more please read
