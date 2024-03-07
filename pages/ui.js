@@ -29,6 +29,9 @@ export default function Websites({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/ui/transverse-funding.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg} src="/images/ui/transverse-product.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg} src="/images/ui/transverse-checkout.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>Connect the doc</h4>
+        <Image  src="/images/ui/connectthedoc-hp.jpg" width={643} height={547} alt="mwo site"/><br/>
+        <Image  src="/images/ui/connectthedoc-sp.png" width={643} height={547} alt="mwo site"/><br/>
       </section>
         <a href="/">&larr; home</a>
       </Layout>
