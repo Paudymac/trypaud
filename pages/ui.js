@@ -24,9 +24,12 @@ export default function Websites({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-longbow.jpg" width={960} height={540} alt="mwo site"/><br/>
         <h4>Warhammer IIC <a className={utilStyles.launch} href="https://mwomercs.com/warhammeriic">Launch</a></h4>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-warhammeriic.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <h4>Civil War Escalation <a className={utilStyles.launch} href="https://mwomercs.com/civil-war-escalation">Launch</a></h4>
-        <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-civil-war-escalation.jpg" width={960} height={540} alt="mwo site"/><br/>
-        </section>
+        <h4>Transverse </h4>
+        <Image className={utilStyles.contentImg} src="/images/ui/transverse-hp.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg} src="/images/ui/transverse-funding.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg} src="/images/ui/transverse-product.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg} src="/images/ui/transverse-checkout.jpg" width={960} height={540} alt="mwo site"/><br/>
+      </section>
         <a href="/">&larr; home</a>
       </Layout>
     );
