@@ -11,7 +11,10 @@ export default function MotionGraphics({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Animation</h1>
-        
+        <h3>Solaris Showdown Launch Trailer <a className={utilStyles.launch} href="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB">Launch</a></h3>
+        <div className={utilStyles.video}>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fMzvadaovKo?si=B96t4-RfiuYRTGn5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        </div>
         <h3>Mechwarrior 5 Clans Teaser Trailer <a className={utilStyles.launch} href="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB">Launch</a></h3>
         <div className={utilStyles.video}>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
