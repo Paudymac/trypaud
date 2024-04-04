@@ -14,10 +14,9 @@ export default function Home({ allPostsData }) {
       <div className={utilStyles.blog}>
       <h2 className={utilStyles.centerText}>Try Something Different</h2>
       <p>Hello, I’m Paudy,</p>
-      <p>A designer of things heralding from Ireland.</p>
+     
 
-      <p>Design is part of the fabric of my character; 
-      graphic design, interaction design, logos, layout, branding, animation, UI, development, storytelling I dig it all.</p>
+      <p>I’m a designer from Ireland specialising in Branding, UI design, Interaction Design and Storytelling.</p>
      
       <p>To find out more please read
       <a href="/mystory"> My Story.</a></p>
