@@ -60,10 +60,36 @@
   height: 100% !important;
 }
 
+.mainMenuParent {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mainMenuParent {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mainMenuParent {
+    grid-template-columns: 100%;
+  }
+}
+
 .mainMenu {
   text-align: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: bold;
+  list-style: none;
+  padding: 2em;
+  border: 1px dashed #027cb2;
+  margin: 0.5em;
+}
+
+.mainMenu:hover {
+  background-color: #027cb2;
+  color: white;
 }
 
 .centerText {
@@ -73,6 +99,12 @@
 .blog {
   margin: 0 auto;
   width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog {
+    width: 100%;
+  }
 }
 
 .video {
@@ -91,6 +123,7 @@
 
 .launch {
   display: inline-block;
+  float: right;
   height: 32px;
   width: 32px;
   background-size: 100%;

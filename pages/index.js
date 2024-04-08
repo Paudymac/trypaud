@@ -12,7 +12,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
       <div className={utilStyles.blog}>
-      <h2 className={utilStyles.centerText}>Try Something Different</h2>
+      <h2 className={utilStyles.centerText}>Make Shit Happen</h2>
       <p>Hello, I’m Paudy,</p>
      
 
@@ -22,14 +22,16 @@ export default function Home({ allPostsData }) {
       <a href="/mystory"> My Story.</a></p>
       </div>
       <br />
-
-        <p className={utilStyles.mainMenu}><a href="/logos">Logos</a></p>
-        <p className={utilStyles.mainMenu}><a href="/branding">Branding</a></p>
-        <p className={utilStyles.mainMenu}><a href="/ui">UI</a></p>
-        <p className={utilStyles.mainMenu}><a href="/animation">Animation</a></p>
-        <p className={utilStyles.mainMenu}><a href="/illustration">Illustration</a></p>
-        <p className={utilStyles.mainMenu}><a href="/print">Print</a></p>
-        <p className={utilStyles.mainMenu}><a href="/miscellaneous">Miscellaneous</a></p>
+        <div className={utilStyles.mainMenuParent}>
+          <a className={utilStyles.mainMenu} href="/logos">Logos</a>
+          <a className={utilStyles.mainMenu} href="/logos">Icons</a>
+          <a className={utilStyles.mainMenu} href="/branding">Branding</a>
+          <a className={utilStyles.mainMenu} href="/ui">UI</a>
+          <a className={utilStyles.mainMenu} href="/animation">Animation</a>
+          <a className={utilStyles.mainMenu} href="/illustration">Illustration</a>
+          <a className={utilStyles.mainMenu} href="/print">Print</a>
+          <a className={utilStyles.mainMenu} href="/miscellaneous">Miscellaneous</a>
+        </div>
       </section>
     </Layout>
   );
