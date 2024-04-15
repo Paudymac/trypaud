@@ -24,7 +24,7 @@ export default function Home({ allPostsData }) {
       <br />
         <div className={utilStyles.mainMenuParent}>
           <a className={utilStyles.mainMenu} href="/logos">Logos</a>
-          <a className={utilStyles.mainMenu} href="/logos">Icons</a>
+          <a className={utilStyles.mainMenu} href="/icons">Icons</a>
           <a className={utilStyles.mainMenu} href="/branding">Branding</a>
           <a className={utilStyles.mainMenu} href="/ui">UI</a>
           <a className={utilStyles.mainMenu} href="/animation">Animation</a>

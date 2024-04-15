@@ -30,8 +30,32 @@ export default function Websites({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/ui/transverse-product.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg} src="/images/ui/transverse-checkout.jpg" width={960} height={540} alt="mwo site"/><br/>
         <h4>Connect the doc</h4>
-        <Image  src="/images/ui/connectthedoc-hp.jpg" width={643} height={547} alt="mwo site"/><br/>
-        <Image  src="/images/ui/connectthedoc-sp.png" width={643} height={547} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/ctd-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image  className={utilStyles.contentImg}  src="/images/ui/ctd-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image  className={utilStyles.contentImg}  src="/images/ui/ctd-img3.jpg" width={960} height={540} alt="mwo site"/><br/>
+         <h4>Karlene Karst</h4>
+        <Image className={utilStyles.contentImg}  src="/images/ui/karlene-img2b.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>Whalley</h4>
+        <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img3.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img4.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>ZLC</h4>
+        <Image className={utilStyles.contentImg}  src="/images/ui/zlc-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/zlc-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/zlc-img3.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>Retirement by Design</h4>
+        <Image className={utilStyles.contentImg}  src="/images/ui/rbd-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/rbd-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/rbd-img3.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>Head & Shoulders</h4>
+        <Image className={utilStyles.contentImg}  src="/images/ui/hs-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
+         <Image className={utilStyles.contentImg}  src="/images/ui/hs-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>Fiberone</h4>
+        <Image className={utilStyles.contentImg}  src="/images/ui/fiberone-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>Blackberry</h4>
+        <Image className={utilStyles.contentImg}  src="/images/ui/bb-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <Image className={utilStyles.contentImg}  src="/images/ui/bb-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
       </section>
         <a href="/">&larr; home</a>
       </Layout>

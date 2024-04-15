@@ -10,7 +10,10 @@ export default function Logos({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <h1>Miscellaneous</h1>
+      <h1>Miscellaneous</h1>
+      <h3>Mellow Yellow</h3>
+        <Image className={utilStyles.contentImg} src="/images/miscellaneous/mellow-yellow.jpg" width={960} height={540} alt="mw5 art"/><br/>
+        
         <h3>Hicks I</h3>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/itsJustAride.jpg" width={960} height={540} alt="mw5 art"/><br/>
         <h3>Hicks II</h3>
