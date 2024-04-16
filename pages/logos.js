@@ -32,12 +32,16 @@ export default function Logos({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/logos/hotis-logo-example.jpg" width={960} height={540} alt="Heroes of the Innersphere logo"/><br/>
         <h3>MechWarrior 5 <a className={utilStyles.launch} href="https://mw5mercs.com">Launch</a></h3>
         <Image className={utilStyles.contentImg} src="/images/logos/mw5-logo-example.jpg" width={960} height={540} alt="mechwarrior 5 logo"/><br/>
+        <h3>MWO Solaris 7</h3>
+        <Image className={utilStyles.contentImg} src="/images/logos/mwos7-logo-example.jpg" width={960} height={540} alt="mechcon logo"/><br/>
         <h3>MechCon <a className={utilStyles.launch} href="https://mechwarrior.com/mechcon">Launch</a></h3>
         <Image className={utilStyles.contentImg} src="/images/logos/mc-logo-example.jpg" width={960} height={540} alt="mechcon logo"/><br/>
         <h3>Colombia College <a className={utilStyles.launch} href="https://www.columbiacollege.ca/">Launch</a></h3>
         <Image className={utilStyles.contentImg} src="/images/logos/cc-logo-example.jpg" width={960} height={540} alt="Call to arms"/><br/>
         <h3>Smartt <a className={utilStyles.launch} href="https://www.smartt.com/">Launch</a></h3>
         <Image className={utilStyles.contentImg} src="/images/logos/smartt-logo-example.jpg" width={960} height={540} alt="Smartt logo"/><br/>
+        <h3>Connect the doc <a className={utilStyles.launch} href="https://www.connectthedoc.com/">Launch</a></h3>
+        <Image className={utilStyles.contentImg} src="/images/logos/ctd-logo-example.jpg" width={960} height={540} alt="Smartt logo"/><br/>
         </section>
         <a href="/">&larr; home</a>
       </Layout>
