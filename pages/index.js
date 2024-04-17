@@ -13,13 +13,13 @@ export default function Home({ allPostsData }) {
       <section className={utilStyles.headingMd}>
       <div className={utilStyles.blog}>
       <h2 className={utilStyles.centerText}>Try, Make It Happen</h2>
-      <p>Hey, I’m Paudy,</p>
+      <p>Hey, I’m Paudy this is my prototype portfolio site.</p>
      
 
-      <p>A designer from Ireland specialising in Branding, UI, Interaction and Storytelling.</p>
+      <p>I'm a designer from Ireland specialising in Branding, UI, Interaction and Storytelling living in Vancouver.</p>
      
       <p>To find out more please read
-      <a href="/mystory"> My Story.</a></p>
+      <a href="/mystory"> My Design Story.</a></p>
       </div>
       <br />
         <div className={utilStyles.mainMenuParent}>
