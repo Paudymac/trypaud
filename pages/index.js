@@ -12,11 +12,11 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
       <div className={utilStyles.blog}>
-      <h2 className={utilStyles.centerText}>Make Sh*t Happen</h2>
+      <h2 className={utilStyles.centerText}>Try, Make It Happen</h2>
       <p>Hey, I’m Paudy,</p>
      
 
-      <p>A designer from Ireland specialising in Branding, UI design, Interaction Design and Storytelling.</p>
+      <p>A designer from Ireland specialising in Branding, UI, Interaction and Storytelling.</p>
      
       <p>To find out more please read
       <a href="/mystory"> My Story.</a></p>
