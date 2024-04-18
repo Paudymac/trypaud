@@ -38,7 +38,6 @@ export default function Websites({ allPostsData }) {
         <h4>Whalley</h4>
         <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img3.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img4.jpg" width={960} height={540} alt="mwo site"/><br/>
         <h4>ZLC</h4>
         <Image className={utilStyles.contentImg}  src="/images/ui/zlc-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
@@ -47,7 +46,6 @@ export default function Websites({ allPostsData }) {
         <h4>Retirement by Design</h4>
         <Image className={utilStyles.contentImg}  src="/images/ui/rbd-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg}  src="/images/ui/rbd-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <Image className={utilStyles.contentImg}  src="/images/ui/rbd-img3.jpg" width={960} height={540} alt="mwo site"/><br/>
         <h4>Head & Shoulders</h4>
         <Image className={utilStyles.contentImg}  src="/images/ui/hs-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
          <Image className={utilStyles.contentImg}  src="/images/ui/hs-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
