@@ -30,10 +30,11 @@ export default function Logos({ allPostsData }) {
         <h3>Sierra Wireless Ad</h3>
          <Image className={utilStyles.contentImg} src="/images/branding/sierra-wireless-ad.jpg" width={960} height={540} quality={100} alt="sierra wireless ad"/><br/>
         <br/>
-        <h3>Smartt Styleguide</h3>
+        <h3>Smartt Branding</h3>
         <Image className={utilStyles.contentImg} src="/images/branding/Styleguide_PM_V6_Page_01.jpg" width={960} height={540} alt="smartt branded ad"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/Styleguide_PM_V6_Page_04.jpg" width={960} height={540} alt="smartt branded ad"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/Styleguide_PM_V6_Page_07.jpg" width={960} height={540} alt="smartt branded ad"/><br/>
+         <Image className={utilStyles.contentImg} src="/images/branding/smartt-folder.jpg" width={960} height={540} alt="smartt branded ad"/><br/>
         <h3>Smartt Ad</h3>
          <Image className={utilStyles.contentImg} src="/images/branding/smartt-ad.jpg" width={960} height={540} alt="smartt branded ad"/><br/>
         <br/>
