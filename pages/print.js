@@ -29,7 +29,9 @@ export default function Logos({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img7.jpg" width={960} height={540} alt="mechcon branding"/>
         <br/>
         <h3>Smartt Branding</h3>
-        <Image className={utilStyles.contentImg} src="/images/branding/smartt-folder.jpg" width={960} height={540} alt="smartt branded ad"/><br/>
+         <Image className={utilStyles.contentImg} src="/images/branding/smartt-folder-front.jpg" width={960} height={540} alt="smartt branding"/>
+        <Image className={utilStyles.contentImg} src="/images/branding/smartt-folder.jpg" width={960} height={540} alt="smartt branding"/><br/>
+       
         </section>
 
        <a href="/">&larr; home</a>
