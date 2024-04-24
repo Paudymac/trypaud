@@ -19,7 +19,7 @@ export default function Home({ allPostsData }) {
       <p>I'm a designer of things from Ireland specialising in Branding, UI, Interaction and Storytelling living in Vancouver.</p>
      
       <p>To find out more please read
-      <a href="/mystory"> My Design Story.</a></p>
+      <a href="/my-design-story"> My Design Story.</a></p>
       </div>
       <br />
         <div className={utilStyles.mainMenuParent}>
