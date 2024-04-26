@@ -18,6 +18,13 @@ body {
   line-height: 1.6;
   font-size: 18px;
   color: #333;
+}
+
+html {
+  background-image: url('../public/trypaud-logo-lg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
   background-color: white;
 }
 
