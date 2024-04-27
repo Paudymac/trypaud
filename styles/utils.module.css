@@ -92,6 +92,18 @@
   color: white;
 }
 
+.logoHome {
+  opacity: 1;
+  transition: 0.5s;
+  scale: 1;
+}
+
+.logoHome:hover {
+  opacity: 0.83;
+  scale: 1.07;
+  transition: 0.5s;
+}
+
 .centerText {
   text-align: center;
 }

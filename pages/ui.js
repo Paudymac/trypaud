@@ -24,6 +24,8 @@ export default function Websites({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-longbow.jpg" width={960} height={540} alt="mwo site"/><br/>
         <h4>Warhammer IIC <a className={utilStyles.launch} href="https://mwomercs.com/warhammeriic">Launch</a></h4>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-warhammeriic.jpg" width={960} height={540} alt="mwo site"/><br/>
+        <h4>MWO World Championships 2016</h4>
+        <Image className={utilStyles.contentImg} src="/images/ui/mwowc2016.jpg" width={960} height={540} alt="mwo wc 2016"/><br/>
         <h4>Transverse </h4>
         <Image className={utilStyles.contentImg} src="/images/ui/transverse-hp.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg} src="/images/ui/transverse-funding.jpg" width={960} height={540} alt="mwo site"/><br/>
@@ -35,7 +37,7 @@ export default function Websites({ allPostsData }) {
         <Image  className={utilStyles.contentImg}  src="/images/ui/ctd-img3.jpg" width={960} height={540} alt="mwo site"/><br/>
          <h4>Karlene Karst</h4>
         <Image className={utilStyles.contentImg}  src="/images/ui/karlene-img2b.jpg" width={960} height={540} alt="mwo site"/><br/>
-        <h4>Whalley</h4>
+        <h4>Whalley Printers</h4>
         <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img1.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img2.jpg" width={960} height={540} alt="mwo site"/><br/>
         <Image className={utilStyles.contentImg}  src="/images/ui/whalley-img4.jpg" width={960} height={540} alt="mwo site"/><br/>
