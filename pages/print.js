@@ -13,7 +13,15 @@ export default function Logos({ allPostsData }) {
         <h1>Print</h1>
         <h3>MW5 Box Art</h3>
         <Image className={utilStyles.contentImg} src="/images/branding/mw5-box-art.jpg" width={960} height={540} alt="mw5 branding"/>
-        <h3>Mechcon Events</h3>
+        <h3>Mechcon Event 2018</h3>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img1.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img2.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img3.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img4.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img5.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img6.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img7.jpg" width={960} height={540} alt="mechcon branding"/>
+        <h3>Mechcon Event 2017</h3>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img1.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img2.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img3.jpg" width={960} height={540} alt="mechcon branding"/>
@@ -22,13 +30,9 @@ export default function Logos({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img6.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img7.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img8.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img1.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img2.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img3.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img4.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img5.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img6.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img7.jpg" width={960} height={540} alt="mechcon branding"/>
+        <h3>Mechcon Event 2016</h3>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2016-img1.jpg" width={960} height={540} alt="mechcon branding"/>
+        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2016-img2.jpg" width={960} height={540} alt="mechcon branding"/>
         <br/>
         <h3>Smartt Branding</h3>
          <Image className={utilStyles.contentImg} src="/images/branding/smartt-folder-front.jpg" width={960} height={540} alt="smartt branding"/>
