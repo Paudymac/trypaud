@@ -20,6 +20,8 @@ export default function Logos({ allPostsData }) {
         <Image className={utilStyles.contentImg} src="/images/branding/technical-manual-2024-v01_Page_01.jpg" width={960} height={540} quality={100} alt="MW5 Technical Manual"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/technical-manual-2024-v01_Page_02.jpg" width={960} height={540} quality={100} alt="MW5 Technical Manual"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/technical-manual-2024-v01_Page_66.jpg" width={960} height={540} quality={100} alt="MW5 Technical Manual"/><br/>
+        <h3>Piranha Games Social</h3>
+        <Image className={utilStyles.contentImg} src="/images/branding/social-mockup.png" width={960} height={540} quality={100} alt="PGI social"/><br/>
         <h3>Columbia College Brand Guide</h3>
          <Image className={utilStyles.contentImg} src="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_01.jpg" width={960} height={540} quality={100} alt="columbia college brand guide"/><br/>
          <Image className={utilStyles.contentImg} src="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_02.jpg" width={960} height={540} quality={100} alt="columbia college brand guide"/><br/>

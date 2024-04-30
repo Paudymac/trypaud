@@ -26,3 +26,18 @@
   display: inline;
   margin: 0 2rem 0 0;
 }
+
+.logoHome {
+  opacity: 1;
+  transition: 0.5s;
+  scale: 1;
+}
+
+.logoHome:hover {
+  opacity: 0.83;
+  scale: 1.07;
+  transition: 0.5s;
+}
+
+
+

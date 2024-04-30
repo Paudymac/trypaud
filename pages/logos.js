@@ -30,6 +30,8 @@ export default function Logos({ allPostsData }) {
         <h3>Heroes of the Innersphere (MW5 DLC) <a className={utilStyles.launch} href="https://mw5mercs.com/dlc/heroes-of-the-inner-sphere">Launch</a>
         </h3>
         <Image className={utilStyles.contentImg} src="/images/logos/hotis-logo-example.jpg" width={960} height={540} alt="Heroes of the Innersphere logo"/><br/>
+        <h3>Project Revenant</h3>
+        <Image className={utilStyles.contentImg} src="/images/logos/pr-logo-example.jpg" width={960} height={540} alt="project revenant logo"/><br/>
         <h3>MechWarrior 5 <a className={utilStyles.launch} href="https://mw5mercs.com">Launch</a></h3>
         <Image className={utilStyles.contentImg} src="/images/logos/mw5-logo-example.jpg" width={960} height={540} alt="mechwarrior 5 logo"/><br/>
         <h3>MWO Solaris 7</h3>
