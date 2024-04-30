@@ -38,7 +38,6 @@ export default function Layout({ children, home }) {
               alt={name}
             />
           </a>
-          
           </>
         ) : (
           <>
