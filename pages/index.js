@@ -12,7 +12,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
       <div className={utilStyles.blog}>
-      <h2 className={utilStyles.centerText}>Try, Make It Happen</h2>
+      <h2 className={utilStyles.centerText}>In Paud We Trust</h2>
       <p>Hey, I’m Paudy this is my portfolio prototype.</p>
      
 
