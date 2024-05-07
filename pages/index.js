@@ -12,13 +12,12 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
       <div className={utilStyles.blog}>
-      <h2 className={utilStyles.centerText}>In Paud We Trust</h2>
       <p>Hey, I’m Paudy this is my portfolio prototype.</p>
      
 
-      <p>I'm a designer of things from Ireland specialising in Branding, UI, Interaction and Storytelling living in Vancouver.</p>
+      <p>I'm a designer of things from Ireland. I specialize in Branding, UI, Interaction Design and Storytelling. My abode is presently Vancouver, British Columbia.</p>
      
-      <p>To find out more please read
+      <p>To learn more about me read
       <a href="/my-design-story"> My Design Story.</a></p>
       </div>
       <br />
