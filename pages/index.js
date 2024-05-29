@@ -15,7 +15,7 @@ export default function Home({ allPostsData }) {
       <p>Hi, I’m Paudy.</p>
      
 
-      <p>Innovative and experienced Product Designer with over a decade of experience in crafting compelling design solutions for both gaming and corporate clients. Demonstrated expertise in UI/UX design, branding, web design, and leading cross-functional teams through all stages of product development. Proven track record of contributing to successful product launches, enhancing user experiences, and driving company growth through strategic design initiatives.</p>
+      <p>Innovative and experienced Designer with over a decade of experience in crafting compelling design solutions for both gaming and corporate clients. Demonstrated expertise in UI/UX design, branding, web design, and leading cross-functional teams through all stages of product development. Proven track record of contributing to successful product launches, enhancing user experiences, and driving company growth through strategic design initiatives.</p>
      
       <p>To learn more read
       <a href="/my-design-story"> My Design Story.</a></p>
