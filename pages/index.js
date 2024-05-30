@@ -15,7 +15,7 @@ export default function Home({ allPostsData }) {
       <p>Hi, I’m Paudy.</p>
      
 
-      <p>I'm a designer of things from Ireland. I specialize in Branding, UI, Interaction Design and Storytelling. My abode is presently Vancouver, British Columbia.</p>
+      <p>I'm a designer of things from Ireland. I specialize in Branding, UI, Interaction Design and Storytelling.</p>
      
       <p>To learn more about me read
       <a href="/my-design-story"> My Design Story.</a></p>
