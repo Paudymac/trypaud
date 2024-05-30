@@ -15,9 +15,9 @@ export default function Home({ allPostsData }) {
       <p>Hi, I’m Paudy.</p>
      
 
-      <p>Innovative and experienced Designer with over a decade of experience in crafting compelling design solutions for both gaming and corporate clients. Demonstrated expertise in UI/UX design, branding, web design, and leading cross-functional teams through all stages of development. Proven track record of contributing to successful product launches, enhancing user experiences, and driving company growth through strategic design initiatives.</p>
+      <p>I'm a designer of things from Ireland. I specialize in Branding, UI, Interaction Design and Storytelling. My abode is presently Vancouver, British Columbia.</p>
      
-      <p>To learn more read
+      <p>To learn more about me read
       <a href="/my-design-story"> My Design Story.</a></p>
       </div>
       <br />
