@@ -12,13 +12,14 @@ export default function Logos({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <h1>Logos</h1>
         <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>Solaris Showdown / MW5 DLC <a className={utilStyles.launch} href="https://mw5mercs.com/dlc/solaris-showdown">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Development / Art Direction ]</p>
-        <Image className={utilStyles.contentImg} src="/images/logos/ss-logo-example.jpg" width={960} height={540} alt="solaris showdown"/><br/>
-        <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5 Clans <a className={utilStyles.launch} href="https://mw5clans.com/">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Development / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/logos/mw5-clans-logo-example.jpg" width={960} height={540} alt="Mechwarrior 5 Clans logo"/><br/>
+        <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>Solaris Showdown / MW5 DLC <a className={utilStyles.launch} href="https://mw5mercs.com/dlc/solaris-showdown">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Development / Art Direction ]</p>
+        <Image className={utilStyles.contentImg} src="/images/logos/ss-logo-example.jpg" width={960} height={540} alt="solaris showdown"/><br/>
+        
         <span className={utilStyles.datePortfolio}>2023</span>
         <h3 className={utilStyles.header3Portfolio}>MechWarrior Online Legends <a className={utilStyles.launch} href="https://mwomercs.com/">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Development / Art Direction ]</p>

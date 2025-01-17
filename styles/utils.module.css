@@ -62,13 +62,7 @@
 
 .mainMenuParent {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-}
-
-@media only screen and (max-width: 1200px) {
-  .mainMenuParent {
-    grid-template-columns: 50% 50%;
-  }
+  grid-template-columns: 50% 50%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -85,6 +79,7 @@
   padding: 2em;
   border: 1px dashed #027cb2;
   margin: 0.5em;
+  background-color: #d1d7da;
 }
 
 .mainMenu:hover {
@@ -130,11 +125,14 @@
   background-size: 100%;
   background-image: url('../public/launchico.svg');
   color: transparent;
+  border-radius: 0;
+  transition: none;
 }
 
 .launch:hover {
   color: transparent;
   background-position-y: -32px;
+  transition: none;
 }
 
 .datePortfolio {

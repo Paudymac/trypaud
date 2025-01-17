@@ -31,7 +31,7 @@ export default function Layout({ children, home }) {
           <a href="/" className={styles.logoHome}>
             <Image
               priority
-              src="/images/profile.png"
+              src="/images/profile.webp"
               className={utilStyles.borderCircle}
               height={240}
               width={240}
@@ -67,7 +67,6 @@ export default function Layout({ children, home }) {
       )}
       <footer className={styles.footer}>
       <ul><li className={styles.footerMenu}><Link href="https://www.linkedin.com/in/padraic-mcateer-2895a8203">Linkedin</Link></li>
-          <li className={styles.footerMenu}><Link href="https://www.instagram.com/trypaud">Instagram</Link></li>
           <li className={styles.footerMenu}><Link href="mailto:paudy@trypaud.com">Email</Link></li>
       </ul>
 

@@ -26,8 +26,8 @@ html {
   background-image: url('../public/trypaud-logo-lg.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
-  background-color: white;
+  background-position: center center;
+  background-color: #c5cbce;
 }
 
 h1, h2, h3 {
@@ -41,11 +41,13 @@ h1, h2, h3 {
 a {
   color: #027cb2;
   text-decoration: none;
+  border-radius: 23px;
+  transition: all 0.5s;
 }
 
 a:hover {
   color:#2fbcfa;
-  text-decoration: underline;
+/*  text-decoration: underline;*/
 }
 
 img {
