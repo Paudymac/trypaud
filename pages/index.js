@@ -27,6 +27,19 @@ export default function Home({ allPostsData }) {
           
           <a className={utilStyles.mainMenu} href="/miscellaneous">Miscellaneous</a>
         </div>
+        <div className={utilStyles.mobMenuParent}>
+        <a className={utilStyles.mobMenu} href="/ui">UI / Web</a>
+          <a className={utilStyles.mobMenu} href="/logos">Logos</a>
+          <a className={utilStyles.mobMenu} href="/branding">Branding</a>
+          <a className={utilStyles.mobMenu} href="/print">Print</a>
+          <a className={utilStyles.mobMenu} href="/icons">Icons</a>
+          
+          <a className={utilStyles.mobMenu} href="/animation">Animation</a>
+
+          <a className={utilStyles.mobMenu} href="/illustration">Illustration</a>
+          
+          <a className={utilStyles.mobMenu} href="/miscellaneous">Miscellaneous</a>
+        </div>
       </section>
     </Layout>
   );

@@ -11,14 +11,27 @@ export default function Logos({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
       
-        <h3>SDBA</h3>
-        <h4>Poster 2024</h4>
+        <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>Squamish Dirt Bike Aassociation</h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/sdba-poster.jpg" width={960} height={540} alt="mw5 art"/><br/>
-         <h4>Poster 2023</h4>
+
+
+        <span className={utilStyles.datePortfolio}>2023</span>
+        <h3 className={utilStyles.header3Portfolio}>Squamish Dirt Bike Aassociation</h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/sdba-poster-2023.jpg" width={960} height={540} alt="mw5 art"/><br/>
-        <h3>Hicks I</h3>
+
+
+        <span className={utilStyles.datePortfolio}>2009</span>
+        <h3 className={utilStyles.header3Portfolio}>Hicks I</h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/itsJustAride.jpg" width={960} height={540} alt="mw5 art"/><br/>
-        <h3>Hicks II</h3>
+
+
+        <span className={utilStyles.datePortfolio}>2009</span>
+        <h3 className={utilStyles.header3Portfolio}>Hicks II</h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/wheredoyouthink.jpg" width={960} height={540} alt="mwo legends art"/><br/>
         
         </section>

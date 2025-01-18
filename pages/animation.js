@@ -11,25 +11,44 @@ export default function MotionGraphics({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Animation</h1>
-        <h3>Solaris Showdown Launch Trailer <a className={utilStyles.launch} href="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB">Launch</a></h3>
+
+        <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>Solaris Showdown Launch Trailer  <a className={utilStyles.launch} href="https://www.youtube.com/embed/fMzvadaovKo?si=B96t4-RfiuYRTGn5">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Motion Graphics / Cards / Typography ]</p>
         <div className={utilStyles.video}>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/fMzvadaovKo?si=B96t4-RfiuYRTGn5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
-        <h3>Mechwarrior 5 Clans Teaser Trailer <a className={utilStyles.launch} href="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB">Launch</a></h3>
+
+
+        <br />
+        <span className={utilStyles.datePortfolio}>2023</span>
+        <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5 Clans Teaser Trailer <a className={utilStyles.launch} href="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Motion Graphics / Cards / Typography ]</p>
         <div className={utilStyles.video}>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
-        <h3>Mechwarrior 5 DLC 5 Promo Trailer <a className={utilStyles.launch} href="https://www.youtube.com/embed/XfiI-BJnP2I?si=7_CLiuvzMrflRHjj">Launch</a></h3>
+
+        <br />
+        <span className={utilStyles.datePortfolio}>2022</span>
+        <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5 DLC 5 Rise of Rasalhague Promo Trailer<a className={utilStyles.launch} href="https://www.youtube.com/embed/XfiI-BJnP2I?si=7_CLiuvzMrflRHjj">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Motion Graphics / Cards / Typography ]</p>
         <div className={utilStyles.video}>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/XfiI-BJnP2I?si=7_CLiuvzMrflRHjj" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
+
         <br />
-        <h3>MWO Tournamnt Pause Screen</h3>
+        <span className={utilStyles.datePortfolio}>2017</span>
+        <h3 className={utilStyles.header3Portfolio}>MWO Tournamnt Pause Screen</h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Motion Graphics / Design / Branding]</p>
         <div className={utilStyles.video}>
         <video width="560" height="315" controls>
         <source src="/video/mwowc-pause-screen-2017.mp4" type="video/mp4" />
         </video></div>
-        <h3>Piranha Games Logo</h3>
+
+        <br />
+        <span className={utilStyles.datePortfolio}>2016</span>
+        <h3 className={utilStyles.header3Portfolio}>Piranha Games Bumper</h3>
+        <p className={utilStyles.descriptionPortfolio}>PGI [ Motion Graphics / Design / Branding]</p>
         <div className={utilStyles.video}>
         <video width="560" height="315" controls>
           <source src="/video/piranha-logo-sound.mp4" type="video/mp4" />
