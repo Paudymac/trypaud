@@ -14,23 +14,23 @@ export default function Websites({ allPostsData }) {
 
          <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5:Clans <a className={utilStyles.launch} href="https://mw5clans.com">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Front End ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Front End ]</p>
         <Image className={utilStyles.contentImg} src="/images/ui/mw5clans-site-example.jpg" width={960} height={540} alt="mw5 site"/><br/>     
 
 
         <span className={utilStyles.datePortfolio}>2021</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5:Mercs <a className={utilStyles.launch} href="https://mw5mercs.com">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Front End ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Front End ]</p>
         <Image className={utilStyles.contentImg} src="/images/ui/mw5-site-example.jpg" width={960} height={540} alt="mw5 site"/><br/>
 
         <span className={utilStyles.datePortfolio}>2018</span>
         <h3 className={utilStyles.header3Portfolio}>Mechcon <a className={utilStyles.launch} href="https://mechwarrior.com/mechcon">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Front End ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Front End ]</p>
         <Image className={utilStyles.contentImg} src="/images/ui/mechcon-site-example.jpg" width={960} height={540} alt="mechcon site"/><br/>
 
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>MWO Product Pages</h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Front End ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Front End ]</p>
 
         <h4>Black Hawk Ku<a className={utilStyles.launch} href="https://mwomercs.com/packages/black-hawk-ku">Launch</a></h4>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-black-hawk-ku.jpg" width={960} height={540} alt="mwo site"/><br/>
@@ -44,7 +44,7 @@ export default function Websites({ allPostsData }) {
 
         <span className={utilStyles.datePortfolio}>2023</span>
         <h3 className={utilStyles.header3Portfolio}>MWO Legends Spitfire <a className={utilStyles.launch} href="https://mwomercs.com/legends/spitfire">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Front End ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Front End ]</p>
         <Image className={utilStyles.contentImg} src="/images/ui/mwomercs-legends-spitfire.jpg" width={960} height={540} alt="mwo site"/><br/>
 
         <h3>Piranha Games  <a className={utilStyles.launch} href="https://piranhagames.com/">Launch</a></h3>

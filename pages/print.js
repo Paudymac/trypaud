@@ -15,7 +15,7 @@ export default function Logos({ allPostsData }) {
 
         <span className={utilStyles.datePortfolio}>2018</span>
         <h3 className={utilStyles.header3Portfolio}>Mechcon Event</h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Print ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
 
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img1.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img2.jpg" width={960} height={540} alt="mechcon branding"/>
@@ -28,13 +28,13 @@ export default function Logos({ allPostsData }) {
         <br/>
         <span className={utilStyles.datePortfolio}>2018</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5: Mercenaries Classic Box</h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Print ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
         <Image className={utilStyles.contentImg} src="/images/branding/mw5-box-art.jpg" width={960} height={540} alt="mw5 branding"/>
 
         <br/>
         <span className={utilStyles.datePortfolio}>2017</span>
         <h3 className={utilStyles.header3Portfolio}>Mechcon Event</h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Print ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
 
         
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img1.jpg" width={960} height={540} alt="mechcon branding"/>
@@ -49,7 +49,7 @@ export default function Logos({ allPostsData }) {
         <br/>
         <span className={utilStyles.datePortfolio}>2016</span>
         <h3 className={utilStyles.header3Portfolio}>Mechcon Event</h3>
-        <p className={utilStyles.descriptionPortfolio}>PGI [ Design / Print ]</p>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
 
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2016-img1.jpg" width={960} height={540} alt="mechcon branding"/>
         <Image className={utilStyles.contentImg} src="/images/print/mechcon-2016-img2.jpg" width={960} height={540} alt="mechcon branding"/>
