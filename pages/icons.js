@@ -51,7 +51,7 @@ export default function Logos({ allPostsData }) {
         <span className={utilStyles.datePortfolio}>2017</span>
         <h3 className={utilStyles.header3Portfolio}> Cow Skull </h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development ]</p>
-        <Image className={utilStyles.contentImg} src="/images/icons/-icon.jpg" width={960} height={540} alt="cow skull"/><br/>
+        <Image className={utilStyles.contentImg} src="/images/icons/pgi-icon.jpg" width={960} height={540} alt="cow skull"/><br/>
 
         <span className={utilStyles.datePortfolio}>2012</span>
         <h3 className={utilStyles.header3Portfolio}>Smartt A</h3>
