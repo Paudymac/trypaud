@@ -49,6 +49,7 @@
   transition: all 0.5s;
   border-radius:23px;
   font-size:0.75rem;
+  letter-spacing:0.2rem;
 /*  position: absolute;
   left: 0;*/
 }
@@ -76,7 +77,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
 }
 
 .mobMenuLink:hover {
