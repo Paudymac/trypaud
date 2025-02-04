@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
+import Menu from './mobNav';
 import Link from 'next/link';
 
 const name = 'TryPaud';
@@ -26,6 +27,27 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
+
+        <Menu />
+
+        <nav className={utilStyles.MenuParent}>
+          <a className={utilStyles.Menuhome} href="/"><Image
+              priority
+              src="/logo-sm-icon.svg"
+              className={utilStyles.Menuhome}
+              height={40}
+              width={40}
+              alt={name}
+            /></a>
+          <a className={utilStyles.Menulink} href="/ui">UI / Web</a>
+          <a className={utilStyles.Menulink} href="/logos">Logos</a>
+          <a className={utilStyles.Menulink} href="/branding">Branding</a>
+          <a className={utilStyles.Menulink} href="/print">Print</a>
+          <a className={utilStyles.Menulink} href="/icons">Icons</a>
+          <a className={utilStyles.Menulink} href="/animation">Animation</a>
+          <a className={utilStyles.Menulink} href="/illustration">Illustration</a>
+       </nav>
+
         {home ? (
           <>
           <a href="/" className={styles.logoHome}>

@@ -14,7 +14,7 @@ export default function Home({ allPostsData }) {
       <div className={utilStyles.blog}>
       </div>
       <br />
-        <div className={utilStyles.mainMenuParent}>
+        <nav className={utilStyles.mainMenuParent}>
         <a className={utilStyles.mainMenu} href="/ui">UI / Web</a>
           <a className={utilStyles.mainMenu} href="/logos">Logos</a>
           <a className={utilStyles.mainMenu} href="/branding">Branding</a>
@@ -25,21 +25,9 @@ export default function Home({ allPostsData }) {
 
           <a className={utilStyles.mainMenu} href="/illustration">Illustration</a>
           
-          <a className={utilStyles.mainMenu} href="/miscellaneous">Miscellaneous</a>
-        </div>
-        <div className={utilStyles.mobMenuParent}>
-        <a className={utilStyles.mobMenu} href="/ui">UI / Web</a>
-          <a className={utilStyles.mobMenu} href="/logos">Logos</a>
-          <a className={utilStyles.mobMenu} href="/branding">Branding</a>
-          <a className={utilStyles.mobMenu} href="/print">Print</a>
-          <a className={utilStyles.mobMenu} href="/icons">Icons</a>
-          
-          <a className={utilStyles.mobMenu} href="/animation">Animation</a>
-
-          <a className={utilStyles.mobMenu} href="/illustration">Illustration</a>
-          
-          <a className={utilStyles.mobMenu} href="/miscellaneous">Miscellaneous</a>
-        </div>
+         
+        </nav>
+        
       </section>
     </Layout>
   );

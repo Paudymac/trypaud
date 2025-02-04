@@ -1,0 +1,94 @@
+.menu-closed {
+  display: none;
+}
+
+.menu-open {
+  display: initial;
+}
+
+.mobileMenu {
+  display: none;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba(184,189,191,0.5) 0%, rgba(255,255,255,0.15) 100%);
+  border-radius: 23px;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mobileMenu {
+    display: initial;
+  }
+}
+
+.mobileMenu ul {
+  margin: 0;
+  padding: 0;
+
+}
+
+.mobileMenu li {
+  list-style-type: none;
+  width: 100%;
+}
+
+.mobileMenu li  a {
+  display: block;
+}
+
+.mobileBtn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: #027cb2;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius:23px;
+  font-size:0.75rem;
+/*  position: absolute;
+  left: 0;*/
+}
+
+.mobileBtn:hover {
+/*  background-color: rgba(184,189,191, 1);*/
+  color:#2fbcfa;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mobileBtn {
+    display: block;
+  }
+}
+
+.menuIcon {
+
+}
+
+
+.mobMenuLink {
+    padding: 1rem;
+    text-align: center;
+/*    width: 12.5%;*/
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.mobMenuLink:hover {
+  background-color: #027cb2;
+  color: white;
+}
+
+.mobMenuHome {
+  background-image: url('../public/logo-sm-icon.svg');
+  height: 40px;
+  width: 40px;
+  background-size: 100%;
+  border-radius: 0;
+  position: relative;
+}

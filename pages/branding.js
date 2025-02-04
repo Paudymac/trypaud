@@ -12,22 +12,23 @@ export default function Logos({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <h1>Branding</h1>
         <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>Game Manual / MW5 </h3>
+        <h3 className={utilStyles.header3Portfolio}>MW5:Mercs Game Manual  </h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/branding/Game Manual_v2_5_Page_01.jpg" width={960} height={540} quality={100} alt="MW5 Game Manual"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/Game Manual_v2_5_Page_04.jpg" width={960} height={540} quality={100} alt="MW5 Game Manual"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/Game Manual_v2_5_Page_08.jpg" width={960} height={540} quality={100} alt="MW5 Game Manual"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/Game Manual_v2_5_Page_13.jpg" width={960} height={540} quality={100} alt="MW5 Game Manual"/><br/>
         <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>MW5 Technical Manual/ MW5</h3>
+        <h3 className={utilStyles.header3Portfolio}>MW5:Mercs Technical Manual</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/branding/technical-manual-2024-v01_Page_01.jpg" width={960} height={540} quality={100} alt="MW5 Technical Manual"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/technical-manual-2024-v01_Page_02.jpg" width={960} height={540} quality={100} alt="MW5 Technical Manual"/><br/>
         <Image className={utilStyles.contentImg} src="/images/branding/technical-manual-2024-v01_Page_66.jpg" width={960} height={540} quality={100} alt="MW5 Technical Manual"/><br/>
         <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>Piranha Games Social</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
-        <Image className={utilStyles.contentImg} src="/images/branding/social-mockup.png" width={960} height={540} quality={100} alt=" social"/><br/>
+       <span className={utilStyles.datePortfolio}>2018</span>
+        <h3 className={utilStyles.header3Portfolio}>MechWarrior 5 Branding Illustration</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+        <Image className={utilStyles.contentImg} src="/images/illustration/vector-art-mw5.svg" width={960} height={540} alt="mw5 art"/><br/>
         <span className={utilStyles.datePortfolio}>2012</span>
         <h3 className={utilStyles.header3Portfolio}>Columbia College Brand Guide</h3>
         <p className={utilStyles.descriptionPortfolio}>Smartt [ Design / Development / Art Direction ]</p>

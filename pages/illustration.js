@@ -22,7 +22,7 @@ export default function Logos({ allPostsData }) {
         <h3 className={utilStyles.header3Portfolio}>MWO Legends Art</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/illustration/art-legends.jpg" width={960} height={540} alt="mwo legends art"/><br/>
-
+        
 
         <span className={utilStyles.datePortfolio}>2021</span>
         <h3 className={utilStyles.header3Portfolio}> Xmas Card</h3>
@@ -33,11 +33,8 @@ export default function Logos({ allPostsData }) {
         <h3 className={utilStyles.header3Portfolio}> Xmas Card</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/illustration/xmas-card-1.jpg" width={960} height={540} alt="mw5 art"/><br/>
-
-        <span className={utilStyles.datePortfolio}>2018</span>
-        <h3 className={utilStyles.header3Portfolio}>MechWarrior 5 Branding Illustration</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
-        <Image className={utilStyles.contentImg} src="/images/illustration/vector-art-mw5.svg" width={960} height={540} alt="mw5 art"/><br/>
+        
+        
         </section>
 
         <a href="/">&larr; home</a>

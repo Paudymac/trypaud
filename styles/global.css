@@ -20,14 +20,19 @@ body {
   line-height: 1.6;
   font-size: 18px;
   color: #333;
+/*  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;*/
 }
 
 html {
-  background-image: url('../public/trypaud-logo-lg.svg');
-  background-size: cover;
+  background: rgba(197,203,206,1);
+  background-image:url('../public/trypaud-logo-lg.svg'), linear-gradient(180deg, rgba(197,203,206,1) 0%, rgba(255,255,255,1) 100%);
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #c5cbce;
+  background-size: cover;
+  background-position: top center;
 }
 
 h1, h2, h3 {
@@ -59,3 +64,16 @@ video, iframe {
   max-width: 100%;
 }
 
+.menu-closed {
+  display: none;
+}
+
+.menu-open {
+  display: initial;
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu-open {
+    display: none;
+  }
+}

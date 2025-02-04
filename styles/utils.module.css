@@ -80,7 +80,8 @@
   padding: 2em;
   border: 1px dashed #027cb2;
   margin: 0.5em;
-  background-color: #d1d7da;
+  letter-spacing:0.2em;
+/*  background-color: #fff;*/
 }
 
 .mainMenu:hover {
@@ -88,10 +89,58 @@
   color: white;
 }
 
-.mobMenuParent {
-  display: none;
+@media only screen and (max-width: 1024px) {
+  .mainMenu {
+    padding: 1em;
+    font-size: 1rem;
+  }
 }
 
+
+.MenuParent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 23px;
+  margin: 1rem 0 0 0;
+  background-image: linear-gradient(180deg, rgba(184,189,191,0.5) 0%, rgba(255,255,255,0.15) 100%);
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .MenuParent {
+    display: none;
+  }
+}
+
+.Menulink {
+  padding: 1rem;
+  text-align: center;
+  width: 12.5%;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+.Menulink:hover {
+  background-color: #027cb2;
+  color: white;
+}
+
+.Menuhome {
+  /*background-image: url('../public/logo-sm-icon.svg');*/
+  position: relative;
+  top:5px;
+  left: 7px;
+}
+
+.Menuhome:hover {
+  transition: all 0.75s;
+  opacity: 0.83;
+/*    scale: 1.05;*/
+}
 
 .centerText {
   text-align: center;

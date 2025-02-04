@@ -1,7 +1,7 @@
 .container {
   max-width: 80rem;
   padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  margin: 0rem auto 6rem;
 }
 
 .header {
@@ -28,6 +28,7 @@
 }
 
 .logoHome {
+  margin-top: 2rem;
   opacity: 1;
   transition: 0.5s;
   scale: 1;

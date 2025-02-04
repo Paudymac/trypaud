@@ -12,13 +12,13 @@ export default function Logos({ allPostsData }) {
       <section className={utilStyles.headingMd}>
       
         <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>Squamish Dirt Bike Aassociation</h3>
+        <h3 className={utilStyles.header3Portfolio}>Poster S.D.B.A.</h3>
         <p className={utilStyles.descriptionPortfolio}>[ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/sdba-poster.jpg" width={960} height={540} alt="mw5 art"/><br/>
 
 
         <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>Squamish Dirt Bike Aassociation</h3>
+        <h3 className={utilStyles.header3Portfolio}>Poster S.D.B.A.</h3>
         <p className={utilStyles.descriptionPortfolio}>[ Design / Art Direction ]</p>
         <Image className={utilStyles.contentImg} src="/images/miscellaneous/sdba-poster-2023.jpg" width={960} height={540} alt="mw5 art"/><br/>
 
