@@ -55,31 +55,16 @@ export default function Layout({ children, home }) {
           <a href="/" className={styles.logoHome}>
             <Image
               priority
-              src="/images/profile.webp"
-              className={utilStyles.borderCircle}
-              height={240}
-              width={240}
+              src="/images/trypaud-logo-lg.svg"
+              height={180}
+              width={180}
               alt={name}
             />
           </a>
           </>
         ) : (
           <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
+            
           </>
         )}
       </header>
