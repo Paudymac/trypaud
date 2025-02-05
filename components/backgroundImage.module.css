@@ -1,7 +1,8 @@
 /* styles.module.css */
 .backgroundImage {
   background-size: 100%;
-  background-position: top center;
+  background-position-x: center;
+  background-position-y: var(--background-position-y); /* Use the CSS variable */
   width: 100%;
   background-image: var(--bg-image); /* Use the CSS variable */
   border-radius:23px;
