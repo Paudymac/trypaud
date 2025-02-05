@@ -1,0 +1,49 @@
+/* styles.module.css */
+.backgroundImage {
+  background-size: 100%;
+  background-position: top center;
+  width: 100%;
+  background-image: var(--bg-image); /* Use the CSS variable */
+  border-radius:23px;
+  transition: all 0.5s;
+  background-repeat: no-repeat;
+}
+
+.backgroundImage::before {
+  content: '';
+  display: block;
+  padding-bottom: var(--padding-bottom); /* Use the CSS variable */
+}
+
+.backgroundImage:hover {
+  background-size: 103%;
+/*  border-color:#2fbcfa;*/
+}
+
+.imageLink {
+  margin-bottom: 2rem;
+  display: block;
+  padding: 0.2rem;
+  background: linear-gradient(351deg, rgba(150,152,153,1) 0%, rgba(131,131,131,1) 12%, rgba(184,189,191,1) 31%, rgba(117,117,117,1) 50%, rgba(195,195,195,1) 70%, rgba(255,255,255,1) 83%, rgba(184,189,191,1) 100%);
+}
+
+.imageLink:hover {
+
+}
+
+.imageBg {
+  margin-bottom: 2rem;
+  display: block;
+  padding: 0.2rem;
+  background: linear-gradient(351deg, rgba(150,152,153,1) 0%, rgba(131,131,131,1) 12%, rgba(184,189,191,1) 31%, rgba(117,117,117,1) 50%, rgba(195,195,195,1) 70%, rgba(255,255,255,1) 83%, rgba(184,189,191,1) 100%);
+  border-radius:23px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .imageLink {
+    padding: 0.1rem;
+  }
+  .imageBg {
+    padding: 0.1rem;
+  }
+}
