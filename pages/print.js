@@ -2,6 +2,8 @@ import Head from 'next/head';
 import utilStyles from '../styles/utils.module.css';
 import Layout, { siteTitle } from '../components/layout';
 import Image from 'next/image';
+import BackgroundImage from '../components/backgroundImage';
+import styles from '../components/backgroundImage.module.css';
 
 export default function Logos({ allPostsData }) {
   return (
@@ -13,54 +15,150 @@ export default function Logos({ allPostsData }) {
         <h1>Print</h1>
       
 
-        <span className={utilStyles.datePortfolio}>2018</span>
+        <span className={utilStyles.datePortfolio}>2016 - 2018</span>
         <h3 className={utilStyles.header3Portfolio}>Mechcon Event</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
 
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img1.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img2.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img3.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img4.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img5.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img6.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2018-img7.jpg" width={960} height={540} alt="mechcon branding"/>
+         <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2018-img1.webp"
+        paddingBottom= "100%"
+        backgroundPositionY="center"
+        />
+        </div>
 
-        <br/>
-        <span className={utilStyles.datePortfolio}>2018</span>
-        <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5: Mercenaries Classic Box</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
-        <Image className={utilStyles.contentImg} src="/images/branding/mw5-box-art.jpg" width={960} height={540} alt="mw5 branding"/>
+         <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2018-img2.webp"
+        paddingBottom= "25%"
+        backgroundPositionY="center"
+        />
+        </div>
 
-        <br/>
-        <span className={utilStyles.datePortfolio}>2017</span>
-        <h3 className={utilStyles.header3Portfolio}>Mechcon Event</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
+         <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2018-img3.webp"
+        paddingBottom= "100%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2018-img4.webp"
+        paddingBottom= "120%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2018-img5.webp"
+        paddingBottom= "80%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+                <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2018-img6.webp"
+        paddingBottom= "20%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2018-img7.webp"
+        paddingBottom= "70%"
+        backgroundPositionY="center"
+        />
+        </div>
 
         
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img1.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img2.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img3.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img4.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img5.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img6.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img7.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2017-img8.jpg" width={960} height={540} alt="mechcon branding"/>
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img1.webp"
+        paddingBottom= "30%"
+        backgroundPositionY="center"
+        />
+        </div>
 
-        <br/>
-        <span className={utilStyles.datePortfolio}>2016</span>
-        <h3 className={utilStyles.header3Portfolio}>Mechcon Event</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img2.webp"
+        paddingBottom= "37%"
+        backgroundPositionY="center"
+        />
+        </div>
 
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2016-img1.jpg" width={960} height={540} alt="mechcon branding"/>
-        <Image className={utilStyles.contentImg} src="/images/print/mechcon-2016-img2.jpg" width={960} height={540} alt="mechcon branding"/>
-        <br/>
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img3.webp"
+        paddingBottom= "40%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img4.webp"
+        paddingBottom= "50%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+                <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img5.webp"
+        paddingBottom= "50%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+                        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img6.webp"
+        paddingBottom= "50%"
+        backgroundPositionY="center"
+        />
+        </div>
 
 
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>Smartt Rebrand</h3>
-        <p className={utilStyles.descriptionPortfolio}>Smartt [ Design / Print ]</p>
-         <Image className={utilStyles.contentImg} src="/images/branding/smartt-folder-front.jpg" width={960} height={540} alt="smartt branding"/>
-        <Image className={utilStyles.contentImg} src="/images/branding/smartt-folder.jpg" width={960} height={540} alt="smartt branding"/><br/>
+                        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img7.webp"
+        paddingBottom= "50%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+                                <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2017-img8.webp"
+        paddingBottom= "60%"
+        backgroundPositionY="center"
+        />
+        </div>
+        
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2016-img1.webp"
+        paddingBottom= "40%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+                <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/print/mechcon-2016-img2.webp"
+        paddingBottom= "40%"
+        backgroundPositionY="center"
+        />
+        </div>
        
         </section>
 

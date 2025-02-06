@@ -53,7 +53,7 @@ export default function Logos({ allPostsData }) {
         <h3 className={utilStyles.header3Portfolio}> Xmas Card</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
 
-         <div className={styles.imageBg}>
+        <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/illustration/xmas-card-1.jpg"
         paddingBottom= "70%"
@@ -66,7 +66,7 @@ export default function Logos({ allPostsData }) {
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
 
 
-         <div className={styles.imageBg}>
+        <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/illustration/vector-art-mw5.svg"
         paddingBottom= "61%"
