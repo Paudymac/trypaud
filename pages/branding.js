@@ -20,7 +20,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/GameManual_v2_5_Page_01.jpg"
+        imageUrl="/images/branding/GameManual_v2_5_Page_01.webp"
         paddingBottom= "52%"
         backgroundPositionY="center"
         />
@@ -28,7 +28,7 @@ export default function Logos({ allPostsData }) {
 
          <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/GameManual_v2_5_Page_04.jpg"
+        imageUrl="/images/branding/GameManual_v2_5_Page_04.webp"
         paddingBottom= "52%"
         backgroundPositionY="center"
         />
@@ -36,7 +36,7 @@ export default function Logos({ allPostsData }) {
 
          <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/GameManual_v2_5_Page_08.jpg"
+        imageUrl="/images/branding/GameManual_v2_5_Page_08.webp"
         paddingBottom= "52%"
         backgroundPositionY="center"
         />
@@ -44,7 +44,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/GameManual_v2_5_Page_13.jpg"
+        imageUrl="/images/branding/GameManual_v2_5_Page_13.webp"
         paddingBottom= "52%"
         backgroundPositionY="center"
         />
@@ -57,7 +57,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/technical-manual-2024-v01_Page_01.jpg"
+        imageUrl="/images/branding/technical-manual-2024-v01_Page_01.webp"
         paddingBottom= "52%"
         backgroundPositionY="center"
         />
@@ -65,7 +65,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/technical-manual-2024-v01_Page_02.jpg"
+        imageUrl="/images/branding/technical-manual-2024-v01_Page_02.webp"
         paddingBottom= "52%"
         backgroundPositionY="center"
         />
@@ -73,7 +73,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/technical-manual-2024-v01_Page_66.jpg"
+        imageUrl="/images/branding/technical-manual-2024-v01_Page_66.webp"
         paddingBottom= "52%"
         backgroundPositionY="center"
         />
@@ -85,7 +85,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/mw5-box-art.jpg"
+        imageUrl="/images/branding/mw5-box-art.webp"
         paddingBottom= "50%"
         backgroundPositionY="center"
         />
@@ -97,7 +97,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_01.jpg"
+        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_01.webp"
         paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -105,7 +105,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_02.jpg"
+        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_02.webp"
         paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -113,7 +113,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_04.jpg"
+        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_04.webp"
         paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -122,7 +122,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_11.jpg"
+        imageUrl="/images/branding/Columbia_College_Brand_Guidelines_Final_Page_11.webp"
         paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -136,7 +136,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/sierra-wireless-ad.jpg"
+        imageUrl="/images/branding/sierra-wireless-ad.webp"
         paddingBottom= "140%"
         backgroundPositionY="center"
         />
@@ -148,7 +148,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/Styleguide_PM_V6_Page_01.jpg"
+        imageUrl="/images/branding/Styleguide_PM_V6_Page_01.webp"
         paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -156,7 +156,7 @@ export default function Logos({ allPostsData }) {
 
                 <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/Styleguide_PM_V6_Page_04.jpg"
+        imageUrl="/images/branding/Styleguide_PM_V6_Page_04.webp"
         paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -164,7 +164,7 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/Styleguide_PM_V6_Page_07.jpg"
+        imageUrl="/images/branding/Styleguide_PM_V6_Page_07.webp"
         paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -172,7 +172,7 @@ export default function Logos({ allPostsData }) {
 
                 <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/smartt-folder-front.jpg"
+        imageUrl="/images/branding/smartt-folder-front.webp"
         // paddingBottom= "77%"
         backgroundPositionY="center"
         />
@@ -180,7 +180,7 @@ export default function Logos({ allPostsData }) {
 
                    <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/smartt-folder.jpg"
+        imageUrl="/images/branding/smartt-folder.webp"
         paddingBottom= "40%"
         backgroundPositionY="center"
         />
@@ -189,7 +189,7 @@ export default function Logos({ allPostsData }) {
         
          <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/branding/smartt-ad.jpg"
+        imageUrl="/images/branding/smartt-ad.webp"
         paddingBottom= "143%"
         backgroundPositionY="center"
         />
