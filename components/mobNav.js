@@ -15,19 +15,25 @@ const Menu = () => {
   return (
     <div className={styles.mobileMenu}>
       {/* Button to toggle the menu */}
-      <button className={styles.mobileBtn} onClick={toggleMenu}><span className={styles.menuIcon} ></span>{isMenuOpen ? 'close' : 'menu'}</button>
+      <button className={styles.mobileBtn} onClick={toggleMenu}>
+      <div className={styles.menuIcon} >
+      <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar1Open : styles.mobileBar1}`}></span>
+      <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar2Open : styles.mobileBar2}`}></span>
+      </div>
+      {isMenuOpen ? 'close' : 'menu'}
+      </button>
 
       {/* Menu with conditional class name */}
       <ul className={isMenuOpen ? 'menu-open' : 'menu-closed'}>
 
-	        <li><a className={styles.mobMenuLink} href="/">home</a></li>
-	        <li><a className={styles.mobMenuLink} href="/ui">UI / Web</a></li>
-	        <li><a className={styles.mobMenuLink} href="/logos">Logos</a></li>
-	        <li><a className={styles.mobMenuLink} href="/branding">Branding</a></li>
-	        <li><a className={styles.mobMenuLink} href="/print">Print</a></li>
-	        <li><a className={styles.mobMenuLink} href="/icons">Icons</a></li>
-	        <li><a className={styles.mobMenuLink} href="/animation">Animation</a></li>
-	        <li><a className={styles.mobMenuLink} href="/illustration">Illustration</a></li>
+	        <li><a className={styles.mobMenuLink} href="/" onClick={toggleMenu}>home</a></li>
+	        <li><a className={styles.mobMenuLink} href="/ui" onClick={toggleMenu}>UI / Web</a></li>
+	        <li><a className={styles.mobMenuLink} href="/logos" onClick={toggleMenu}>Logos</a></li>
+	        <li><a className={styles.mobMenuLink} href="/branding" onClick={toggleMenu}>Branding</a></li>
+	        <li><a className={styles.mobMenuLink} href="/print" onClick={toggleMenu}>Print</a></li>
+	        <li><a className={styles.mobMenuLink} href="/icons" onClick={toggleMenu}>Icons</a></li>
+	        <li><a className={styles.mobMenuLink} href="/animation" onClick={toggleMenu}>Animation</a></li>
+	        <li><a className={styles.mobMenuLink} href="/illustration" onClick={toggleMenu}>Illustration</a></li>
 
       </ul>
     </div>

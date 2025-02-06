@@ -50,6 +50,7 @@
   border-radius:23px;
   font-size:0.75rem;
   letter-spacing:0.2rem;
+  text-indent: 33px;
 /*  position: absolute;
   left: 0;*/
 }
@@ -62,19 +63,51 @@
 @media only screen and (max-width: 1024px) {
   .mobileBtn {
     display: block;
+    position: relative;
   }
 }
 
 .menuIcon {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 23px;
+  position: absolute;
 }
 
+.mobileBar {
+  height: 3px;
+  background-color: #027cb2;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobileBar:hover {
+  background-color: #027cb2;
+}
+
+.mobileBar1 {
+  transform: translateY(0) rotate(0);
+}
+
+.mobileBar2 {
+  transform: translateY(8px) rotate(0);
+}
+
+.mobileBar1Open {
+  transform: translateY(8px) rotate(45deg);
+  position: relative;
+    top: -4px;
+}
+
+.mobileBar2Open {
+  transform: translateY(0) rotate(-45deg);
+}
 
 .mobMenuLink {
     padding: 1rem;
     text-align: center;
 /*    width: 12.5%;*/
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.2rem;
@@ -93,3 +126,5 @@
   border-radius: 0;
   position: relative;
 }
+
+
