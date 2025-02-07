@@ -116,6 +116,10 @@
     letter-spacing: 0.2rem;
 }
 
+li:last-child .mobMenuLink {
+  border-radius: 0 0 23px 23px;
+}
+
 .mobMenuLink:hover {
   background-color: #027cb2;
   color: white;
@@ -130,4 +134,13 @@
   position: relative;
 }
 
+.activeLink {
+  color:#2fbcfa;
+}
+
+.activeLink:hover {
+  background-color: transparent;
+  color:#2fbcfa;
+  cursor: auto;
+}
 

@@ -93,6 +93,7 @@
   border: 1px dashed #027cb2;
   margin: 0.5em;
   letter-spacing:0.2em;
+  border-radius:23px;
 /*  background-color: #fff;*/
 }
 
@@ -130,11 +131,15 @@
 .Menulink {
   padding: 1rem;
   text-align: center;
-  width: 12.5%;
+/*  width: 12.5%;*/
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.05rem;
+}
+
+.Menulink:last-child {
+  border-radius:0 23px 23px 0;
 }
 
 @media only screen and (max-width: 1200px) {

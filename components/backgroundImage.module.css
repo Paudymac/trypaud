@@ -26,6 +26,7 @@
   display: block;
   padding: 0.2rem;
   background: linear-gradient(351deg, rgba(150,152,153,1) 0%, rgba(131,131,131,1) 12%, rgba(184,189,191,1) 31%, rgba(117,117,117,1) 50%, rgba(195,195,195,1) 70%, rgba(255,255,255,1) 83%, rgba(184,189,191,1) 100%);
+  border-radius: 23px;
 }
 
 .imageLink:hover {

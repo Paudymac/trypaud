@@ -4,11 +4,20 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Menu from './mobNav';
 import Link from 'next/link';
+import { useRouter } from 'next/router'; 
 
 const name = 'TryPaud';
 export const siteTitle = 'TryPaud Portfolio';
 
+
 export default function Layout({ children, home }) {
+  const router = useRouter(); 
+
+  const isActiveLink = (href) => {
+    return router.pathname === href;
+  };
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -41,13 +50,13 @@ export default function Layout({ children, home }) {
               width={40}
               alt={name}
             /></a>
-          <a className={utilStyles.Menulink} href="/ui">UI / Web</a>
-          <a className={utilStyles.Menulink} href="/logos">Logos</a>
-          <a className={utilStyles.Menulink} href="/branding">Branding</a>
-          <a className={utilStyles.Menulink} href="/print">Print</a>
-          <a className={utilStyles.Menulink} href="/icons">Icons</a>
-          <a className={utilStyles.Menulink} href="/animation">Animation</a>
-          <a className={utilStyles.Menulink} href="/illustration">Illustration</a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/ui') ? styles.activeLink : ''}`} href="/ui">UI / Web</a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/logos') ? styles.activeLink : ''}`} href="/logos">Logos</a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/branding') ? styles.activeLink : ''}`} href="/branding">Branding</a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/print') ? styles.activeLink : ''}`} href="/print">Print</a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`} href="/icons">Icons</a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/animation') ? styles.activeLink : ''}`} href="/animation">Animation</a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`} href="/illustration">Illustration</a>
        </nav>
 
        
@@ -87,3 +96,4 @@ export default function Layout({ children, home }) {
     </div>
   );
 }
+
