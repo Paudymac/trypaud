@@ -50,12 +50,16 @@ export default function Layout({ children, home }) {
           <a className={utilStyles.Menulink} href="/illustration">Illustration</a>
        </nav>
 
-        {home ? (
+       
+      </header>
+
+       {home ? (
           <>
           <a href="/" className={styles.logoHome}>
             <Image
               priority
               src="/images/trypaud-logo-lg.svg"
+              className={styles.logo}
               height={180}
               width={180}
               alt={name}
@@ -64,10 +68,9 @@ export default function Layout({ children, home }) {
           </>
         ) : (
           <>
-            
+          
           </>
         )}
-      </header>
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
