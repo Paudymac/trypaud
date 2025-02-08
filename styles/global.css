@@ -63,12 +63,16 @@ video, iframe {
   max-width: 100%;
 }
 
-.menu-closed {
-  display: none;
+.menu-open {
+  max-height: 80vh; 
+  overflow-y: auto; 
+  transition: max-height 0.3s ease-in-out; 
 }
 
-.menu-open {
-  display: initial;
+.menu-closed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out; 
 }
 
 @media only screen and (min-width: 1024px) {
