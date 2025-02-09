@@ -17,6 +17,8 @@ export default function Layout({ children, home }) {
     return router.pathname === href;
   };
 
+  const isHomePage = router.pathname === '/';
+
 
   return (
     <div className={styles.container}>
@@ -62,24 +64,19 @@ export default function Layout({ children, home }) {
        
       </header>
 
-       {home ? (
-          <>
-          <a href="/" className={styles.logoHome}>
-            <Image
-              priority
-              src="/images/trypaud-logo-lg.svg"
-              className={styles.logo}
-              height={180}
-              width={180}
-              alt={name}
-            />
-          </a>
-          </>
-        ) : (
-          <>
-          
-          </>
-        )}
+
+      {isHomePage && (
+
+          <Image
+            priority
+            src="/images/trypaud-logo-lg.svg"
+            className={styles.logo}
+            height={180}
+            width={180}
+            alt="Logo"
+          />
+
+      )}
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>

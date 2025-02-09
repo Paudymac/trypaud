@@ -3,6 +3,7 @@ import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
 import styles from './menu.module.css';
 import { useRouter } from 'next/router'; 
+import Image from 'next/image';
 
 const Menu = () => {
   // State to track if the menu is open or closed
@@ -21,7 +22,7 @@ const Menu = () => {
 
   return (
     <div className={styles.mobileMenu}>
-      {/* Button to toggle the menu */}
+
       <button className={styles.mobileBtn} onClick={toggleMenu}>
       <div className={styles.menuIcon} >
       <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar1Open : styles.mobileBar1}`}></span>
@@ -30,7 +31,8 @@ const Menu = () => {
       {isMenuOpen ? 'close' : 'menu'}
       </button>
 
-      {/* Menu with conditional class name */}
+
+
       <ul className={isMenuOpen ? 'menu-open' : 'menu-closed'}>
 
 	        <li><a className={`${styles.mobMenuLink} ${isActiveLink('/') ? styles.activeLink : ''}`}  href="/" onClick={toggleMenu}>home</a></li>
