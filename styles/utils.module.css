@@ -119,6 +119,7 @@
   margin: 1rem 0 0 0;
   background-image: linear-gradient(180deg, rgba(184,189,191,1) 0%, rgba(255,255,255,0.9) 100%);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  line-height: 1.1;
 }
 
 
@@ -152,10 +153,13 @@
 }
 
 .Menuhome {
-  /*background-image: url('../public/logo-sm-icon.svg');*/
+ height: 40px;
+  width: 40px;
+  border-radius: 0;
   position: relative;
-  top:5px;
-  left: 7px;
+  display: inline-block;
+  top: 3px;
+  left: 11px;
 }
 
 .Menuhome:hover {

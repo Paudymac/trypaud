@@ -22,7 +22,13 @@ const Menu = () => {
 
   return (
     <div className={styles.mobileMenu}>
-
+      <a className={styles.mobMenuHome} href="/"><Image
+              priority
+              src="/logo-sm-icon.svg"
+              height={40}
+              width={40}
+              alt="Logo"
+            /></a>
       <button className={styles.mobileBtn} onClick={toggleMenu}>
       <div className={styles.menuIcon} >
       <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar1Open : styles.mobileBar1}`}></span>
