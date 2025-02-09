@@ -59,7 +59,7 @@
 }
 
 .activeLink:hover {
-  background-color: transparent;
-  color:#2fbcfa;
-  cursor: auto;
+  background-color: transparent !important;
+  color:#2fbcfa !important;
+  cursor: auto !important;
 }
