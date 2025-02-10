@@ -5,6 +5,7 @@ import Image from 'next/image';
 import BackgroundImage from '../components/backgroundImage';
 import styles from '../components/backgroundImage.module.css';
 
+
 export default function Logos({ allPostsData }) {
   return (
     <Layout home>
