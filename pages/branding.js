@@ -14,6 +14,35 @@ export default function Logos({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Branding</h1>
+
+        <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>MW5:Clans Game Manual</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Development ]</p>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/branding/Mechwarrior5-CLANS-game-manual-1.webp"
+        // paddingBottom= "52%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/branding/Mechwarrior5-CLANS-game-manual-3.webp"
+        // paddingBottom= "52%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/branding/Mechwarrior5-CLANS-game-manual-5.webp"
+        // paddingBottom= "52%"
+        backgroundPositionY="center"
+        />
+        </div>
+
         <span className={utilStyles.datePortfolio}>2021</span>
         <h3 className={utilStyles.header3Portfolio}>MW5:Mercs Game Manual </h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
@@ -21,7 +50,7 @@ export default function Logos({ allPostsData }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/branding/GameManual_v2_5_Page_01.webp"
-        paddingBottom= "52%"
+        // paddingBottom= "52%"
         backgroundPositionY="center"
         />
         </div>
@@ -29,7 +58,7 @@ export default function Logos({ allPostsData }) {
          <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/branding/GameManual_v2_5_Page_04.webp"
-        paddingBottom= "52%"
+        // paddingBottom= "52%"
         backgroundPositionY="center"
         />
         </div>
@@ -37,7 +66,7 @@ export default function Logos({ allPostsData }) {
          <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/branding/GameManual_v2_5_Page_08.webp"
-        paddingBottom= "52%"
+        // paddingBottom= "52%"
         backgroundPositionY="center"
         />
         </div>
@@ -45,7 +74,7 @@ export default function Logos({ allPostsData }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/branding/GameManual_v2_5_Page_13.webp"
-        paddingBottom= "52%"
+        // paddingBottom= "52%"
         backgroundPositionY="center"
         />
         </div>
@@ -58,7 +87,7 @@ export default function Logos({ allPostsData }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/branding/technical-manual-2024-v01_Page_01.webp"
-        paddingBottom= "52%"
+        // paddingBottom= "52%"
         backgroundPositionY="center"
         />
         </div>
@@ -66,7 +95,7 @@ export default function Logos({ allPostsData }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/branding/technical-manual-2024-v01_Page_02.webp"
-        paddingBottom= "52%"
+        // paddingBottom= "52%"
         backgroundPositionY="center"
         />
         </div>
@@ -74,7 +103,7 @@ export default function Logos({ allPostsData }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/branding/technical-manual-2024-v01_Page_66.webp"
-        paddingBottom= "52%"
+        // paddingBottom= "52%"
         backgroundPositionY="center"
         />
         </div>
