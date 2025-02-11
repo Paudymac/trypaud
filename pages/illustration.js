@@ -15,6 +15,22 @@ export default function Logos({ allPostsData }) {
         <h1>Illustration</h1>
 
         <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>MechWarrior 5 Clans Art </h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design ]</p>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-leo-only.webp"
+        />
+        </div>
+
+       <div className={styles.imageBg}>
+       <BackgroundImage 
+        imageUrl="/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-mia-only.webp"
+        />
+        </div>
+
+        <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>MechWarrior 5 Clans DLC Art <a className={utilStyles.launch} href="https://mw5clans.com/dlc/trials-of-war">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
 
