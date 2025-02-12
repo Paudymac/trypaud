@@ -16,6 +16,18 @@ export default function Logos({ allPostsData }) {
         <h1>Branding</h1>
 
         <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>MW5:Clans Technical Read Out</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Development ]</p>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/branding/tro-digital-extras.webp"
+        // paddingBottom= "52%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+        <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>MW5:Clans Game Manual</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development ]</p>
 
