@@ -15,19 +15,7 @@ export default function Logos({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <h1>Branding</h1>
 
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>MW5:Clans Technical Read Out</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development ]</p>
-
-        <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/branding/tro-digital-extras.webp"
-        // paddingBottom= "52%"
-        backgroundPositionY="center"
-        />
-        </div>
-
-        <span className={utilStyles.datePortfolio}>2024</span>
+         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>MW5:Clans Game Manual</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development ]</p>
 
@@ -55,8 +43,22 @@ export default function Logos({ allPostsData }) {
         />
         </div>
 
+        <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>MW5:Clans Technical Read Out</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Development ]</p>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/branding/tro-digital-extras.webp"
+        // paddingBottom= "52%"
+        backgroundPositionY="center"
+        />
+        </div>
+
+       
+
         <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>MW5:Mercs Game Manual </h3>
+        <h3 className={utilStyles.header3Portfolio}>MW5:Mercs Game Manual</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
 
         <div className={styles.imageBg}>

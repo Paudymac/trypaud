@@ -43,6 +43,14 @@ export default function Logos({ allPostsData }) {
         <h3 className={utilStyles.header3Portfolio}>MWO Legends Art</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
 
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/illustration/card-bg-atlas.webp"
+        // paddingBottom= "50%"
+        backgroundPositionY="center"
+        />
+        </div>
+
          <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/illustration/art-legends.jpg"
