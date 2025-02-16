@@ -121,6 +121,7 @@ video, iframe {
 }
 
 .slick-dots {
+  bottom: auto !important;
   top: -40px !important;
   right: 0;
 /*  z-index: 1001 !important;*/
