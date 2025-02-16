@@ -84,13 +84,13 @@ video, iframe {
 .slick-prev {
     left: 10% !important;
     z-index: 1000 !important;
-/*    display: none !important;*/
+    display: none !important;
 }
 
 .slick-next {
     right: 10% !important;
     z-index: 1000 !important;
-/*    display: none !important;*/
+    display: none !important;
   }
 
 .slick-slide {
@@ -108,5 +108,21 @@ video, iframe {
 }
 
 .slick-dots {
-  bottom: -30px;
+  bottom: 10px !important;
+  z-index: 1001 !important;
 }
+
+.slick-dots li {
+  margin: 0 20px 0 !important;
+}
+
+.slick-dots li button:before {
+  color:white !important;
+  opacity: 1 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #027cb2 !important;
+  opacity: 1 !important;
+}
+
