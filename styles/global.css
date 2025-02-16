@@ -81,3 +81,29 @@ video, iframe {
   }
 }
 
+.slick-prev {
+    left: 25px !important;
+    z-index: 1000 !important;
+}
+
+.slick-next {
+    right: 25px !important;
+    z-index: 1000 !important;
+  }
+
+.slick-slide {
+  line-height: 0;
+ }
+
+.slick-prev:before, .slick-next:before 
+{
+  font-size: 30px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+}
+
+.slick-dots {
+  bottom: -30px;
+}

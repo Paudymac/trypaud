@@ -4,8 +4,16 @@ import Layout, { siteTitle } from '../components/layout';
 import Image from 'next/image';
 import BackgroundImage from '../components/backgroundImage';
 import styles from '../components/backgroundImage.module.css';
+import ImageCarousel from '../components/ImageCarousel';
 
-export default function Websites({ allPostsData }) {
+ const images = [
+    "/images/ui/mw5-clans-homepage.webp",
+    "/images/ui/mw5-clans-news.webp",
+    "/images/ui/mw5-clans-dlc.webp",
+    "/images/ui/mw5-clans-purchase.webp",
+  ];
+
+export default function Websites({  }) {
   return (
     <Layout home>
      <Head>
@@ -14,13 +22,13 @@ export default function Websites({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <h1>UI / Web</h1> 
 
+
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5:Clans <a className={utilStyles.launch} href="https://mw5clans.com">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
-        <a className={styles.imageLink} href="https://mw5clans.com"><BackgroundImage 
-        imageUrl="/images/ui/mw5clans-site-example.webp"
-        paddingBottom= "100%"
-        /> </a>
+        <a className={styles.imageLink} href="https://mw5clans.com">
+        <ImageCarousel images={images} />
+        </a>
 
 
         <span className={utilStyles.datePortfolio}>2021</span>
