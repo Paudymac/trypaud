@@ -82,13 +82,15 @@ video, iframe {
 }
 
 .slick-prev {
-    left: 25px !important;
+    left: 10% !important;
     z-index: 1000 !important;
+    display: none !important;
 }
 
 .slick-next {
-    right: 25px !important;
+    right: 10% !important;
     z-index: 1000 !important;
+    display: none !important;
   }
 
 .slick-slide {
@@ -98,6 +100,7 @@ video, iframe {
 .slick-prev:before, .slick-next:before 
 {
   font-size: 30px !important;
+  opacity: 1 !important;
 }
 
 .slick-dots li button:before {

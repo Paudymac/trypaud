@@ -27,8 +27,13 @@ export default function Websites({  }) {
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5:Clans <a className={utilStyles.launch} href="https://mw5clans.com">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
         <a className={styles.imageLink} href="https://mw5clans.com">
+        <div className={styles.maskBg}>
+        <div className={styles.mask}>
         <ImageCarousel images={images} />
+         </div>
+         </div>
         </a>
+
 
 
         <span className={utilStyles.datePortfolio}>2021</span>
