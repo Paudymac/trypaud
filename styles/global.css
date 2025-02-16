@@ -132,6 +132,10 @@ video, iframe {
 /*  z-index: 1001 !important;*/
 }
 
+@media only screen and (max-width: 1024px) {
+  .slick-dots { top: -37px !important; }
+}
+
 .slick-dots li {
   margin: 0 10px 0 !important;
 }
