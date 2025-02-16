@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const ImageCarousel = ({ images = [] }) => {
   const settings = {
     dots: true,
@@ -33,7 +34,7 @@ const ImageCarousel = ({ images = [] }) => {
               lineHeight:"0",
             }}
           >
-            {/* Optional: Add content on top of the background image */}
+            {/* repeated for more content */}
             <div
             key={index}
             style={{
@@ -43,7 +44,6 @@ const ImageCarousel = ({ images = [] }) => {
               height: "auto", // Set a fixed height or make it responsive
               width: "100%",
               paddingBottom:"56.25%",
-              borderRadius: "23px",
               backgroundRepeat: "no-repeat",
               lineHeight:"0",
             }}
