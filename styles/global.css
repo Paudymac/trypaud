@@ -93,6 +93,11 @@ video, iframe {
 /*    display: none !important;*/
   }
 
+  @media only screen and (max-width: 1024px) {
+  .slick-next { right: 30% !important; }
+  .slick-prev { left: 30% !important; }
+}
+
 .slick-slider {
   margin: 2rem 0;
 }
