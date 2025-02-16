@@ -84,13 +84,13 @@ video, iframe {
 .slick-prev {
     left: 10% !important;
     z-index: 1000 !important;
-    display: none !important;
+/*    display: none !important;*/
 }
 
 .slick-next {
     right: 10% !important;
     z-index: 1000 !important;
-    display: none !important;
+/*    display: none !important;*/
   }
 
 .slick-slide {
