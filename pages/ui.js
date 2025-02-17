@@ -20,6 +20,12 @@ import ImageCarousel from '../components/ImageCarousel';
     "/images/ui/mw5-mercs-media.webp",
   ];
 
+ const images2 = [
+    "/images/ui/mechcon-homepage.webp",
+    "/images/ui/mechcon-about.webp",
+    "/images/ui/mechcon-tickets.webp",
+  ];
+
 export default function Websites({  }) {
   return (
     <Layout home>
@@ -49,10 +55,9 @@ export default function Websites({  }) {
         <span className={utilStyles.datePortfolio}>2018</span>
         <h3 className={utilStyles.header3Portfolio}>Mechcon <a className={utilStyles.launch} href="https://mechwarrior.com/mechcon">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
-         <a className={styles.imageLink} href="https://mechwarrior.com/mechcon"><BackgroundImage 
-        imageUrl="/images/ui/mechcon-site-example.webp"
-        paddingBottom= "100%"
-        /> </a>
+        <a className={styles.imageLink} href="https://mechwarrior.com/mechcon">
+        <ImageCarousel images={images2} />
+        </a>
        
 
         <span className={utilStyles.datePortfolio}>2024</span>
