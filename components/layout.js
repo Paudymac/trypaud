@@ -4,7 +4,8 @@ import utilStyles from '../styles/utils.module.css';
 import styles from './layout.module.css';
 import Menu from './mobNav';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; 
+import { useRouter } from 'next/router';
+import { Analytics } from '@vercel/analytics/next';
 
 const name = 'TryPaud';
 export const siteTitle = 'TryPaud Portfolio';
@@ -78,6 +79,7 @@ export default function Layout({ children, home }) {
 
       )}
       <main>{children}</main>
+      <Analytics />
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
