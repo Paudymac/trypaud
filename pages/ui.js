@@ -13,6 +13,13 @@ import ImageCarousel from '../components/ImageCarousel';
     "/images/ui/mw5-clans-purchase.webp",
   ];
 
+ const images1 = [
+    "/images/ui/mw5-mercs-homepage.webp",
+    "/images/ui/mw5-mercs-dlc1.webp",
+    "/images/ui/mw5-mercs-dlc2.webp",
+    "/images/ui/mw5-mercs-media.webp",
+  ];
+
 export default function Websites({  }) {
   return (
     <Layout home>
@@ -35,10 +42,9 @@ export default function Websites({  }) {
         <span className={utilStyles.datePortfolio}>2021</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5:Mercs <a className={utilStyles.launch} href="https://mw5mercs.com">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
-        <a className={styles.imageLink} href="https://mw5mercs.com"><BackgroundImage 
-        imageUrl="/images/ui/mw5-site-example.webp"
-        paddingBottom= "100%"
-        /> </a>
+        <a className={styles.imageLink} href="https://mw5mercs.com">
+        <ImageCarousel images={images1} />
+        </a>
 
         <span className={utilStyles.datePortfolio}>2018</span>
         <h3 className={utilStyles.header3Portfolio}>Mechcon <a className={utilStyles.launch} href="https://mechwarrior.com/mechcon">Launch</a></h3>

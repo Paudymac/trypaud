@@ -83,13 +83,13 @@ video, iframe {
 
 .slick-prev {
     left: 40% !important;
-    z-index: 1000 !important;
+/*    z-index: 1000 !important;*/
 /*    display: none !important;*/
 }
 
 .slick-next {
     right: 40% !important;
-    z-index: 1000 !important;
+/*    z-index: 1000 !important;*/
 /*    display: none !important;*/
   }
 
@@ -146,7 +146,7 @@ video, iframe {
 }
 
 .slick-dots li.slick-active button:before {
-  color: #027cb2 !important;
+  color: #2fbcfa !important;
   opacity: 1 !important;
 }
 
