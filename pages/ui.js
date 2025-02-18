@@ -36,6 +36,12 @@ import ImageCarousel from '../components/ImageCarousel';
     "/images/ui/mwo-product-page7.webp",
   ];
 
+  const images4 = [
+    "/images/ui/pgi-homepage.webp",
+    "/images/ui/pgi-studio.webp",
+    "/images/ui/pgi-careers.webp",
+  ];
+
 export default function Websites({  }) {
   return (
     <Layout home>
@@ -81,10 +87,9 @@ export default function Websites({  }) {
         <span className={utilStyles.datePortfolio}>2017</span>
         <h3 className={utilStyles.header3Portfolio}>Piranha Games <a className={utilStyles.launch} href="https://piranhagames.com/">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
-        <a className={styles.imageLink} href="https://piranhagames.com/"><BackgroundImage 
-        imageUrl="/images/ui/piranhagames-site-example.webp"
-        paddingBottom= "100%"
-        /> </a>
+        <a className={styles.imageLink} href="https://piranhagames.com/">
+        <ImageCarousel images={images4} />
+        </a>
 
             
         <span className={utilStyles.datePortfolio}>2014</span>
