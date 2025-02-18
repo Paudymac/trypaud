@@ -26,6 +26,16 @@ import ImageCarousel from '../components/ImageCarousel';
     "/images/ui/mechcon-tickets.webp",
   ];
 
+  const images3 = [
+    "/images/ui/mwo-product-page1.webp",
+    "/images/ui/mwo-product-page2.webp",
+    "/images/ui/mwo-product-page3.webp",
+    "/images/ui/mwo-product-page4.webp",
+    "/images/ui/mwo-product-page5.webp",
+    "/images/ui/mwo-product-page6.webp",
+    "/images/ui/mwo-product-page7.webp",
+  ];
+
 export default function Websites({  }) {
   return (
     <Layout home>
@@ -60,37 +70,12 @@ export default function Websites({  }) {
         </a>
        
 
-        <span className={utilStyles.datePortfolio}>2024</span>
+        <span className={utilStyles.datePortfolio}>2013 - 2024</span>
         <h3 className={utilStyles.header3Portfolio}>MWO Product Pages</h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
-
-        <h4>Black Hawk Ku<a className={utilStyles.launch} href="https://mwomercs.com/packages/black-hawk-ku">Launch</a></h4>
-        <a className={styles.imageLink} href="https://mwomercs.com/packages/black-hawk-ku"><BackgroundImage 
-        imageUrl="/images/ui/mwomercs-black-hawk-ku.webp"
-        paddingBottom= "100%"
-        /> </a>
-
-
-        <h4>Bullshark <a className={utilStyles.launch} href="https://mwomercs.com/bullshark">Launch</a></h4>
-        <a className={styles.imageLink} href="https://mwomercs.com/bullshark"><BackgroundImage 
-        imageUrl="/images/ui/mwomercs-bullshark.webp"
-        paddingBottom= "100%"
-        /> </a>
-
-
-        <h4>Stone Rhino <a className={utilStyles.launch} href="https://mwomercs.com/stone-rhino">Launch</a></h4>
-        <a className={styles.imageLink} href="https://mwomercs.com/stone-rhino"><BackgroundImage 
-        imageUrl="/images/ui/mwomercs-stone-rhino.webp"
-        paddingBottom= "100%"
-        /> </a>
-       
-        <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>MWO Legends Spitfire <a className={utilStyles.launch} href="https://mwomercs.com/legends/spitfire">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
-        <a className={styles.imageLink} href="https://mwomercs.com/legends/spitfire"><BackgroundImage 
-        imageUrl="/images/ui/mwomercs-legends-spitfire.webp"
-        paddingBottom= "100%"
-        /> </a>
+        <a className={styles.imageLink} href="https://mwomercs.com/store">
+        <ImageCarousel images={images3} />
+        </a>
 
 
         <span className={utilStyles.datePortfolio}>2017</span>
