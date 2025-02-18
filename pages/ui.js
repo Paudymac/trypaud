@@ -109,7 +109,66 @@ export default function Websites({  }) {
         <ImageCarousel images={images5} />
         </div>
 
+        <span className={utilStyles.datePortfolio}>2012</span>
+        <h3 className={utilStyles.header3Portfolio}>Connect the doc <a className={utilStyles.launch} href="https://connectthedoc.com/">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
 
+         <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/ui/ctd-img1.webp"
+        paddingBottom= "50%"
+        />
+        </div>
+
+         <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/ui/ctd-img2.webp"
+        paddingBottom= "50%"
+        />
+        </div>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/ui/ctd-img3.webp"
+        paddingBottom= "50%"
+        />
+        </div>
+
+        <span className={utilStyles.datePortfolio}>2009</span>
+        <h3 className={utilStyles.header3Portfolio}>Blackberry</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Animation]</p>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/ui/bb-img1.webp"
+        paddingBottom= "50%"
+        />
+        </div>
+
+         <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/ui/bb-img2.webp"
+        paddingBottom= "50%"
+        />
+        </div>
+
+        <span className={utilStyles.datePortfolio}>2008</span>
+        <h3 className={utilStyles.header3Portfolio}>Head & Shoulders</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Animation]</p>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/ui/hs-img1.webp"
+        paddingBottom= "50%"
+        />
+        </div>
+
+          <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/ui/hs-img2.webp"
+        paddingBottom= "50%"
+        />
+        </div>
         
         
       </section>
