@@ -42,6 +42,14 @@ import ImageCarousel from '../components/ImageCarousel';
     "/images/ui/pgi-careers.webp",
   ];
 
+  const images5 = [
+    "/images/ui/transverse-homepage.webp",
+    "/images/ui/transverse-about.webp",
+    "/images/ui/transverse-product.webp",
+    "/images/ui/transverse-checkout.webp",
+    "/images/ui/transverse-social.webp",
+  ];
+
 export default function Websites({  }) {
   return (
     <Layout home>
@@ -98,28 +106,7 @@ export default function Websites({  }) {
         
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/transverse-hp.webp"
-        paddingBottom= "100%"
-        />
-        </div>
-
-        <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/transverse-funding.webp"
-        />
-        </div>
-
-        <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/transverse-product.webp"
-        />
-        </div>
-
-        <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/transverse-checkout.webp"
-        />
+        <ImageCarousel images={images5} />
         </div>
 
         <span className={utilStyles.datePortfolio}>2012</span>
