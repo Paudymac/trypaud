@@ -61,4 +61,11 @@
   border-radius:23px;
 }
 
+.imgCarouselBg {
+  background-size: 100%;
+  transition: all 0.5s;
+}
 
+.imgCarouselBg:hover {
+  background-size: 103%;
+}

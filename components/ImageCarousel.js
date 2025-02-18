@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styles from './backgroundImage.module.css';
 
 
 const ImageCarousel = ({ images = [] }) => {
@@ -35,7 +36,7 @@ const ImageCarousel = ({ images = [] }) => {
             }}
           >
             {/* repeated for more content */}
-            <div
+            <div className={styles.imgCarouselBg}
             key={index}
             style={{
               backgroundImage: `url(${image})`,
