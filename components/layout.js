@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/next';
 
+
 const name = 'TryPaud';
 export const siteTitle = 'TryPaud Portfolio';
 
@@ -67,24 +68,43 @@ export default function Layout({ children, home }) {
 
 
       {isHomePage && (
-
-          <Image
-            priority
-            src="/images/trypaud-logo-lg.svg"
-            className={styles.logo}
-            height={180}
-            width={180}
-            alt="Logo"
-          />
-
+     <div className={styles.videoReelHolder}>
+     <div className={styles.videoReelContainer}>
+     
+               {/* <Image
+                 priority
+                 src="/images/trypaud-logo-lg.svg"
+                 className={styles.logo}
+                 height={180}
+                 width={180}
+                 alt="Logo"
+               /> */}
+     
+     <video className={styles.videoReel} width="1920" height="auto" autoPlay muted  loop preload="none">
+     <source  src="/video/header-video.mp4" type="video/mp4" />
+           <track
+             src="/path/to/captions.vtt"
+             kind="subtitles"
+             srcLang="en"
+             label="English"
+           />
+           Your browser does not support the video tag.
+         </video>
+         <Link className={styles.primaryBtn} href="mailto:paudy@trypaud.com">let's collaborate &rarr;</Link>
+             </div>
+             </div>
       )}
-      <main>{children}</main>
-      <Analytics />
+   
+      <main className={styles.mainContent}>{children}</main>
+
+      
+     
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
         </div>
       )}
+      <Analytics />
       <footer className={styles.footer}>
       <ul><li className={styles.footerMenu}><Link href="https://www.linkedin.com/in/padraic-mcateer-trypaud/">Linkedin</Link></li>
           <li className={styles.footerMenu}><Link href="mailto:paudy@trypaud.com">Email</Link></li>
@@ -93,6 +113,7 @@ export default function Layout({ children, home }) {
 
       </footer>
     </div>
+      
   );
 }
 
