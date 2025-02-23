@@ -13,6 +13,15 @@
   z-index: 1000;
 }
 
+@media only screen and (max-width: 1024px) {
+  .header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 0 0.5rem;
+  }
+}
+
 .backToHome {
   margin: 3rem 0 0;
   text-align: center;
@@ -62,4 +71,85 @@
   background-color: transparent !important;
   color:#2fbcfa !important;
   cursor: auto !important;
+}
+
+.videoReelContainer {
+  position: absolute;
+  background-color: black;
+  height: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.videoReelHolder {
+ /* position: relative;
+ width: 100%; */
+}
+
+.videoReel {
+  margin: 0 auto;
+  display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+  .videoReel {
+    margin-top: 40px;
+  }
+}
+
+.primaryBtn {
+  position: absolute;
+  bottom: 100px;
+  right: 240px;
+  background-color: #027cb2;
+  padding: 1rem 2rem;
+  /* transform: translate(50%,-50%); */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.primaryBtn:hover {
+  background-color: #2fbcfa;
+  color: white;
+}
+
+@media only screen and (max-width: 1400px) {
+  .primaryBtn {
+    right: 200px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .primaryBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    bottom: 50px;
+    right: 100px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .primaryBtn {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .primaryBtn {
+   width: 100%;
+   top: auto;
+   bottom: 0px;
+   left: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mainContent {
+    margin-top: 80px;
+  }
 }

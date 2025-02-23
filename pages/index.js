@@ -11,9 +11,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-      <div className={utilStyles.blog}>
-      </div>
-      <br />
+        
         <nav className={utilStyles.mainMenuParent}>
         <a className={utilStyles.mainMenu} href="/ui">UI / Web</a>
           <a className={utilStyles.mainMenu} href="/logos">Logos</a>
