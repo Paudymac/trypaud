@@ -4,6 +4,17 @@ import Layout, { siteTitle } from '../components/layout';
 import Image from 'next/image';
 import BackgroundImage from '../components/backgroundImage';
 import styles from '../components/backgroundImage.module.css';
+import ImageCarousel from '../components/ImageCarousel';
+
+const images = [
+  "/images/logos/trypaud-white-logo-example.webp",
+  "/images/logos/trypaud-black-logo-example.webp",
+];
+
+const images1 = [
+  "/images/logos/kwc-logo-black-example.webp",
+  "/images/logos/kwc-logo-white-example.webp",
+];
 
 export default function Logos({ allPostsData }) {
   return (
@@ -13,9 +24,27 @@ export default function Logos({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <h1>Logos</h1>
+
+        <span className={utilStyles.datePortfolio}>2025</span>
+        <h3 className={utilStyles.header3Portfolio}>KirkWood Carpentry <a className={utilStyles.launch} href="/">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <div className={styles.imageBg}>
+        <ImageCarousel images={images1} />
+        </div>
+
+        <span className={utilStyles.datePortfolio}>2025</span>
+        <h3 className={utilStyles.header3Portfolio}>TryPaud <a className={utilStyles.launch} href="/">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <div className={styles.imageBg}>
+        <ImageCarousel images={images} />
+        </div>
+
+
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5 Clans <a className={utilStyles.launch} href="https://mw5clans.com/">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+
+       
 
         <a className={styles.imageLink} href="https://mw5clans.com"><BackgroundImage 
         imageUrl="/images/logos/mw5-clans-logo-example.webp"
