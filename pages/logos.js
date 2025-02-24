@@ -7,13 +7,13 @@ import styles from '../components/backgroundImage.module.css';
 import ImageCarousel from '../components/ImageCarousel';
 
 const images = [
-  "/images/logos/trypaud-white-logo-example.webp",
   "/images/logos/trypaud-black-logo-example.webp",
+  "/images/logos/trypaud-white-logo-example.webp",
 ];
 
 const images1 = [
-  "/images/logos/kwc-logo-white-example.webp",
   "/images/logos/kwc-logo-black-example.webp",
+  "/images/logos/kwc-logo-white-example.webp",
 ];
 
 export default function Logos({ allPostsData }) {
