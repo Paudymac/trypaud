@@ -456,3 +456,15 @@
     width: 100%;
   }
 }
+
+.aboutMeSummary {
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+}
+
+@media only screen and (max-width: 900px) {
+  .aboutMeSummary {
+    font-size: 1em;
+    letter-spacing: 0em;
+  }
+}
