@@ -90,7 +90,7 @@
 }
 
 .partnerLogosContainer {
-  margin-top: 73%;
+  margin-top: 77%;
 }
 
 .partnerLogosContainer h1 {
@@ -141,6 +141,7 @@
   padding-right:1rem;
 } */
 
+
 @media only screen and (max-width: 1920px) {
   .partnerLogosContainer {
     margin-top: 73%;
@@ -149,7 +150,7 @@
 
 @media only screen and (max-width: 1800px) {
   .partnerLogosContainer {
-    margin-top: 67%;
+    margin-top: 70%;
   }
 }
 
@@ -161,32 +162,32 @@
 
 @media only screen and (max-width: 1600px) {
   .partnerLogosContainer {
-    margin-top: 60%;
+    margin-top: 63%;
   }
 }
 
 @media only screen and (max-width: 1500px) {
   .partnerLogosContainer {
-    margin-top: 55%;
+    margin-top: 59%;
   }
 }
 
 
 @media only screen and (max-width: 1400px) {
   .partnerLogosContainer {
-    margin-top: 53%;
+    margin-top: 57%;
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .partnerLogosContainer {
-    margin-top: 63%;
+    margin-top: 67%;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .partnerLogosContainer {
-    margin-top: 65%;
+    margin-top: 73%;
   }
 }
 
@@ -194,13 +195,20 @@
 @media only screen and (max-width: 600px) {
   .partnerLogosContainer {
     grid-template-columns: 100%;
-    margin-top: 70%;
+    margin-top: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .partnerLogosContainer {
+    grid-template-columns: 100%;
+    margin-top: 90%;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .partnerLogosContainer {
-    margin-top: 75%;
+    margin-top: 100%;
   }
 }
 

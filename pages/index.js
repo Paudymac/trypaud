@@ -104,7 +104,7 @@ export default function Home({ allPostsData }) {
         <div className={utilStyles.aboutMeDescipt}>
           <h3 className={utilStyles.aboutMeHeadline}>I love design, sharing ideas & being creative </h3>
             <p>I’ve always sketched, colored from when I was small. Being a creative is something innate with in me. 
-              My 17 year design journey has allowed me to wear many hats at the same time making me a versatile designer
+              My 17 year design journey has allowed me to wear many hats concurrently, making me a versatile designer
                with an eye for layout and identity mixed in with technical acumen through the lens of a user centered philosophy. </p>
         </div>
 
