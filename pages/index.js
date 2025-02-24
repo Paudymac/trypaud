@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Date from '../components/date';
+import Image from 'next/image';
 
 export default function Home({ allPostsData }) {
   return (
@@ -10,8 +11,108 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section >
         
+      <div className={utilStyles.partnerLogosContainer}>
+        <h1>Partners</h1>
+        <ul className={utilStyles.partnerLogos}>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/pgi.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+          </li>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/mw5.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+          </li>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/clans.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+         </li>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/mwo.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+          </li>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/smartt.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+          </li>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/ctd.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+          </li>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/columbia.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+         </li>
+          <li>
+          <Image
+                 priority
+                 src="/images/logos/partners/kwc.svg"
+                 height={150}
+                 width={200}
+                 alt="Logo"
+               />
+         </li>
+        </ul>
+      </div>
+
+      <div className={utilStyles.aboutMeContainer}>
+      <h1>TryPaud</h1>
+      <div className={utilStyles.aboutMe}>
+      
+      <div className={utilStyles.aboutMeImgContainer}>
+      <div className={utilStyles.aboutMeImg}></div>
+      </div>
+    
+ 
+
+        <div className={utilStyles.aboutMeDescipt}>
+          <h3 className={utilStyles.aboutMeHeadline}>I love design, sharing ideas & being creative </h3>
+            <p>I’ve always sketched, colored from when I was small. Being a creative is something innate with in me. 
+              My 17 year design journey has allowed me to wear many hats at the same time making me a versatile designer
+               with an eye for layout and identity mixed in with technical acumen through the lens of a user centered philosophy. </p>
+        </div>
+
+      </div>
+      </div>
+
+    <div className={utilStyles.galleryMenuConatiner}>
+      <h1>Galleries</h1>
         <nav className={utilStyles.mainMenuParent}>
         <a className={utilStyles.mainMenu} href="/ui">UI / Web</a>
           <a className={utilStyles.mainMenu} href="/logos">Logos</a>
@@ -25,6 +126,8 @@ export default function Home({ allPostsData }) {
           
          
         </nav>
+        </div>
+        
         
       </section>
     </Layout>

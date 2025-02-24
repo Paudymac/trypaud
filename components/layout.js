@@ -23,6 +23,7 @@ export default function Layout({ children, home }) {
 
 
   return (
+    <div>
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
@@ -69,16 +70,17 @@ export default function Layout({ children, home }) {
 
       {isHomePage && (
      <div className={styles.videoReelHolder}>
-     <div className={styles.videoReelContainer}>
-     
-               {/* <Image
+       {/* <Image
                  priority
-                 src="/images/trypaud-logo-lg.svg"
+                 src="/images/video-bg.jpg"
                  className={styles.logo}
-                 height={180}
-                 width={180}
+                 height={0}
+                 width={0}
+                 sizes="100vw"
+                 style={{ width: '100%', height: 'auto' }}
                  alt="Logo"
                /> */}
+     <div className={styles.videoReelContainer}>
      
      <video className={styles.videoReel} width="1920" height="auto" autoPlay muted  loop preload="none">
      <source  src="/video/header-video.mp4" type="video/mp4" />
@@ -105,15 +107,18 @@ export default function Layout({ children, home }) {
         </div>
       )}
       <Analytics />
-      <footer className={styles.footer}>
-      <ul><li className={styles.footerMenu}><Link href="https://www.linkedin.com/in/padraic-mcateer-trypaud/">Linkedin</Link></li>
+     
+    </div>
+    <div className={styles.footerContainer}>
+    <footer className={styles.footer}>
+      <ul className={styles.footerNav}><li className={styles.footerMenu}><Link href="https://www.linkedin.com/in/padraic-mcateer-trypaud/">Linkedin</Link></li>
           <li className={styles.footerMenu}><Link href="mailto:paudy@trypaud.com">Email</Link></li>
           <li className={styles.footerMenu}><Link href="/images/PadraicMcAteer_CV_2025.pdf">CV</Link></li>
       </ul>
-
       </footer>
     </div>
-      
+    
+    </div>
   );
 }
 

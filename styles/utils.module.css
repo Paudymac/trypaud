@@ -22,13 +22,15 @@
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em; 
 }
 
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.15em;
 }
 
 
@@ -74,70 +76,130 @@
 }
 
 .mainMenuParent {
-  margin-top: 73%;
   display: grid;
   grid-template-columns: 50% 50%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 23px;
 }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 600px) {
   .mainMenuParent {
-    margin-top: 70%;
+    grid-template-columns: 100%;
+  }
+}
+
+.partnerLogosContainer {
+  margin-top: 73%;
+}
+
+.partnerLogosContainer h1 {
+  margin-bottom: 0;
+}
+
+.partnerLogos {
+  list-style: none;
+  margin:0;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  align-self: end;
+  background-color: white;
+  border-radius:23px;
+}
+
+
+
+.partnerLogos img {
+  margin: 0 auto;
+  opacity: 0.75;
+}
+
+@media only screen and (max-width: 1280px) {
+  .partnerLogos img {
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .partnerLogos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 0.5rem;
+    padding: 0.25rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .partnerLogos {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+/* .partnerLogos li {
+  padding-right:1rem;
+} */
+
+@media only screen and (max-width: 1920px) {
+  .partnerLogosContainer {
+    margin-top: 73%;
   }
 }
 
 @media only screen and (max-width: 1800px) {
-  .mainMenuParent {
+  .partnerLogosContainer {
     margin-top: 67%;
   }
 }
 
 @media only screen and (max-width: 1700px) {
-  .mainMenuParent {
-    margin-top: 63%;
+  .partnerLogosContainer {
+    margin-top: 65%;
   }
 }
 
 @media only screen and (max-width: 1600px) {
-  .mainMenuParent {
-    margin-top: 58%;
+  .partnerLogosContainer {
+    margin-top: 60%;
   }
 }
 
 @media only screen and (max-width: 1500px) {
-  .mainMenuParent {
+  .partnerLogosContainer {
     margin-top: 55%;
   }
 }
 
 
 @media only screen and (max-width: 1400px) {
-  .mainMenuParent {
+  .partnerLogosContainer {
     margin-top: 53%;
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .mainMenuParent {
+  .partnerLogosContainer {
     margin-top: 63%;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .mainMenuParent {
+  .partnerLogosContainer {
     margin-top: 65%;
   }
 }
 
 
 @media only screen and (max-width: 600px) {
-  .mainMenuParent {
+  .partnerLogosContainer {
     grid-template-columns: 100%;
     margin-top: 70%;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  .mainMenuParent {
+  .partnerLogosContainer {
     margin-top: 75%;
   }
 }
@@ -148,7 +210,7 @@
   font-weight: bold;
   list-style: none;
   padding: 2em;
-  border: 1px dashed #027cb2;
+  border: 2px solid #027cb2;
   margin: 0.5em;
   letter-spacing:0.2em;
   border-radius:23px;
@@ -331,4 +393,58 @@
     margin: 1rem auto 0;
 }
 
+.galleryMenuConatiner {
+  margin-top: 4rem;
+}
 
+.galleryMenuConatiner h1 {
+  margin-bottom: 0;
+}
+
+.aboutMeContainer {
+  margin-top: 4rem;
+}
+
+.aboutMe {
+  background-color: white;
+  border-radius: 23px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutMe {
+    display: block;
+  }  
+}
+
+.aboutMeImgContainer {
+  width: 600px;
+  height: 600px;
+  background-size: cover;
+  background-image: url('../public/images/portfolio-pic.webp');
+  background-position: center;
+  border-radius: 23px;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutMeImgContainer {
+    width: 100%;
+  }
+}
+
+.aboutMeContainer h1 {
+  margin-bottom: 0;
+}
+
+.aboutMeDescipt {
+  width: 70%;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutMeDescipt {
+    width: 100%;
+  }
+}
