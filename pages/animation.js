@@ -36,8 +36,17 @@ export default function MotionGraphics({ allPostsData }) {
         </div>
 
         <br />
+        <span className={utilStyles.datePortfolio}>2018</span>
+        <h3 className={utilStyles.header3Portfolio}>MechCon Logo Animation</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Motion Graphics / Design / Branding]</p>
+        <div className={utilStyles.video}>
+        <video width="560" height="315" controls>
+        <source src="/video/mechcon-logo-animation.mp4" type="video/mp4" />
+        </video></div>
+
+        <br />
         <span className={utilStyles.datePortfolio}>2017</span>
-        <h3 className={utilStyles.header3Portfolio}>MWO Tournamnt Pause Screen</h3>
+        <h3 className={utilStyles.header3Portfolio}>MWO Tournamnt Logo Animation</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Motion Graphics / Design / Branding]</p>
         <div className={utilStyles.video}>
         <video width="560" height="315" controls>
