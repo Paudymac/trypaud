@@ -68,19 +68,10 @@ export default function Layout({ children, home }) {
 
       {isHomePage && (
      <div className={styles.videoReelHolder}>
-       {/* <Image
-                 priority
-                 src="/images/video-bg.jpg"
-                 className={styles.logo}
-                 height={0}
-                 width={0}
-                 sizes="100vw"
-                 style={{ width: '100%', height: 'auto' }}
-                 alt="Logo"
-               /> */}
+      
      <div className={styles.videoReelContainer}>
      
-     <video className={styles.videoReel} width="1920" height="auto" autoPlay muted  loop preload="none">
+     <video className={styles.videoReel} width="1920" height="auto" autoPlay muted  loop preload="metadata">
      <source  src="/video/header-video.mp4" type="video/mp4" />
            <track
              src="/path/to/captions.vtt"
