@@ -18,7 +18,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    padding: 0 0.5rem;
+    /* padding: 0 0.5rem; */
   }
 }
 
@@ -35,7 +35,7 @@
 
 .footerContainer {
   background-color: black;
-  background-image:url('../public/trypaud-logo-lg.svg');
+  /* background-image:url('../public/trypaud-logo-lg.svg'); */
   min-height: 400px;
   background-size: 200%;
   background-position: center 55%;
@@ -54,15 +54,15 @@
 
 @media only screen and (max-width: 1024px) {
   .footerContainer {
-    background-size: 200%;
-    background-position: center 55%;
+    /* background-size: 200%;
+    background-position: center 55%; */
   }
 }
 
 @media only screen and (max-width: 600px) {
   .footerContainer {
-    background-size: 300%;
-    background-position: 20% 55%;
+    /* background-size: 300%;
+    background-position: 20% 55%; */
   }
 }
 

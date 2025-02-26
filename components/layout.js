@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
 
   return (
     <div>
-    <div className={styles.container}>
+    
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -65,6 +65,7 @@ export default function Layout({ children, home }) {
        
       </header>
 
+      <div className={styles.container}>
 
       {isHomePage && (
      <div className={styles.videoReelHolder}>

@@ -30,7 +30,7 @@ const Menu = () => {
               alt="Logo"
             /></a>
       <button className={styles.mobileBtn} onClick={toggleMenu}>
-      <div className={styles.menuIcon} >
+      <div  className={`${styles.menuIcon} ${isMenuOpen ? styles.menuIconOpen : styles.menuIcon }`} >
       <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar1Open : styles.mobileBar1}`}></span>
       <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar2Open : styles.mobileBar2}`}></span>
       </div>
