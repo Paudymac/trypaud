@@ -121,12 +121,11 @@
   background-color: black;
   top: 0;
   left: 0;
-  height: 1080px;
 }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (min-width: 1920px) {
   .videoReelContainer {
-    height: auto;
+    height: 1080px;
   }
 }
 
