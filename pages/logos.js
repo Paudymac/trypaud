@@ -25,32 +25,34 @@ export default function Logos({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <h1>Logos</h1>
 
+      
+
+        <span className={utilStyles.datePortfolio}>2024</span>
+        <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5 Clans <a className={utilStyles.launch} href="https://mw5clans.com/">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <a className={styles.imageLink} href="https://mw5clans.com"><BackgroundImage 
+        imageUrl="/images/logos/mw5-clans-logo-example.webp"
+        paddingBottom= "50%"
+        backgroundPositionY="top"
+        /> </a>
+
         <span className={utilStyles.datePortfolio}>2025</span>
-        <h3 className={utilStyles.header3Portfolio}>KirkWood Carpentry <a className={utilStyles.launch} href="/">Launch</a></h3>
+        <h3 className={utilStyles.header3Portfolio}>KirkWood Carpentry</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
         <div className={styles.imageBg}>
         <ImageCarousel images={images1} />
         </div>
 
         <span className={utilStyles.datePortfolio}>2025</span>
-        <h3 className={utilStyles.header3Portfolio}>TryPaud <a className={utilStyles.launch} href="/">Launch</a></h3>
+        <h3 className={utilStyles.header3Portfolio}>TryPaud</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
         <div className={styles.imageBg}>
         <ImageCarousel images={images} />
         </div>
 
-
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5 Clans <a className={utilStyles.launch} href="https://mw5clans.com/">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
-
        
 
-        <a className={styles.imageLink} href="https://mw5clans.com"><BackgroundImage 
-        imageUrl="/images/logos/mw5-clans-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="top"
-        /> </a>
+       
 
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Solaris Showdown / MW5 DLC <a className={utilStyles.launch} href="https://mw5mercs.com/dlc/solaris-showdown">Launch</a></h3>
