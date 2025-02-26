@@ -18,7 +18,6 @@
     position: absolute;
     width: 100%;
     left: 0;
-    /* padding: 0 0.5rem; */
   }
 }
 
@@ -61,8 +60,8 @@
 
 @media only screen and (max-width: 600px) {
   .footerContainer {
-    /* background-size: 300%;
-    background-position: 20% 55%; */
+    background-size: 300%;
+    background-position: 20% 55%;
   }
 }
 
@@ -141,6 +140,12 @@
   height: auto;
   width: 100%;
   /* object-fit: contain; */
+}
+
+@media only screen and (min-width: 1920px) {
+  .videoReel {
+    height: 1080px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {

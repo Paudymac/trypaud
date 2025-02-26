@@ -118,7 +118,7 @@
 
 @media only screen and (max-width: 1280px) {
   .partnerLogos img {
-    height: 120px;
+    /* height: 120px; */
   }
 }
 
