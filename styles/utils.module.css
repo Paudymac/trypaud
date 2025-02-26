@@ -122,6 +122,12 @@
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .partnerLogos img {
+    height: 150px;
+  }
+}
+
 @media only screen and (max-width: 1280px) {
   .partnerLogos {
     grid-template-columns: repeat(2, 1fr);
