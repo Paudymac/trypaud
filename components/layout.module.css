@@ -119,16 +119,8 @@
 .videoReelContainer {
   position: absolute;
   background-color: black;
-  height: 1080px;
-  width: 100%;
   top: 0;
   left: 0;
-}
-
-@media only screen and (max-width: 1920px) {
-  .videoReelContainer {
-    height: auto;
-  }
 }
 
 .videoReelHolder {
@@ -139,6 +131,9 @@
 .videoReel {
   margin: 0 auto;
   display: block;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
 }
 
 @media only screen and (max-width: 1024px) {
