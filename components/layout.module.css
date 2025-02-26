@@ -126,6 +126,7 @@
 @media only screen and (min-width: 1920px) {
   .videoReelContainer {
     height: 1080px;
+    width: 100%;
   }
 }
 
