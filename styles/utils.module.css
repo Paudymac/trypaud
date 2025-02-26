@@ -266,6 +266,7 @@
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.05rem;
+  color: #383838;
 }
 
 .Menulink:last-child {

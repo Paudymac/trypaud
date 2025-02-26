@@ -41,7 +41,7 @@
   display: none;
   background-color: transparent;
   border: none;
-  color: #027cb2;
+  color: #383838;
   text-transform: uppercase;
   font-weight: bold;
   padding: 1rem;
@@ -80,8 +80,12 @@
 
 .mobileBar {
   height: 3px;
-  background-color: #027cb2;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: #383838;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.mobileBtn:hover .mobileBar {
+  background-color:#2fbcfa !important;
 }
 
 .mobileBar:hover {
@@ -116,6 +120,7 @@
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.2rem;
+    color: #383838;
 }
 
 li:last-child .mobMenuLink {
