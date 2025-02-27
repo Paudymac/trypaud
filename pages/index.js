@@ -4,6 +4,9 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Date from '../components/date';
 import Image from 'next/image';
+import ContactForm from '../components/ContactForm';
+import styles from '../components/contactForm.module.css';
+
 
 export default function Home({ allPostsData }) {
   return (
@@ -14,7 +17,7 @@ export default function Home({ allPostsData }) {
       <section >
         
       <div className={utilStyles.partnerLogosContainer}>
-        <h1>Partners</h1>
+        <h1>Clients</h1>
         <ul className={utilStyles.partnerLogos}>
           <li>
           <Image
@@ -92,7 +95,7 @@ export default function Home({ allPostsData }) {
       </div>
 
       <div className={utilStyles.aboutMeContainer}>
-      <h1>TryPaud</h1>
+      <h1>About</h1>
       <div className={utilStyles.aboutMe}>
       
       <div className={utilStyles.aboutMeImgContainer}>
@@ -102,7 +105,7 @@ export default function Home({ allPostsData }) {
  
 
         <div className={utilStyles.aboutMeDescipt}>
-          <h2 className={utilStyles.aboutMeHeadline}>design love, sharing ideas & being creative </h2>
+          <h2 className={utilStyles.aboutMeHeadline}>Love of Design & being creative </h2>
             <p className={utilStyles.aboutMeSummary}>I’ve always sketched and coloured from when I was small. Being creative is something I find innate. 
               My 17 year design journey has allowed me to wear many hats concurrently, making me a versatile designer
                with an eye for layout and identity mixed in with technical acumen through the lens of a user centered philosophy. </p>
@@ -110,7 +113,15 @@ export default function Home({ allPostsData }) {
 
       </div>
       </div>
+      <div id="collaborate"></div>
+      <div className={styles.contactFormContainer}>
+          <h1>Let's Collaborate</h1>
+          <div className={styles.contactFormHolder}>
+          <ContactForm />
+          </div>
+        </div>
 
+   
     <div className={utilStyles.galleryMenuConatiner}>
       <h1>Galleries</h1>
         <nav className={utilStyles.mainMenuParent}>
