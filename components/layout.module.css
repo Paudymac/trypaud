@@ -168,6 +168,8 @@
   font-weight: bold;
   text-align: center;
   border-radius: 23px;
+  border: 0;
+  cursor: pointer;
 }
 
 .primaryBtn:hover {
@@ -183,8 +185,6 @@
 
 @media only screen and (max-width: 1024px) {
   .primaryBtn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
     bottom: 50px;
     right: 100px;
   }

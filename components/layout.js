@@ -6,6 +6,7 @@ import Menu from './mobNav';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/next';
+import scrollTo from '../components/scrollTo';
 
 
 const name = 'TryPaud';
@@ -20,6 +21,8 @@ export default function Layout({ children, home }) {
   };
 
   const isHomePage = router.pathname === '/';
+
+  const { scrollToTarget } = scrollTo({ targetId: 'collaborate' });
 
 
   return (
@@ -82,7 +85,7 @@ export default function Layout({ children, home }) {
            />
            Your browser does not support the video tag.
          </video>
-         <Link className={styles.primaryBtn} href="mailto:paudy@trypaud.com">let's collaborate &rarr;</Link>
+         <button onClick={scrollToTarget} className={styles.primaryBtn}>let's collaborate &rarr;</button>
              </div>
              </div>
       )}
