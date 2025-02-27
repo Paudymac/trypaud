@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './contactForm.module.css';
 
-//contact form
+//contact form data
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
