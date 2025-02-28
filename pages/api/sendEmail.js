@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
     console.log('Received form data:', { name, email, message });
 
-    // Check if environment variables are set
+
     if (!process.env.GMAIL_USER || !process.env.GMAIL_PASSWORD) {
       console.error('Gmail credentials are missing.');
       return res.status(500).json({ message: 'Server configuration error.' });

@@ -22,7 +22,7 @@ export default function Layout({ children, home }) {
 
   const isHomePage = router.pathname === '/';
 
-  // scroll to call
+  // scroll to call for page
   const { scrollToTarget } = scrollTo({ targetId: 'collaborate' });
 
 

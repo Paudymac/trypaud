@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-// scroll to function
+// scroll to function for page
 const scrollTo = ({ targetId }) => {
   const scrollToTarget = useCallback(() => {
     const targetElement = document.getElementById(targetId);

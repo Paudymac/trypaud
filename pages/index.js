@@ -117,6 +117,7 @@ export default function Home({ allPostsData }) {
       <div className={styles.contactFormContainer}>
           <h1>Let's Collaborate</h1>
           <div className={styles.contactFormHolder}>
+            {/* contact form */}
           <contactForm />
           </div>
         </div>
