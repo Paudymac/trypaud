@@ -4,7 +4,7 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Date from '../components/date';
 import Image from 'next/image';
-import contactForm from '../components/contactForm';
+import ContactForm from '../components/contactForm';
 import styles from '../components/contactForm.module.css';
 
 
@@ -117,8 +117,7 @@ export default function Home({ allPostsData }) {
       <div className={styles.contactFormContainer}>
           <h1>Let's Collaborate</h1>
           <div className={styles.contactFormHolder}>
-            {/* contact form */}
-          <contactForm />
+          <ContactForm />
           </div>
         </div>
 
