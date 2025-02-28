@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './contactForm.module.css';
 
 //contact form data
-export default function ContactForm() {
+export default function contactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
