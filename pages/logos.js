@@ -18,11 +18,11 @@ const images1 = [
 
 export default function Logos({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <h1>Logos</h1>
 
       
@@ -200,7 +200,6 @@ export default function Logos({ allPostsData }) {
         /></a>
 
         </section>
-        <a href="/">&larr; home</a>
       </Layout>
     );
 }

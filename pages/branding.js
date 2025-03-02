@@ -8,11 +8,11 @@ import styles from '../components/backgroundImage.module.css';
 
 export default function Logos({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <h1>Branding</h1>
 
          <span className={utilStyles.datePortfolio}>2024</span>
@@ -239,7 +239,6 @@ export default function Logos({ allPostsData }) {
         </div>
 
         </section>
-        <a href="/">&larr; home</a>
       </Layout>
     );
 }

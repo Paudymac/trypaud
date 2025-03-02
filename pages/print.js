@@ -7,11 +7,11 @@ import styles from '../components/backgroundImage.module.css';
 
 export default function Logos({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <h1>Print</h1>
       
 
@@ -161,8 +161,6 @@ export default function Logos({ allPostsData }) {
         </div>
        
         </section>
-
-       <a href="/">&larr; home</a>
       </Layout>
     );
 }

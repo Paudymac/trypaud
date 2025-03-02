@@ -23,7 +23,7 @@
 
 .backToHome {
   margin: 3rem 0 0;
-  text-align: center;
+  text-align: right;
 }
 
 .footer {
@@ -151,15 +151,12 @@
 
 @media only screen and (max-width: 1024px) {
   .videoReel {
-    margin-top: 40px;
+    margin-top: 50px;
   }
 }
 /* 
 primary nav btn */
 .primaryBtn {
-  position: absolute;
-  bottom: 100px;
-  right: 240px;
   background-color: #027cb2;
   padding: 1rem 2rem;
   /* transform: translate(50%,-50%); */
@@ -171,6 +168,19 @@ primary nav btn */
   border-radius: 23px;
   border: 0;
   cursor: pointer;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .primaryBtn {
+    font-size: 0.85rem;
+  }
+}
+
+.headerBtn {
+  position: absolute;
+  bottom: 100px;
+  right: 240px;
 }
 
 .primaryBtn:hover {
@@ -179,27 +189,27 @@ primary nav btn */
 }
 
 @media only screen and (max-width: 1400px) {
-  .primaryBtn {
+  .headerBtn {
     right: 200px;
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .primaryBtn {
+  .headerBtn {
     bottom: 50px;
     right: 100px;
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .primaryBtn {
+  .headerBtn  {
     bottom: 20px;
     right: 20px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .primaryBtn {
+  .headerBtn  {
    width: 100%;
    top: auto;
    bottom: 0px;

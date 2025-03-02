@@ -52,11 +52,11 @@ import ImageCarousel from '../components/ImageCarousel';
 
 export default function Websites({  }) {
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <h1>UI / Web</h1> 
 
 
@@ -172,7 +172,7 @@ export default function Websites({  }) {
         
         
       </section>
-        <a href="/">&larr; home</a>
+       
       </Layout>
     );
 }

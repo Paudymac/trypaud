@@ -42,6 +42,7 @@ const Menu = () => {
       <ul className={isMenuOpen ? 'menu-open' : 'menu-closed'}>
 
 	        <li><a className={`${styles.mobMenuLink} ${isActiveLink('/') ? styles.activeLink : ''}`}  href="/" onClick={toggleMenu}>home</a></li>
+          <li><a className={`${styles.mobMenuLink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`} href="/case-studies">Case Studies</a></li>
 	        <li><a className={`${styles.mobMenuLink} ${isActiveLink('/ui') ? styles.activeLink : ''}`} href="/ui" onClick={toggleMenu}>UI / Web</a></li>
 	        <li><a className={`${styles.mobMenuLink} ${isActiveLink('/logos') ? styles.activeLink : ''}`} href="/logos" onClick={toggleMenu}>Logos</a></li>
 	        <li><a className={`${styles.mobMenuLink} ${isActiveLink('/branding') ? styles.activeLink : ''}`} href="/branding" onClick={toggleMenu}>Branding</a></li>

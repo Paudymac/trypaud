@@ -27,11 +27,11 @@ export async function getStaticProps() {
 
 export default function Icons({ images }) {
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <h1>Icons</h1>
 
         {/* Dynamically render icons */}
@@ -160,7 +160,6 @@ export default function Icons({ images }) {
         </div>
 
         </section>
-        <a href="/">&larr; home</a>
       </Layout>
     );
 }

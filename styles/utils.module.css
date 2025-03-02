@@ -143,11 +143,6 @@
 }
 
 
-/* .partnerLogos li {
-  padding-right:1rem;
-} */
-
-
 @media only screen and (max-width: 1920px) {
   .partnerLogosContainer {
     margin-top: 73%;
@@ -228,7 +223,6 @@
   margin: 0.5em;
   letter-spacing:0.2em;
   border-radius:23px;
-/*  background-color: #fff;*/
 }
 
 .mainMenu:hover {
@@ -243,21 +237,23 @@
   }
 }
 
-
 .MenuParent {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border-radius: 23px; */
-  /* margin: 0.5rem 0 0 0; */
   background-color: white;
-  /* background-image: linear-gradient(180deg, rgba(184,189,191,1) 0%, rgba(255,255,255,0.9) 100%); */
-  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); */
   line-height: 1.1;
+  /* border-bottom: 1px solid transparent; */
+}
+
+.MenuParentChildren {
   border-bottom: 1px solid rgba(175,173,173,0.5);
 }
 
+.scrolledNav {
+  border-bottom: 1px solid rgba(175,173,173,0.5);
+}
 
 @media only screen and (max-width: 1024px) {
   .MenuParent {
@@ -378,7 +374,7 @@
     font-size: 0.8em;
     color: white;
     background-color: #383838;
-    padding: 0 0 0.1em 0.3em;
+    padding: 0 0.3em 0.1em 0.3em;
     border-radius: 5px 0 5px 0;
 }
 
@@ -474,4 +470,68 @@
     font-size: 1em;
     letter-spacing: 0em;
   }
+}
+
+.caseStudiesContainer {
+  margin-top: 4rem;
+}
+
+.caseStudiesContainer h1 {
+  margin-bottom: 0;
+}
+
+.caseStudies {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1rem;
+  padding: 0.25rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 23px;
+}
+
+@media only screen and (max-width: 900px) {
+  .caseStudies {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 1rem;
+  }
+}
+
+.caseStudy {
+  display: block;
+  padding: 1rem;
+  border-radius: 23px;
+  height: 400px;
+  background-size: 140%;
+  background-position: top center;
+}
+
+@media only screen and (max-width: 900px) {
+  .caseStudy {
+    height: 260px;
+    background-size: 145%;
+  }
+}
+
+.caseStudy:hover {
+  background-size: 145%;
+}
+
+.caseStudy:first-child {
+  background-image: url('/images/case-studies/mwo-product-img-sm-case-study1.webp');
+}
+
+.caseStudy:last-child {
+  background-image: url('/images/case-studies/mechcon-img-sm-case-study2.webp');
+}
+
+.caseStudies h3 {
+  margin-top: 0;
+  /* position: absolute;
+  bottom: 0; */
+  color: white;
+}
+
+.backToBtn {
+  display: inline-block;
 }

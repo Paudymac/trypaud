@@ -218,7 +218,15 @@ button[type=submit] {
     border: 0;
     transition: all 0.5s;
     cursor: pointer;
+    /* font-size: 18px; */
 }
+
+/* @media only screen and (max-width: 1024px) {
+  button[type=submit] {
+    font-size: 0.85rem;
+  }
+} */
+
 
 button[type=submit]:hover {
   background-color: #2fbcfa;

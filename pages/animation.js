@@ -5,11 +5,11 @@ import Image from 'next/image';
 
 export default function MotionGraphics({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <h1>Animation</h1>
 
         <span className={utilStyles.datePortfolio}>2024</span>
@@ -63,7 +63,6 @@ export default function MotionGraphics({ allPostsData }) {
         </video></div>
         
         </section>
-        <a href="/">&larr; home</a>
       </Layout>
     );
 }

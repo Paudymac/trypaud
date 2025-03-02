@@ -6,6 +6,7 @@ import BackgroundImage from '../components/backgroundImage';
 import styles from '../components/backgroundImage.module.css';
 import ImageCarousel from '../components/ImageCarousel';
 
+
 const images = [
   "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-ibrahim.webp",
   "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-noedit-ibrahim.webp",
@@ -17,11 +18,11 @@ const images = [
 
 export default function Logos({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section>
         <h1>Illustration</h1>
 
         <span className={utilStyles.datePortfolio}>2025</span>
@@ -44,17 +45,9 @@ export default function Logos({ allPostsData }) {
         <h3 className={utilStyles.header3Portfolio}>MWO Legends Art</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
 
-        <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/illustration/card-bg-atlas.webp"
-        // paddingBottom= "50%"
-        backgroundPositionY="center"
-        />
-        </div>
-
          <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/illustration/art-legends.jpg"
+        imageUrl="/images/illustration/mwo-legends-art-atlas.webp"
         paddingBottom= "50%"
         backgroundPositionY="center"
         />
@@ -67,8 +60,8 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/illustration/xmas-card-2.jpg"
-        paddingBottom= "100%"
+        imageUrl="/images/illustration/xmas-card-2.webp"
+        paddingBottom= "120%"
         backgroundPositionY="center"
         />
         </div>
@@ -80,8 +73,8 @@ export default function Logos({ allPostsData }) {
 
         <div className={styles.imageBg}>
         <BackgroundImage 
-        imageUrl="/images/illustration/xmas-card-1.jpg"
-        paddingBottom= "70%"
+        imageUrl="/images/illustration/xmas-card-1.webp"
+        paddingBottom= "73%"
         backgroundPositionY="center"
         />
         </div>
@@ -101,7 +94,6 @@ export default function Logos({ allPostsData }) {
         
         </section>
 
-        <a href="/">&larr; home</a>
       </Layout>
     );
 }

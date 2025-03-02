@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
-import Date from '../components/date';
 import Image from 'next/image';
 import ContactForm from '../components/contactForm';
 import styles from '../components/contactForm.module.css';
@@ -92,6 +90,18 @@ export default function Home({ allPostsData }) {
                />
          </li>
         </ul>
+      </div>
+
+      <div className={utilStyles.caseStudiesContainer}>
+          <h1>Case Studies</h1>
+          <div className={utilStyles.caseStudies}>
+            <a className={utilStyles.caseStudy} href="/case-studies/ux-mwo-product-pages">
+              <h3>UX of MWO Product Pages</h3>
+            </a>
+            <a className={utilStyles.caseStudy} href="/case-studies/branding-mechcon">
+              <h3>Branding for Mech_Con</h3>
+            </a>
+          </div>
       </div>
 
       <div className={utilStyles.aboutMeContainer}>
