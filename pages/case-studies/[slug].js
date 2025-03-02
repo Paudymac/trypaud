@@ -37,7 +37,7 @@ export default CaseStudy;
 export async function getStaticPaths() {
   const paths = [
     { params: { slug: 'ux-mwo-product-pages' } },
-    { params: { slug: 'branding-mw5' } },
+    { params: { slug: 'branding-mechcon' } },
   ];
 
   return {
