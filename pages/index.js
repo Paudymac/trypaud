@@ -41,8 +41,8 @@ export default function Home({ allPostsData }) {
               </button>
             </div>
           </div>
-          
-          <div className={stylesLayout.container}>
+
+          <div className={stylesLayout.containerHome}>
       <div className={utilStyles.partnerLogosContainer}>
         <h1>Clients</h1>
         <ul className={utilStyles.partnerLogos}>
