@@ -54,8 +54,7 @@ export default function Layout({ children, home }) {
     return router.pathname === href;
   };
 
-  // Scroll to target function
-  const { scrollToTarget } = scrollTo({ targetId: 'collaborate' });
+
 
   return (
     <div>
@@ -115,28 +114,9 @@ export default function Layout({ children, home }) {
         </nav>
       </header>
 
-      <div className={!isChildCaseStudiesPage ? styles.container : ''}>
+      <div className={!isHomePage && !isChildCaseStudiesPage  ? styles.container : ''}>
         {isHomePage && (
-          <div className={styles.videoReelHolder}>
-            <div className={styles.videoReelContainer}>
-              <video
-                className={styles.videoReel}
-                width="1920"
-                height="auto"
-                autoPlay
-                muted
-                loop
-                preload="metadata"
-              >
-                <source src="/video/header-video.mp4" type="video/mp4" />
-                <track src="/path/to/captions.vtt" kind="subtitles" srcLang="en" label="English" />
-                Your browser does not support the video tag.
-              </video>
-              <button onClick={scrollToTarget} className={`${styles.primaryBtn} ${styles.headerBtn}`}>
-                let's collaborate &rarr;
-              </button>
-            </div>
-          </div>
+        <div></div>
         )}
 
         <main className={!isChildCaseStudiesPage ? styles.mainContent : ''}>{children}</main>

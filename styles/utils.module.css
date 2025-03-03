@@ -89,8 +89,13 @@
   }
 }
 
-.partnerLogosContainer {
+/* .partnerLogosContainer {
   margin-top: 77%;
+} */
+
+.partnerLogosContainer {
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 .partnerLogosContainer h1 {
@@ -143,75 +148,75 @@
 }
 
 
-@media only screen and (max-width: 1920px) {
+/* @media only screen and (max-width: 1920px) {
   .partnerLogosContainer {
     margin-top: 73%;
   }
-}
+} */
 
-@media only screen and (max-width: 1800px) {
+/* @media only screen and (max-width: 1800px) {
   .partnerLogosContainer {
     margin-top: 70%;
   }
-}
+} */
 
-@media only screen and (max-width: 1700px) {
+/* @media only screen and (max-width: 1700px) {
   .partnerLogosContainer {
     margin-top: 65%;
   }
-}
+} */
 
-@media only screen and (max-width: 1600px) {
+/* @media only screen and (max-width: 1600px) {
   .partnerLogosContainer {
     margin-top: 63%;
   }
-}
+} */
 
-@media only screen and (max-width: 1500px) {
+/* @media only screen and (max-width: 1500px) {
   .partnerLogosContainer {
     margin-top: 59%;
   }
-}
+} */
 
 
-@media only screen and (max-width: 1400px) {
+/* @media only screen and (max-width: 1400px) {
   .partnerLogosContainer {
     margin-top: 57%;
   }
-}
+} */
 
-@media only screen and (max-width: 1024px) {
+/* @media only screen and (max-width: 1024px) {
   .partnerLogosContainer {
     margin-top: 67%;
   }
-}
+} */
 
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
   .partnerLogosContainer {
     margin-top: 73%;
   }
-}
+} */
 
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .partnerLogosContainer {
     grid-template-columns: 100%;
     margin-top: 80%;
   }
-}
+} */
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
   .partnerLogosContainer {
     grid-template-columns: 100%;
     margin-top: 90%;
   }
-}
+} */
 
-@media only screen and (max-width: 400px) {
+/* @media only screen and (max-width: 400px) {
   .partnerLogosContainer {
     margin-top: 100%;
   }
-}
+} */
 
 .mainMenu {
   text-align: center;
@@ -406,6 +411,8 @@
 }
 
 .galleryMenuConatiner {
+  max-width: 80rem;
+  margin: 0 auto;
   margin-top: 4rem;
 }
 
@@ -414,6 +421,8 @@
 }
 
 .aboutMeContainer {
+  max-width: 80rem;
+  margin: auto;
   margin-top: 4rem;
 }
 
@@ -473,6 +482,8 @@
 }
 
 .caseStudiesContainer {
+  max-width: 80rem;
+  margin: 0 auto;
   margin-top: 4rem;
 }
 

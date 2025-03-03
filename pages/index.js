@@ -4,16 +4,45 @@ import utilStyles from '../styles/utils.module.css';
 import Image from 'next/image';
 import ContactForm from '../components/contactForm';
 import styles from '../components/contactForm.module.css';
+import stylesLayout from '../components/layout.module.css';
+import scrollTo from '../components/scrollTo';
 
 
 export default function Home({ allPostsData }) {
+
+    // Scroll to target function
+    const { scrollToTarget } = scrollTo({ targetId: 'collaborate' });
+
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section >
-        
+
+      
+      <div className={stylesLayout.videoReelHolder}>
+            <div className={stylesLayout.videoReelContainer}>
+              <video
+                className={stylesLayout.videoReel}
+                width="1920"
+                height="auto"
+                autoPlay
+                muted
+                loop
+                preload="metadata"
+              >
+                <source src="/video/header-video.mp4" type="video/mp4" />
+                <track src="/path/to/captions.vtt" kind="subtitles" srcLang="en" label="English" />
+                Your browser does not support the video tag.
+              </video>
+              <button onClick={scrollToTarget} className={`${stylesLayout.primaryBtn} ${stylesLayout.headerBtn}`}>
+                let's collaborate &rarr;
+              </button>
+            </div>
+          </div>
+          
+          <div className={stylesLayout.container}>
       <div className={utilStyles.partnerLogosContainer}>
         <h1>Clients</h1>
         <ul className={utilStyles.partnerLogos}>
@@ -148,7 +177,7 @@ export default function Home({ allPostsData }) {
          
         </nav>
         </div>
-        
+        </div>
         
       </section>
     </Layout>

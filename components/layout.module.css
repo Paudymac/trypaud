@@ -116,11 +116,15 @@
   cursor: auto !important;
 }
 
+.videoReelHolder {
+  position: relative;
+}
+
 .videoReelContainer {
-  position: absolute;
+  /* position: absolute; */
   background-color: black;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
 }
 
 @media only screen and (min-width: 1920px) {
@@ -128,11 +132,6 @@
     height: 1080px;
     width: 100%;
   }
-}
-
-.videoReelHolder {
- /* position: relative;
- width: 100%; */
 }
 
 .videoReel {
@@ -222,6 +221,6 @@ primary nav btn */
 
 @media only screen and (max-width: 1024px) {
   .mainContent {
-    margin-top: 80px;
+    margin-top: 50px;
   }
 }
