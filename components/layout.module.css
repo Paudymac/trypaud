@@ -99,12 +99,6 @@
   margin: auto;
 }
 
-
-
-.logoHome:hover {
- 
-}
-
 .logo {
   margin-top: 2rem;
   margin: 2rem auto 0;
@@ -131,20 +125,13 @@
 
 .videoReelHolder {
   position: relative;
+  padding-bottom: 56.25%;
 }
 
 .videoReelContainer {
-  /* position: absolute; */
+  position: absolute;
   background-color: black;
-  /* top: 0;
-  left: 0; */
-}
-
-@media only screen and (min-width: 1920px) {
-  .videoReelContainer {
-    height: 1080px;
-    width: 100%;
-  }
+  width: 100%;
 }
 
 .videoReel {
@@ -155,17 +142,11 @@
   /* object-fit: contain; */
 }
 
-@media only screen and (min-width: 1920px) {
-  .videoReel {
-    height: 1080px;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
+/* @media only screen and (max-width: 1024px) {
   .videoReel {
     margin-top: 50px;
   }
-}
+} */
 /* 
 primary nav btn */
 .primaryBtn {
