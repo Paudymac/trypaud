@@ -203,15 +203,12 @@ primary nav btn */
 
 @media only screen and (max-width: 600px) {
   .headerBtn  {
-   /* width: 100%; */
-   /* top: auto; */
-   /* bottom: 0px;
+   width: 100%;
+   bottom: 0px;
    left: 0;
-   border-radius: 0; */
-   /* position: relative; */
-   /* display: block; */
-   font-size: 0.65em;
-   padding: 0.5rem 1rem;
+   border-radius: 0;
+   position: relative;
+   display: block;
   }
 }
 
