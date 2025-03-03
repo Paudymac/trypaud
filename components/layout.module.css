@@ -139,7 +139,7 @@
   display: block;
   height: auto;
   width: 100%;
-  /* object-fit: contain; */
+  object-fit: contain;
 }
 
 /* @media only screen and (max-width: 1024px) {
@@ -204,10 +204,10 @@ primary nav btn */
 @media only screen and (max-width: 600px) {
   .headerBtn  {
    width: 100%;
-   bottom: 0px;
+   bottom: -54px;
    left: 0;
    border-radius: 0;
-   position: relative;
+   /* position: relative; */
    display: block;
   }
 }
