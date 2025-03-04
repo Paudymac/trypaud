@@ -13,7 +13,7 @@ export default function CaseStudy({  }) {
   const { scrollToTarget } = scrollTo({ targetId: 'case-study' });
 
   return (
-    <Layout home>
+    <Layout>
      <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -37,8 +37,9 @@ export default function CaseStudy({  }) {
         </div>
     
        
-        <div className={styles.caseStudyContainer}>
+       
         <article id="case-study">
+        <div className={styles.caseStudyContainer}>
           <h2>MechWarrior Online is a live services tactical shooter with a consistent user base spanning the globe based on the popular BattleTech Universe. 
             The game is free to play with purchasable in game content adding value to the user experience. </h2>
         <p>
@@ -48,11 +49,25 @@ export default function CaseStudy({  }) {
           New product offerings were highlighted on the homepage with a separate product page detailing the new content.  The highlight of the content were Mechs’. They provided the vehicular chassis players experienced the free to play tactical shooter.Game content sustained game development allowing expansion with new levels, gameplay updates and Mechs’. The Free to Play business model relied on an easy and reliable process for players to purchase content. 
           </p>
           <p>I discovered the Product Page design was image heavy with many images not optimized for the web, increasing page load times, they were non-responsive designs meaning the mobile experience was lacking and the click through experience of the page was non-intuitive. Buttons were missing hover states, while rollover states were surprising. The Mechs’ lacked visibility in how they looked at scale reducing the players ability to visualize how they would play in game. It wasn’t clear players had to sign to purchase content. This only became apparent when you clicked on a ‘buy’ button. Overall, I felt the design and purchasing experience could be improved to say the least. </p>
-          <p className={styles.caseStudiesBtnContainer}>
+          <p>
+          </p>
+          </div>
+      
+        
+        <Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/case-study1-mwo-product-page-comparison-img copy.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         />
+
+<div className={styles.caseStudyContainer}>
+                         <p className={styles.caseStudiesBtnContainer}>
           <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
           </p>
-        </article>
-        </div>
+                         </div>
+          </article>
         </section>
       </Layout>
     );

@@ -66,6 +66,11 @@
     margin: 0;
 }
 
+.caseStudyIntro h2 {
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
 @media only screen and (max-width: 1280px) {
     .caseStudyIntro h1 {
         font-size: 2em;
@@ -102,17 +107,25 @@
   }
 
   .caseStudyContainer {
-    max-width: 80rem;
+    max-width: 1024px;
     padding: 1rem;
-    margin: 3rem auto;
+    margin: 0 auto;
     background-color: white;
-    border-radius: 23px;
+    /* border-radius: 23px; */
   }
 
-  @media only screen and (max-width: 1480px) {
+
+  .caseStudyContainer:last-child {
+    border-radius: 0 0 23px 23px;
+    margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: 1024px) {
     .caseStudyContainer {
-        margin: 1rem;
-        padding: 0.5rem;
+        /* margin: 1rem; */
+        /* padding:0.5rem; */
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
   }
 
