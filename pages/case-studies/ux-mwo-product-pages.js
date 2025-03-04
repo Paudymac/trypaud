@@ -56,7 +56,7 @@ export default function CaseStudy({  }) {
         
         <Image className={styles.caseStudyImg}
                            priority
-                           src="/images/case-studies/case-study1-mwo-product-page-comparison-img copy.webp"
+                           src="/images/case-studies/case-study1-mwo-product-page-comparison-img.webp"
                            height={1080}
                            width={1920}
                            alt="Logo"
