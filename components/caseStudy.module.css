@@ -68,7 +68,7 @@
 
 .caseStudyIntro h2 {
   line-height: 1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 @media only screen and (max-width: 1280px) {

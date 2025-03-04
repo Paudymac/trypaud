@@ -22,7 +22,7 @@ export default function CaseStudy({  }) {
           <div className={styles.caseStudyIntro}>
           <h1>Branding Mech_Con</h1>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Mech_Con was a 2-day Gaming event celebrating the BattleTech game universe and Piranha MechWarrior games taking place in 2018. 
           </p>
           <button onClick={scrollToTarget} className={`${stylesLayout.primaryBtn} ${styles.readBtn}`}>read</button>
           </div>
@@ -37,16 +37,12 @@ export default function CaseStudy({  }) {
     
         <article id="case-study">
         <div className={styles.caseStudyContainer}>
-          <h2>MechWarrior Online is a live services tactical shooter with a consistent user base spanning the globe based on the popular BattleTech Universe. 
-            The game is free to play with purchasable in game content adding value to the user experience. </h2>
+          <h2>Mech_Con was a 2-day Gaming event celebrating the BattleTech game universe and Piranha MechWarrior games taking place in 2018. 
+          This case study is an exploration of the design system used for the creation of digital and print media branding Mech_Con.
+          </h2>
         <p>
-        When I joined the marketing team as their Interactive Designer MWO had just launched and products were being sold through an already established game site www.mwomercs.com whose fundamental design hasn’t changed since launch, although the product pages have consistently been updated. 
-          </p>
-          <p>
-          New product offerings were highlighted on the homepage with a separate product page detailing the new content.  The highlight of the content were Mechs’. They provided the vehicular chassis players experienced the free to play tactical shooter.Game content sustained game development allowing expansion with new levels, gameplay updates and Mechs’. The Free to Play business model relied on an easy and reliable process for players to purchase content. 
-          </p>
-          <p>I discovered the Product Page design was image heavy with many images not optimized for the web, increasing page load times, they were non-responsive designs meaning the mobile experience was lacking and the click through experience of the page was non-intuitive. Buttons were missing hover states, while rollover states were surprising. The Mechs’ lacked visibility in how they looked at scale reducing the players ability to visualize how they would play in game. It wasn’t clear players had to sign to purchase content. This only became apparent when you clicked on a ‘buy’ button. Overall, I felt the design and purchasing experience could be improved to say the least. </p>
-          <p>
+        The event was an overwhelming success with gaming enthusiasts from around the world gathering to celebrate the BattleTech franchise and Mechs’. 
+        The task was to create a scalable brand for the event with touchpoints existing on screen in the form of a website, game streams, video, advertising, signs and a MechWarrior Online world series tournament.
           </p>
           </div>
       
@@ -60,6 +56,7 @@ export default function CaseStudy({  }) {
                          />
 
 <div className={styles.caseStudyContainer}>
+  <p>The first step was to create a logo and style-guide.</p>
                          <p className={styles.caseStudiesBtnContainer}>
           <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
           </p>
