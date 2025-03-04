@@ -22,7 +22,8 @@ export default function CaseStudy({  }) {
           <div className={styles.caseStudyIntro}>
           <h1>The User Experience of MWO Legends Products</h1>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          MechWarrior Online is a live services tactical shooter with a consistent user base spanning the globe based on the popular BattleTech Universe. 
+          The game is free to play with purchasable in game content adding value to the user experience. 
           </p>
           <button onClick={scrollToTarget} className={`${stylesLayout.primaryBtn} ${styles.readBtn}`}>read</button>
           </div>
@@ -38,13 +39,15 @@ export default function CaseStudy({  }) {
        
         <div className={styles.caseStudyContainer}>
         <article id="case-study">
-          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+          <h2>MechWarrior Online is a live services tactical shooter with a consistent user base spanning the globe based on the popular BattleTech Universe. 
+            The game is free to play with purchasable in game content adding value to the user experience. </h2>
         <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        When I joined the marketing team as their Interactive Designer MWO had just launched and products were being sold through an already established game site www.mwomercs.com whose fundamental design hasn’t changed since launch, although the product pages have consistently been updated. 
           </p>
           <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+          New product offerings were highlighted on the homepage with a separate product page detailing the new content.  The highlight of the content were Mechs’. They provided the vehicular chassis players experienced the free to play tactical shooter.Game content sustained game development allowing expansion with new levels, gameplay updates and Mechs’. The Free to Play business model relied on an easy and reliable process for players to purchase content. 
           </p>
+          <p>I discovered the Product Page design was image heavy with many images not optimized for the web, increasing page load times, they were non-responsive designs meaning the mobile experience was lacking and the click through experience of the page was non-intuitive. Buttons were missing hover states, while rollover states were surprising. The Mechs’ lacked visibility in how they looked at scale reducing the players ability to visualize how they would play in game. It wasn’t clear players had to sign to purchase content. This only became apparent when you clicked on a ‘buy’ button. Overall, I felt the design and purchasing experience could be improved to say the least. </p>
           <p className={styles.caseStudiesBtnContainer}>
           <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
           </p>
