@@ -79,6 +79,8 @@ export default function CaseStudy({  }) {
                            width={1920}
                            alt="Logo"
                          /></p>
+    <p>Mech_Con provided a complex design challenge with so many variables coming together at once on the week prior to commencement. 
+      The hexagon proved a useful cornerstone for asset creation reducing design thinking time and speeding up development. </p>
     <p className={styles.caseStudiesBtnContainer}>
         <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
     </p>
