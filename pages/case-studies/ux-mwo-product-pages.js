@@ -61,7 +61,9 @@ export default function CaseStudy({  }) {
                          />
 
 <div className={styles.caseStudyContainer}>
-                         <p className={styles.caseStudiesBtnContainer}>
+  <p>Less than 20% of users accessed the site through a mobile device. This made sense as the game was created for a PC game environment with the installer downloaded directly from the site. Even so, it was still important to tackle this from a web dev perspective. New product pages would thus sbe created with media queries using a desktop first approach. 
+    At the time significant publications lke Smashing Magazine were endorsing a mobile first appraoch with content scaling up, but since the majority of our traffic was PC based it made sense to start with a desktop view and scale down. This allowed us to create the best possible experience for players who wanted a new Mech. Another significant reason was the art. Mechs' were designed to be seen in a larger format with all their bells and whistles on full display, enticing players to buy a game pack.</p>
+   <p className={styles.caseStudiesBtnContainer}>
           <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
           </p>
                          </div>
