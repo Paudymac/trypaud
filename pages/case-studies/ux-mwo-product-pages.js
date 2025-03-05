@@ -61,14 +61,33 @@ export default function CaseStudy({  }) {
                          />
 
 <div className={styles.caseStudyContainer}>
-  <p>Less than 20% of users accessed the site through a mobile device. This made sense as the game was created for a PC game environment with the installer downloaded directly from the site. Even so, it was still important to tackle this from a web dev perspective. New product pages would thus sbe created with media queries using a desktop first approach. 
+  <p>Less than 20% of users accessed the site through a mobile device. This made sense as the game was created for a PC environment with the installer downloaded directly from the site. Even so, it was still important to tackle this from a web dev perspective. Thus new product pages would be created with media queries using a desktop first approach. 
     At the time significant publications lke Smashing Magazine were endorsing a mobile first approach with content scaling up, but since the majority of our traffic was PC based it made sense to start with a desktop view and scale down. This allowed us to create the best possible experience for players who wanted a new Mech while playing the game. 
     Another significant reason was the art. Mechs' were designed to be seen in a larger format with all their bells and whistles on full display, enticing players to buy a game pack.</p>
-    <p>A carousel was implemented with full length Mech images showcasing the art without any cropping. Small and medium sized images are fetched for smaller resolutions, speeding up page speed. </p>
+  <p>A carousel was implemented with full length Mech images showcasing the art without any cropping. A right hand menu featured a thumbnail of each Mech allowing the players to convenient switch between them. Small and medium sized images are fetched for smaller resolutions, speeding up page load times for mobile devices. Desaturated backgrounds were used to highlight the original Mech skins sold with the packs.</p>
+  <p><Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/top-header-origins-case-study1.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         /></p>
+  <p>Important actions like loging into your account were included in a sticky navigation below the carousel. I included a unique strapline for the pack to complement the theme and title. New pack straplines continue to this day and are a point of joy within the live ops team.</p>
+    <p>Pack content was now displayed columns collapsable on mobile devices. Each pack version could then be compared with the last pack clearly showing the most value. A magnifying glass icon was used for a modal gallery which revealed the concept art in png form. This avoided loading heavy pngs on to the page initially but provided a necessary full length unobstructed view of the chassis types for the players.</p>
+    
+    <p><Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/mwo-origins-pack-view-case-study1.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         /></p>
+                         <p>Moving further down the page players were provided with a detailed breakdown of additional pack content and mech specifications detailing information like hard points, tonnage and weapon groups via a click and reveal system.</p>
+                         <p>Most packs usually contained extra content which expired when the Mechs' were ready for purchase in game. To incentivize purchase a countdown clock was added to the main carousel at the top. A back to top arrow was included in the sticky nav due to the long length of the page. Additional sections like subscribe to our newsletter and links to other Mech packs were also included to keep players engaged.</p>
    <p className={styles.caseStudiesBtnContainer}>
           <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
           </p>
-                         </div>
+          </div>
           </article>
         </section>
       </Layout>
