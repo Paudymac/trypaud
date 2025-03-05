@@ -84,6 +84,8 @@ export default function CaseStudy({  }) {
                          /></p>
                          <p>Moving further down the page players were provided with a detailed breakdown of additional pack content and mech specifications detailing information like hard points, tonnage and weapon groups via a click and reveal system.</p>
                          <p>Most packs usually contained extra content which expired when the Mechs' were ready for purchase in game. To incentivize purchase a countdown clock was added to the main carousel at the top. A back to top arrow was included in the sticky nav due to the long length of the page. Additional sections like subscribe to our newsletter and links to other Mech packs were also included to keep players engaged.</p>
+                         <p>Over the years page designed simplified to accommodate various product offers. Social media icons were removed along with newsletter signup. Data revealed they weren't overly clicked on. A clutter free approach to the page design to maximise click and buy was pursued. Mech specs were encapsulated into a one click reveal all page design, whie additional Mech packs were removed thus reducing page scroll time and illuminating the current content offering more readily.</p>
+                         <p>This approach has significantly reduced company overhead in page design and content creation meaning something that initially took months to prepare can now be achieved during a few days of the working week.</p>
    <p className={styles.caseStudiesBtnContainer}>
           <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
           </p>
