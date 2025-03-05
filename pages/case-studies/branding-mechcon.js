@@ -56,11 +56,22 @@ export default function CaseStudy({  }) {
                          />
 
 <div className={styles.caseStudyContainer}>
-  <p>The first step was to create a logo and style-guide.</p>
-                         <p className={styles.caseStudiesBtnContainer}>
-          <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
-          </p>
-                         </div>
+  <p>The first step was to update the logo from Mech_Con 2017 and create a style-guide. 
+    I hit the sketch pad and ideated on a design which could be expanded, landing upon the shape of a hexagon, this dovetailed with the event setup using lots of rigging for lights and cameras and the BattleTech game which famously uses a hexagonal map with Mechs’ strategically placed for combat.</p>
+
+    </div>
+    <Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/mechcon-styleguide-case-study2.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         />
+    <div className={styles.caseStudyContainer}>
+    <p className={styles.caseStudiesBtnContainer}>
+        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
+    </p>
+    </div>        
           </article>
         </section>
       </Layout>
