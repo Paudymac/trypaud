@@ -51,7 +51,7 @@ export default function CaseStudy({  }) {
             In summation the design and purchasing experience could be improved. </p>
           </div>
       <div className={styles.caseStudyWideImgContainer}>
-      <span className={styles.caseStudyWideImgMeta}>Image revealing the evolution of the MWO Legends product page.</span>
+      <span className={styles.caseStudyWideImgMeta}>Image revealing the evolution of the MWO product pages.</span>
         <Image className={styles.caseStudyImg}
                            priority
                            src="/images/case-studies/case-study1-mwo-product-page-comparison-img.webp"
