@@ -15,6 +15,7 @@ export const siteTitle = 'TryPaud Portfolio';
 export default function Layout({ children, home }) {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCollaborateSectionInView, setIsCollaborateSectionInView] = useState(false);
 
   // Check if the current route is the homepage
   const isHomePage = router.pathname === '/';
@@ -22,11 +23,8 @@ export default function Layout({ children, home }) {
   // Check if the current route is a child of the case studies page
   const isChildCaseStudiesPage = router.pathname.startsWith('/case-studies/');
 
-  console.log('isScrolled:', isScrolled);
-
   // Scroll event handler
   useEffect(() => {
-    // Only run this effect if it's the homepage or a child of the case studies page
     if (isHomePage && isChildCaseStudiesPage) return;
 
     const handleScroll = () => {
@@ -36,10 +34,20 @@ export default function Layout({ children, home }) {
       } else {
         setIsScrolled(false);
       }
-      console.log('Scroll position:', window.scrollY);
-    };
 
-    
+      // Check if the collaborate section is in view
+      const collaborateSection = document.getElementById('collaborate');
+      if (collaborateSection) {
+        const rect = collaborateSection.getBoundingClientRect();
+        const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+        console.log('Collaborate section in view:', isInView); // Debugging log
+        console.log('Rect top:', rect.top, 'Rect bottom:', rect.bottom); // Debugging log
+        console.log('Window inner height:', window.innerHeight); // Debugging log
+
+        setIsCollaborateSectionInView(isInView);
+      }
+    };
 
     window.addEventListener('scroll', handleScroll);
 
@@ -54,7 +62,25 @@ export default function Layout({ children, home }) {
     return router.pathname === href;
   };
 
+  // Use the scrollTo component
+  const { scrollToTarget } = scrollTo({ targetId: 'collaborate' });
 
+  // Handle the "Collaborate" button click
+  const handleCollaborateClick = () => {
+    if (router.pathname !== '/') {
+      // Navigate to the homepage first
+      router.push('/').then(() => {
+        // After navigation, scroll to the collaborate section
+        scrollToTarget();
+      });
+    } else {
+      // If already on the homepage, just scroll to the collaborate section
+      scrollToTarget();
+    }
+  };
+
+  // Determine if the "Collaborate" button should be active
+  const isCollaborateButtonActive = isHomePage && isCollaborateSectionInView;
 
   return (
     <div>
@@ -99,9 +125,6 @@ export default function Layout({ children, home }) {
           <a className={`${utilStyles.Menulink} ${isActiveLink('/branding') ? styles.activeLink : ''}`} href="/branding">
             Branding
           </a>
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/print') ? styles.activeLink : ''}`} href="/print">
-            Print
-          </a>
           <a className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`} href="/icons">
             Icons
           </a>
@@ -111,13 +134,19 @@ export default function Layout({ children, home }) {
           <a className={`${utilStyles.Menulink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`} href="/illustration">
             Illustration
           </a>
+          <button
+            onClick={handleCollaborateClick}
+            className={`${utilStyles.Menulink} ${utilStyles.collabMenulink} ${
+              isCollaborateButtonActive ? styles.activeLink : ''
+            }`}
+          >
+            Collaborate
+          </button>
         </nav>
       </header>
 
-      <div className={!isHomePage && !isChildCaseStudiesPage  ? styles.container : ''}>
-        {isHomePage && (
-        <div></div>
-        )}
+      <div className={!isHomePage && !isChildCaseStudiesPage ? styles.container : ''}>
+        {isHomePage && <div></div>}
 
         <main className={!isChildCaseStudiesPage ? styles.mainContent : ''}>{children}</main>
 

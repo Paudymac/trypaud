@@ -204,6 +204,10 @@ textarea {
   margin-top: 1em;
   background-color: #f5f5f5;
 }
+
+button {
+  font-family: var(--font-barlow);
+}
 /* form submit button style for page */
 button[type=submit] {
     background-color: #027cb2;

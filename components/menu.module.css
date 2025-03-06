@@ -126,6 +126,15 @@
     color: #383838;
 }
 
+.collabMobMenuLink {
+  border: 0;
+  background-color: transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 100%;
+  /* line-height: 1.6; */
+}
+
 li:last-child .mobMenuLink {
   /* border-radius: 0 0 23px 23px; */
 }
