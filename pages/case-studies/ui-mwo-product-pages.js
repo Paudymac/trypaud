@@ -20,7 +20,7 @@ export default function CaseStudy({  }) {
       <section>
         <div className={styles.caseStudyImgContainer}>
           <div className={styles.caseStudyIntro}>
-          <h1>The User Experience of purchasing content for MWO Legends</h1>
+          <h1>The User Interface for purchasing MWO Legends content</h1>
           <p>
           MechWarrior Online is a live services tactical shooter with a persistent player base spanning the globe based on the popular BattleTech Universe. 
           </p>

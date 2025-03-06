@@ -124,8 +124,8 @@ export default function Home({ allPostsData }) {
       <div className={utilStyles.caseStudiesContainer}>
           <h1>Case Studies</h1>
           <div className={utilStyles.caseStudies}>
-            <a className={utilStyles.caseStudy} href="/case-studies/ux-mwo-product-pages">
-              <h3>UX of MWO Product Pages</h3>
+            <a className={utilStyles.caseStudy} href="/case-studies/ui-mwo-product-pages">
+              <h3>UI for MWO Product Pages</h3>
             </a>
             <a className={utilStyles.caseStudy} href="/case-studies/branding-mechcon">
               <h3>Branding for Mech_Con</h3>

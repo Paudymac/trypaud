@@ -38,7 +38,7 @@ export default function CaseStudy({  }) {
         <article id="case-study">
         <div className={styles.caseStudyContainer}>
           <h2>Mech_Con was a 2-day Gaming event celebrating the BattleTech universe and Piranha Games MechWarrior titles taking place between 2016 - 2018.
-          This case study, focusing on 2018, is an exploration of the design system used for the creation of digital and print media for the event.
+          This case study, focusing on 2018, is a partial exploration of the design system used for the creation of digital and print media for the event.
           </h2>
         <p>
         The event was an overwhelming success with gaming enthusiasts from around the world gathering to celebrate the BattleTech franchise and Mechs’. 
