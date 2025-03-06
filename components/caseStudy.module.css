@@ -67,8 +67,8 @@
 }
 
 .caseStudyContainer h2 {
-  /* line-height: 1.2; */
-  letter-spacing: 0.08em;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
 }
 
 @media only screen and (max-width: 1280px) {

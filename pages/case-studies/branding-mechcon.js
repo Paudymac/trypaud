@@ -22,7 +22,7 @@ export default function CaseStudy({  }) {
           <div className={styles.caseStudyIntro}>
           <h1>Branding Mech_Con</h1>
           <p>
-          Mech_Con was a 2-day Gaming event celebrating the BattleTech game universe and Piranha Games MechWarrior titles taking place in 2018. 
+          Mech_Con was a 2-day gaming event celebrating the BattleTech universe and Piranha Games MechWarrior titles taking place between 2016 - 2018. 
           </p>
           <button onClick={scrollToTarget} className={`${stylesLayout.primaryBtn} ${styles.readBtn}`}>read</button>
           </div>
@@ -37,17 +37,17 @@ export default function CaseStudy({  }) {
     
         <article id="case-study">
         <div className={styles.caseStudyContainer}>
-          <h2>Mech_Con was a 2-day Gaming event celebrating the BattleTech game universe and Piranha Games MechWarrior titles taking place in 2018. 
-          This case study is an exploration of the design system used for the creation of digital and print media for Mech_Con.
+          <h2>Mech_Con was a 2-day Gaming event celebrating the BattleTech universe and Piranha Games MechWarrior titles taking place between 2016 - 2018.
+          This case study, focusing on 2018, is an exploration of the design system used for the creation of digital and print media for the event.
           </h2>
         <p>
         The event was an overwhelming success with gaming enthusiasts from around the world gathering to celebrate the BattleTech franchise and Mechs’. 
-        The task was to create a scalable brand for the event with touchpoints existing on screen and physically in the form of a website, merch, game streams, video, advertising, signs and a MechWarrior Online world series tournament.
-          </p>
+        The task was to create a scalable brand with event touchpoints existing digitally and physically in the form of a website, merch, game streams, video, advertising, signs and a MechWarrior Online world tournament.
+        </p>
           </div>
       
           <div className={styles.caseStudyWideImgContainer}>
-          <span className={styles.caseStudyWideImgMeta}>Image showing Mech_Con 2018 brand touchpoints.</span>  
+          <span className={styles.caseStudyWideImgMeta}>Image showing Mech_Con 2018 brand elements.</span>  
         <Image className={styles.caseStudyImg}
                            priority
                            src="/images/case-studies/case-study2-mechcon-branding-elements.webp"
@@ -59,8 +59,8 @@ export default function CaseStudy({  }) {
 
 <div className={styles.caseStudyContainer}>
   <p>Step one involved updating the logo from Mech_Con 2017 and creating a style-guide. 
-    I hit the sketch pad and ideated on a design which could be expanded, landing upon the shape of a hexagon, 
-    this dovetailed with the event setup using rigging for lights and cameras and the BattleTech game which famously uses a hexagonal map with Mechs’ strategically placed for combat.</p>
+    I broke open the sketch pad and ideated on a design, a hexagon, which could be expanded upon in various use case scenarios. 
+    The hexagon dovetailed nicely with the event setup using rigs extensively for lights, cameras and the BattleTech board game which famously employs a hexagonal map with Mechs’ strategically placed for combat.</p>
     <p>The website was created first for attendee’s to sign-up with print collateral developed in months preceding the event. The style-guide was shared between printers, the event staging firm and marketers allowing for a confluence of supplemental material to be organised with a consistent look and feel. </p>
     </div>
     <div className={styles.caseStudyWideImgContainer}>
@@ -74,9 +74,19 @@ export default function CaseStudy({  }) {
                          />
                          </div>
     <div className={styles.caseStudyContainer}>
-      <p>Custom made player shirts were created for MechWarrior Online tournament teams outside of the Mech_Con brand. The shirts corresponded with the teams’ own logos and represented another design challenge in between the event and tournament branding. </p>
-      <p>A specially designed Mech was created by the Piranha Senior Concept Artist which was factored into the brand at a later point. The central use case for this unique Mech were the event custom tees.</p>
-      <p>The tournament branding while different vis-a-vis the event identity, using a fire orange as the primary colour, incorporated the hex in the form of a pattern representing the global player network of MechWarrior Online.</p>
+      <p>Custom made player shirts were created for MechWarrior Online tournament teams outside of the Mech_Con brand. The shirts corresponded with the teams’ own logos and represented another design challenge in between the event and tournament branding. 
+        Even though each player tee was bespoke, I was still able to add a hex pattern invoking battle hardened chain mail for the design. 
+      </p>
+      <p>
+      <Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/example-team-tee-case-study-2.webp"
+                           height={1000}
+                           width={1000}
+                           alt="Logo"
+                         />
+      </p>
+      <p>A specially designed Mech for the event was created by the Piranha Senior Concept Artist which was factored into the brand at a later point. The central use case for this unique Mech were the event custom tees. The tournament branding while different vis-a-vis the event identity's electric blue, instead using a fire orange as the primary colour, incorporated the hex in the form of a spherized pattern representing the global player network of MechWarrior Online.</p>
       <p> <Image className={styles.caseStudyImg}
                            priority
                            src="/images/case-studies/tournament-logo.webp"
@@ -84,8 +94,8 @@ export default function CaseStudy({  }) {
                            width={1920}
                            alt="Logo"
                          /></p>
-    <p>Mech_Con provided a complex design challenge with so many variables coming together at once on the week prior to commencement. 
-      The hexagon proved a useful cornerstone for asset creation reducing design thinking time and speeding up development. </p>
+    <p>In conclusion Mech_Con provided a complex design challenge with numerous variables coalesing on the week prior to commencement. 
+      The hexagon proved a useful cornerstone for asset creation reducing design thinking time and speeding up asset development. </p>
     <p className={styles.caseStudiesBtnContainer}>
         <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
     </p>
