@@ -167,7 +167,7 @@ export default function Home({ allPostsData }) {
         <a className={utilStyles.mainMenu} href="/ui">UI / Web</a>
           <a className={utilStyles.mainMenu} href="/logos">Logos</a>
           <a className={utilStyles.mainMenu} href="/branding">Branding</a>
-          <a className={utilStyles.mainMenu} href="/print">Print</a>
+          {/* <a className={utilStyles.mainMenu} href="/print">Print</a> */}
           <a className={utilStyles.mainMenu} href="/icons">Icons</a>
           
           <a className={utilStyles.mainMenu} href="/animation">Animation</a>
