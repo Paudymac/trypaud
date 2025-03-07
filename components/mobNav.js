@@ -165,7 +165,7 @@ const Menu = () => {
         <li>
           <button
             onClick={handleCollaborateClick}
-            className={`${utilStyles.primaryBtn}`}
+            className={`${styles.mobMenuLink} ${styles.collabMobMenuLink}`}
           >
             Collaborate
           </button>
