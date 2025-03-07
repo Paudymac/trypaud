@@ -24,13 +24,14 @@ export default function Home({ allPostsData }) {
       <div className={stylesLayout.videoReelHolder}>
             <div className={stylesLayout.videoReelContainer}>
               <video
+                poster="/images/header-video-poster.webp"
                 className={stylesLayout.videoReel}
                 width="1920"
                 height="auto"
                 autoPlay
                 muted
                 loop
-                preload="metadata"
+                preload="auto"
               >
                 <source src="/video/header-video.mp4" type="video/mp4" />
                 <track src="/path/to/captions.vtt" kind="subtitles" srcLang="en" label="English" />
