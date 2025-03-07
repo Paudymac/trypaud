@@ -17,6 +17,12 @@
   margin: 0rem auto 6rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .containerHome {
+    margin-top: 6rem;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -193,7 +199,7 @@ primary nav btn */
 
 @media only screen and (max-width: 1400px) {
   .headerBtn {
-    right: 200px;
+    right: 110px;
   }
 }
 
