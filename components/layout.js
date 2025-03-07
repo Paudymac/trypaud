@@ -173,6 +173,24 @@ export default function Layout({ children, home }) {
               <Link href="/images/PadraicMcAteer_CV_2025.pdf">CV</Link>
             </li>
           </ul>
+          <div className={styles.collabBtnFooterContainer}>
+          <button
+            onClick={handleCollaborateClick}
+            className={`${styles.primaryBtn}`}
+          >
+            let's Collaborate &rarr;
+          </button>
+          <p className={styles.logoBtnFooterContainer}> <a href="/">
+            <Image
+              priority
+              src="/trypaud-logo-white-100px.svg"
+              height={150}
+              width={150}
+              alt={name}
+            />
+          </a></p>
+         
+          </div>
         </footer>
       </div>
     </div>
