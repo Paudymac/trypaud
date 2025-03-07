@@ -170,7 +170,7 @@ export default function Layout({ children, home }) {
               <Link href="mailto:paudy@trypaud.com">Email</Link>
             </li>
             <li className={styles.footerMenu}>
-              <Link href="/images/PadraicMcAteer_CV_2025.pdf">CV</Link>
+              <Link href="/PadraicMcAteer_CV_2025.pdf">CV</Link>
             </li>
           </ul>
           <div className={styles.collabBtnFooterContainer}>
