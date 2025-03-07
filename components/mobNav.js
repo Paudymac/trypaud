@@ -90,7 +90,7 @@ const Menu = () => {
       </button>
 
       <ul className={isMenuOpen ? 'menu-open' : 'menu-closed'}>
-        <li>
+        {/* <li>
           <a
             className={`${styles.mobMenuLink} ${isActiveLink('/') ? styles.activeLink : ''}`}
             href="/"
@@ -98,16 +98,8 @@ const Menu = () => {
           >
             home
           </a>
-        </li>
-        <li>
-          <a
-            className={`${styles.mobMenuLink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
-            href="/case-studies"
-            onClick={toggleMenu}
-          >
-            Case Studies
-          </a>
-        </li>
+        </li> */}
+       
         <li>
           <a
             className={`${styles.mobMenuLink} ${isActiveLink('/ui') ? styles.activeLink : ''}`}
@@ -160,6 +152,15 @@ const Menu = () => {
             onClick={toggleMenu}
           >
             Illustration
+          </a>
+        </li>
+        <li>
+          <a
+            className={`${styles.mobMenuLink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
+            href="/case-studies"
+            onClick={toggleMenu}
+          >
+            Case Studies
           </a>
         </li>
         <li>

@@ -110,12 +110,7 @@ export default function Layout({ children, home }) {
               alt={name}
             />
           </a>
-          <a
-            className={`${utilStyles.Menulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
-            href="/case-studies"
-          >
-            Case Studies
-          </a>
+         
           <a className={`${utilStyles.Menulink} ${isActiveLink('/ui') ? styles.activeLink : ''}`} href="/ui">
             UI / Web
           </a>
@@ -133,6 +128,12 @@ export default function Layout({ children, home }) {
           </a>
           <a className={`${utilStyles.Menulink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`} href="/illustration">
             Illustration
+          </a>
+          <a
+            className={`${utilStyles.Menulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
+            href="/case-studies"
+          >
+            Case Studies
           </a>
           <button
             onClick={handleCollaborateClick}
@@ -174,12 +175,6 @@ export default function Layout({ children, home }) {
             </li>
           </ul>
           <div className={styles.collabBtnFooterContainer}>
-          <button
-            onClick={handleCollaborateClick}
-            className={`${styles.primaryBtn}`}
-          >
-            let's Collaborate &rarr;
-          </button>
           <p className={styles.logoBtnFooterContainer}> <a href="/">
             <Image
               priority
@@ -189,6 +184,13 @@ export default function Layout({ children, home }) {
               alt={name}
             />
           </a></p>
+          <button
+            onClick={handleCollaborateClick}
+            className={`${styles.primaryBtn}`}
+          >
+            let's Collaborate &rarr;
+          </button>
+         
          
           </div>
         </footer>

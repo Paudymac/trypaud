@@ -241,7 +241,7 @@ primary nav btn */
 .logoBtnFooterContainer {
   display: grid;
   justify-content: center;
-  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .logoBtnFooterContainer img {
