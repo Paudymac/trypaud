@@ -102,8 +102,8 @@ const Menu = () => {
        
         <li>
           <a
-            className={`${styles.mobMenuLink} ${isActiveLink('/ui') ? styles.activeLink : ''}`}
-            href="/ui"
+            className={`${styles.mobMenuLink} ${isActiveLink('/ui-web') ? styles.activeLink : ''}`}
+            href="/ui-web"
             onClick={toggleMenu}
           >
             UI / Web

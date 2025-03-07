@@ -88,9 +88,9 @@ export default function CaseStudy({  }) {
                          <p>Most packs usually contained extra content which expired when the Mechs' were ready for purchase in game. The time between when a pack was announced and when the content was created approximated at two months. To incentivize purchase a countdown clock was added to the main carousel at the top, which disappeared after the two month window. A back to top arrow was included in the sticky nav due to the long length of the page. Additional sections like subscribe to our newsletter and links to other Mech packs were also included to keep players engaged. Page design could be successfully tweaked to accommodate less Mech packs without large development overhead. This would have been unachievable with the initial page design method.</p>
                          <p>From 2014 - 2024 page design simplified to accommodate different < a href='https://mwomercs.com/stryker'>product offers</a>. Social media icons were removed along with newsletter signup. Data revealed they weren't overly interacted with by users. A clutter free approach to page design for maximal purchase experience was pursued. Mech specs were encapsulated into a one click reveal all page design, whie older Mech packs for purchase were removed, reducing page scroll time and illuminating the current content offering more readily.</p>
                          <p>This approach has significantly reduced company overhead in page design and content creation meaning something that would have taken months to oraganise can now be achieved during a few days of the working week.</p>
-   <p className={styles.caseStudiesBtnContainer}>
-          <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
-          </p>
+    <p className={stylesLayout.backToBtnContainer}>
+        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
+    </p>
           </div>
           </article>
         </section>

@@ -164,7 +164,7 @@ export default function Home({ allPostsData }) {
     <div className={utilStyles.galleryMenuConatiner}>
       <h1>Galleries</h1>
         <nav className={utilStyles.mainMenuParent}>
-        <a className={utilStyles.mainMenu} href="/ui">UI / Web</a>
+        <a className={utilStyles.mainMenu} href="/ui-web">UI / Web</a>
           <a className={utilStyles.mainMenu} href="/logos">Logos</a>
           <a className={utilStyles.mainMenu} href="/branding">Branding</a>
           {/* <a className={utilStyles.mainMenu} href="/print">Print</a> */}

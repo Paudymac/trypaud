@@ -111,7 +111,7 @@ export default function Layout({ children, home }) {
             />
           </a>
          
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/ui') ? styles.activeLink : ''}`} href="/ui">
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/ui-web') ? styles.activeLink : ''}`} href="/ui-web">
             UI / Web
           </a>
           <a className={`${utilStyles.Menulink} ${isActiveLink('/logos') ? styles.activeLink : ''}`} href="/logos">
@@ -152,11 +152,11 @@ export default function Layout({ children, home }) {
         <main className={!isChildCaseStudiesPage ? styles.mainContent : ''}>{children}</main>
 
         {!home && !isChildCaseStudiesPage && (
-          <div className={styles.backToHome}>
+         <p className={styles.backToBtnContainer}>
             <Link href="/" className={styles.primaryBtn}>
               ← Back to home
             </Link>
-          </div>
+          </p>
         )}
         <Analytics />
       </div>

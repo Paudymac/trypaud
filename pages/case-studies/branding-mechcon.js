@@ -95,8 +95,8 @@ export default function CaseStudy({  }) {
                            alt="Logo"
                          /></p>
     <p>In conclusion Mech_Con provided a complex design challenge with numerous variables coalesing on the week prior to commencement. 
-      The hexagon proved a useful cornerstone for asset creation reducing design thinking time and speeding up asset development. </p>
-    <p className={styles.caseStudiesBtnContainer}>
+      The hexagon proved a useful cornerstone for asset creation reducing design thinking time and speeding up development. </p>
+    <p className={stylesLayout.backToBtnContainer}>
         <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}>&larr; Case Studies</a>
     </p>
     </div>        

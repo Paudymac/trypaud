@@ -261,3 +261,10 @@ primary nav btn */
 .logoBtnFooterContainer a:hover {
   opacity: 1;
 }
+
+.backToBtnContainer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(175,173,173,0.5);
+  text-align: right;
+}
