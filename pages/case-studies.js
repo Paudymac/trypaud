@@ -21,7 +21,7 @@ const CaseStudiesPage = () => {
               <h3>UI for MWO Product Pages</h3>
             </a>
             <a className={utilStyles.caseStudy} href="/case-studies/branding-mechcon">
-              <h3>Branding for Mech_Con</h3>
+              <h3>Branding Mech_Con</h3>
             </a>
           </div>
 </section>
