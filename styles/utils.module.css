@@ -144,14 +144,14 @@
   animation: fadeInScaleUp 0.5s ease forwards;
 }
 
-.partnerLogos li.visible:nth-child(1) { animation-delay: 0.2s; }
-.partnerLogos li.visible:nth-child(2) { animation-delay: 0.3s; }
-.partnerLogos li.visible:nth-child(3) { animation-delay: 0.4s; }
-.partnerLogos li.visible:nth-child(4) { animation-delay: 0.5s; }
-.partnerLogos li.visible:nth-child(5) { animation-delay: 0.6s; }
-.partnerLogos li.visible:nth-child(6) { animation-delay: 0.7s; }
-.partnerLogos li.visible:nth-child(7) { animation-delay: 0.8s; }
-.partnerLogos li.visible:nth-child(8) { animation-delay: 0.9s; }
+.partnerLogos li.visible:nth-child(1) { animation-delay: 0.1s; }
+.partnerLogos li.visible:nth-child(2) { animation-delay: 0.2s; }
+.partnerLogos li.visible:nth-child(3) { animation-delay: 0.3s; }
+.partnerLogos li.visible:nth-child(4) { animation-delay: 0.4s; }
+.partnerLogos li.visible:nth-child(5) { animation-delay: 0.5s; }
+.partnerLogos li.visible:nth-child(6) { animation-delay: 0.6s; }
+.partnerLogos li.visible:nth-child(7) { animation-delay: 0.7s; }
+.partnerLogos li.visible:nth-child(8) { animation-delay: 0.8s; }
 
 @media only screen and (max-width: 1280px) {
   .partnerLogos img {
