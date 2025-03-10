@@ -6,6 +6,7 @@ import ContactForm from '../components/contactForm';
 import styles from '../components/contactForm.module.css';
 import stylesLayout from '../components/layout.module.css';
 import scrollTo from '../components/scrollTo';
+import PartnerLogos from '../components/partnerLogos';
 
 
 export default function Home({ allPostsData }) {
@@ -44,83 +45,8 @@ export default function Home({ allPostsData }) {
           </div>
 
           <div className={stylesLayout.containerHome}>
-      <div className={utilStyles.partnerLogosContainer}>
-        <h1>Clients</h1>
-        <ul className={utilStyles.partnerLogos}>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/pgi.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-          </li>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/mw5.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-          </li>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/clans.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-         </li>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/mwo.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-          </li>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/smartt.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-          </li>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/ctd.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-          </li>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/columbia.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-         </li>
-          <li>
-          <Image
-                 priority
-                 src="/images/logos/partners/kwc.svg"
-                 height={150}
-                 width={200}
-                 alt="Logo"
-               />
-         </li>
-        </ul>
-      </div>
+            
+          <PartnerLogos />
 
       <div className={utilStyles.caseStudiesContainer}>
           <h1>Case Studies</h1>
