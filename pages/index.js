@@ -7,6 +7,7 @@ import styles from '../components/contactForm.module.css';
 import stylesLayout from '../components/layout.module.css';
 import scrollTo from '../components/scrollTo';
 import PartnerLogos from '../components/partnerLogos';
+import Galleries from '../components/galleries';
 
 
 export default function Home({ allPostsData }) {
@@ -45,7 +46,7 @@ export default function Home({ allPostsData }) {
           </div>
 
           <div className={stylesLayout.containerHome}>
-            
+
           <PartnerLogos />
 
       <div className={utilStyles.caseStudiesContainer}>
@@ -87,23 +88,8 @@ export default function Home({ allPostsData }) {
           </div>
         </div>
 
-   
-    <div className={utilStyles.galleryMenuConatiner}>
-      <h1>Galleries</h1>
-        <nav className={utilStyles.mainMenuParent}>
-        <a className={utilStyles.mainMenu} href="/ui-web">UI / Web</a>
-          <a className={utilStyles.mainMenu} href="/logos">Logos</a>
-          <a className={utilStyles.mainMenu} href="/branding">Branding</a>
-          {/* <a className={utilStyles.mainMenu} href="/print">Print</a> */}
-          <a className={utilStyles.mainMenu} href="/icons">Icons</a>
-          
-          <a className={utilStyles.mainMenu} href="/animation">Animation</a>
+   <Galleries />
 
-          <a className={utilStyles.mainMenu} href="/illustration">Illustration</a>
-          
-         
-        </nav>
-        </div>
         </div>
         
       </section>

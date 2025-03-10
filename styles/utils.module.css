@@ -267,6 +267,37 @@
   color: white;
 }
 
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    /* transform: scale(0.9); */
+  }
+  100% {
+    opacity: 1;
+    /* transform: scale(1); */
+  }
+}
+
+.mainMenu {
+  opacity: 0; /* Start with hidden logos */
+  /* transform: scale(0.9); */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mainMenu.visible {
+  /* opacity: 1;
+  transform: scale(1); */
+  animation: fadeInScaleUp 0.5s ease forwards;
+}
+
+.mainMenu.visible:nth-child(1) { animation-delay: 0.1s; }
+.mainMenu.visible:nth-child(2) { animation-delay: 0.2s; }
+.mainMenu.visible:nth-child(3) { animation-delay: 0.3s; }
+.mainMenu.visible:nth-child(4) { animation-delay: 0.4s; }
+.mainMenu.visible:nth-child(5) { animation-delay: 0.5s; }
+.mainMenu.visible:nth-child(6) { animation-delay: 0.6s; }
+
+
 @media only screen and (max-width: 1024px) {
   .mainMenu {
     padding: 1em;
