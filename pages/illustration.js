@@ -66,6 +66,17 @@ export default function Logos({ allPostsData }) {
         />
         </div>
 
+        <span className={utilStyles.datePortfolio}>2020</span>
+        <h3 className={utilStyles.header3Portfolio}> MW5 Mercs Dev Tee</h3>
+        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+
+        <div className={styles.imageBg}>
+        <BackgroundImage 
+        imageUrl="/images/illustration/mw5mercs-tee-design.webp"
+        backgroundPositionY="center"
+        />
+        </div>
+
 
         <span className={utilStyles.datePortfolio}>2020</span>
         <h3 className={utilStyles.header3Portfolio}> Xmas Card</h3>
