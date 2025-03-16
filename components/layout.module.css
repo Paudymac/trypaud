@@ -262,11 +262,11 @@ primary nav btn */
 }
 
 .logoBtnFooterContainer a {
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .logoBtnFooterContainer a:hover {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .backToBtnContainer {

@@ -7,8 +7,8 @@ import styles from '../components/backgroundImage.module.css';
 import ImageCarousel from '../components/ImageCarousel';
 
 const images = [
+  "/images/logos/trypaud-colour-logo-example.webp",
   "/images/logos/trypaud-black-logo-example.webp",
-  "/images/logos/trypaud-white-logo-example.webp",
 ];
 
 const images1 = [
