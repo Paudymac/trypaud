@@ -12,8 +12,8 @@ const images = [
 ];
 
 const images1 = [
-  "/images/logos/kwc-logo-black-example.webp",
-  "/images/logos/kwc-logo-white-example.webp",
+  "/images/logos/kwc-logo-colour-example.webp",
+  "/images/logos/kwc-logo-longform-colour-example.webp",
 ];
 
 export default function Logos({ allPostsData }) {
