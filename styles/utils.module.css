@@ -361,6 +361,11 @@
   color: white;
 }
 
+.Menulink:active {
+  background-color: #035977;
+  color: white;
+}
+
 .Menuhome {
  height: 40px;
   width: 40px;

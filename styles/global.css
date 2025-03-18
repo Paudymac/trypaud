@@ -245,3 +245,7 @@ button[type=submit] {
 button[type=submit]:hover {
   background-color: #2fbcfa;
 }
+
+button[type=submit]:active {
+  background-color: #035977;
+}

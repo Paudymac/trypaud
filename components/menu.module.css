@@ -144,6 +144,11 @@ li:last-child .mobMenuLink {
   color: white;
 }
 
+.mobMenuLink:active {
+  background-color: #035977;
+  color: white;
+}
+
 .mobMenuHome {
   height: 40px;
   width: 40px;
