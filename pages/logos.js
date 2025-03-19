@@ -16,6 +16,41 @@ const images1 = [
   "/images/logos/kwc-logo-longform-colour-example.webp",
 ];
 
+const images2 = [
+  "/images/logos/mw5-clans-logo-example.webp",
+  "/images/icons/mw5-clans-icon.webp",
+];
+
+const images3 = [
+  "/images/logos/ss-logo-example.webp",
+  "/images/icons/mw5-dlc6-icon.webp",
+];
+
+const images4 = [
+  "/images/logos/mwol-logo-example.webp",
+  "/images/icons/mwo-icon.webp",
+];
+
+const images5 = [
+  "/images/logos/tdg-logo-example.webp",
+  "/images/icons/mw5-dlc5-icon.webp",
+];
+
+const images6 = [
+  "/images/logos/ror-logo-example.webp",
+  "/images/icons/mw5-dlc4-icon.webp",
+];
+
+const images7 = [
+  "/images/logos/lotkl-logo-example.webp",
+  "/images/icons/mw5-dlc2-icon.webp",
+];
+
+const images8 = [
+  "/images/logos/mw5-logo-example.webp",
+  "/images/icons/mw5-icon.webp",
+];
+
 export default function Logos({ allPostsData }) {
   return (
     <Layout>
@@ -30,11 +65,9 @@ export default function Logos({ allPostsData }) {
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Mechwarrior 5 Clans <a className={utilStyles.launch} href="https://mw5clans.com/">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
-        <a className={styles.imageLink} href="https://mw5clans.com"><BackgroundImage 
-        imageUrl="/images/logos/mw5-clans-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="top"
-        /> </a>
+        <a className={styles.imageLink} href="https://mw5clans.com">
+        <ImageCarousel images={images2} />
+       </a>
 
         <span className={utilStyles.datePortfolio}>2025</span>
         <h3 className={utilStyles.header3Portfolio}>KirkWood Carpentry</h3>
@@ -59,53 +92,35 @@ export default function Logos({ allPostsData }) {
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ] </p>
 
 
-        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/solaris-showdown"><BackgroundImage 
-        imageUrl="/images/logos/ss-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        /></a>
+        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/solaris-showdown">
+        <ImageCarousel images={images3} />
+        </a>
 
         
         <span className={utilStyles.datePortfolio}>2023</span>
         <h3 className={utilStyles.header3Portfolio}>MechWarrior Online Legends <a className={utilStyles.launch} href="https://mwomercs.com/">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
 
-        <a className={styles.imageLink} href="https://mwomercs.com/"><BackgroundImage 
-        imageUrl="/images/logos/mwol-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        /></a>
+        <a className={styles.imageLink} href="https://mwomercs.com/">
+        <ImageCarousel images={images4} />
+        </a>
 
 
         <span className={utilStyles.datePortfolio}>2023</span>
         <h3 className={utilStyles.header3Portfolio}>The Dragons Gambit (MW5 DLC)<a className={utilStyles.launch} href="https://mw5mercs.com/dlc/the-dragons-gambit">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
         
-        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/the-dragons-gambit"><BackgroundImage 
-        imageUrl="/images/logos/tdg-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        /></a>
+        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/the-dragons-gambit">
+        <ImageCarousel images={images5} />
+        </a>
 
         <span className={utilStyles.datePortfolio}>2022</span>
         <h3 className={utilStyles.header3Portfolio}>Rise of Rasalhague (MW5 DLC) <a className={utilStyles.launch} href="https://mw5mercs.com/dlc/rise-of-rasalhague">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
 
-        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/rise-of-rasalhague"><BackgroundImage 
-        imageUrl="/images/logos/ror-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        /></a>
-
-        <span className={utilStyles.datePortfolio}>2022</span>
-        <h3 className={utilStyles.header3Portfolio}>Call to Arms (MW5 DLC) <a className={utilStyles.launch} href="https://mw5mercs.com/dlc/call-to-arms">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
-
-        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/call-to-arms"><BackgroundImage 
-        imageUrl="/images/logos/cta-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        /></a>
+        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/rise-of-rasalhague">
+        <ImageCarousel images={images6} />
+        </a>
 
 
         <span className={utilStyles.datePortfolio}>2021</span>
@@ -114,11 +129,9 @@ export default function Logos({ allPostsData }) {
         </h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
 
-        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/legend-of-the-kestrel-lancers"><BackgroundImage 
-        imageUrl="/images/logos/lotkl-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        /></a>
+        <a className={styles.imageLink} href="https://mw5mercs.com/dlc/legend-of-the-kestrel-lancers">
+        <ImageCarousel images={images7} />
+        </a>
 
         <span className={utilStyles.datePortfolio}>2020</span>
         <h3 className={utilStyles.header3Portfolio}>Heroes of the Innersphere (MW5 DLC) <a className={utilStyles.launch} href="https://mw5mercs.com/dlc/heroes-of-the-inner-sphere">Launch</a>
@@ -127,7 +140,7 @@ export default function Logos({ allPostsData }) {
 
         <a className={styles.imageLink} href="https://mw5mercs.com/dlc/heroes-of-the-inner-sphere"><BackgroundImage 
         imageUrl="/images/logos/hotis-logo-example.webp"
-        paddingBottom= "50%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         /></a>
 
@@ -139,7 +152,7 @@ export default function Logos({ allPostsData }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/logos/pr-logo-example.webp"
-        paddingBottom= "50%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -150,11 +163,9 @@ export default function Logos({ allPostsData }) {
         <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
 
 
-        <a className={styles.imageLink} href="https://mw5mercs.com"><BackgroundImage 
-        imageUrl="/images/logos/mw5-logo-example.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        /></a>
+        <a className={styles.imageLink} href="https://mw5mercs.com">
+        <ImageCarousel images={images8} />
+        </a>
 
 
         <span className={utilStyles.datePortfolio}>2018</span>
@@ -163,7 +174,7 @@ export default function Logos({ allPostsData }) {
 
         <a className={styles.imageLink} href="https://mechwarrior.com/mechcon"><BackgroundImage 
         imageUrl="/images/logos/mc-logo-example.webp"
-        paddingBottom= "50%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         /></a>
 
@@ -174,7 +185,7 @@ export default function Logos({ allPostsData }) {
 
         <a className={styles.imageLink} href="https://www.columbiacollege.ca/"><BackgroundImage 
         imageUrl="/images/logos/cc-logo-example.webp"
-        paddingBottom= "50%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         /></a>
 
@@ -185,7 +196,7 @@ export default function Logos({ allPostsData }) {
 
         <a className={styles.imageLink} href="https://www.smartt.com/"><BackgroundImage 
         imageUrl="/images/logos/smartt-logo-example.webp"
-        paddingBottom= "50%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         /></a>
 
@@ -195,7 +206,7 @@ export default function Logos({ allPostsData }) {
 
         <a className={styles.imageLink} href="https://www.connectthedoc.com/"><BackgroundImage 
         imageUrl="/images/logos/ctd-logo-example.webp"
-        paddingBottom= "50%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         /></a>
 

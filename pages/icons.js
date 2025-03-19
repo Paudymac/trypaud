@@ -45,7 +45,7 @@ export default function Icons({ images }) {
               <img
                 src={image}
                 alt={`Icon ${index}`}
-                style={{ width: '120px', height: '120px' }}
+                style={{ width: '180px', height: '180px' }}
               />
               {/* <p>{image.split('/').pop()}</p>  Display the filename */}
             </div>
@@ -62,7 +62,7 @@ export default function Icons({ images }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/mw5-clans-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -74,7 +74,7 @@ export default function Icons({ images }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/mw5-dlc6-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -87,7 +87,7 @@ export default function Icons({ images }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/mw5-dlc5-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -99,7 +99,7 @@ export default function Icons({ images }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/mw5-dlc4-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -112,7 +112,7 @@ export default function Icons({ images }) {
          <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/mwo-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -125,7 +125,7 @@ export default function Icons({ images }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/mw5-dlc2-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -139,7 +139,7 @@ export default function Icons({ images }) {
          <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/mw5-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
@@ -154,7 +154,7 @@ export default function Icons({ images }) {
         <div className={styles.imageBg}>
         <BackgroundImage 
         imageUrl="/images/icons/smartt-icon.webp"
-        paddingBottom= "52%"
+        paddingBottom= "56.25%"
         backgroundPositionY="center"
         />
         </div>
