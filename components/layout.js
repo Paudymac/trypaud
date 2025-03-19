@@ -104,9 +104,8 @@ export default function Layout({ children, home }) {
             <Image
               priority
               src="/logo-sm-icon.svg"
-              className={utilStyles.Menuhome}
-              height={40}
-              width={40}
+              height={50}
+              width={50}
               alt={name}
             />
           </a>
@@ -138,7 +137,7 @@ export default function Layout({ children, home }) {
           <button
             onClick={handleCollaborateClick}
             className={`${utilStyles.Menulink} ${utilStyles.collabMenulink} ${
-              isCollaborateButtonActive ? styles.activeLink : ''
+              isCollaborateButtonActive ? utilStyles.activeCollab : ''
             }`}
           >
             Collaborate

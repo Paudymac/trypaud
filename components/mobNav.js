@@ -76,8 +76,8 @@ const Menu = () => {
         <Image
           priority
           src="/logo-sm-icon.svg"
-          height={40}
-          width={40}
+          height={50}
+          width={50}
           alt="Logo"
         />
       </a>
