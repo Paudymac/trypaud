@@ -292,6 +292,7 @@
   letter-spacing:0.2em;
   border-radius:60px;
   transition: all 0.5s;
+  position: relative;
 }
 
 .mainMenu:hover {
@@ -305,6 +306,20 @@
   color: white;
 }
 
+.mainMenuImg {
+  position: absolute;
+  top: 17px;
+  left: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mainMenuImg {
+    height: 32px;
+    width: 32px;
+    left: 20px;
+    /* top: 0px; */
+  }
+}
 
 @media only screen and (max-width: 1024px) {
   .mainMenu {

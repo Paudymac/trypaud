@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.9.3, SVG Export Plug-In . SVG Version: 9.03 Build 53313)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#FFFFFF;stroke:#027CB2;stroke-width:2;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;stroke:#027CB2;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g id="ui" class="st0">
+	<rect x="3.5" y="3.5" class="st1" width="57" height="57"/>
+</g>
+<g id="logos" class="st0">
+	<circle class="st1" cx="32" cy="32" r="27.2"/>
+</g>
+<g id="branding" class="st0">
+	<polygon class="st1" points="8.4,18.4 8.4,45.6 32,59.2 55.6,45.6 55.6,18.4 32,4.8 	"/>
+</g>
+<g id="icons" class="st0">
+	<polygon class="st1" points="32,4.8 38.8,25.6 60.6,25.6 42.9,38.4 49.7,59.2 32,46.4 14.3,59.2 21.1,38.4 3.4,25.6 25.2,25.6 	"/>
+</g>
+<g id="animation">
+	<polygon class="st2" points="55.6,32 32,45.6 8.4,59.2 8.4,32 8.4,4.8 32,18.4 	"/>
+</g>
+<g id="illustration" class="st0">
+	<polygon class="st1" points="22.5,59.2 41.5,59.2 41.6,21.3 36.8,13 32,4.8 27.2,13 22.4,21.3 	"/>
+</g>
+</svg>
