@@ -97,8 +97,8 @@ export default function Layout({ children, home }) {
         <Menu />
         <nav
           className={`${utilStyles.MenuParent} ${
-            !isHomePage && !isChildCaseStudiesPage ? utilStyles.MenuParentChildren : ''
-          } ${(isHomePage || isChildCaseStudiesPage) && isScrolled ? utilStyles.scrolledNav : ''}`}
+            !isHomePage ? utilStyles.MenuParentChildren : ''
+          } ${(isHomePage) && isScrolled ? utilStyles.scrolledNav : ''}`}
         >
           <a className={utilStyles.Menuhome} href="/">
             <Image
