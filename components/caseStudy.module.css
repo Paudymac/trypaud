@@ -116,11 +116,11 @@
     }
   } */
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
     .readBtn {
         padding: 0.5rem 1rem;
     }
-  }
+  } */
 
   .caseStudyContainer {
     max-width: 1024px;
