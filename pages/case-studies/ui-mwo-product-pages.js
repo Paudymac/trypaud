@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import styles from '../../components/caseStudy.module.css';
 import stylesLayout from '../../components/layout.module.css';
 import Layout, { siteTitle } from '../../components/layout';
 import utilStyles from '../../styles/utils.module.css';
+import styles from '../../components/caseStudy.module.css';
 import Image from 'next/image';
 import scrollTo from '../../components/scrollTo';
 
