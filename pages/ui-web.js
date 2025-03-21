@@ -69,6 +69,11 @@ import ImageCarousel from '../components/ImageCarousel';
     "/images/ui/bb-img2.webp",
   ];
 
+  const images8 = [
+    "/images/ui/mwomercs-legends-moonwalker.webp",
+    "/images/ui/mwomercs-legends-moonwalker2.webp",
+  ];
+
 export default function Websites({  }) {
   return (
     <Layout>
@@ -105,12 +110,8 @@ export default function Websites({  }) {
         <span className={utilStyles.datePortfolio}>2023</span>
         <h3 className={utilStyles.header3Portfolio}>MWO Legends Product Page <a className={utilStyles.launch} href="https://mwomercs.com/legends/moonwalker">Launch</a></h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
-
         <a className={styles.imageLink} href="https://mwomercs.com/legends/moonwalker">
-        <BackgroundImage 
-        imageUrl="/images/ui/mwomercs-legends-moonwalker.webp"
-        paddingBottom= "100%"
-        />
+        <ImageCarousel images={images8} />
         </a>
        
 
