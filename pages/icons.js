@@ -39,7 +39,7 @@ export default function Icons({ images }) {
         <h3 className={utilStyles.header3Portfolio}>MWO PLayer Icons</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
           {images.map((image, index) => (
             <div key={index} style={{ textAlign: 'center' }}>
               <img

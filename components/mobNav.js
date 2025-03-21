@@ -129,15 +129,6 @@ const Menu = () => {
         </li>
         <li>
           <a
-            className={`${styles.mobMenuLink} ${isActiveLink('/icons') ? styles.activeLink : ''}`}
-            href="/icons"
-            onClick={toggleMenu}
-          >
-            Icons
-          </a>
-        </li>
-        <li>
-          <a
             className={`${styles.mobMenuLink} ${isActiveLink('/animation') ? styles.activeLink : ''}`}
             href="/animation"
             onClick={toggleMenu}
@@ -152,6 +143,15 @@ const Menu = () => {
             onClick={toggleMenu}
           >
             Illustration
+          </a>
+        </li>
+        <li>
+          <a
+            className={`${styles.mobMenuLink} ${isActiveLink('/icons') ? styles.activeLink : ''}`}
+            href="/icons"
+            onClick={toggleMenu}
+          >
+            Icons
           </a>
         </li>
         <li>

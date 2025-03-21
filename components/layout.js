@@ -119,14 +119,14 @@ export default function Layout({ children, home }) {
           <a className={`${utilStyles.Menulink} ${isActiveLink('/branding') ? styles.activeLink : ''}`} href="/branding">
             Branding
           </a>
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`} href="/icons">
-            Icons
-          </a>
           <a className={`${utilStyles.Menulink} ${isActiveLink('/animation') ? styles.activeLink : ''}`} href="/animation">
             Animation
           </a>
           <a className={`${utilStyles.Menulink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`} href="/illustration">
             Illustration
+          </a>
+          <a className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`} href="/icons">
+            Icons
           </a>
           <a
             className={`${utilStyles.Menulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
