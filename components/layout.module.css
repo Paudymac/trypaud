@@ -116,16 +116,7 @@
 .logo {
   margin-top: 2rem;
   margin: 2rem auto 0;
-/*  opacity: 1;
-  transition: 0.5s;
-  scale: 1;*/
 }
-
-/*.logo:hover {
-   opacity: 0.83;
-  scale: 1.07;
-  transition: 0.5s;
-}*/
 
 .activeLink {
   color:#2fbcfa;
@@ -165,7 +156,7 @@
 /* 
 primary nav btn */
 .primaryBtn {
-  background-color: #027cb2;
+  background-color: #9e0505;
   padding: 1rem 2rem;
   /* transform: translate(50%,-50%); */
   color: white;
@@ -193,7 +184,12 @@ primary nav btn */
 }
 
 .primaryBtn:hover {
-  background-color: #2fbcfa;
+  background-color: #ce0505;
+  color: white;
+}
+
+.primaryBtn:active {
+  background-color: #7c0505;
   color: white;
 }
 
@@ -274,4 +270,16 @@ primary nav btn */
   padding: 2rem 0;
   border-top: 1px solid rgba(175,173,173,0.5);
   text-align: right;
+}
+
+.backToBtnContainer .primaryBtn {
+  background-color: #027cb2;
+}
+
+.backToBtnContainer .primaryBtn:hover {
+  background-color: #2fbcfa;
+}
+
+.backToBtnContainer .primaryBtn:active {
+  background-color: #035977;
 }
