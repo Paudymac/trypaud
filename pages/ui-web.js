@@ -50,6 +50,25 @@ import ImageCarousel from '../components/ImageCarousel';
     "/images/ui/transverse-social.webp",
   ];
 
+  const images6 = [
+    "/images/ui/ctd-img1.webp",
+    "/images/ui/ctd-img2.webp",
+    "/images/ui/ctd-img3.webp",
+    "/images/ui/ctd-img4.webp",
+    "/images/ui/ctd-img5.webp",
+    "/images/ui/ctd-img6.webp",
+    "/images/ui/ctd-img7.webp",
+    "/images/ui/ctd-img8.webp",
+    "/images/ui/ctd-img9.webp",
+  ];
+
+  const images7 = [
+    "/images/ui/hs-img1.webp",
+    "/images/ui/hs-img2.webp",
+    "/images/ui/bb-img1.webp",
+    "/images/ui/bb-img2.webp",
+  ];
+
 export default function Websites({  }) {
   return (
     <Layout>
@@ -125,61 +144,16 @@ export default function Websites({  }) {
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
 
          <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/ctd-img1.webp"
-        paddingBottom= "50%"
-        />
-        </div>
-
-         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/ctd-img2.webp"
-        paddingBottom= "50%"
-        />
-        </div>
-
-        <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/ctd-img3.webp"
-        paddingBottom= "50%"
-        />
-        </div>
+         <ImageCarousel images={images6} />
+         </div>
 
         <span className={utilStyles.datePortfolio}>2009</span>
-        <h3 className={utilStyles.header3Portfolio}>Blackberry</h3>
+        <h3 className={utilStyles.header3Portfolio}>SaaS Desktop Apps</h3>
         <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Animation]</p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/bb-img1.webp"
-        paddingBottom= "50%"
-        />
-        </div>
-
-         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/bb-img2.webp"
-        paddingBottom= "50%"
-        />
-        </div>
-
-        <span className={utilStyles.datePortfolio}>2008</span>
-        <h3 className={utilStyles.header3Portfolio}>Head & Shoulders</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Animation]</p>
-
-        <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/hs-img1.webp"
-        paddingBottom= "50%"
-        />
-        </div>
-
-          <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/ui/hs-img2.webp"
-        paddingBottom= "50%"
-        />
-        </div>
+         <ImageCarousel images={images7} />
+         </div>
         
         
       </section>

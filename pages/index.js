@@ -62,20 +62,19 @@ export default function Home({ allPostsData }) {
       </div>
 
       <div className={utilStyles.aboutMeContainer}>
-      <h1>About</h1>
+      <h1>About Me</h1>
       <div className={utilStyles.aboutMe}>
       
       <div className={utilStyles.aboutMeImgContainer}>
       <div className={utilStyles.aboutMeImg}></div>
       </div>
-    
- 
 
         <div className={utilStyles.aboutMeDescipt}>
-          <h2 className={utilStyles.aboutMeHeadline}>Love of Design & being creative </h2>
+          <h2 className={utilStyles.aboutMeHeadline}>Creativity & Design Good</h2>
             <p className={utilStyles.aboutMeSummary}>I’ve always sketched and coloured from when I was small. Being creative is something I find innate. 
               My 17 year design journey has allowed me to wear many hats concurrently, making me a versatile designer
-               with an eye for layout and identity mixed in with technical acumen through the lens of a user centered philosophy. </p>
+               with an eye for layout and identity mixed in with technical acumen through the lens of a user centered philosophy. I believe good design helps people. 
+               Like holding a door open and letting someone in. Great design keeps them coming back.</p>
         </div>
 
       </div>
