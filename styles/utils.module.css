@@ -377,7 +377,7 @@
 
 .collabMenulink {
   border: 0;
-  background-color: #027cb2;
+  background-color: #9e0505;
   transition: all 0.5s;
   cursor: pointer;
   line-height: 0;
@@ -391,11 +391,11 @@
 }
 
 .Menulink.collabMenulink:hover {
-  background-color: #2fbcfa;
+  background-color: #ce0505;
 }
 
 .Menulink.collabMenulink:active {
-  background-color: #035977;
+  background-color: #7c0505;
 }
 
 .Menulink.collabMenulink.activeCollab {

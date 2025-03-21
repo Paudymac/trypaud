@@ -160,3 +160,15 @@
     color: #666666;
     padding: 0.3em;
   }
+
+  .readBtn {
+    background-color: #027cb2;
+  }
+  
+  .readBtn:hover {
+    background-color: #2fbcfa;
+  }
+  
+  .readBtn:active {
+    background-color: #035977;
+  }
