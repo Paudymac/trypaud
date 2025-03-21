@@ -82,6 +82,17 @@ export default function Websites({  }) {
         <a className={styles.imageLink} href="https://mechwarrior.com/mechcon">
         <ImageCarousel images={images2} />
         </a>
+
+        <span className={utilStyles.datePortfolio}>2023</span>
+        <h3 className={utilStyles.header3Portfolio}>MWO Legends Product Page <a className={utilStyles.launch} href="https://mwomercs.com/legends/moonwalker">Launch</a></h3>
+        <p className={utilStyles.descriptionPortfolio}> [ UI / UX / Front End ]</p>
+
+        <a className={styles.imageLink} href="https://mwomercs.com/legends/moonwalker">
+        <BackgroundImage 
+        imageUrl="/images/ui/mwomercs-legends-moonwalker.webp"
+        paddingBottom= "100%"
+        />
+        </a>
        
 
         <span className={utilStyles.datePortfolio}>2013 - 2024</span>
