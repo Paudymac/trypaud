@@ -20,8 +20,8 @@ const CaseStudiesPage = () => {
             <a className={utilStyles.caseStudy} href="/case-studies/ui-mwo-product-pages">
               <h3>UI for MWO Product Pages</h3>
             </a>
-            <a className={utilStyles.caseStudy} href="/case-studies/branding-mechcon">
-              <h3>Branding Mech_Con</h3>
+            <a className={utilStyles.caseStudy} href="/case-studies/mechcon-design-system">
+              <h3>Mech_Con Design System</h3>
             </a>
           </div>
 </section>
