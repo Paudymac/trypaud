@@ -20,7 +20,7 @@ export default function CaseStudy({  }) {
       <section>
         <div className={styles.caseStudyImgContainer}>
           <div className={styles.caseStudyIntro}>
-          <h1>Branding Mech_Con</h1>
+          <h1>Mech_Con Design System</h1>
           <p>
           Mech_Con was a 2-day gaming event celebrating the BattleTech universe and Piranha Games MechWarrior titles taking place between 2016 - 2018. 
           </p>
