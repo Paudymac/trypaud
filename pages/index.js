@@ -67,9 +67,9 @@ export default function Home({ allPostsData }) {
       <div className={utilStyles.hpSection}>
 
       
-      <div className={utilStyles.hpSectionImgContainer}>
-      <div className={utilStyles.hpSectionImg}></div>
-      </div>
+     
+      <a href="/design-process" className={utilStyles.hpSectionImgContainer}></a>
+      
 
 
       <div className={utilStyles.hpSectionDescipt}>

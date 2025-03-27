@@ -75,7 +75,7 @@ h3 {
 a {
   color: #027cb2;
   text-decoration: none;
-  transition: all 0.5s;
+  transition: all 0.3s ease;
 }
 
 a:hover {
