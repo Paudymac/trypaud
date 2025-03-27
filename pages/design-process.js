@@ -14,8 +14,8 @@ export default function CaseStudy({  }) {
       </Head>
       <section className={utilStyles.articleSection}>
       <h1>Design Process</h1>
-      <p>The answer is in the question asked. What's missing from a business? Why do people need it? How should it be presented? 
-        Is it a product, a brand identity problem or a communication issue? The final deliverable is the agreed upon solution; an app, a website or a brand asset.
+      <p>A Design Process should answer the question being asked. What's missing from a business? Why do people need it? How should it be presented? 
+        Is it a product, a brand identity problem, a communication issue? The final deliverable is the agreed upon solution; an app, a website or a brand asset.
         Every design solution falls under the 3 spheres. The subjective field of creativity is made from the collaborative experience of the client / creative team relationship working within the spheres; which is always unique at that moment in time. 
         Clients and creatives bring their own subjective realities to every project. A good design process distills the most objective truth and presents a clear path towards a successful end result.
      
@@ -29,7 +29,9 @@ export default function CaseStudy({  }) {
                            alt="Logo"
                          />
         
-        <h1>Design Method</h1>
+        <h2>Design Method</h2>
+        <p>The Design Method below are the usual steps I employ to create a design artifact.  The amount of time spent on each is dependent on the complexity of the problem. 
+            The final deliverables are usually myriad derived from the work put in at each stage. </p>
         <Image    
                            className={utilStyles.articleImg}
                            priority
@@ -39,7 +41,10 @@ export default function CaseStudy({  }) {
                            alt="Logo"
                          />
 
-        <h1>Design Loop</h1>
+        <h2>Design Loop</h2>
+        <p>During each step the design loop below is used. This in theory prevents projects from going off track and buttresses alignment between the client/ creative team. 
+            It’s important to show work often, receive feedback and iterate on the feedback. 
+           After a few rounds I can usually knuckle down and deliver a polished version of what’s required, meeting expectations, before moving onto the next step. </p>
          <Image    
                            className={utilStyles.articleImg}
                            priority
