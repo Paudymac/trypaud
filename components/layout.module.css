@@ -171,6 +171,10 @@ primary nav btn */
   transition: all 0.5s;
 }
 
+.readBtn {
+  background: #027cb2;
+}
+
 @media only screen and (max-width: 1024px) {
   .primaryBtn {
     font-size: 0.85rem;
@@ -188,9 +192,17 @@ primary nav btn */
   color: white;
 }
 
+.readBtn:hover {
+  background-color: #2fbcfa;
+}
+
 .primaryBtn:active {
   background-color: #7c0505;
   color: white;
+}
+
+.readBtn:active {
+  background-color: #035977;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -270,6 +282,12 @@ primary nav btn */
   padding: 2rem 0;
   border-top: 1px solid rgba(175,173,173,0.5);
   text-align: right;
+}
+
+.readBtnContainer {
+  padding-top: 1em;
+  display: flex;
+  justify-content: end;
 }
 
 .backToBtnContainer .primaryBtn {

@@ -180,77 +180,6 @@
 }
 
 
-/* @media only screen and (max-width: 1920px) {
-  .partnerLogosContainer {
-    margin-top: 73%;
-  }
-} */
-
-/* @media only screen and (max-width: 1800px) {
-  .partnerLogosContainer {
-    margin-top: 70%;
-  }
-} */
-
-/* @media only screen and (max-width: 1700px) {
-  .partnerLogosContainer {
-    margin-top: 65%;
-  }
-} */
-
-/* @media only screen and (max-width: 1600px) {
-  .partnerLogosContainer {
-    margin-top: 63%;
-  }
-} */
-
-/* @media only screen and (max-width: 1500px) {
-  .partnerLogosContainer {
-    margin-top: 59%;
-  }
-} */
-
-
-/* @media only screen and (max-width: 1400px) {
-  .partnerLogosContainer {
-    margin-top: 57%;
-  }
-} */
-
-/* @media only screen and (max-width: 1024px) {
-  .partnerLogosContainer {
-    margin-top: 67%;
-  }
-} */
-
-/* @media only screen and (max-width: 800px) {
-  .partnerLogosContainer {
-    margin-top: 73%;
-  }
-} */
-
-
-/* @media only screen and (max-width: 600px) {
-  .partnerLogosContainer {
-    grid-template-columns: 100%;
-    margin-top: 80%;
-  }
-} */
-
-/* @media only screen and (max-width: 500px) {
-  .partnerLogosContainer {
-    grid-template-columns: 100%;
-    margin-top: 90%;
-  }
-} */
-
-/* @media only screen and (max-width: 400px) {
-  .partnerLogosContainer {
-    margin-top: 100%;
-  }
-} */
-
-
 @keyframes fadeInScaleUp {
   0% {
     opacity: 0;
@@ -538,6 +467,12 @@
   margin-top: 4rem;
 }
 
+.hpSectionContainer {
+  max-width: 80rem;
+  margin: auto;
+  margin-top: 4rem;
+}
+
 .aboutMe {
   background-color: white;
   border-radius: 15px;
@@ -549,6 +484,21 @@
 
 @media only screen and (max-width: 600px) {
   .aboutMe {
+    display: block;
+  }  
+}
+
+.hpSection {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .hpSection {
     display: block;
   }  
 }
@@ -568,8 +518,37 @@
   }
 }
 
+.hpSectionImgContainer {
+  width: 600px;
+  height: 600px;
+  background-size: cover;
+  background-image: url('../public/images/design-process-model.svg');
+  background-position: center;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .hpSectionImgContainer {
+    width: 100%;
+  }
+}
+
 .aboutMeContainer h1 {
   margin-bottom: 0;
+}
+
+.hpSectionContainer h1 {
+  margin-bottom: 0;
+}
+
+.hpSectionDescipt {
+  width: 50%;
+}
+
+@media only screen and (max-width: 800px) {
+  .hpSectionDescipt {
+    width: 100%;
+  }
 }
 
 .aboutMeDescipt {
@@ -582,12 +561,19 @@
   }
 }
 
-.aboutMeSummary {
+.aboutMeSummary, .hpSectionSummary {
   font-size: 1.2em;
 }
 
 @media only screen and (max-width: 900px) {
   .aboutMeSummary {
+    font-size: 1em;
+    letter-spacing: 0em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .hpSectionSummary {
     font-size: 1em;
     letter-spacing: 0em;
   }
@@ -657,4 +643,9 @@
 
 .backToBtn {
   display: inline-block;
+}
+
+.articleImg {
+  width: 100%;
+  height: auto;
 }

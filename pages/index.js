@@ -8,6 +8,7 @@ import stylesLayout from '../components/layout.module.css';
 import scrollTo from '../components/scrollTo';
 import PartnerLogos from '../components/partnerLogos';
 import Galleries from '../components/galleries';
+import Link from 'next/link';
 
 
 export default function Home({ allPostsData }) {
@@ -45,7 +46,7 @@ export default function Home({ allPostsData }) {
             </div>
           </div>
 
-          <div className={stylesLayout.containerHome}>
+          <div className={`${stylesLayout.containerHome}`}>
 
           <PartnerLogos />
 
@@ -60,6 +61,35 @@ export default function Home({ allPostsData }) {
             </a>
           </div>
       </div>
+
+      <div className={utilStyles.hpSectionContainer}>
+      <h1>Design Process</h1>
+      <div className={utilStyles.hpSection}>
+
+      
+      <div className={utilStyles.hpSectionImgContainer}>
+      <div className={utilStyles.hpSectionImg}></div>
+      </div>
+
+
+      <div className={utilStyles.hpSectionDescipt}>
+          <h2 className={utilStyles.hpSectionHeadline}>Finding an answer</h2>
+            <p className={utilStyles.hpSectionSummary}>Every design project I’ve contributed to has 3 spheres of reality effecting the final answer to the original problem; 
+              User Goals, Business Needs and Resource Constraints. These spheres exist within the field of subjective creativity. Defining each sphere is subject to the design teams’ 
+              interpretations and thus their own biases.
+               </p>
+               <p className={stylesLayout.readBtnContainer}>
+               <Link href="/design-process" className={`${stylesLayout.primaryBtn} ${stylesLayout.readBtn}`}>
+             Read &rarr;
+            </Link>
+            </p>
+
+              
+              
+        </div>
+
+        </div>
+        </div>
 
       <div className={utilStyles.aboutMeContainer}>
       <h1>About Me</h1>
