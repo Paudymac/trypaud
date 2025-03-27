@@ -75,7 +75,7 @@ export default function Home({ allPostsData }) {
       <div className={utilStyles.hpSectionDescipt}>
           <h2 className={utilStyles.hpSectionHeadline}>Finding an answer</h2>
             <p className={utilStyles.hpSectionSummary}>Every design project I’ve contributed to has 3 spheres of reality effecting the final answer to the original problem; 
-              User Goals, Business Needs and Resource Constraints. These spheres exist within the field of subjective creativity. Defining each sphere is subject to the design teams’ 
+              User Goals, Business Needs and Resource Constraints. Each sphere exists in the field of subjective creativity. Defining how they overlap is subject to the design teams’ 
               interpretations and thus their own biases.
                </p>
                <p className={stylesLayout.readBtnContainer}>

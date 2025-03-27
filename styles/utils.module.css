@@ -649,3 +649,7 @@
   width: 100%;
   height: auto;
 }
+
+.articleSection p {
+  font-size: 1.2em;
+}
