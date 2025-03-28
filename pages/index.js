@@ -62,15 +62,11 @@ export default function Home({ allPostsData }) {
           </div>
       </div>
 
-      <div className={utilStyles.hpSectionContainer}>
+      {/* <div className={utilStyles.hpSectionContainer}>
       <h1>Design Process</h1>
       <div className={utilStyles.hpSection}>
 
-      
-     
       <a href="/design-process" className={utilStyles.hpSectionImgContainer}></a>
-      
-
 
       <div className={utilStyles.hpSectionDescipt}>
           <h2 className={utilStyles.hpSectionHeadline}>Finding an answer</h2>
@@ -83,13 +79,11 @@ export default function Home({ allPostsData }) {
              Read &rarr;
             </Link>
             </p>
-
-              
               
         </div>
 
         </div>
-        </div>
+        </div> */}
 
       <div className={utilStyles.aboutMeContainer}>
       <h1>About Me</h1>
