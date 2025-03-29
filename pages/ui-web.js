@@ -53,13 +53,6 @@ import ImageCarousel from '../components/ImageCarousel';
   const images6 = [
     "/images/ui/ctd-img1.webp",
     "/images/ui/ctd-img2.webp",
-    "/images/ui/ctd-img3.webp",
-    "/images/ui/ctd-img4.webp",
-    "/images/ui/ctd-img5.webp",
-    "/images/ui/ctd-img6.webp",
-    "/images/ui/ctd-img7.webp",
-    "/images/ui/ctd-img8.webp",
-    "/images/ui/ctd-img9.webp",
   ];
 
   const images7 = [
