@@ -28,7 +28,7 @@ export default function CaseStudy({  }) {
           </div>
            <Image className={styles.caseStudyImg}
                            priority
-                           src="/images/case-studies/mechcon-poster-img-lg-case-study2.webp"
+                           src="/images/case-studies/mechcon-img-lg-case-study2.webp"
                            height={1080}
                            width={1920}
                            alt="Logo"
@@ -56,7 +56,16 @@ export default function CaseStudy({  }) {
                            alt="Logo"
                          />
                          </div>
-
+                         <div className={styles.caseStudyWideImgContainer}>
+          <span className={styles.caseStudyWideImgMeta}>Mech_Con website.</span>  
+        <Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/case-study2-mechcon-website-elements.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         />
+                         </div>
 <div className={styles.caseStudyContainer}>
   <p>Step one involved updating the logo from Mech_Con 2017 and creating a style-guide. 
     I broke open the sketch pad and ideated on a design, a hexagon, which could be expanded upon in various use case scenarios. 
@@ -73,27 +82,32 @@ export default function CaseStudy({  }) {
                            alt="Logo"
                          />
                          </div>
+                         <div className={styles.caseStudyWideImgContainer}>
+      <span className={styles.caseStudyWideImgMeta}>Event components.</span>
+    <Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/case-study2-mechcon-event-elements.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         />
+                         </div>
+                         <div className={styles.caseStudyWideImgContainer}>
+      <span className={styles.caseStudyWideImgMeta}>Tournament competitors.</span>
+    <Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/case-study-2-team-tees.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         />
+                         </div>
     <div className={styles.caseStudyContainer}>
       <p>Custom made player shirts were created for MechWarrior Online tournament teams outside of the Mech_Con brand. The shirts corresponded with the teams’ own logos and represented another design challenge in between the event and tournament branding. 
         Even though each player tee was bespoke, I was still able to add a hex pattern invoking battle hardened chain mail for the design. 
       </p>
-      <p>
-      <Image className={styles.caseStudyImg}
-                           priority
-                           src="/images/case-studies/example-team-tee-case-study-2.webp"
-                           height={1000}
-                           width={1000}
-                           alt="Logo"
-                         />
-      </p>
+  
       <p>A specially designed Mech for the event was created by the Piranha Senior Concept Artist which was factored into the brand at a later point. The central use case for this unique Mech were the event custom tees. The tournament branding while different vis-a-vis the event identity's electric blue, instead using a fire orange as the primary colour, incorporated the hex in the form of a spherized pattern representing the global player network of MechWarrior Online.</p>
-      <p> <Image className={styles.caseStudyImg}
-                           priority
-                           src="/images/case-studies/tournament-logo.webp"
-                           height={1080}
-                           width={1920}
-                           alt="Logo"
-                         /></p>
     <p>In conclusion Mech_Con provided a complex design challenge with numerous variables coalesing on the week prior to commencement. 
       The hexagon proved a useful cornerstone for asset creation reducing design thinking time and speeding up development. </p>
     <p className={stylesLayout.backToBtnContainer}>

@@ -507,7 +507,7 @@
   width: 600px;
   height: 600px;
   background-size: cover;
-  background-image: url('../public/images/portfolio-pic.svg');
+  background-image: url('../public/images/profile-ai-shot.webp');
   background-position: center;
   border-radius: 15px;
 }
@@ -598,10 +598,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 1rem;
-  padding: 0.25rem;
+  row-gap: 1rem;
   background-color: white;
-  padding: 1rem;
   border-radius: 15px;
+  padding: 1rem;
 }
 
 @media only screen and (max-width: 900px) {
@@ -631,12 +631,20 @@
   background-size: 145%;
 }
 
-.caseStudy:first-child {
+.caseStudy1 {
   background-image: url('/images/case-studies/mwo-product-img-sm-case-study1.webp');
 }
 
-.caseStudy:last-child {
+.caseStudy2 {
   background-image: url('/images/case-studies/mechcon-img-sm-case-study2.webp');
+}
+
+.caseStudy3 {
+  background-image: url('/images/case-studies/mw5-img-sm-case-study3.webp');
+}
+
+.caseStudy4 {
+  background-image: url('/images/case-studies/clans-img-sm-case-study4.webp');
 }
 
 .caseStudies h3 {
