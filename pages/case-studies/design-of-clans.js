@@ -80,6 +80,13 @@ export default function CaseStudy({  }) {
           <p>Website design was priortised to show character videos, trailers and giving players a path to their preferred game vendor.
             The look and feel consolidated the marketing campaign with the game ui viusals to create a coherent brand experience. 
           </p>
+          <p><Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/case-study4-game-front-end.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         /></p>
           </div>
           <div className={styles.caseStudyWideImgContainer}>
       <span className={styles.caseStudyWideImgMeta}>Clans website aims to showcase the new characters.</span>
@@ -93,7 +100,7 @@ export default function CaseStudy({  }) {
       </div>
       <div className={styles.caseStudyContainer}>
           <p>Responsive web design techniques were used in making sure the site had a seamless mobile experience. Even though the site is image heavy file size was kept low with the webp image format.
-            
+
           </p>
           </div>
       <div className={styles.caseStudyWideImgContainer}>
