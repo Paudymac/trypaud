@@ -336,15 +336,74 @@
   border-radius: 0;
   position: relative;
   display: inline-block;
-  top: 4px;
-  left: 4px;
+  /* top: 4px;
+  left: 4px; */
   height: 50px;
 }
 
 .Menuhome:hover {
   transition: all 0.75s;
   opacity: 0.83;
-/*    scale: 1.05;*/
+}
+
+.dropdownMenulink {
+  position: relative;
+  top: 17px;
+  line-height: 1.6;
+  background-color: transparent;
+}
+
+.dropdownMenulink:hover {
+  background-color: transparent;
+}
+
+.dropdownMenulink.activeLink:hover {
+  color: white;
+}
+
+.dropDown {
+  position: relative;
+  background-color: white;
+  padding: 0;
+  line-height: 0;
+  transition: all 0.3s ease;
+}
+
+.dropDown:hover {
+  background-color: #027cb2;
+  color: white;
+}
+
+.dropDown:hover .dropdownMenulink {
+  color: white;
+}
+
+.dropDown:hover .dropdownMenulink.activeLink:hover {
+  color: white;
+} 
+
+.dropDownList {
+  display: none;
+  position: absolute;
+  width: 160px;
+  top: 51px;
+  font-size: 0.75em;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  background: white;
+  font-weight: bold;
+  border-top: 1px solid rgba(175,173,173,0.5);
+  letter-spacing: 0.05rem;
+}
+
+.dropDown:hover .dropDownList {
+  display: block;
+}
+
+.dropDownLink {
+  display: block;
+  width: 100%;
+  padding: 1rem;
 }
 
 .centerText {

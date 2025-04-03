@@ -53,29 +53,6 @@ export default function Home({ allPostsData }) {
 
           <CaseStudies />
 
-      {/* <div className={utilStyles.hpSectionContainer}>
-      <h1>Design Process</h1>
-      <div className={utilStyles.hpSection}>
-
-      <a href="/design-process" className={utilStyles.hpSectionImgContainer}></a>
-
-      <div className={utilStyles.hpSectionDescipt}>
-          <h2 className={utilStyles.hpSectionHeadline}>Finding an answer</h2>
-            <p className={utilStyles.hpSectionSummary}>Every design project I’ve contributed to has 3 spheres of reality effecting the final answer to the original problem; 
-              User Goals, Business Needs and Resource Constraints. Each sphere exists in the field of subjective creativity. Defining how they overlap is subject to the design teams’ 
-              interpretations and thus their own biases.
-               </p>
-               <p className={stylesLayout.readBtnContainer}>
-               <Link href="/design-process" className={`${stylesLayout.primaryBtn} ${stylesLayout.readBtn}`}>
-             Read &rarr;
-            </Link>
-            </p>
-              
-        </div>
-
-        </div>
-        </div> */}
-
       <div className={utilStyles.aboutMeContainer}>
       <h1>About Me</h1>
       <div className={utilStyles.aboutMe}>

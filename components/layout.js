@@ -128,12 +128,20 @@ export default function Layout({ children, home }) {
           <a className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`} href="/icons">
             Icons
           </a>
-          <a
-            className={`${utilStyles.Menulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
-            href="/case-studies"
-          >
-            Case Studies
-          </a>
+          <div className={`${utilStyles.dropDown}`}>
+              <a
+                className={`${utilStyles.Menulink} ${utilStyles.dropdownMenulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
+                href="/case-studies"
+              >
+                Case Studies
+              </a>
+                  <div className={`${utilStyles.dropDownList}`}>
+                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/design-of-clans'>Clans</a>
+                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/mw5-mercenaries'>Mercenariess</a>
+                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/ui-mwo-product-pages'>MWO</a>
+                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/mechcon-design-system'>Mech_Con</a>
+                  </div>
+          </div>
           <button
             onClick={handleCollaborateClick}
             className={`${utilStyles.Menulink} ${utilStyles.collabMenulink} ${
