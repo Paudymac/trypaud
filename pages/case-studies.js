@@ -1,8 +1,7 @@
 // pages/case-studies.js
-
 import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
+import CaseStudies from '../components/caseStudies';
+
 
 const CaseStudiesPage = () => {
   const caseStudies = [
@@ -12,39 +11,9 @@ const CaseStudiesPage = () => {
 
   return (
     <Layout>
-      <section>
-<h1>Case Studies</h1>
+      
+      <CaseStudies />
 
-          
-          <div className={utilStyles.caseStudies}>
-          <a className={`${utilStyles.caseStudy} ${utilStyles.caseStudy4}`} href="/case-studies/design-of-clans">
-              <h3>Design of Clans</h3>
-            </a>
-            <a className={`${utilStyles.caseStudy} ${utilStyles.caseStudy3}`} href="/case-studies/mw5-mercenaries">
-              <h3>MW5 Mercenaries Marketing</h3>
-            </a>
-            <a className={`${utilStyles.caseStudy} ${utilStyles.caseStudy1}`} href="/case-studies/ui-mwo-product-pages">
-            <h3>UI for MWO Product Pages</h3>
-            </a>
-            <a className={`${utilStyles.caseStudy} ${utilStyles.caseStudy2}`} href="/case-studies/mechcon-design-system">
-              <h3>Mech_Con Design System</h3>
-            </a>
-          </div>
-</section>
-
-      {/* <div>
-        <h1>Case Studies</h1>
-        <p>Explore our detailed case studies below.</p>
-        <ul>
-          {caseStudies.map((caseStudy) => (
-            <li key={caseStudy.slug}>
-              <Link href={`/case-studies/${caseStudy.slug}`}>
-                {caseStudy.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </Layout>
   );
 };

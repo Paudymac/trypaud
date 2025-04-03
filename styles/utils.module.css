@@ -594,6 +594,22 @@
   margin-bottom: 0;
 }
 
+.caseStudy.visible {
+  /* opacity: 1;
+  transform: scale(1); */
+  animation: fadeInScaleUp 0.5s ease forwards;
+}
+
+.caseStudy {
+  opacity: 0; /* Start with hidden logos */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.caseStudy1.visible { animation-delay: 0.1s; }
+.caseStudy2.visible  { animation-delay: 0.2s; }
+.caseStudy3.visible  { animation-delay: 0.3s; }
+.caseStudy4.visible { animation-delay: 0.4s; }
+
 .caseStudies {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -618,6 +634,7 @@
   height: 400px;
   background-size: 140%;
   background-position: top center;
+  transition: all ease 0.3s;
 }
 
 @media only screen and (max-width: 900px) {
@@ -629,6 +646,7 @@
 
 .caseStudy:hover {
   background-size: 145%;
+  /* transition: all ease 0.3s; */
 }
 
 .caseStudy1 {
@@ -647,10 +665,9 @@
   background-image: url('/images/case-studies/clans-img-sm-case-study4.webp');
 }
 
+
 .caseStudies h3 {
   margin-top: 0;
-  /* position: absolute;
-  bottom: 0; */
   color: white;
 }
 
