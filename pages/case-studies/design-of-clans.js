@@ -79,6 +79,8 @@ export default function CaseStudy({  }) {
       <div className={styles.caseStudyContainer}>
           <p>Website design was priortised to show character videos, trailers and giving players a path to their preferred game vendor.
             The look and feel consolidated the marketing campaign with the game ui viusals to create a coherent brand experience. 
+            Themed widgets from the game were used in the site design as frames for content including text and images were converted into css components.
+            A colour scheme was created to be used for the web based on keyart from ad agency Petrol and the game UI.
           </p>
           <p><Image className={styles.caseStudyImg}
                            priority
