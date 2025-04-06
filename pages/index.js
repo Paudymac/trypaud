@@ -37,7 +37,7 @@ export default function Home({ allPostsData }) {
                 loop
                 preload="auto"
               >
-                <source src="/video/header-video_20_secs.mp4" type="video/mp4" />
+                <source src="/video/header-video.mp4" type="video/mp4" />
                 <track src="/path/to/captions.vtt" kind="subtitles" srcLang="en" label="English" />
                 Your browser does not support the video tag.
               </video>
