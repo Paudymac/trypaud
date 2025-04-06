@@ -135,7 +135,7 @@
 
 .videoReelContainer {
   position: absolute;
-  background-color: black;
+  background-color: #ce0505;
   width: 100%;
   transform: translateZ(0);
 }
