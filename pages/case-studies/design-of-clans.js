@@ -38,6 +38,17 @@ export default function CaseStudy({  }) {
         <article id="case-study">
         <div className={styles.caseStudyContainer}>
           <h2>CLANS is the latest standalone release from Piranha Games which takes place in the Mechwarrior Universe however it is a completely different game from MW5 Mercenaries. </h2>
+          <h3>My Role</h3>
+          <ul>
+            <li>Discovery</li>
+            <li>Competition Analysis</li>
+            <li>Branding</li>
+            <li>Logo Design</li>
+            <li>Content</li>
+            <li>Wireframes</li>
+            <li>Mockups</li>
+            <li>Frontend Dev</li>
+          </ul>
         <p>
         The challenge was to create a brand and marketing experience to support the release of MECHWARRIOR 5: CLANS. It features a new story rich campaign which you can play with 5 other 
         friends in a more immersive experience utilising the latest technology updates from unreal engine.  
@@ -76,6 +87,16 @@ export default function CaseStudy({  }) {
                            alt="Logo"
                          />
       </div>
+      <div className={styles.caseStudyWideImgContainer}>
+      <span className={styles.caseStudyWideImgMeta}>Website Mockup Phase & Site flow.</span>
+        <Image className={styles.caseStudyImg}
+                           priority
+                           src="/images/case-studies/case-study-4-clans-website-design-img.webp"
+                           height={1080}
+                           width={1920}
+                           alt="Logo"
+                         />
+      </div>
       <div className={styles.caseStudyContainer}>
           <p>Website design was priortised to show character videos, trailers and giving players a path to their preferred game vendor.
             The look and feel consolidated the marketing campaign with the game ui viusals to create a coherent brand experience. 
@@ -90,6 +111,7 @@ export default function CaseStudy({  }) {
                            alt="Logo"
                          /></p>
           </div>
+
           <div className={styles.caseStudyWideImgContainer}>
       <span className={styles.caseStudyWideImgMeta}>Clans website aims to showcase the new characters.</span>
         <Image className={styles.caseStudyImg}
@@ -101,7 +123,7 @@ export default function CaseStudy({  }) {
                          />
       </div>
       <div className={styles.caseStudyContainer}>
-          <p>Responsive web design techniques were used in making sure the site had a seamless mobile experience. Even though the site is image heavy file size was kept low with the webp image format.
+          <p>Responsive web design techniques were used in making sure the site had a seamless mobile experience. This was made easier using webp images and tailwind a utility first CSS framework.
 
           </p>
           </div>
