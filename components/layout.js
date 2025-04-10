@@ -133,7 +133,7 @@ export default function Layout({ children, home }) {
                 className={`${utilStyles.Menulink} ${utilStyles.dropdownMenulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
                 href="/case-studies"
               >
-                Case Studies
+                Case Studies &#11206;
               </a>
                   <div className={`${utilStyles.dropDownList}`}>
                     <a className={`${utilStyles.dropDownLink}`} href='/case-studies/design-of-clans'>Clans</a>
@@ -195,7 +195,7 @@ export default function Layout({ children, home }) {
             onClick={handleCollaborateClick}
             className={`${styles.primaryBtn}`}
           >
-            let's Collaborate &rarr;
+            let's Collaborate &#129138;
           </button>
          
          
