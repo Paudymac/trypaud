@@ -21,6 +21,7 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <meta charset="UTF-8" />
       </Head>
       <section >
 

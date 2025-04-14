@@ -1,0 +1,16 @@
+module.exports = {
+    // ... other config
+    headers: async () => {
+      return [
+        {
+          source: '/(.*)',
+          headers: [
+            {
+              key: 'Content-Type',
+              value: 'text/html; charset=UTF-8',
+            },
+          ],
+        },
+      ]
+    },
+  }
