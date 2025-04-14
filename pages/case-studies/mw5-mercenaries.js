@@ -89,8 +89,8 @@ export default function CaseStudy({  }) {
       </div>
 
       <div className={styles.caseStudyContainer}>
-          <p>The goal was not to keep things simple. The site had look good on mobile just as much as desktop. Traffic was being driven from visuals on social media which were added to DLC page designs.
-            Interactive game content including video, in game screenshots and basic story narratives were added so players had a good understanding of what was in each DLC Pack. 
+          <p>The goal was to keep things simple. The site had look good on mobile just as much as desktop. Traffic was being driven from visuals on social media which were added to DLC page designs.
+            Interactive game content including video, in game screenshots and basic story narratives were added so players had a good understanding of content in each DLC Pack. 
           </p>
           </div>
          
