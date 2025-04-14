@@ -92,6 +92,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="googlebot" content="notranslate" />
         <meta name="google" content="notranslate" />
+        <meta charset="UTF-8" />
       </Head>
       <header className={styles.header}>
         <Menu />
