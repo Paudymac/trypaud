@@ -162,7 +162,7 @@ export default function Layout({ children, home }) {
         {!home && !isChildCaseStudiesPage && (
          <p className={styles.backToBtnContainer}>
             <Link href="/" className={styles.primaryBtn}>
-              ← Back to home
+            <span  className={`${styles.arrowIcoHTF}`}>🡰</span> Back to home
             </Link>
           </p>
         )}
@@ -196,7 +196,7 @@ export default function Layout({ children, home }) {
             onClick={handleCollaborateClick}
             className={`${styles.primaryBtn}`}
           >
-            let's Collaborate <span  className={`${styles.arrowIcoHTF}`}>➔</span>
+            let's Collaborate <span  className={`${styles.arrowIcoHTF}`}>🡲</span>
           </button>
          
          
