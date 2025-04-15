@@ -196,7 +196,7 @@ export default function Layout({ children, home }) {
             onClick={handleCollaborateClick}
             className={`${styles.primaryBtn}`}
           >
-            let's Collaborate &#129138;
+            let's Collaborate <span  className={`${styles.arrowIcoHTF}`}>➔</span>
           </button>
          
          
