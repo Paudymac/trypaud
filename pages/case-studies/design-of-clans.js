@@ -141,7 +141,7 @@ export default function CaseStudy({  }) {
       <div className={styles.caseStudyContainer}>
                          
     <p className={stylesLayout.backToBtnContainer}>
-        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}> <span  className={`${styles.arrowIcoHTF}`}>🡰</span> Case Studies</a>
+        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}> <span  className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case Studies</a>
     </p>
           </div>
          
