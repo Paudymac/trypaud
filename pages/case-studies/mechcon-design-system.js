@@ -111,7 +111,7 @@ export default function CaseStudy({  }) {
     <p>In conclusion Mech_Con provided a complex design challenge with numerous variables coalesing on the week prior to commencement. 
       The hexagon proved a useful cornerstone for asset creation reducing design thinking time and speeding up development. </p>
     <p className={stylesLayout.backToBtnContainer}>
-        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}><span  className={`${styles.arrowIcoHTF}`}>&#8678;</span> Case Studies</a>
+        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}><span  className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case Studies</a>
     </p>
     </div>        
           </article>

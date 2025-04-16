@@ -43,7 +43,7 @@ export default function Home({ allPostsData }) {
                 Your browser does not support the video tag.
               </video>
               <button onClick={scrollToTarget} className={`${stylesLayout.primaryBtn} ${stylesLayout.headerBtn}`}>
-                let's collaborate <span  className={`${styles.arrowIcoHTF}`}>&#8680;</span>
+                let's collaborate <span  className={`${styles.arrowIcoHTF}`}>&#11157;</span>
               </button>
             </div>
           </div>

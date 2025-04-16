@@ -87,7 +87,7 @@ export default function CaseStudy({  }) {
 <div className={styles.caseStudyContainer}>
   <p>After a game rebrand in 2023 a new Battlepass feature was added to incentive players to buy and play Mechs with new greater value added to the Mech the more you played. </p>
     <p className={stylesLayout.backToBtnContainer}>
-        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}><span  className={`${styles.arrowIcoHTF}`}>&#8678;</span> Case Studies</a>
+        <a href="/case-studies" className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}><span  className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case Studies</a>
     </p>
           </div>
           </article>
