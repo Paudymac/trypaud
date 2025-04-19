@@ -572,6 +572,18 @@
   border-radius: 15px;
 }
 
+.aboutMeImgContainer.visible, .aboutMeDescipt.visible {
+  animation: fadeInScaleUp 0.5s ease forwards;
+}
+
+.aboutMeImgContainer, .aboutMeDescipt {
+  opacity: 0; /* Start with hidden logos */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.aboutMeImgContainer.visible { animation-delay: 0.1s; }
+.aboutMeDescipt.visible  { animation-delay: 0.2s; }
+
 @media only screen and (max-width: 600px) {
   .aboutMeImgContainer {
     width: 100%;
