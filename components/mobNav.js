@@ -7,6 +7,7 @@ import useScrollTo from '../components/scrollTo';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCollaborateSectionInView, setIsCollaborateSectionInView] = useState(false);
   const router = useRouter();
 
   // Function to toggle the menu state
