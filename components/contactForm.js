@@ -38,8 +38,8 @@ export default function ContactForm() {
       } else {
         alert('Failed to send message.');
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch {
+      // Error submitting form
       alert('An error occurred while submitting the form.');
     }
   };

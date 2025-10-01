@@ -7,12 +7,7 @@ import useScrollTo from '../components/scrollTo';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCollaborateSectionInView, setIsCollaborateSectionInView] =
-    useState(false);
   const router = useRouter();
-
-  // Check if the current route is the homepage
-  const isHomePage = router.pathname === '/';
 
   // Function to toggle the menu state
   const toggleMenu = () => {
@@ -27,7 +22,6 @@ const Menu = () => {
       if (collaborateSection) {
         const rect = collaborateSection.getBoundingClientRect();
         const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
-
 
         setIsCollaborateSectionInView(isInView);
       }
@@ -63,7 +57,6 @@ const Menu = () => {
     }
     toggleMenu(); // Close the menu after clicking
   };
-
 
   return (
     <div className={styles.mobileMenu}>
@@ -120,49 +113,49 @@ const Menu = () => {
           </Link>
         </li>
         <li>
-          <a
+          <Link
             className={`${styles.mobMenuLink} ${isActiveLink('/branding') ? styles.activeLink : ''}`}
             href="/branding"
             onClick={toggleMenu}
           >
             Branding
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className={`${styles.mobMenuLink} ${isActiveLink('/animation') ? styles.activeLink : ''}`}
             href="/animation"
             onClick={toggleMenu}
           >
             Animation
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className={`${styles.mobMenuLink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`}
             href="/illustration"
             onClick={toggleMenu}
           >
             Illustration
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className={`${styles.mobMenuLink} ${isActiveLink('/icons') ? styles.activeLink : ''}`}
             href="/icons"
             onClick={toggleMenu}
           >
             Icons
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className={`${styles.mobMenuLink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
             href="/case-studies"
             onClick={toggleMenu}
           >
             Case Studies
-          </a>
+          </Link>
         </li>
         <li>
           <button

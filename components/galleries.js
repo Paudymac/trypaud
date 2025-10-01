@@ -1,6 +1,7 @@
 import { useIntersectionObserver } from './intersectionObserver';
 import utilStyles from '../styles/utils.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Galleries = () => {
   const [ref1, isVisible1] = useIntersectionObserver({ threshold: 0.1 });
@@ -14,7 +15,7 @@ const Galleries = () => {
     <div className={utilStyles.galleryMenuConatiner}>
       <h1>Galleries</h1>
       <nav className={utilStyles.mainMenuParent}>
-        <a
+        <Link
           ref={ref1}
           className={`${utilStyles.mainMenu} ${isVisible1 ? utilStyles.visible : ''}`}
           href="/ui-web"
@@ -25,10 +26,11 @@ const Galleries = () => {
             height={64}
             width={64}
             className={utilStyles.mainMenuImg}
+            alt="UI/Web gallery"
           />
           UI / Web
-        </a>
-        <a
+        </Link>
+        <Link
           ref={ref2}
           className={`${utilStyles.mainMenu} ${isVisible2 ? utilStyles.visible : ''}`}
           href="/logos"
@@ -39,10 +41,11 @@ const Galleries = () => {
             height={64}
             width={64}
             className={utilStyles.mainMenuImg}
+            alt="Logos gallery"
           />
           Logos
-        </a>
-        <a
+        </Link>
+        <Link
           ref={ref3}
           className={`${utilStyles.mainMenu} ${isVisible3 ? utilStyles.visible : ''}`}
           href="/branding"
@@ -53,10 +56,11 @@ const Galleries = () => {
             height={64}
             width={64}
             className={utilStyles.mainMenuImg}
+            alt="Branding gallery"
           />
           Branding
-        </a>
-        <a
+        </Link>
+        <Link
           ref={ref4}
           className={`${utilStyles.mainMenu} ${isVisible4 ? utilStyles.visible : ''}`}
           href="/icons"
@@ -67,10 +71,11 @@ const Galleries = () => {
             height={64}
             width={64}
             className={utilStyles.mainMenuImg}
+            alt="Icons gallery"
           />
           Icons
-        </a>
-        <a
+        </Link>
+        <Link
           ref={ref5}
           className={`${utilStyles.mainMenu} ${isVisible5 ? utilStyles.visible : ''}`}
           href="/animation"
@@ -81,10 +86,11 @@ const Galleries = () => {
             height={64}
             width={64}
             className={utilStyles.mainMenuImg}
+            alt="Animation gallery"
           />
           Animation
-        </a>
-        <a
+        </Link>
+        <Link
           ref={ref6}
           className={`${utilStyles.mainMenu} ${isVisible6 ? utilStyles.visible : ''}`}
           href="/illustration"
@@ -95,9 +101,10 @@ const Galleries = () => {
             height={64}
             width={64}
             className={utilStyles.mainMenuImg}
+            alt="Illustration gallery"
           />
           Illustration
-        </a>
+        </Link>
       </nav>
     </div>
   );

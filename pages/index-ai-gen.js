@@ -2,9 +2,8 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import Date from '../components/date';
 
-export default function Home({ allPostsData }) {
+export default function Home() {
   return (
     <Layout home>
       <Head>
@@ -22,35 +21,35 @@ export default function Home({ allPostsData }) {
 
           <p>
             To learn more about me read
-            <a href="/my-design-story"> My Design Story.</a>
+            <Link href="/my-design-story"> My Design Story.</Link>
           </p>
         </div>
         <br />
         <div className={utilStyles.mainMenuParent}>
-          <a className={utilStyles.mainMenu} href="/logos">
+          <Link className={utilStyles.mainMenu} href="/logos">
             Logos
-          </a>
-          <a className={utilStyles.mainMenu} href="/icons">
+          </Link>
+          <Link className={utilStyles.mainMenu} href="/icons">
             Icons
-          </a>
-          <a className={utilStyles.mainMenu} href="/branding">
+          </Link>
+          <Link className={utilStyles.mainMenu} href="/branding">
             Branding
-          </a>
-          <a className={utilStyles.mainMenu} href="/ui">
+          </Link>
+          <Link className={utilStyles.mainMenu} href="/ui">
             UI
-          </a>
-          <a className={utilStyles.mainMenu} href="/animation">
+          </Link>
+          <Link className={utilStyles.mainMenu} href="/animation">
             Animation
-          </a>
-          <a className={utilStyles.mainMenu} href="/illustration">
+          </Link>
+          <Link className={utilStyles.mainMenu} href="/illustration">
             Illustration
-          </a>
-          <a className={utilStyles.mainMenu} href="/print">
+          </Link>
+          <Link className={utilStyles.mainMenu} href="/print">
             Print
-          </a>
-          <a className={utilStyles.mainMenu} href="/miscellaneous">
+          </Link>
+          <Link className={utilStyles.mainMenu} href="/miscellaneous">
             Miscellaneous
-          </a>
+          </Link>
         </div>
       </section>
     </Layout>

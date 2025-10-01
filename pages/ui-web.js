@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import utilStyles from '../styles/utils.module.css';
 import Layout, { siteTitle } from '../components/layout';
-import Image from 'next/image';
-import BackgroundImage from '../components/backgroundImage';
 import styles from '../components/backgroundImage.module.css';
 import ImageCarousel from '../components/ImageCarousel';
 
@@ -64,7 +62,7 @@ const images8 = [
   '/images/ui/mwomercs-legends-moonwalker2.webp',
 ];
 
-export default function Websites({}) {
+export default function Websites() {
   return (
     <Layout>
       <Head>

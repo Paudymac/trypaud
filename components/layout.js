@@ -42,7 +42,6 @@ export default function Layout({ children, home }) {
         const rect = collaborateSection.getBoundingClientRect();
         const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
 
-
         setIsCollaborateSectionInView(isInView);
       }
     };
@@ -102,7 +101,7 @@ export default function Layout({ children, home }) {
             !isHomePage ? utilStyles.MenuParentChildren : ''
           } ${isHomePage && isScrolled ? utilStyles.scrolledNav : ''}`}
         >
-          <a className={utilStyles.Menuhome} href="/">
+          <Link className={utilStyles.Menuhome} href="/">
             <Image
               priority
               src="/logo-sm-icon.svg"
@@ -110,76 +109,76 @@ export default function Layout({ children, home }) {
               width={50}
               alt={name}
             />
-          </a>
+          </Link>
 
-          <a
+          <Link
             className={`${utilStyles.Menulink} ${isActiveLink('/ui-web') ? styles.activeLink : ''}`}
             href="/ui-web"
           >
             UI / Web
-          </a>
-          <a
+          </Link>
+          <Link
             className={`${utilStyles.Menulink} ${isActiveLink('/logos') ? styles.activeLink : ''}`}
             href="/logos"
           >
             Logos
-          </a>
-          <a
+          </Link>
+          <Link
             className={`${utilStyles.Menulink} ${isActiveLink('/branding') ? styles.activeLink : ''}`}
             href="/branding"
           >
             Branding
-          </a>
-          <a
+          </Link>
+          <Link
             className={`${utilStyles.Menulink} ${isActiveLink('/animation') ? styles.activeLink : ''}`}
             href="/animation"
           >
             Animation
-          </a>
-          <a
+          </Link>
+          <Link
             className={`${utilStyles.Menulink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`}
             href="/illustration"
           >
             Illustration
-          </a>
-          <a
+          </Link>
+          <Link
             className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`}
             href="/icons"
           >
             Icons
-          </a>
+          </Link>
           <div className={`${utilStyles.dropDown}`}>
-            <a
+            <Link
               className={`${utilStyles.Menulink} ${utilStyles.dropdownMenulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
               href="/case-studies"
             >
               Case Studies &#11206;
-            </a>
+            </Link>
             <div className={`${utilStyles.dropDownList}`}>
-              <a
+              <Link
                 className={`${utilStyles.dropDownLink}`}
                 href="/case-studies/design-of-clans"
               >
                 Clans
-              </a>
-              <a
+              </Link>
+              <Link
                 className={`${utilStyles.dropDownLink}`}
                 href="/case-studies/mw5-mercenaries"
               >
                 Mercenariess
-              </a>
-              <a
+              </Link>
+              <Link
                 className={`${utilStyles.dropDownLink}`}
                 href="/case-studies/ui-mwo-product-pages"
               >
                 MWO
-              </a>
-              <a
+              </Link>
+              <Link
                 className={`${utilStyles.dropDownLink}`}
                 href="/case-studies/mechcon-design-system"
               >
                 Mech_Con
-              </a>
+              </Link>
             </div>
           </div>
           <button
@@ -233,7 +232,7 @@ export default function Layout({ children, home }) {
           <div className={styles.collabBtnFooterContainer}>
             <p className={styles.logoBtnFooterContainer}>
               {' '}
-              <a href="/">
+              <Link href="/">
                 <Image
                   priority
                   src="/trypaud-logo-white-100px.svg"
@@ -241,7 +240,7 @@ export default function Layout({ children, home }) {
                   width={150}
                   alt={name}
                 />
-              </a>
+              </Link>
             </p>
             <button
               onClick={handleCollaborateClick}

@@ -1,6 +1,6 @@
 // pages/case-studies/[slug].js
 
-import Layout, { siteTitle } from '../../components/layout';
+import Layout from '../../components/layout';
 
 const CaseStudy = ({ slug }) => {
   // Fetch case study data based on the slug

@@ -5,6 +5,7 @@ import utilStyles from '../../styles/utils.module.css';
 import styles from '../../components/caseStudy.module.css';
 import Image from 'next/image';
 import scrollTo from '../../components/scrollTo';
+import Link from 'next/link';
 
 export default function CaseStudy({}) {
   const { scrollToTarget } = scrollTo({ targetId: 'case-study' });
@@ -143,14 +144,14 @@ export default function CaseStudy({}) {
 
           <div className={styles.caseStudyContainer}>
             <p className={stylesLayout.backToBtnContainer}>
-              <a
+              <Link
                 href="/case-studies"
                 className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}
               >
                 {' '}
                 <span className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case
                 Studies
-              </a>
+              </Link>
             </p>
           </div>
         </article>

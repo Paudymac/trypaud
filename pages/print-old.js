@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import utilStyles from '../styles/utils.module.css';
 import Layout, { siteTitle } from '../components/layout';
-import Image from 'next/image';
 import BackgroundImage from '../components/backgroundImage';
 import styles from '../components/backgroundImage.module.css';
 
-export default function Logos({ allPostsData }) {
+export default function Logos() {
   return (
     <Layout>
       <Head>

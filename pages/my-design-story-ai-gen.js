@@ -2,8 +2,9 @@ import Head from 'next/head';
 import utilStyles from '../styles/utils.module.css';
 import Layout, { siteTitle } from '../components/layout';
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Logos({ allPostsData }) {
+export default function Logos() {
   return (
     <Layout home>
       <Head>
@@ -111,7 +112,7 @@ export default function Logos({ allPostsData }) {
           </p>
         </div>
       </section>
-      <a href="/">&larr; home</a>
+      <Link href="/">&larr; home</Link>
     </Layout>
   );
 }
