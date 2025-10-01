@@ -45,7 +45,6 @@ export default function ContactForm() {
   };
 
   return (
-    
     <form onSubmit={handleSubmit} className={styles.contactForm}>
       <div>
         <label htmlFor="name">Name</label>
@@ -81,6 +80,5 @@ export default function ContactForm() {
       </div>
       <button type="submit">Submit</button>
     </form>
- 
   );
 }

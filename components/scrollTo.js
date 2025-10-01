@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-// scroll to function for page
-const scrollTo = ({ targetId }) => {
+// Custom hook for scrolling to targets
+const useScrollTo = ({ targetId }) => {
   const scrollToTarget = useCallback(() => {
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
@@ -9,7 +9,7 @@ const scrollTo = ({ targetId }) => {
     }
   }, [targetId]);
 
-  return { scrollToTarget }; 
+  return { scrollToTarget };
 };
 
-export default scrollTo;
+export default useScrollTo;

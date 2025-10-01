@@ -1,25 +1,23 @@
 import Head from 'next/head';
 import utilStyles from '../styles/utils.module.css';
 import Layout, { siteTitle } from '../components/layout';
-import Image from 'next/image';
 import BackgroundImage from '../components/backgroundImage';
 import styles from '../components/backgroundImage.module.css';
 import ImageCarousel from '../components/ImageCarousel';
 
-
 const images = [
-  "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-ibrahim.webp",
-  "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-noedit-ibrahim.webp",
-  "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-leo-only.webp",
-  "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-noedit-leo-only.webp",
-  "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-mia-only.webp",
-  "/images/illustration/MW5C_KA_16x9_v02_240717_Profile-noedit-mia-only.webp",
+  '/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-ibrahim.webp',
+  '/images/illustration/MW5C_KA_16x9_v02_240717_Profile-noedit-ibrahim.webp',
+  '/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-leo-only.webp',
+  '/images/illustration/MW5C_KA_16x9_v02_240717_Profile-noedit-leo-only.webp',
+  '/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-mia-only.webp',
+  '/images/illustration/MW5C_KA_16x9_v02_240717_Profile-noedit-mia-only.webp',
 ];
 
-export default function Logos({ allPostsData }) {
+export default function Logos() {
   return (
     <Layout>
-     <Head>
+      <Head>
         <title>{siteTitle}</title>
       </Head>
       <section>
@@ -29,83 +27,107 @@ export default function Logos({ allPostsData }) {
         <h3 className={utilStyles.header3Portfolio}>MechWarrior 5 Clans Art</h3>
         <p className={utilStyles.descriptionPortfolio}> [ Design ]</p>
         <div className={styles.imageBg}>
-        <ImageCarousel images={images} />
+          <ImageCarousel images={images} />
         </div>
 
         <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>MechWarrior 5 Clans DLC Art <a className={utilStyles.launch} href="https://mw5clans.com/dlc/trials-of-war">Launch</a></h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+        <h3 className={utilStyles.header3Portfolio}>
+          MechWarrior 5 Clans DLC Art{' '}
+          <a
+            className={utilStyles.launch}
+            href="https://mw5clans.com/dlc/trials-of-war"
+          >
+            Launch
+          </a>
+        </h3>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Art Direction ]
+        </p>
 
-         <a className={styles.imageLink} href="https://mw5clans.com/dlc/trials-of-war"><BackgroundImage 
-        imageUrl="/images/illustration/MW5C_TOW_KA_16x9.jpg"
-        /> </a>
+        <a
+          className={styles.imageLink}
+          href="https://mw5clans.com/dlc/trials-of-war"
+        >
+          <BackgroundImage imageUrl="/images/illustration/MW5C_TOW_KA_16x9.jpg" />{' '}
+        </a>
 
-       
         <span className={utilStyles.datePortfolio}>2023</span>
         <h3 className={utilStyles.header3Portfolio}>MWO Legends Art</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Art Direction ]
+        </p>
 
-         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/illustration/mwo-legends-art-atlas.webp"
-        paddingBottom= "50%"
-        backgroundPositionY="center"
-        />
+        <div className={styles.imageBg}>
+          <BackgroundImage
+            imageUrl="/images/illustration/mwo-legends-art-atlas.webp"
+            paddingBottom="50%"
+            backgroundPositionY="center"
+          />
         </div>
-        
 
         <span className={utilStyles.datePortfolio}>2021</span>
         <h3 className={utilStyles.header3Portfolio}> Xmas Card</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/illustration/xmas-card-2.webp"
-        paddingBottom= "120%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/illustration/xmas-card-2.webp"
+            paddingBottom="120%"
+            backgroundPositionY="center"
+          />
         </div>
 
         <span className={utilStyles.datePortfolio}>2020</span>
         <h3 className={utilStyles.header3Portfolio}> MW5 Mercs Dev Tee</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/illustration/mw5mercs-tee-design.webp"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/illustration/mw5mercs-tee-design.webp"
+            backgroundPositionY="center"
+          />
         </div>
-
 
         <span className={utilStyles.datePortfolio}>2020</span>
         <h3 className={utilStyles.header3Portfolio}> Xmas Card</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/illustration/xmas-card-1.webp"
-        paddingBottom= "73%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/illustration/xmas-card-1.webp"
+            paddingBottom="73%"
+            backgroundPositionY="center"
+          />
         </div>
-        
-         <span className={utilStyles.datePortfolio}>2018</span>
-        <h3 className={utilStyles.header3Portfolio}>MechWarrior 5 Branding Illustration</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
 
+        <span className={utilStyles.datePortfolio}>2018</span>
+        <h3 className={utilStyles.header3Portfolio}>
+          MechWarrior 5 Branding Illustration
+        </h3>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/illustration/vector-art-mw5.svg"
-        paddingBottom= "61%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/illustration/vector-art-mw5.svg"
+            paddingBottom="61%"
+            backgroundPositionY="center"
+          />
         </div>
-        
-        </section>
-
-      </Layout>
-    );
+      </section>
+    </Layout>
+  );
 }
-

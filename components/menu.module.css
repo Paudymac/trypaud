@@ -30,7 +30,7 @@
   width: 100%;
 }
 
-.mobileMenu li  a {
+.mobileMenu li a {
   display: block;
 }
 
@@ -46,18 +46,18 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.5s;
-  border-radius:23px;
-  font-size:0.75rem;
-  letter-spacing:0.2rem;
+  border-radius: 23px;
+  font-size: 0.75rem;
+  letter-spacing: 0.2rem;
   text-indent: 33px;
   float: right;
-/*  position: absolute;
+  /*  position: absolute;
   left: 0;*/
 }
 
 .mobileBtn:hover {
-/*  background-color: rgba(184,189,191, 1);*/
-  color:#2fbcfa;
+  /*  background-color: rgba(184,189,191, 1);*/
+  color: #2fbcfa;
 }
 
 .mobileBtn:active {
@@ -78,7 +78,7 @@
   justify-content: space-between;
   width: 23px;
   position: absolute;
-  top:17px;
+  top: 17px;
 }
 
 .menuIconOpen {
@@ -88,11 +88,14 @@
 .mobileBar {
   height: 3px;
   background-color: #383838;
-  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .mobileBtn:hover .mobileBar {
-  background-color:#2fbcfa;
+  background-color: #2fbcfa;
 }
 
 .mobileBar:active .mobileBar {
@@ -114,20 +117,19 @@
   /* background-color: #035977; */
 }
 
-
 .mobileBar2Open {
   transform: translateY(0) rotate(-45deg);
   /* background-color: #035977; */
 }
 
 .mobMenuLink {
-    padding: 1.5rem 1rem;
-    text-align: center;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.2rem;
-    color: #383838;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  color: #383838;
 }
 
 .collabMobMenuLink {
@@ -167,12 +169,11 @@
 }
 
 .activeLink {
-  color:#2fbcfa;
+  color: #2fbcfa;
 }
 
 .activeLink:hover {
   background-color: transparent;
-  color:#2fbcfa;
+  color: #2fbcfa;
   cursor: auto;
 }
-

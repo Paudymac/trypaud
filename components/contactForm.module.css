@@ -1,29 +1,28 @@
- /* contact form styles for page */
+/* contact form styles for page */
 .contactForm {
-    padding: 0;
-    width: 50%;
-    margin: auto;
-  }
+  padding: 0;
+  width: 50%;
+  margin: auto;
+}
 
-  .contactFormContainer {
-    max-width: 80rem;
-    margin: 0 auto;
-    margin-top: 4rem;
-  }
+.contactFormContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
 
-  .contactFormContainer h1 {
-    margin-bottom: 0;
-  }
+.contactFormContainer h1 {
+  margin-bottom: 0;
+}
 
-  @media only screen and (max-width: 1024px) {
-    .contactForm { 
-        width: 100%;
-    }
+@media only screen and (max-width: 1024px) {
+  .contactForm {
+    width: 100%;
   }
-  
-  .contactFormHolder {
-    background-color: white;
-    border-radius: 15px;
-    padding: 1rem;
-  }
+}
 
+.contactFormHolder {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+}

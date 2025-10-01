@@ -10,7 +10,6 @@
   }
 }
 
-
 .containerHome {
   max-width: 80rem;
   padding: 0 0.5rem;
@@ -61,7 +60,7 @@
 
 .footerContainer {
   background-color: black;
-  background-image:url('../public/trypaud-logo-lg.svg');
+  background-image: url('../public/trypaud-logo-lg.svg');
   min-height: 400px;
   background-size: 100%;
   background-position: center 90%;
@@ -119,12 +118,12 @@
 }
 
 .activeLink {
-  color:#2fbcfa;
+  color: #2fbcfa;
 }
 
 .activeLink:hover {
   background-color: transparent !important;
-  color:#2fbcfa;
+  color: #2fbcfa;
   cursor: auto;
 }
 
@@ -219,22 +218,22 @@ primary nav btn */
 }
 
 @media only screen and (max-width: 1024px) {
-  .headerBtn  {
+  .headerBtn {
     bottom: 20px;
     right: 20px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .headerBtn  {
-   /* width: 100%;
+  .headerBtn {
+    /* width: 100%;
    bottom: -49px;
    left: 0;
    border-radius: 0;
    border:0;
    display: block; */
-   padding: 0.5rem 1rem;
-   bottom: 10px;
+    padding: 0.5rem 1rem;
+    bottom: 10px;
     right: 10px;
   }
 }
@@ -283,7 +282,7 @@ primary nav btn */
 .backToBtnContainer {
   margin-top: 3rem;
   padding: 2rem 0;
-  border-top: 1px solid rgba(175,173,173,0.5);
+  border-top: 1px solid rgba(175, 173, 173, 0.5);
   text-align: right;
 }
 

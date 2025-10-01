@@ -1,9 +1,8 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import styles from './backgroundImage.module.css';
-
 
 const ImageCarousel = ({ images = [] }) => {
   const settings = {
@@ -21,35 +20,35 @@ const ImageCarousel = ({ images = [] }) => {
   }
 
   return (
-    <div style={{ width: "100%", margin: "0 auto" }}>
+    <div style={{ width: '100%', margin: '0 auto' }}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <div
             key={index}
             style={{
               backgroundImage: `url(${image})`,
-              backgroundSize: "100%",
-              backgroundPosition: "center",
-              height: "1080px", // Set a fixed height or make it responsive
-              width: "100%",
-              lineHeight:"0",
+              backgroundSize: '100%',
+              backgroundPosition: 'center',
+              height: '1080px', // Set a fixed height or make it responsive
+              width: '100%',
+              lineHeight: '0',
             }}
           >
             {/* repeated for more content */}
-            <div className={styles.imgCarouselBg}
-            key={index}
-            style={{
-              backgroundImage: `url(${image})`,
-              backgroundSize: "100%",
-              backgroundPosition: "top center",
-              height: "auto", // Set a fixed height or make it responsive
-              width: "100%",
-              paddingBottom:"56.25%",
-              backgroundRepeat: "no-repeat",
-              lineHeight:"0",
-            }}
-          >
-            </div>
+            <div
+              className={styles.imgCarouselBg}
+              key={index}
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: '100%',
+                backgroundPosition: 'top center',
+                height: 'auto', // Set a fixed height or make it responsive
+                width: '100%',
+                paddingBottom: '56.25%',
+                backgroundRepeat: 'no-repeat',
+                lineHeight: '0',
+              }}
+            ></div>
           </div>
         ))}
       </Slider>

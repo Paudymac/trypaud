@@ -16,7 +16,7 @@ export async function getStaticProps() {
   const iconsData = JSON.parse(fileContent);
 
   // Map filenames to their public URLs
- const images = iconsData.map((filename) => `/images/icons/mwo/${filename}`);
+  const images = iconsData.map((filename) => `/images/icons/mwo/${filename}`);
 
   return {
     props: {
@@ -28,139 +28,162 @@ export async function getStaticProps() {
 export default function Icons({ images }) {
   return (
     <Layout>
-     <Head>
+      <Head>
         <title>{siteTitle}</title>
       </Head>
       <section>
         <h1>Icons</h1>
 
         {/* Dynamically render icons */}
-         <span className={utilStyles.datePortfolio}>2014 - 2024</span>
+        <span className={utilStyles.datePortfolio}>2014 - 2024</span>
         <h3 className={utilStyles.header3Portfolio}>MWO PLayer Icons</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Art Direction ]
+        </p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
           {images.map((image, index) => (
             <div key={index} style={{ textAlign: 'center' }}>
-              <img
+              <Image
                 src={image}
                 alt={`Icon ${index}`}
-                style={{ width: '180px', height: '180px' }}
+                width={180}
+                height={180}
               />
               {/* <p>{image.split('/').pop()}</p>  Display the filename */}
             </div>
           ))}
         </div>
-        
+
         <br />
         <br />
 
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>MW5:Clans Icon</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Development / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/mw5-clans-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/icons/mw5-clans-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
         </div>
 
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Solaris Icon</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Development / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/mw5-dlc6-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/icons/mw5-dlc6-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
         </div>
 
-
         <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>The Dragons Gambit Dragon</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <h3 className={utilStyles.header3Portfolio}>
+          The Dragons Gambit Dragon
+        </h3>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Development / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/mw5-dlc5-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/icons/mw5-dlc5-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
         </div>
 
         <span className={utilStyles.datePortfolio}>2022</span>
-        <h3 className={utilStyles.header3Portfolio}>Rise of Rasalhague Serpent</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <h3 className={utilStyles.header3Portfolio}>
+          Rise of Rasalhague Serpent
+        </h3>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Development / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/mw5-dlc4-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/icons/mw5-dlc4-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
         </div>
-        
-        
+
         <span className={utilStyles.datePortfolio}>2023</span>
         <h3 className={utilStyles.header3Portfolio}>MWO Atlas Icon</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
-
-         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/mwo-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
-        </div>
-
-        
-        <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>Legends of the Kestrel Lancers Bird</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Development / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/mw5-dlc2-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/icons/mwo-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
         </div>
 
+        <span className={utilStyles.datePortfolio}>2021</span>
+        <h3 className={utilStyles.header3Portfolio}>
+          Legends of the Kestrel Lancers Bird
+        </h3>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Development / Art Direction ]
+        </p>
+
+        <div className={styles.imageBg}>
+          <BackgroundImage
+            imageUrl="/images/icons/mw5-dlc2-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
+        </div>
 
         <span className={utilStyles.datePortfolio}>2019</span>
         <h3 className={utilStyles.header3Portfolio}>MW5</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Development / Art Direction ]</p>
+        <p className={utilStyles.descriptionPortfolio}>
+          {' '}
+          [ Design / Development / Art Direction ]
+        </p>
 
-
-         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/mw5-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
+        <div className={styles.imageBg}>
+          <BackgroundImage
+            imageUrl="/images/icons/mw5-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
         </div>
-
-
 
         <span className={utilStyles.datePortfolio}>2012</span>
         <h3 className={utilStyles.header3Portfolio}>Smartt A</h3>
-        <p className={utilStyles.descriptionPortfolio}>Smartt [ Design / Development / Art Direction ]</p>
-
+        <p className={utilStyles.descriptionPortfolio}>
+          Smartt [ Design / Development / Art Direction ]
+        </p>
 
         <div className={styles.imageBg}>
-        <BackgroundImage 
-        imageUrl="/images/icons/smartt-icon.webp"
-        paddingBottom= "56.25%"
-        backgroundPositionY="center"
-        />
+          <BackgroundImage
+            imageUrl="/images/icons/smartt-icon.webp"
+            paddingBottom="56.25%"
+            backgroundPositionY="center"
+          />
         </div>
-
-        </section>
-      </Layout>
-    );
+      </section>
+    </Layout>
+  );
 }
-

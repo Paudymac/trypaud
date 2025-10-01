@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import utilStyles from '../styles/utils.module.css';
 import styles from './menu.module.css';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import scrollTo from '../components/scrollTo';
+import useScrollTo from '../components/scrollTo';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCollaborateSectionInView, setIsCollaborateSectionInView] = useState(false);
+  const [isCollaborateSectionInView, setIsCollaborateSectionInView] =
+    useState(false);
   const router = useRouter();
 
   // Check if the current route is the homepage
@@ -28,9 +28,6 @@ const Menu = () => {
         const rect = collaborateSection.getBoundingClientRect();
         const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
 
-        console.log('Collaborate section in view:', isInView); // Debugging log
-        console.log('Rect top:', rect.top, 'Rect bottom:', rect.bottom); // Debugging log
-        console.log('Window inner height:', window.innerHeight); // Debugging log
 
         setIsCollaborateSectionInView(isInView);
       }
@@ -50,7 +47,7 @@ const Menu = () => {
   };
 
   // Use the scrollTo component
-  const { scrollToTarget } = scrollTo({ targetId: 'collaborate' });
+  const { scrollToTarget } = useScrollTo({ targetId: 'collaborate' });
 
   // Handle the "Collaborate" button click
   const handleCollaborateClick = () => {
@@ -67,12 +64,10 @@ const Menu = () => {
     toggleMenu(); // Close the menu after clicking
   };
 
-  // Determine if the "Collaborate" button should be active
-  const isCollaborateButtonActive = isHomePage && isCollaborateSectionInView;
 
   return (
     <div className={styles.mobileMenu}>
-      <a className={styles.mobMenuHome} href="/">
+      <Link href="/" className={styles.mobMenuHome}>
         <Image
           priority
           src="/logo-sm-icon.svg"
@@ -80,11 +75,17 @@ const Menu = () => {
           width={50}
           alt="Logo"
         />
-      </a>
+      </Link>
       <button className={styles.mobileBtn} onClick={toggleMenu}>
-        <div className={`${styles.menuIcon} ${isMenuOpen ? styles.menuIconOpen : styles.menuIcon}`}>
-          <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar1Open : styles.mobileBar1}`}></span>
-          <span className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar2Open : styles.mobileBar2}`}></span>
+        <div
+          className={`${styles.menuIcon} ${isMenuOpen ? styles.menuIconOpen : styles.menuIcon}`}
+        >
+          <span
+            className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar1Open : styles.mobileBar1}`}
+          ></span>
+          <span
+            className={`${styles.mobileBar} ${isMenuOpen ? styles.mobileBar2Open : styles.mobileBar2}`}
+          ></span>
         </div>
         {isMenuOpen ? 'close' : 'menu'}
       </button>
@@ -99,24 +100,24 @@ const Menu = () => {
             home
           </a>
         </li> */}
-       
+
         <li>
-          <a
+          <Link
             className={`${styles.mobMenuLink} ${isActiveLink('/ui-web') ? styles.activeLink : ''}`}
             href="/ui-web"
             onClick={toggleMenu}
           >
             UI / Web
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className={`${styles.mobMenuLink} ${isActiveLink('/logos') ? styles.activeLink : ''}`}
             href="/logos"
             onClick={toggleMenu}
           >
             Logos
-          </a>
+          </Link>
         </li>
         <li>
           <a

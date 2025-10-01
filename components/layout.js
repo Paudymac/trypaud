@@ -6,7 +6,7 @@ import Menu from './mobNav';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
-import scrollTo from '../components/scrollTo';
+import useScrollTo from '../components/scrollTo';
 import React, { useState, useEffect } from 'react';
 
 const name = 'TryPaud';
@@ -15,7 +15,8 @@ export const siteTitle = 'TryPaud Portfolio';
 export default function Layout({ children, home }) {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isCollaborateSectionInView, setIsCollaborateSectionInView] = useState(false);
+  const [isCollaborateSectionInView, setIsCollaborateSectionInView] =
+    useState(false);
 
   // Check if the current route is the homepage
   const isHomePage = router.pathname === '/';
@@ -41,9 +42,6 @@ export default function Layout({ children, home }) {
         const rect = collaborateSection.getBoundingClientRect();
         const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
 
-        console.log('Collaborate section in view:', isInView); // Debugging log
-        console.log('Rect top:', rect.top, 'Rect bottom:', rect.bottom); // Debugging log
-        console.log('Window inner height:', window.innerHeight); // Debugging log
 
         setIsCollaborateSectionInView(isInView);
       }
@@ -63,7 +61,7 @@ export default function Layout({ children, home }) {
   };
 
   // Use the scrollTo component
-  const { scrollToTarget } = scrollTo({ targetId: 'collaborate' });
+  const { scrollToTarget } = useScrollTo({ targetId: 'collaborate' });
 
   // Handle the "Collaborate" button click
   const handleCollaborateClick = () => {
@@ -87,19 +85,22 @@ export default function Layout({ children, home }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Portfolio site" />
-        <meta property="og:image" content={`/images/logos/trypaud-black-logo-example.webp`} />
+        <meta
+          property="og:image"
+          content={`/images/logos/trypaud-black-logo-example.webp`}
+        />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="googlebot" content="notranslate" />
         <meta name="google" content="notranslate" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
       </Head>
       <header className={styles.header}>
         <Menu />
         <nav
           className={`${utilStyles.MenuParent} ${
             !isHomePage ? utilStyles.MenuParentChildren : ''
-          } ${(isHomePage) && isScrolled ? utilStyles.scrolledNav : ''}`}
+          } ${isHomePage && isScrolled ? utilStyles.scrolledNav : ''}`}
         >
           <a className={utilStyles.Menuhome} href="/">
             <Image
@@ -110,38 +111,76 @@ export default function Layout({ children, home }) {
               alt={name}
             />
           </a>
-         
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/ui-web') ? styles.activeLink : ''}`} href="/ui-web">
+
+          <a
+            className={`${utilStyles.Menulink} ${isActiveLink('/ui-web') ? styles.activeLink : ''}`}
+            href="/ui-web"
+          >
             UI / Web
           </a>
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/logos') ? styles.activeLink : ''}`} href="/logos">
+          <a
+            className={`${utilStyles.Menulink} ${isActiveLink('/logos') ? styles.activeLink : ''}`}
+            href="/logos"
+          >
             Logos
           </a>
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/branding') ? styles.activeLink : ''}`} href="/branding">
+          <a
+            className={`${utilStyles.Menulink} ${isActiveLink('/branding') ? styles.activeLink : ''}`}
+            href="/branding"
+          >
             Branding
           </a>
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/animation') ? styles.activeLink : ''}`} href="/animation">
+          <a
+            className={`${utilStyles.Menulink} ${isActiveLink('/animation') ? styles.activeLink : ''}`}
+            href="/animation"
+          >
             Animation
           </a>
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`} href="/illustration">
+          <a
+            className={`${utilStyles.Menulink} ${isActiveLink('/illustration') ? styles.activeLink : ''}`}
+            href="/illustration"
+          >
             Illustration
           </a>
-          <a className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`} href="/icons">
+          <a
+            className={`${utilStyles.Menulink} ${isActiveLink('/icons') ? styles.activeLink : ''}`}
+            href="/icons"
+          >
             Icons
           </a>
           <div className={`${utilStyles.dropDown}`}>
+            <a
+              className={`${utilStyles.Menulink} ${utilStyles.dropdownMenulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
+              href="/case-studies"
+            >
+              Case Studies &#11206;
+            </a>
+            <div className={`${utilStyles.dropDownList}`}>
               <a
-                className={`${utilStyles.Menulink} ${utilStyles.dropdownMenulink} ${isActiveLink('/case-studies') ? styles.activeLink : ''}`}
-                href="/case-studies"
+                className={`${utilStyles.dropDownLink}`}
+                href="/case-studies/design-of-clans"
               >
-                Case Studies &#11206;
+                Clans
               </a>
-                  <div className={`${utilStyles.dropDownList}`}>
-                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/design-of-clans'>Clans</a>
-                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/mw5-mercenaries'>Mercenariess</a>
-                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/ui-mwo-product-pages'>MWO</a>
-                    <a className={`${utilStyles.dropDownLink}`} href='/case-studies/mechcon-design-system'>Mech_Con</a>
-                  </div>
+              <a
+                className={`${utilStyles.dropDownLink}`}
+                href="/case-studies/mw5-mercenaries"
+              >
+                Mercenariess
+              </a>
+              <a
+                className={`${utilStyles.dropDownLink}`}
+                href="/case-studies/ui-mwo-product-pages"
+              >
+                MWO
+              </a>
+              <a
+                className={`${utilStyles.dropDownLink}`}
+                href="/case-studies/mechcon-design-system"
+              >
+                Mech_Con
+              </a>
+            </div>
           </div>
           <button
             onClick={handleCollaborateClick}
@@ -154,15 +193,22 @@ export default function Layout({ children, home }) {
         </nav>
       </header>
 
-      <div className={!isHomePage && !isChildCaseStudiesPage ? styles.container : ''}>
+      <div
+        className={
+          !isHomePage && !isChildCaseStudiesPage ? styles.container : ''
+        }
+      >
         {isHomePage && <div></div>}
 
-        <main className={!isChildCaseStudiesPage ? styles.mainContent : ''}>{children}</main>
+        <main className={!isChildCaseStudiesPage ? styles.mainContent : ''}>
+          {children}
+        </main>
 
         {!home && !isChildCaseStudiesPage && (
-         <p className={styles.backToBtnContainer}>
+          <p className={styles.backToBtnContainer}>
             <Link href="/" className={styles.primaryBtn}>
-            <span  className={`${styles.arrowIcoHTF}`}>&#11013;</span> Back to home
+              <span className={`${styles.arrowIcoHTF}`}>&#11013;</span> Back to
+              home
             </Link>
           </p>
         )}
@@ -173,7 +219,9 @@ export default function Layout({ children, home }) {
         <footer className={styles.footer}>
           <ul className={styles.footerNav}>
             <li className={styles.footerMenu}>
-              <Link href="https://www.linkedin.com/in/padraic-mcateer-trypaud/">Linkedin</Link>
+              <Link href="https://www.linkedin.com/in/padraic-mcateer-trypaud/">
+                Linkedin
+              </Link>
             </li>
             <li className={styles.footerMenu}>
               <Link href="mailto:paudy@trypaud.com">Email</Link>
@@ -183,23 +231,25 @@ export default function Layout({ children, home }) {
             </li>
           </ul>
           <div className={styles.collabBtnFooterContainer}>
-          <p className={styles.logoBtnFooterContainer}> <a href="/">
-            <Image
-              priority
-              src="/trypaud-logo-white-100px.svg"
-              height={150}
-              width={150}
-              alt={name}
-            />
-          </a></p>
-          <button
-            onClick={handleCollaborateClick}
-            className={`${styles.primaryBtn}`}
-          >
-            let's Collaborate <span  className={`${styles.arrowIcoHTF}`}>&#11157;</span>
-          </button>
-         
-         
+            <p className={styles.logoBtnFooterContainer}>
+              {' '}
+              <a href="/">
+                <Image
+                  priority
+                  src="/trypaud-logo-white-100px.svg"
+                  height={150}
+                  width={150}
+                  alt={name}
+                />
+              </a>
+            </p>
+            <button
+              onClick={handleCollaborateClick}
+              className={`${styles.primaryBtn}`}
+            >
+              let's Collaborate{' '}
+              <span className={`${styles.arrowIcoHTF}`}>&#11157;</span>
+            </button>
           </div>
         </footer>
       </div>

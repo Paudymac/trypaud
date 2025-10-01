@@ -1,5 +1,3 @@
-
-
 .heading2Xl {
   font-size: 2.5rem;
   line-height: 1.2;
@@ -23,7 +21,7 @@
   line-height: 1.4;
   margin: 1rem 0;
   text-transform: uppercase;
-  letter-spacing: 0.15em; 
+  letter-spacing: 0.15em;
 }
 
 .headingMd {
@@ -33,16 +31,14 @@
   letter-spacing: 0.15em;
 }
 
-
 @media only screen and (max-width: 1024px) {
- .headingMd {
+  .headingMd {
     font-size: 1rem;
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 0.15em;
   }
 }
-
 
 .borderCircle {
   border-radius: 0px;
@@ -105,14 +101,14 @@
 
 .partnerLogos {
   list-style: none;
-  margin:0;
+  margin: 0;
   padding: 0.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 1rem;
   align-self: end;
   background-color: white;
-  border-radius:15px;
+  border-radius: 15px;
 }
 
 .partnerLogos img {
@@ -135,7 +131,9 @@
 .partnerLogos li {
   opacity: 0; /* Start with hidden logos */
   /* transform: scale(0.9); */
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .partnerLogos li.visible {
@@ -144,14 +142,30 @@
   animation: fadeInScaleUp 0.5s ease forwards;
 }
 
-.partnerLogos li.visible:nth-child(1) { animation-delay: 0.1s; }
-.partnerLogos li.visible:nth-child(2) { animation-delay: 0.2s; }
-.partnerLogos li.visible:nth-child(3) { animation-delay: 0.3s; }
-.partnerLogos li.visible:nth-child(4) { animation-delay: 0.4s; }
-.partnerLogos li.visible:nth-child(5) { animation-delay: 0.5s; }
-.partnerLogos li.visible:nth-child(6) { animation-delay: 0.6s; }
-.partnerLogos li.visible:nth-child(7) { animation-delay: 0.7s; }
-.partnerLogos li.visible:nth-child(8) { animation-delay: 0.8s; }
+.partnerLogos li.visible:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.partnerLogos li.visible:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.partnerLogos li.visible:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.partnerLogos li.visible:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.partnerLogos li.visible:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.partnerLogos li.visible:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.partnerLogos li.visible:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.partnerLogos li.visible:nth-child(8) {
+  animation-delay: 0.8s;
+}
 
 @media only screen and (max-width: 1280px) {
   .partnerLogos img {
@@ -179,7 +193,6 @@
   }
 }
 
-
 @keyframes fadeInScaleUp {
   0% {
     opacity: 0;
@@ -194,7 +207,9 @@
 .mainMenu {
   opacity: 0; /* Start with hidden logos */
   /* transform: scale(0.9); */
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .mainMenu.visible {
@@ -203,12 +218,24 @@
   animation: fadeInScaleUp 0.5s ease forwards;
 }
 
-.mainMenu.visible:nth-child(1) { animation-delay: 0.1s; }
-.mainMenu.visible:nth-child(2) { animation-delay: 0.2s; }
-.mainMenu.visible:nth-child(3) { animation-delay: 0.3s; }
-.mainMenu.visible:nth-child(4) { animation-delay: 0.4s; }
-.mainMenu.visible:nth-child(5) { animation-delay: 0.5s; }
-.mainMenu.visible:nth-child(6) { animation-delay: 0.6s; }
+.mainMenu.visible:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mainMenu.visible:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mainMenu.visible:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.mainMenu.visible:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.mainMenu.visible:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.mainMenu.visible:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 .mainMenu {
   text-align: center;
@@ -218,8 +245,8 @@
   padding: 2em;
   border: 2px solid #027cb2;
   margin: 0.5em;
-  letter-spacing:0.2em;
-  border-radius:60px;
+  letter-spacing: 0.2em;
+  border-radius: 60px;
   transition: all 0.5s;
   position: relative;
 }
@@ -231,7 +258,7 @@
 
 .mainMenu:active {
   background-color: #035977;
-  border-color:#035977;
+  border-color: #035977;
   color: white;
 }
 
@@ -266,11 +293,11 @@
 }
 
 .MenuParentChildren {
-  border-bottom: 1px solid rgba(175,173,173,0.5);
+  border-bottom: 1px solid rgba(175, 173, 173, 0.5);
 }
 
 .scrolledNav {
-  border-bottom: 1px solid rgba(175,173,173,0.5);
+  border-bottom: 1px solid rgba(175, 173, 173, 0.5);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -282,7 +309,7 @@
 .Menulink {
   padding: 1rem;
   text-align: center;
-/*  width: 12.5%;*/
+  /*  width: 12.5%;*/
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: bold;
@@ -291,7 +318,9 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .Menulink {letter-spacing: 0;}
+  .Menulink {
+    letter-spacing: 0;
+  }
 }
 
 .Menulink:hover {
@@ -380,7 +409,7 @@
 
 .dropDown:hover .dropdownMenulink.activeLink:hover {
   color: white;
-} 
+}
 
 .dropDownList {
   display: none;
@@ -392,7 +421,7 @@
   text-transform: uppercase;
   background: white;
   font-weight: bold;
-  border: 1px solid rgba(175,173,173,0.5);
+  border: 1px solid rgba(175, 173, 173, 0.5);
   letter-spacing: 0.05rem;
 }
 
@@ -438,7 +467,7 @@
 
 .launch {
   display: inline-block;
-/*  float: right;*/
+  /*  float: right;*/
   height: 24px;
   width: 24px;
   background-size: 100%;
@@ -460,9 +489,9 @@
 @media only screen and (max-width: 1024px) {
   .launch {
     display: block;
-     height: 20px;
-     width: 20px;
-     top: 0;
+    height: 20px;
+    width: 20px;
+    top: 0;
   }
   .launch:hover {
     background-position-y: -20px;
@@ -470,24 +499,23 @@
 }
 
 @media only screen and (max-width: 400px) {
-    .launch {
-     
+  .launch {
   }
 }
 
 .datePortfolio {
-    margin-top: -1.5em;
-    font-size: 0.8em;
-    color: white;
-    background-color: #383838;
-    padding: 0 0.3em 0.1em 0.3em;
-    border-radius: 5px 0 5px 0;
+  margin-top: -1.5em;
+  font-size: 0.8em;
+  color: white;
+  background-color: #383838;
+  padding: 0 0.3em 0.1em 0.3em;
+  border-radius: 5px 0 5px 0;
 }
 
 .header3Portfolio {
-    margin-block-end: 0;
-    margin-block-start: 0;
-    text-transform: uppercase;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  text-transform: uppercase;
 }
 
 .descriptionPortfolio {
@@ -495,7 +523,7 @@
 }
 
 .logoHome {
-/*  margin-top: 2rem;
+  /*  margin-top: 2rem;
   opacity: 1;*/
   transition: 0.5s;
   scale: 1;
@@ -508,7 +536,7 @@
 }
 
 .logo {
-    margin: 1rem auto 0;
+  margin: 1rem auto 0;
 }
 
 .galleryMenuConatiner {
@@ -545,7 +573,7 @@
 @media only screen and (max-width: 600px) {
   .aboutMe {
     display: block;
-  }  
+  }
 }
 
 .hpSection {
@@ -560,7 +588,7 @@
 @media only screen and (max-width: 600px) {
   .hpSection {
     display: block;
-  }  
+  }
 }
 
 .aboutMeImgContainer {
@@ -572,17 +600,25 @@
   border-radius: 15px;
 }
 
-.aboutMeImgContainer.visible, .aboutMeDescipt.visible {
+.aboutMeImgContainer.visible,
+.aboutMeDescipt.visible {
   animation: fadeInScaleUp 0.5s ease forwards;
 }
 
-.aboutMeImgContainer, .aboutMeDescipt {
+.aboutMeImgContainer,
+.aboutMeDescipt {
   opacity: 0; /* Start with hidden logos */
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
-.aboutMeImgContainer.visible { animation-delay: 0.1s; }
-.aboutMeDescipt.visible  { animation-delay: 0.2s; }
+.aboutMeImgContainer.visible {
+  animation-delay: 0.1s;
+}
+.aboutMeDescipt.visible {
+  animation-delay: 0.2s;
+}
 
 @media only screen and (max-width: 600px) {
   .aboutMeImgContainer {
@@ -638,7 +674,8 @@
   }
 }
 
-.aboutMeSummary, .hpSectionSummary {
+.aboutMeSummary,
+.hpSectionSummary {
   font-size: 1.2em;
 }
 
@@ -674,13 +711,23 @@
 
 .caseStudy {
   opacity: 0; /* Start with hidden logos */
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
-.caseStudy1.visible { animation-delay: 0.1s; }
-.caseStudy2.visible  { animation-delay: 0.2s; }
-.caseStudy3.visible  { animation-delay: 0.3s; }
-.caseStudy4.visible { animation-delay: 0.4s; }
+.caseStudy1.visible {
+  animation-delay: 0.1s;
+}
+.caseStudy2.visible {
+  animation-delay: 0.2s;
+}
+.caseStudy3.visible {
+  animation-delay: 0.3s;
+}
+.caseStudy4.visible {
+  animation-delay: 0.4s;
+}
 
 .caseStudies {
   display: grid;
@@ -737,7 +784,6 @@
   background-image: url('/images/case-studies/clans-img-sm-case-study4.webp');
 }
 
-
 .caseStudies h3 {
   margin-top: 0;
   color: white;
@@ -758,7 +804,9 @@
 }
 
 @media only screen and (max-width: 1280px) {
-  .articleSection p { width: 80%;}
+  .articleSection p {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 900px) {

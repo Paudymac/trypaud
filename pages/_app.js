@@ -1,12 +1,12 @@
 import '../styles/global.css';
 
-import { Barlow } from 'next/font/google'
- 
+import { Barlow } from 'next/font/google';
+
 const barlow = Barlow({
   weight: ['400', '700'],
-   style: ['normal','italic'],
+  style: ['normal', 'italic'],
   subsets: ['latin'],
-})
+});
 
 export default function App({ Component, pageProps }) {
   return (
@@ -18,5 +18,5 @@ export default function App({ Component, pageProps }) {
       `}</style>
       <Component {...pageProps} />
     </>
-  )
+  );
 }
