@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './menu.module.css';
 import { useRouter } from 'next/router';
@@ -7,34 +7,12 @@ import useScrollTo from '../components/scrollTo';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCollaborateSectionInView, setIsCollaborateSectionInView] = useState(false);
   const router = useRouter();
 
   // Function to toggle the menu state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // Scroll event handler
-  useEffect(() => {
-    const handleScroll = () => {
-      // Check if the collaborate section is in view
-      const collaborateSection = document.getElementById('collaborate');
-      if (collaborateSection) {
-        const rect = collaborateSection.getBoundingClientRect();
-        const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
-
-        setIsCollaborateSectionInView(isInView);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup the event listener on unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   // Check if a link is active
   const isActiveLink = (href) => {
