@@ -40,9 +40,103 @@ function checkRateLimit(ip) {
   return true;
 }
 
+// List of common disposable/temporary email domains
+const disposableEmailDomains = [
+  'tempmail.com',
+  'guerrillamail.com',
+  'mailinator.com',
+  '10minutemail.com',
+  'trashmail.com',
+  'throwaway.email',
+  'maildrop.cc',
+  'temp-mail.org',
+  'getnada.com',
+  'sharklasers.com',
+  'guerrillamailblock.com',
+  'spam4.me',
+  'getairmail.com',
+  'fake-mail.com',
+  'yopmail.com',
+  'mailnesia.com',
+];
+
 function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  if (!emailRegex.test(email)) return false;
+
+  // Check for disposable email domains
+  const domain = email.split('@')[1]?.toLowerCase();
+  if (disposableEmailDomains.includes(domain)) {
+    return false;
+  }
+
+  // Check for suspicious patterns
+  if (
+    email.includes('test') ||
+    email.includes('fake') ||
+    email.includes('spam') ||
+    /^\d+@/.test(email)
+  ) {
+    // Email starts with only numbers
+    return false;
+  }
+
+  return true;
+}
+
+function validateName(name) {
+  // Check if name has at least 2 characters
+  if (name.length < 2) return false;
+
+  // Check for excessive numbers or special characters
+  const numberCount = (name.match(/\d/g) || []).length;
+  if (numberCount > 2) return false; // Names shouldn't have many numbers
+
+  // Check for gibberish patterns (repeating characters)
+  if (/(.)\1{4,}/.test(name)) return false; // "aaaaa" pattern
+
+  // Check for random keyboard mashing patterns
+  if (/^[qwertyuiopasdfghjklzxcvbnm]{10,}$/i.test(name.replace(/\s/g, ''))) {
+    return false;
+  }
+
+  // Name should contain at least one letter
+  if (!/[a-zA-Z]/.test(name)) return false;
+
+  // Check for common spam names
+  const spamNames = [
+    'admin',
+    'administrator',
+    'webmaster',
+    'test',
+    'user',
+    'guest',
+    'demo',
+    'null',
+    'undefined',
+  ];
+  if (spamNames.includes(name.toLowerCase().trim())) {
+    return false;
+  }
+
+  return true;
+}
+
+function validateMessage(message) {
+  // Check for minimum quality
+  if (message.length < 10) return false;
+
+  // Check for excessive repetition
+  if (/(.{3,})\1{3,}/.test(message)) return false; // Repeated phrases
+
+  // Check if message has reasonable word count
+  const words = message.trim().split(/\s+/);
+  if (words.length < 3) return false; // At least 3 words
+
+  // Check for gibberish (too many consonants in a row)
+  if (/[bcdfghjklmnpqrstvwxyz]{8,}/i.test(message)) return false;
+
+  return true;
 }
 
 function sanitizeInput(input) {
@@ -91,9 +185,25 @@ export default async function handler(req, res) {
       .json({ message: 'Message must be between 10 and 5000 characters.' });
   }
 
-  // Validate email format
+  // Validate email format and check for disposable emails
   if (!validateEmail(sanitizedEmail)) {
-    return res.status(400).json({ message: 'Invalid email format.' });
+    return res.status(400).json({
+      message: 'Please provide a valid email address.',
+    });
+  }
+
+  // Validate name is legitimate
+  if (!validateName(sanitizedName)) {
+    return res.status(400).json({
+      message: 'Please provide a valid name.',
+    });
+  }
+
+  // Validate message quality
+  if (!validateMessage(sanitizedMessage)) {
+    return res.status(400).json({
+      message: 'Please provide a more detailed message.',
+    });
   }
 
   // Check for suspicious patterns (common spam indicators)
