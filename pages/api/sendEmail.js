@@ -6,14 +6,17 @@ const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const MAX_REQUESTS = 3; // Max 3 submissions per minute per IP
 
 // Clean up old entries every 5 minutes
-setInterval(() => {
-  const now = Date.now();
-  for (const [key, value] of rateLimiter.entries()) {
-    if (now - value.timestamp > RATE_LIMIT_WINDOW) {
-      rateLimiter.delete(key);
+setInterval(
+  () => {
+    const now = Date.now();
+    for (const [key, value] of rateLimiter.entries()) {
+      if (now - value.timestamp > RATE_LIMIT_WINDOW) {
+        rateLimiter.delete(key);
+      }
     }
-  }
-}, 5 * 60 * 1000);
+  },
+  5 * 60 * 1000
+);
 
 function checkRateLimit(ip) {
   const now = Date.now();
@@ -53,16 +56,17 @@ export default async function handler(req, res) {
   }
 
   // Get IP address for rate limiting
-  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+  const ip =
+    req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
 
   // Check rate limit
   if (!checkRateLimit(ip)) {
-    return res.status(429).json({ 
-      message: 'Too many requests. Please try again later.' 
+    return res.status(429).json({
+      message: 'Too many requests. Please try again later.',
     });
   }
 
-  const { name, email, message, timestamp } = req.body;
+  const { name, email, message } = req.body;
 
   // Validate required fields
   if (!name || !email || !message) {
@@ -76,11 +80,15 @@ export default async function handler(req, res) {
 
   // Validate lengths
   if (sanitizedName.length < 2 || sanitizedName.length > 100) {
-    return res.status(400).json({ message: 'Name must be between 2 and 100 characters.' });
+    return res
+      .status(400)
+      .json({ message: 'Name must be between 2 and 100 characters.' });
   }
 
   if (sanitizedMessage.length < 10 || sanitizedMessage.length > 5000) {
-    return res.status(400).json({ message: 'Message must be between 10 and 5000 characters.' });
+    return res
+      .status(400)
+      .json({ message: 'Message must be between 10 and 5000 characters.' });
   }
 
   // Validate email format
@@ -91,8 +99,8 @@ export default async function handler(req, res) {
   // Check for suspicious patterns (common spam indicators)
   const suspiciousPatterns = [
     /https?:\/\//gi, // URLs in name
-    /<script>/gi,     // Script tags
-    /\[url=/gi,       // BBCode
+    /<script>/gi, // Script tags
+    /\[url=/gi, // BBCode
     /viagra|cialis|casino|lottery|winner/gi, // Common spam words
   ];
 
