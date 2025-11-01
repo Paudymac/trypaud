@@ -1,4 +1,3 @@
-import utilStyles from '@/styles/utils.module.css';
 import Image from 'next/image';
 import BackgroundImage from '@/components/BackgroundImage';
 import styles from '@/components/backgroundImage.module.css';
@@ -33,7 +32,6 @@ export default function Icons({ images }) {
         title="MWO Player Icons"
         description="[ Design / Art Direction ]"
       >
-
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
           {images.map((image, index) => (
             <div key={index} style={{ textAlign: 'center' }}>

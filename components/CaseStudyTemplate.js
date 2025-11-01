@@ -7,7 +7,12 @@ import Image from 'next/image';
 import useScrollTo from '@/components/useScrollTo';
 import Link from 'next/link';
 
-export default function CaseStudyTemplate({ title, description, heroImage, children }) {
+export default function CaseStudyTemplate({
+  title,
+  description,
+  heroImage,
+  children,
+}) {
   const { scrollToTarget } = useScrollTo({ targetId: 'case-study' });
 
   return (
@@ -46,7 +51,8 @@ export default function CaseStudyTemplate({ title, description, heroImage, child
                 href="/case-studies"
                 className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}
               >
-                <span className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case Studies
+                <span className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case
+                Studies
               </Link>
             </p>
           </div>

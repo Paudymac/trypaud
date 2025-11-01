@@ -1,6 +1,12 @@
 import utilStyles from '@/styles/utils.module.css';
 
-export default function PortfolioItem({ date, title, launchUrl, description, children }) {
+export default function PortfolioItem({
+  date,
+  title,
+  launchUrl,
+  description,
+  children,
+}) {
   return (
     <>
       <span className={utilStyles.datePortfolio}>{date}</span>

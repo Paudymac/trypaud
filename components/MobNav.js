@@ -20,7 +20,8 @@ const Menu = () => {
   };
 
   // Use the scrollToCollaborate utility
-  const { handleCollaborateClick: scrollToCollaborate } = useScrollToCollaborate();
+  const { handleCollaborateClick: scrollToCollaborate } =
+    useScrollToCollaborate();
 
   // Handle the "Collaborate" button click
   const handleCollaborateClick = () => {
