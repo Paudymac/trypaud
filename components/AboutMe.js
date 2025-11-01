@@ -1,5 +1,5 @@
-import { useIntersectionObserver } from './intersectionObserver';
-import utilStyles from '../styles/utils.module.css';
+import { useIntersectionObserver } from './useIntersectionObserver';
+import utilStyles from '@/styles/utils.module.css';
 
 const AboutMe = () => {
   const [ref1, isVisible1] = useIntersectionObserver({ threshold: 0.1 });

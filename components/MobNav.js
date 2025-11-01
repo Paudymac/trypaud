@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './menu.module.css';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import useScrollTo from '../components/scrollTo';
+import { useScrollToCollaborate } from '@/lib/scrollToCollaborate';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,21 +19,12 @@ const Menu = () => {
     return router.pathname === href;
   };
 
-  // Use the scrollTo component
-  const { scrollToTarget } = useScrollTo({ targetId: 'collaborate' });
+  // Use the scrollToCollaborate utility
+  const { handleCollaborateClick: scrollToCollaborate } = useScrollToCollaborate();
 
   // Handle the "Collaborate" button click
   const handleCollaborateClick = () => {
-    if (router.pathname !== '/') {
-      // Navigate to the homepage first
-      router.push('/').then(() => {
-        // After navigation, scroll to the collaborate section
-        scrollToTarget();
-      });
-    } else {
-      // If already on the homepage, just scroll to the collaborate section
-      scrollToTarget();
-    }
+    scrollToCollaborate();
     toggleMenu(); // Close the menu after clicking
   };
 

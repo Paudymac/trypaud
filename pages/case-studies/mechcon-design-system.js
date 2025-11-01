@@ -1,47 +1,14 @@
-import Head from 'next/head';
-import stylesLayout from '../../components/layout.module.css';
-import Layout, { siteTitle } from '../../components/layout';
-import utilStyles from '../../styles/utils.module.css';
-import styles from '../../components/caseStudy.module.css';
+import CaseStudyTemplate from '@/components/CaseStudyTemplate';
+import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
-import scrollTo from '../../components/scrollTo';
-import Link from 'next/link';
 
-export default function CaseStudy({}) {
-  const { scrollToTarget } = scrollTo({ targetId: 'case-study' });
-
+export default function CaseStudy() {
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <div className={styles.caseStudyImgContainer}>
-          <div className={styles.caseStudyIntro}>
-            <h1>Mech_Con Design System</h1>
-            <p>
-              Mech_Con was a 2-day gaming event celebrating the BattleTech
-              universe and Piranha Games MechWarrior titles taking place between
-              2016 - 2018.
-            </p>
-            <button
-              onClick={scrollToTarget}
-              className={`${stylesLayout.primaryBtn} ${styles.readBtn}`}
-            >
-              read
-            </button>
-          </div>
-          <Image
-            className={styles.caseStudyImg}
-            priority
-            src="/images/case-studies/mechcon-img-lg-case-study2.webp"
-            height={1080}
-            width={1920}
-            alt="Logo"
-          />
-        </div>
-
-        <article id="case-study">
+    <CaseStudyTemplate
+      title="Mech_Con Design System"
+      description="Mech_Con was a 2-day gaming event celebrating the BattleTech universe and Piranha Games MechWarrior titles taking place between 2016 - 2018."
+      heroImage="/images/case-studies/mechcon-img-lg-case-study2.webp"
+    >
           <div className={styles.caseStudyContainer}>
             <h2>
               Mech_Con was a 2-day Gaming event celebrating the BattleTech
@@ -169,18 +136,6 @@ export default function CaseStudy({}) {
               The hexagon proved a useful cornerstone for asset creation
               reducing design thinking time and speeding up development.{' '}
             </p>
-            <p className={stylesLayout.backToBtnContainer}>
-              <Link
-                href="/case-studies"
-                className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}
-              >
-                <span className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case
-                Studies
-              </Link>
-            </p>
-          </div>
-        </article>
-      </section>
-    </Layout>
+    </CaseStudyTemplate>
   );
 }

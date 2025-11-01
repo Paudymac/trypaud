@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
-import Layout, { siteTitle } from '../components/layout';
+import utilStyles from '@/styles/utils.module.css';
 import Image from 'next/image';
-import BackgroundImage from '../components/backgroundImage';
-import styles from '../components/backgroundImage.module.css';
+import BackgroundImage from '@/components/BackgroundImage';
+import styles from '@/components/backgroundImage.module.css';
+import PortfolioItem from '@/components/PortfolioItem';
+import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
 import fs from 'fs';
 import path from 'path';
 
@@ -27,20 +27,12 @@ export async function getStaticProps() {
 
 export default function Icons({ images }) {
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <h1>Icons</h1>
-
-        {/* Dynamically render icons */}
-        <span className={utilStyles.datePortfolio}>2014 - 2024</span>
-        <h3 className={utilStyles.header3Portfolio}>MWO PLayer Icons</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Art Direction ]
-        </p>
+    <PortfolioGalleryTemplate title="Icons">
+      <PortfolioItem
+        date="2014 - 2024"
+        title="MWO Player Icons"
+        description="[ Design / Art Direction ]"
+      >
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
           {images.map((image, index) => (
@@ -55,17 +47,13 @@ export default function Icons({ images }) {
             </div>
           ))}
         </div>
+      </PortfolioItem>
 
-        <br />
-        <br />
-
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>MW5:Clans Icon</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2024"
+        title="MW5:Clans Icon"
+        description="[ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/mw5-clans-icon.webp"
@@ -73,14 +61,13 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>Solaris Icon</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2024"
+        title="Solaris Icon"
+        description="[ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/mw5-dlc6-icon.webp"
@@ -88,16 +75,13 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          The Dragons Gambit Dragon
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2023"
+        title="The Dragons Gambit Dragon"
+        description="[ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/mw5-dlc5-icon.webp"
@@ -105,16 +89,13 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2022</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Rise of Rasalhague Serpent
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2022"
+        title="Rise of Rasalhague Serpent"
+        description="[ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/mw5-dlc4-icon.webp"
@@ -122,14 +103,13 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>MWO Atlas Icon</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2023"
+        title="MWO Atlas Icon"
+        description="[ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/mwo-icon.webp"
@@ -137,16 +117,13 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Legends of the Kestrel Lancers Bird
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2021"
+        title="Legends of the Kestrel Lancers Bird"
+        description="[ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/mw5-dlc2-icon.webp"
@@ -154,14 +131,13 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2019</span>
-        <h3 className={utilStyles.header3Portfolio}>MW5</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2019"
+        title="MW5"
+        description="[ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/mw5-icon.webp"
@@ -169,13 +145,13 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>Smartt A</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          Smartt [ Design / Development / Art Direction ]
-        </p>
-
+      <PortfolioItem
+        date="2012"
+        title="Smartt A"
+        description="Smartt [ Design / Development / Art Direction ]"
+      >
         <div className={styles.imageBg}>
           <BackgroundImage
             imageUrl="/images/icons/smartt-icon.webp"
@@ -183,7 +159,7 @@ export default function Icons({ images }) {
             backgroundPositionY="center"
           />
         </div>
-      </section>
-    </Layout>
+      </PortfolioItem>
+    </PortfolioGalleryTemplate>
   );
 }

@@ -1,6 +1,6 @@
 // pages/case-studies.js
-import Layout from '../components/layout';
-import CaseStudies from '../components/caseStudies';
+import Layout from '@/components/Layout';
+import CaseStudies from '@/components/CaseStudies';
 
 const CaseStudiesPage = () => {
   return (

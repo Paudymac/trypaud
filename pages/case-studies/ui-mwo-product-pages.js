@@ -1,47 +1,14 @@
-import Head from 'next/head';
-import stylesLayout from '../../components/layout.module.css';
-import Layout, { siteTitle } from '../../components/layout';
-import utilStyles from '../../styles/utils.module.css';
-import styles from '../../components/caseStudy.module.css';
+import CaseStudyTemplate from '@/components/CaseStudyTemplate';
+import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
-import scrollTo from '../../components/scrollTo';
-import Link from 'next/link';
 
-export default function CaseStudy({}) {
-  const { scrollToTarget } = scrollTo({ targetId: 'case-study' });
-
+export default function CaseStudy() {
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <div className={styles.caseStudyImgContainer}>
-          <div className={styles.caseStudyIntro}>
-            <h1>The User Interface for purchasing MWO Legends content</h1>
-            <p>
-              MechWarrior Online is a live services tactical shooter with a
-              persistent player base spanning the globe based on the popular
-              BattleTech Universe.
-            </p>
-            <button
-              onClick={scrollToTarget}
-              className={`${stylesLayout.primaryBtn} ${styles.readBtn}`}
-            >
-              read
-            </button>
-          </div>
-          <Image
-            className={styles.caseStudyImg}
-            priority
-            src="/images/case-studies/mwo-product-img-lg-art-case-study1.webp"
-            height={1080}
-            width={1920}
-            alt="Logo"
-          />
-        </div>
-
-        <article id="case-study">
+    <CaseStudyTemplate
+      title="The User Interface for purchasing MWO Legends content"
+      description="MechWarrior Online is a live services tactical shooter with a persistent player base spanning the globe based on the popular BattleTech Universe."
+      heroImage="/images/case-studies/mwo-product-img-lg-art-case-study1.webp"
+    >
           <div className={styles.caseStudyContainer}>
             <h2>
               MechWarrior Online is a live services tactical shooter with a
@@ -185,18 +152,6 @@ export default function CaseStudy({}) {
               incentive players to buy and play Mechs with new greater value
               added to the Mech the more you played.{' '}
             </p>
-            <p className={stylesLayout.backToBtnContainer}>
-              <Link
-                href="/case-studies"
-                className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}
-              >
-                <span className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case
-                Studies
-              </Link>
-            </p>
-          </div>
-        </article>
-      </section>
-    </Layout>
+    </CaseStudyTemplate>
   );
 }

@@ -1,0 +1,38 @@
+{
+  "tryPaud": [
+    "/images/logos/trypaud-colour-logo-example.webp",
+    "/images/logos/trypaud-black-logo-example.webp"
+  ],
+  "kirkwoodCarpentry": [
+    "/images/logos/kwc-logo-colour-example.webp",
+    "/images/logos/kwc-logo-longform-colour-example.webp"
+  ],
+  "mw5Clans": [
+    "/images/logos/mw5-clans-logo-example.webp",
+    "/images/icons/mw5-clans-icon.webp"
+  ],
+  "solarisShowdown": [
+    "/images/logos/ss-logo-example.webp",
+    "/images/icons/mw5-dlc6-icon.webp"
+  ],
+  "mwoLegends": [
+    "/images/logos/mwol-logo-example.webp",
+    "/images/icons/mwo-icon.webp"
+  ],
+  "theDevil'sGambit": [
+    "/images/logos/tdg-logo-example.webp",
+    "/images/icons/mw5-dlc5-icon.webp"
+  ],
+  "riseOfRasalhague": [
+    "/images/logos/ror-logo-example.webp",
+    "/images/icons/mw5-dlc4-icon.webp"
+  ],
+  "legendOfTheKestrelLancers": [
+    "/images/logos/lotkl-logo-example.webp",
+    "/images/icons/mw5-dlc2-icon.webp"
+  ],
+  "mw5Mercenaries": [
+    "/images/logos/mw5-logo-example.webp",
+    "/images/icons/mw5-icon.webp"
+  ]
+}

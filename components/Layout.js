@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import utilStyles from '../styles/utils.module.css';
+import utilStyles from '@/styles/utils.module.css';
 import styles from './layout.module.css';
-import Menu from './mobNav';
+import Menu from './MobNav';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
-import useScrollTo from '../components/scrollTo';
+import { useScrollToCollaborate } from '@/lib/scrollToCollaborate';
 import React, { useState, useEffect } from 'react';
 
 const name = 'TryPaud';
@@ -59,22 +59,8 @@ export default function Layout({ children, home }) {
     return router.pathname === href;
   };
 
-  // Use the scrollTo component
-  const { scrollToTarget } = useScrollTo({ targetId: 'collaborate' });
-
-  // Handle the "Collaborate" button click
-  const handleCollaborateClick = () => {
-    if (router.pathname !== '/') {
-      // Navigate to the homepage first
-      router.push('/').then(() => {
-        // After navigation, scroll to the collaborate section
-        scrollToTarget();
-      });
-    } else {
-      // If already on the homepage, just scroll to the collaborate section
-      scrollToTarget();
-    }
-  };
+  // Use the scrollToCollaborate utility
+  const { handleCollaborateClick } = useScrollToCollaborate();
 
   // Determine if the "Collaborate" button should be active
   const isCollaborateButtonActive = isHomePage && isCollaborateSectionInView;

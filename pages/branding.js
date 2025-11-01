@@ -1,60 +1,43 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
-import Layout, { siteTitle } from '../components/layout';
-import BackgroundImage from '../components/backgroundImage';
-import styles from '../components/backgroundImage.module.css';
-import ImageCarousel from '../components/ImageCarousel';
+import BackgroundImage from '@/components/BackgroundImage';
+import styles from '@/components/backgroundImage.module.css';
+import ImageCarousel from '@/components/ImageCarousel';
+import PortfolioItem from '@/components/PortfolioItem';
+import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
+import fs from 'fs';
+import path from 'path';
 
-const images = [
-  '/images/branding/mw5-dev-tee.webp',
-  '/images/branding/mw5-dev-tee2.webp',
-  '/images/branding/mw5-dev-tee-back.webp',
-];
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), 'data', 'branding-images.json');
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  const imageData = JSON.parse(fileContent);
 
-const images1 = [
-  '/images/branding/Mechwarrior5-CLANS-game-manual-1.webp',
-  '/images/branding/Mechwarrior5-CLANS-game-manual-3.webp',
-  '/images/branding/Mechwarrior5-CLANS-game-manual-5.webp',
-];
+  return {
+    props: {
+      imageData,
+    },
+  };
+}
 
-const images2 = [
-  '/images/branding/GameManual_v2_5_Page_01.webp',
-  '/images/branding/GameManual_v2_5_Page_04.webp',
-  '/images/branding/GameManual_v2_5_Page_08.webp',
-  '/images/branding/GameManual_v2_5_Page_13.webp',
-];
-
-const images3 = [
-  '/images/branding/technical-manual-2024-v01_Page_01.webp',
-  '/images/branding/technical-manual-2024-v01_Page_02.webp',
-  '/images/branding/technical-manual-2024-v01_Page_66.webp',
-];
-
-const images4 = [
-  '/images/branding/Columbia_College_Brand_Guidelines_Final_Page_01.webp',
-  '/images/branding/Columbia_College_Brand_Guidelines_Final_Page_02.webp',
-  '/images/branding/Columbia_College_Brand_Guidelines_Final_Page_04.webp',
-  '/images/branding/Columbia_College_Brand_Guidelines_Final_Page_11.webp',
-];
-
-export default function Logos() {
+export default function Branding({ imageData }) {
+  const {
+    mw5DevTee,
+    clansGameManual,
+    mercsGameManual,
+    technicalManual,
+    columbiaBrandGuidelines,
+  } = imageData;
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <h1>Branding</h1>
+    <PortfolioGalleryTemplate title="Branding">
 
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>MW5:Clans Game Manual</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development ]
-        </p>
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images1} />
-        </div>
+        <PortfolioItem
+          date="2024"
+          title="MW5:Clans Game Manual"
+          description="[ Design / Development ]"
+        >
+          <div className={styles.imageBg}>
+            <ImageCarousel images={clansGameManual} />
+          </div>
+        </PortfolioItem>
 
         {/* <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>MW5:Clans Technical Read Out</h3>
@@ -68,274 +51,269 @@ export default function Logos() {
         />
         </div> */}
 
-        <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>MW5:Mercs Game Manual</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images2} />
-        </div>
+        <PortfolioItem
+          date="2021"
+          title="MW5:Mercs Game Manual"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <ImageCarousel images={mercsGameManual} />
+          </div>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          MW5:Mercs Technical Manual
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images3} />
-        </div>
+        <PortfolioItem
+          date="2021"
+          title="MW5:Mercs Technical Manual"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <ImageCarousel images={technicalManual} />
+          </div>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2020</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Mechwarrior 5: Mercenaries Tee's
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Print / Art Direction ]
-        </p>
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images} />
-        </div>
+        <PortfolioItem
+          date="2020"
+          title="Mechwarrior 5: Mercenaries Tee's"
+          description="[ Design / Print / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <ImageCarousel images={mw5DevTee} />
+          </div>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2018</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Mechwarrior 5: Mercenaries Classic Box
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
+        <PortfolioItem
+          date="2018"
+          title="Mechwarrior 5: Mercenaries Classic Box"
+          description="[ Design / Print ]"
+        >
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/mw5-box-art.webp"
+              paddingBottom="50%"
+              backgroundPositionY="center"
+            />
+          </div>
+        </PortfolioItem>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/mw5-box-art.webp"
-            paddingBottom="50%"
-            backgroundPositionY="center"
-          />
-        </div>
+        <PortfolioItem
+          date="2016 - 2018"
+          title="Mechcon Event"
+          description="[ Design / Print ]"
+        >
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2018-img1.webp"
+              paddingBottom="100%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <span className={utilStyles.datePortfolio}>2016 - 2018</span>
-        <h3 className={utilStyles.header3Portfolio}>Mechcon Event</h3>
-        <p className={utilStyles.descriptionPortfolio}> [ Design / Print ]</p>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2018-img2.webp"
+              paddingBottom="25%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2018-img1.webp"
-            paddingBottom="100%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2018-img3.webp"
+              paddingBottom="100%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2018-img2.webp"
-            paddingBottom="25%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2018-img4.webp"
+              paddingBottom="120%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2018-img3.webp"
-            paddingBottom="100%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2018-img5.webp"
+              paddingBottom="80%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2018-img4.webp"
-            paddingBottom="120%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2018-img6.webp"
+              paddingBottom="20%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2018-img5.webp"
-            paddingBottom="80%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2018-img7.webp"
+              paddingBottom="70%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2018-img6.webp"
-            paddingBottom="20%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img1.webp"
+              paddingBottom="30%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2018-img7.webp"
-            paddingBottom="70%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img2.webp"
+              paddingBottom="37%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img1.webp"
-            paddingBottom="30%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img3.webp"
+              paddingBottom="40%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img2.webp"
-            paddingBottom="37%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img4.webp"
+              paddingBottom="50%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img3.webp"
-            paddingBottom="40%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img5.webp"
+              paddingBottom="50%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img4.webp"
-            paddingBottom="50%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img6.webp"
+              paddingBottom="50%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img5.webp"
-            paddingBottom="50%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img7.webp"
+              paddingBottom="50%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img6.webp"
-            paddingBottom="50%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2017-img8.webp"
+              paddingBottom="60%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img7.webp"
-            paddingBottom="50%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2016-img1.webp"
+              paddingBottom="40%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2017-img8.webp"
-            paddingBottom="60%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/print/mechcon-2016-img2.webp"
+              paddingBottom="40%"
+              backgroundPositionY="center"
+            />
+          </div>
+        </PortfolioItem>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2016-img1.webp"
-            paddingBottom="40%"
-            backgroundPositionY="center"
-          />
-        </div>
+        <PortfolioItem
+          date="2012"
+          title="Columbia College Brand Guide"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <ImageCarousel images={columbiaBrandGuidelines} />
+          </div>
+        </PortfolioItem>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/print/mechcon-2016-img2.webp"
-            paddingBottom="40%"
-            backgroundPositionY="center"
-          />
-        </div>
+        <PortfolioItem
+          date="2012"
+          title="Sierra Wireless Ad"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/sierra-wireless-ad.webp"
+              paddingBottom="140%"
+              backgroundPositionY="center"
+            />
+          </div>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Columbia College Brand Guide
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          [ Design / Development / Art Direction ]
-        </p>
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images4} />
-        </div>
+        <PortfolioItem
+          date="2012"
+          title="Smartt Branding"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/Styleguide_PM_V6_Page_01.webp"
+              paddingBottom="77%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>Sierra Wireless Ad</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/Styleguide_PM_V6_Page_04.webp"
+              paddingBottom="77%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/sierra-wireless-ad.webp"
-            paddingBottom="140%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/Styleguide_PM_V6_Page_07.webp"
+              paddingBottom="77%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>Smartt Branding</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          [ Design / Development / Art Direction ]
-        </p>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/smartt-folder-front.webp"
+              // paddingBottom= "77%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/Styleguide_PM_V6_Page_01.webp"
-            paddingBottom="77%"
-            backgroundPositionY="center"
-          />
-        </div>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/smartt-folder.webp"
+              paddingBottom="40%"
+              backgroundPositionY="center"
+            />
+          </div>
 
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/Styleguide_PM_V6_Page_04.webp"
-            paddingBottom="77%"
-            backgroundPositionY="center"
-          />
-        </div>
-
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/Styleguide_PM_V6_Page_07.webp"
-            paddingBottom="77%"
-            backgroundPositionY="center"
-          />
-        </div>
-
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/smartt-folder-front.webp"
-            // paddingBottom= "77%"
-            backgroundPositionY="center"
-          />
-        </div>
-
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/smartt-folder.webp"
-            paddingBottom="40%"
-            backgroundPositionY="center"
-          />
-        </div>
-
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/branding/smartt-ad.webp"
-            paddingBottom="143%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </section>
-    </Layout>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/branding/smartt-ad.webp"
+              paddingBottom="143%"
+              backgroundPositionY="center"
+            />
+          </div>
+        </PortfolioItem>
+    </PortfolioGalleryTemplate>
   );
 }

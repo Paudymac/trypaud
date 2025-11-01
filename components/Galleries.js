@@ -1,5 +1,5 @@
-import { useIntersectionObserver } from './intersectionObserver';
-import utilStyles from '../styles/utils.module.css';
+import { useIntersectionObserver } from './useIntersectionObserver';
+import utilStyles from '@/styles/utils.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 

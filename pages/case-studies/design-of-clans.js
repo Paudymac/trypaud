@@ -1,46 +1,14 @@
-import Head from 'next/head';
-import stylesLayout from '../../components/layout.module.css';
-import Layout, { siteTitle } from '../../components/layout';
-import utilStyles from '../../styles/utils.module.css';
-import styles from '../../components/caseStudy.module.css';
+import CaseStudyTemplate from '@/components/CaseStudyTemplate';
+import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
-import scrollTo from '../../components/scrollTo';
-import Link from 'next/link';
 
-export default function CaseStudy({}) {
-  const { scrollToTarget } = scrollTo({ targetId: 'case-study' });
-
+export default function CaseStudy() {
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <div className={styles.caseStudyImgContainer}>
-          <div className={styles.caseStudyIntro}>
-            <h1>Design of Clans</h1>
-            <p>
-              The challenge was to create a brand and player experience to
-              support the release of MECHWARRIOR 5: CLANS.
-            </p>
-            <button
-              onClick={scrollToTarget}
-              className={`${stylesLayout.primaryBtn} ${styles.readBtn}`}
-            >
-              read
-            </button>
-          </div>
-          <Image
-            className={styles.caseStudyImg}
-            priority
-            src="/images/case-studies/clans-img-lg-case-study4.webp"
-            height={1080}
-            width={1920}
-            alt="Logo"
-          />
-        </div>
-
-        <article id="case-study">
+    <CaseStudyTemplate
+      title="Design of Clans"
+      description="The challenge was to create a brand and player experience to support the release of MECHWARRIOR 5: CLANS."
+      heroImage="/images/case-studies/clans-img-lg-case-study4.webp"
+    >
           <div className={styles.caseStudyContainer}>
             <h2>
               CLANS is the latest standalone release from Piranha Games which
@@ -185,20 +153,6 @@ export default function CaseStudy({}) {
             />
           </div>
 
-          <div className={styles.caseStudyContainer}>
-            <p className={stylesLayout.backToBtnContainer}>
-              <Link
-                href="/case-studies"
-                className={`${stylesLayout.primaryBtn} ${utilStyles.backToBtn}`}
-              >
-                {' '}
-                <span className={`${styles.arrowIcoHTF}`}>&#11013;</span> Case
-                Studies
-              </Link>
-            </p>
-          </div>
-        </article>
-      </section>
-    </Layout>
+    </CaseStudyTemplate>
   );
 }

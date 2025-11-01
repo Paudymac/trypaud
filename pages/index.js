@@ -1,13 +1,13 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import ContactForm from '../components/contactForm';
-import styles from '../components/contactForm.module.css';
-import stylesLayout from '../components/layout.module.css';
-import useScrollTo from '../components/scrollTo';
-import PartnerLogos from '../components/partnerLogos';
-import Galleries from '../components/galleries';
-import CaseStudies from '../components/caseStudies';
-import AboutMe from '../components/aboutMe';
+import Layout, { siteTitle } from '@/components/Layout';
+import ContactForm from '@/components/ContactForm';
+import styles from '@/components/contactForm.module.css';
+import stylesLayout from '@/components/layout.module.css';
+import useScrollTo from '@/components/useScrollTo';
+import PartnerLogos from '@/components/PartnerLogos';
+import Galleries from '@/components/Galleries';
+import CaseStudies from '@/components/CaseStudies';
+import AboutMe from '@/components/AboutMe';
 
 export default function Home() {
   // Scroll to target function

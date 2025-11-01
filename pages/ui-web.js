@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
-import Layout, { siteTitle } from '../components/layout';
-import styles from '../components/backgroundImage.module.css';
-import ImageCarousel from '../components/ImageCarousel';
+import utilStyles from '@/styles/utils.module.css';
+import Layout, { siteTitle } from '@/components/Layout';
+import styles from '@/components/backgroundImage.module.css';
+import ImageCarousel from '@/components/ImageCarousel';
 
 const images = [
   '/images/ui/mw5-clans-homepage.webp',

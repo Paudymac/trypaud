@@ -1,349 +1,238 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
-import Layout, { siteTitle } from '../components/layout';
-import BackgroundImage from '../components/backgroundImage';
-import styles from '../components/backgroundImage.module.css';
-import ImageCarousel from '../components/ImageCarousel';
+import BackgroundImage from '@/components/BackgroundImage';
+import styles from '@/components/backgroundImage.module.css';
+import ImageCarousel from '@/components/ImageCarousel';
+import PortfolioItem from '@/components/PortfolioItem';
+import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
+import fs from 'fs';
+import path from 'path';
 
-const images = [
-  '/images/logos/trypaud-colour-logo-example.webp',
-  '/images/logos/trypaud-black-logo-example.webp',
-];
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), 'data', 'logos-images.json');
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  const imageData = JSON.parse(fileContent);
 
-const images1 = [
-  '/images/logos/kwc-logo-colour-example.webp',
-  '/images/logos/kwc-logo-longform-colour-example.webp',
-];
+  return {
+    props: {
+      imageData,
+    },
+  };
+}
 
-const images2 = [
-  '/images/logos/mw5-clans-logo-example.webp',
-  '/images/icons/mw5-clans-icon.webp',
-];
-
-const images3 = [
-  '/images/logos/ss-logo-example.webp',
-  '/images/icons/mw5-dlc6-icon.webp',
-];
-
-const images4 = [
-  '/images/logos/mwol-logo-example.webp',
-  '/images/icons/mwo-icon.webp',
-];
-
-const images5 = [
-  '/images/logos/tdg-logo-example.webp',
-  '/images/icons/mw5-dlc5-icon.webp',
-];
-
-const images6 = [
-  '/images/logos/ror-logo-example.webp',
-  '/images/icons/mw5-dlc4-icon.webp',
-];
-
-const images7 = [
-  '/images/logos/lotkl-logo-example.webp',
-  '/images/icons/mw5-dlc2-icon.webp',
-];
-
-const images8 = [
-  '/images/logos/mw5-logo-example.webp',
-  '/images/icons/mw5-icon.webp',
-];
-
-export default function Logos() {
+export default function Logos({ imageData }) {
+  const {
+    tryPaud,
+    kirkwoodCarpentry,
+    mw5Clans,
+    solarisShowdown,
+    mwoLegends,
+    "theDevil'sGambit": theDevilsGambit,
+    riseOfRasalhague,
+    legendOfTheKestrelLancers,
+    mw5Mercenaries,
+  } = imageData;
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <h1>Logos</h1>
+    <PortfolioGalleryTemplate title="Logos">
 
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Mechwarrior 5 Clans{' '}
-          <a className={utilStyles.launch} href="https://mw5clans.com/">
-            Launch
+        <PortfolioItem
+          date="2024"
+          title="Mechwarrior 5 Clans"
+          launchUrl="https://mw5clans.com/"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <a className={styles.imageLink} href="https://mw5clans.com">
+            <ImageCarousel images={mw5Clans} />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-        <a className={styles.imageLink} href="https://mw5clans.com">
-          <ImageCarousel images={images2} />
-        </a>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2025</span>
-        <h3 className={utilStyles.header3Portfolio}>KirkWood Carpentry</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images1} />
-        </div>
+        <PortfolioItem
+          date="2025"
+          title="KirkWood Carpentry"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <ImageCarousel images={kirkwoodCarpentry} />
+          </div>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2025</span>
-        <h3 className={utilStyles.header3Portfolio}>TryPaud</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images} />
-        </div>
+        <PortfolioItem
+          date="2025"
+          title="TryPaud"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <div className={styles.imageBg}>
+            <ImageCarousel images={tryPaud} />
+          </div>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Solaris Showdown / MW5 DLC{' '}
+        <PortfolioItem
+          date="2024"
+          title="Solaris Showdown / MW5 DLC"
+          launchUrl="https://mw5mercs.com/dlc/solaris-showdown"
+          description="[ Design / Development / Art Direction ]"
+        >
           <a
-            className={utilStyles.launch}
+            className={styles.imageLink}
             href="https://mw5mercs.com/dlc/solaris-showdown"
           >
-            Launch
+            <ImageCarousel images={solarisShowdown} />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]{' '}
-        </p>
+        </PortfolioItem>
 
-        <a
-          className={styles.imageLink}
-          href="https://mw5mercs.com/dlc/solaris-showdown"
+        <PortfolioItem
+          date="2023"
+          title="MechWarrior Online Legends"
+          launchUrl="https://mwomercs.com/"
+          description="[ Design / Development / Art Direction ]"
         >
-          <ImageCarousel images={images3} />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          MechWarrior Online Legends{' '}
-          <a className={utilStyles.launch} href="https://mwomercs.com/">
-            Launch
+          <a className={styles.imageLink} href="https://mwomercs.com/">
+            <ImageCarousel images={mwoLegends} />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a className={styles.imageLink} href="https://mwomercs.com/">
-          <ImageCarousel images={images4} />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          The Dragons Gambit (MW5 DLC)
+        <PortfolioItem
+          date="2023"
+          title="The Dragons Gambit (MW5 DLC)"
+          launchUrl="https://mw5mercs.com/dlc/the-dragons-gambit"
+          description="[ Design / Development / Art Direction ]"
+        >
           <a
-            className={utilStyles.launch}
+            className={styles.imageLink}
             href="https://mw5mercs.com/dlc/the-dragons-gambit"
           >
-            Launch
+            <ImageCarousel images={theDevilsGambit} />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a
-          className={styles.imageLink}
-          href="https://mw5mercs.com/dlc/the-dragons-gambit"
+        <PortfolioItem
+          date="2022"
+          title="Rise of Rasalhague (MW5 DLC)"
+          launchUrl="https://mw5mercs.com/dlc/rise-of-rasalhague"
+          description="[ Design / Development / Art Direction ]"
         >
-          <ImageCarousel images={images5} />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2022</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Rise of Rasalhague (MW5 DLC){' '}
           <a
-            className={utilStyles.launch}
+            className={styles.imageLink}
             href="https://mw5mercs.com/dlc/rise-of-rasalhague"
           >
-            Launch
+            <ImageCarousel images={riseOfRasalhague} />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a
-          className={styles.imageLink}
-          href="https://mw5mercs.com/dlc/rise-of-rasalhague"
+        <PortfolioItem
+          date="2021"
+          title="Legends of the Kestrel Lancers (MW5 DLC)"
+          launchUrl="https://mw5mercs.com/dlc/legend-of-the-kestrel-lancers"
+          description="[ Design / Development / Art Direction ]"
         >
-          <ImageCarousel images={images6} />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Legends of the Kestrel Lancers (MW5 DLC){' '}
           <a
-            className={utilStyles.launch}
+            className={styles.imageLink}
             href="https://mw5mercs.com/dlc/legend-of-the-kestrel-lancers"
           >
-            Launch
+            <ImageCarousel images={legendOfTheKestrelLancers} />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a
-          className={styles.imageLink}
-          href="https://mw5mercs.com/dlc/legend-of-the-kestrel-lancers"
+        <PortfolioItem
+          date="2020"
+          title="Heroes of the Innersphere (MW5 DLC)"
+          launchUrl="https://mw5mercs.com/dlc/heroes-of-the-inner-sphere"
+          description="[ Design / Development / Art Direction ]"
         >
-          <ImageCarousel images={images7} />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2020</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Heroes of the Innersphere (MW5 DLC){' '}
           <a
-            className={utilStyles.launch}
+            className={styles.imageLink}
             href="https://mw5mercs.com/dlc/heroes-of-the-inner-sphere"
           >
-            Launch
+            <BackgroundImage
+              imageUrl="/images/logos/hotis-logo-example.webp"
+              paddingBottom="56.25%"
+              backgroundPositionY="center"
+            />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a
-          className={styles.imageLink}
-          href="https://mw5mercs.com/dlc/heroes-of-the-inner-sphere"
+        <PortfolioItem
+          date="2020"
+          title="Project Revenant"
+          description="[ Design / Development / Art Direction ]"
         >
-          <BackgroundImage
-            imageUrl="/images/logos/hotis-logo-example.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </a>
+          <div className={styles.imageBg}>
+            <BackgroundImage
+              imageUrl="/images/logos/pr-logo-example.webp"
+              paddingBottom="56.25%"
+              backgroundPositionY="center"
+            />
+          </div>
+        </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2020</span>
-        <h3 className={utilStyles.header3Portfolio}>Project Revenant</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
-
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/logos/pr-logo-example.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-
-        <span className={utilStyles.datePortfolio}>2019</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          MechWarrior 5{' '}
-          <a className={utilStyles.launch} href="https://mw5mercs.com">
-            Launch
+        <PortfolioItem
+          date="2019"
+          title="MechWarrior 5"
+          launchUrl="https://mw5mercs.com"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <a className={styles.imageLink} href="https://mw5mercs.com">
+            <ImageCarousel images={mw5Mercenaries} />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a className={styles.imageLink} href="https://mw5mercs.com">
-          <ImageCarousel images={images8} />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2018</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          MechCon{' '}
-          <a
-            className={utilStyles.launch}
-            href="https://mechwarrior.com/mechcon"
-          >
-            Launch
+        <PortfolioItem
+          date="2018"
+          title="MechCon"
+          launchUrl="https://mechwarrior.com/mechcon"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <a className={styles.imageLink} href="https://mechwarrior.com/mechcon">
+            <BackgroundImage
+              imageUrl="/images/logos/mc-logo-example.webp"
+              paddingBottom="56.25%"
+              backgroundPositionY="center"
+            />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a className={styles.imageLink} href="https://mechwarrior.com/mechcon">
-          <BackgroundImage
-            imageUrl="/images/logos/mc-logo-example.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Colombia College{' '}
-          <a
-            className={utilStyles.launch}
-            href="https://www.columbiacollege.ca/"
-          >
-            Launch
+        <PortfolioItem
+          date="2012"
+          title="Colombia College"
+          launchUrl="https://www.columbiacollege.ca/"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <a className={styles.imageLink} href="https://www.columbiacollege.ca/">
+            <BackgroundImage
+              imageUrl="/images/logos/cc-logo-example.webp"
+              paddingBottom="56.25%"
+              backgroundPositionY="center"
+            />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a className={styles.imageLink} href="https://www.columbiacollege.ca/">
-          <BackgroundImage
-            imageUrl="/images/logos/cc-logo-example.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Smartt{' '}
-          <a className={utilStyles.launch} href="https://www.smartt.com/">
-            Launch
+        <PortfolioItem
+          date="2012"
+          title="Smartt"
+          launchUrl="https://www.smartt.com/"
+          description="[ Design / Development / Art Direction ]"
+        >
+          <a className={styles.imageLink} href="https://www.smartt.com/">
+            <BackgroundImage
+              imageUrl="/images/logos/smartt-logo-example.webp"
+              paddingBottom="56.25%"
+              backgroundPositionY="center"
+            />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development / Art Direction ]
-        </p>
+        </PortfolioItem>
 
-        <a className={styles.imageLink} href="https://www.smartt.com/">
-          <BackgroundImage
-            imageUrl="/images/logos/smartt-logo-example.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </a>
-
-        <span className={utilStyles.datePortfolio}>2011</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Connect the doc{' '}
-          <a
-            className={utilStyles.launch}
-            href="https://www.connectthedoc.com/"
-          >
-            Launch
+        <PortfolioItem
+          date="2011"
+          title="Connect the doc"
+          launchUrl="https://www.connectthedoc.com/"
+          description="[ Design / Development ]"
+        >
+          <a className={styles.imageLink} href="https://www.connectthedoc.com/">
+            <BackgroundImage
+              imageUrl="/images/logos/ctd-logo-example.webp"
+              paddingBottom="56.25%"
+              backgroundPositionY="center"
+            />
           </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ Design / Development ]
-        </p>
-
-        <a className={styles.imageLink} href="https://www.connectthedoc.com/">
-          <BackgroundImage
-            imageUrl="/images/logos/ctd-logo-example.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </a>
-      </section>
-    </Layout>
+        </PortfolioItem>
+    </PortfolioGalleryTemplate>
   );
 }
