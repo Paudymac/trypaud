@@ -29,9 +29,7 @@ export default function Home() {
               autoPlay
               muted
               loop
-              playsInline
-              preload="metadata"
-              loading="lazy"
+              preload="auto"
             >
               <source src="/video/header-video.mp4" type="video/mp4" />
               <track
