@@ -1,11 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from './imageCarousel.module.css';
+import styles from './backgroundImage.module.css';
 
-const ImageCarousel = ({ images = [], alt = 'Carousel image' }) => {
+const ImageCarousel = ({ images = [] }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -14,7 +13,6 @@ const ImageCarousel = ({ images = [], alt = 'Carousel image' }) => {
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 4000,
-    lazyLoad: 'ondemand', // Enable lazy loading in slick
   };
 
   if (images.length === 0) {
@@ -25,21 +23,32 @@ const ImageCarousel = ({ images = [], alt = 'Carousel image' }) => {
     <div style={{ width: '100%', margin: '0 auto' }}>
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className={styles.slideWrapper}>
-            <div className={styles.imageContainer}>
-              <Image
-                src={image}
-                alt={`${alt} ${index + 1}`}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'top center',
-                }}
-                loading={index === 0 ? 'eager' : 'lazy'} // First image eager, rest lazy
-                quality={85}
-              />
-            </div>
+          <div
+            key={index}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: '100%',
+              backgroundPosition: 'center',
+              height: '1080px', // Set a fixed height or make it responsive
+              width: '100%',
+              lineHeight: '0',
+            }}
+          >
+            {/* repeated for more content */}
+            <div
+              className={styles.imgCarouselBg}
+              key={index}
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: '100%',
+                backgroundPosition: 'top center',
+                height: 'auto', // Set a fixed height or make it responsive
+                width: '100%',
+                paddingBottom: '56.25%',
+                backgroundRepeat: 'no-repeat',
+                lineHeight: '0',
+              }}
+            ></div>
           </div>
         ))}
       </Slider>

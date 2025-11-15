@@ -1,18 +1,21 @@
 /* backgroundImage.module.css */
-.backgroundImageWrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 15px;
-}
-
 .backgroundImage {
-  position: relative;
+  background-size: 100%;
+  background-position-x: center;
+  background-position-y: var(
+    --background-position-y
+  ); /* Use the CSS variable */
   width: 100%;
-  height: 100%;
+  background-image: var(--bg-image); /* Use the CSS variable */
   border-radius: 15px;
   transition: all 0.5s;
-  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.backgroundImage::before {
+  content: '';
+  display: block;
+  padding-bottom: var(--padding-bottom); /* Use the CSS variable */
 }
 
 /* .backgroundImage:hover {
