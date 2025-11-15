@@ -71,7 +71,13 @@ export default function MotionGraphics() {
         description="[ Motion Graphics / Design / Branding]"
       >
         <div className={utilStyles.video}>
-          <video width="560" height="315" controls>
+          <video
+            width="560"
+            height="315"
+            controls
+            preload="metadata"
+            loading="lazy"
+          >
             <source src="/video/mechcon-logo-animation.mp4" type="video/mp4" />
           </video>
         </div>
@@ -84,7 +90,13 @@ export default function MotionGraphics() {
         description="[ Motion Graphics / Design / Branding]"
       >
         <div className={utilStyles.video}>
-          <video width="560" height="315" controls>
+          <video
+            width="560"
+            height="315"
+            controls
+            preload="metadata"
+            loading="lazy"
+          >
             <source src="/video/mwowc-pause-screen-2017.mp4" type="video/mp4" />
           </video>
         </div>
@@ -97,7 +109,13 @@ export default function MotionGraphics() {
         description="[ Motion Graphics / Design / Branding]"
       >
         <div className={utilStyles.video}>
-          <video width="560" height="315" controls>
+          <video
+            width="560"
+            height="315"
+            controls
+            preload="metadata"
+            loading="lazy"
+          >
             <source src="/video/piranha-logo-sound.mp4" type="video/mp4" />
           </video>
         </div>
