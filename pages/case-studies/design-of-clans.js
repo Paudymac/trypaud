@@ -1,5 +1,4 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
-import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
 
 export default function CaseStudy() {
@@ -9,7 +8,7 @@ export default function CaseStudy() {
       description="The challenge was to create a brand and player experience to support the release of MECHWARRIOR 5: CLANS."
       heroImage="/images/case-studies/clans-img-lg-case-study4.webp"
     >
-      <div className={styles.caseStudyContainer}>
+      <div>
         <h2>
           CLANS is the latest standalone release from Piranha Games which takes
           place in the Mechwarrior Universe however it is a completely different
@@ -49,10 +48,9 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           <Image
-            className={styles.caseStudyImg}
             priority
             src="/images/case-studies/case-study-4-original-clans-branding.webp"
             height={1080}
@@ -70,12 +68,11 @@ export default function CaseStudy() {
           primary logo mirroring the game narrative.
         </p>
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Clans logo features custom typography.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-4-clans-logo-img3.webp"
           height={1080}
@@ -83,12 +80,11 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Website Mockup Phase & Site flow.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-4-clans-website-design-img.webp"
           height={1080}
@@ -96,7 +92,7 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           Website design was priortised to show character videos, trailers and
           giving players a path to their preferred game vendor. The look and
@@ -109,7 +105,6 @@ export default function CaseStudy() {
         </p>
         <p>
           <Image
-            className={styles.caseStudyImg}
             priority
             src="/images/case-studies/case-study4-game-front-end.webp"
             height={1080}
@@ -119,12 +114,11 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Clans website aims to showcase the new characters.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-4-clans-content-img1.webp"
           height={1080}
@@ -132,19 +126,18 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           Responsive web design techniques were used in making sure the site had
           a seamless mobile experience. This was made easier using webp images
           and tailwind a utility first CSS framework.
         </p>
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Responsive design of Clans site.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-4-clans-mobile-img2.webp"
           height={1080}

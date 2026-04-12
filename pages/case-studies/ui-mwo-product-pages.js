@@ -1,5 +1,4 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
-import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
 
 export default function CaseStudy() {
@@ -9,7 +8,7 @@ export default function CaseStudy() {
       description="MechWarrior Online is a live services tactical shooter with a persistent player base spanning the globe based on the popular BattleTech Universe."
       heroImage="/images/case-studies/mwo-product-img-lg-art-case-study1.webp"
     >
-      <div className={styles.caseStudyContainer}>
+      <div>
         <h2>
           MechWarrior Online is a live services tactical shooter with a
           persistent player base spanning the globe based on the popular
@@ -70,12 +69,11 @@ export default function CaseStudy() {
           highlight the original Mech skins sold with the packs.
         </p>
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Image showing the evolution of MWO product pages.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study1-mwo-product-page-comparison-img.webp"
           height={1080}
@@ -84,7 +82,7 @@ export default function CaseStudy() {
         />
       </div>
 
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           Important actions like signing into your account were included in a
           sticky navigation below the carousel. Later, due to player feedback, a
@@ -124,12 +122,9 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
-          MWO Legends Battlepass.
-        </span>
+      <div>
+        <span className="text-secondary text-sm">MWO Legends Battlepass.</span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study1-mwo-product-legends-img.webp"
           height={1080}
@@ -138,7 +133,7 @@ export default function CaseStudy() {
         />
       </div>
 
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           After a game rebrand in 2023 a new Battlepass feature was added to
           incentive players to buy and play Mechs with new greater value added

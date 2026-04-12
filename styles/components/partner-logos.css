@@ -1,0 +1,64 @@
+@layer components {
+  /* ========================================
+     PARTNER LOGOS
+     ======================================== */
+
+  .partners-section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .partners-section h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-1);
+    background-color: var(--color-surface-1);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2);
+  }
+
+  .partners-grid li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+  }
+
+  .partners-grid img {
+    margin: 0 auto;
+    max-height: 120px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition:
+      filter var(--duration-normal) var(--ease-default),
+      opacity var(--duration-normal) var(--ease-default);
+  }
+
+  .partners-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  @media (max-width: 1280px) {
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .partners-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .partners-grid img {
+      max-height: 150px;
+    }
+  }
+}

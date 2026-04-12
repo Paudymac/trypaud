@@ -1,56 +1,50 @@
 import { useState, useEffect } from 'react';
-import styles from './contactForm.module.css';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
-    website: '', // Honeypot field - bots will fill this
+    website: '',
   });
   const [formLoadTime, setFormLoadTime] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(null);
 
-  // Track when form loads to prevent instant submissions
   useEffect(() => {
     setFormLoadTime(Date.now());
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Prevent double submissions
     if (isSubmitting) return;
 
-    // Check if honeypot field was filled (bot detection)
     if (formData.website) {
-      alert('Failed to send message.');
+      setStatusMessage({ type: 'error', text: 'Failed to send message.' });
       return;
     }
 
-    // Check if form was submitted too quickly (less than 3 seconds)
     const timeSpent = Date.now() - formLoadTime;
     if (timeSpent < 3000) {
-      alert('Please take a moment to review your message.');
+      setStatusMessage({
+        type: 'error',
+        text: 'Please take a moment to review your message.',
+      });
       return;
     }
 
     setIsSubmitting(true);
+    setStatusMessage(null);
 
     try {
       const response = await fetch('/api/sendEmail', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
@@ -62,28 +56,32 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (response.ok) {
-        alert('Message sent successfully!');
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-          website: '',
+        setStatusMessage({
+          type: 'success',
+          text: 'Message sent successfully!',
         });
-        setFormLoadTime(Date.now()); // Reset timer
+        setFormData({ name: '', email: '', message: '', website: '' });
+        setFormLoadTime(Date.now());
       } else {
-        alert(data.message || 'Failed to send message.');
+        setStatusMessage({
+          type: 'error',
+          text: data.message || 'Failed to send message.',
+        });
       }
     } catch {
-      alert('An error occurred while submitting the form.');
+      setStatusMessage({
+        type: 'error',
+        text: 'An error occurred while submitting the form.',
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.contactForm}>
-      {/* Honeypot field - hidden from humans, visible to bots */}
-      <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+    <form onSubmit={handleSubmit}>
+      {/* Honeypot */}
+      <div className="form-honeypot" aria-hidden="true">
         <label htmlFor="website">Website (leave blank)</label>
         <input
           type="text"
@@ -96,7 +94,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div>
+      <div className="form-group">
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -107,9 +105,11 @@ export default function ContactForm() {
           required
           minLength="2"
           maxLength="100"
+          placeholder="Your name"
         />
       </div>
-      <div>
+
+      <div className="form-group">
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -118,9 +118,11 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
+          placeholder="you@example.com"
         />
       </div>
-      <div>
+
+      <div className="form-group">
         <label htmlFor="message">Message</label>
         <textarea
           id="message"
@@ -130,10 +132,26 @@ export default function ContactForm() {
           required
           minLength="10"
           maxLength="5000"
+          placeholder="Tell me about your project..."
         />
       </div>
-      <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? 'Sending...' : 'Submit'}
+
+      {statusMessage && (
+        <div
+          className={`form-message ${statusMessage.type === 'success' ? 'form-message-success' : 'form-message-error'}`}
+          role="alert"
+          style={{ marginBottom: 'var(--space-4)' }}
+        >
+          {statusMessage.text}
+        </div>
+      )}
+
+      <button
+        type="submit"
+        className="btn btn-primary btn-lg"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
     </form>
   );

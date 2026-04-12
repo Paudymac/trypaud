@@ -1,0 +1,65 @@
+@layer components {
+  /* ========================================
+     FORM / CONTACT
+     ======================================== */
+
+  .form-section {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-4);
+  }
+
+  .form-section h1 {
+    margin-bottom: var(--space-8);
+  }
+
+  .form-container {
+    background-color: var(--color-surface-1);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+  }
+
+  @media (max-width: 600px) {
+    .form-container {
+      padding: var(--space-4);
+    }
+  }
+
+  .form-group {
+    margin-bottom: var(--space-6);
+  }
+
+  .form-group:last-of-type {
+    margin-bottom: var(--space-8);
+  }
+
+  .form-message {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+  }
+
+  .form-message-success {
+    background-color: color-mix(in srgb, var(--color-success) 15%, var(--color-surface-1));
+    color: var(--color-success);
+    border: 1px solid color-mix(in srgb, var(--color-success) 30%, transparent);
+  }
+
+  .form-message-error {
+    background-color: color-mix(in srgb, var(--color-error) 15%, var(--color-surface-1));
+    color: var(--color-error);
+    border: 1px solid color-mix(in srgb, var(--color-error) 30%, transparent);
+  }
+
+  /* Honeypot */
+  .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}

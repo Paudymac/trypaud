@@ -1,0 +1,26 @@
+/* ============================================
+   TryPaud v2 — Global Stylesheet
+   CSS @layer cascade order declaration
+   ============================================ */
+
+/* Declare layer order — this controls specificity cascade */
+@layer reset, tokens, base, components, utilities, overrides;
+
+/* --- Layer imports --- */
+@import './layers/_reset.css';
+@import './layers/_tokens.css';
+@import './layers/_base.css';
+@import './layers/_utilities.css';
+@import './layers/_overrides.css';
+
+/* --- Component imports --- */
+@import './components/button.css';
+@import './components/card.css';
+@import './components/nav.css';
+@import './components/hero.css';
+@import './components/gallery.css';
+@import './components/form.css';
+@import './components/footer.css';
+@import './components/case-study.css';
+@import './components/partner-logos.css';
+@import './components/about.css';

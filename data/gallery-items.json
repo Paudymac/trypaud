@@ -1,0 +1,303 @@
+[
+  {
+    "id": "mw5-clans-ui",
+    "title": "MechWarrior 5: Clans",
+    "category": "ui",
+    "year": "2024",
+    "description": "Design / Development / Art Direction",
+    "thumbnail": "/images/ui/mw5-clans-homepage.webp",
+    "images": [
+      "/images/ui/mw5-clans-homepage.webp",
+      "/images/ui/mw5-clans-news.webp",
+      "/images/ui/mw5-clans-dlc.webp",
+      "/images/ui/mw5-clans-purchase.webp"
+    ],
+    "url": "https://mw5clans.com"
+  },
+  {
+    "id": "mw5-mercs-ui",
+    "title": "MechWarrior 5: Mercenaries",
+    "category": "ui",
+    "year": "2019",
+    "description": "Design / Development / Art Direction",
+    "thumbnail": "/images/ui/mw5-mercs-homepage.webp",
+    "images": [
+      "/images/ui/mw5-mercs-homepage.webp",
+      "/images/ui/mw5-mercs-dlc1.webp",
+      "/images/ui/mw5-mercs-dlc2.webp",
+      "/images/ui/mw5-mercs-media.webp"
+    ],
+    "url": "https://mw5mercs.com"
+  },
+  {
+    "id": "mechcon-ui",
+    "title": "Mech_Con",
+    "category": "ui",
+    "year": "2016",
+    "description": "Design / Development",
+    "thumbnail": "/images/ui/mechcon-homepage.webp",
+    "images": [
+      "/images/ui/mechcon-homepage.webp",
+      "/images/ui/mechcon-about.webp",
+      "/images/ui/mechcon-tickets.webp"
+    ]
+  },
+  {
+    "id": "mwo-product-ui",
+    "title": "MWO Product Pages",
+    "category": "ui",
+    "year": "2016",
+    "description": "E-commerce UI Design",
+    "thumbnail": "/images/ui/mwo-product-page1.webp",
+    "images": [
+      "/images/ui/mwo-product-page1.webp",
+      "/images/ui/mwo-product-page2.webp",
+      "/images/ui/mwo-product-page3.webp",
+      "/images/ui/mwo-product-page4.webp",
+      "/images/ui/mwo-product-page5.webp",
+      "/images/ui/mwo-product-page6.webp",
+      "/images/ui/mwo-product-page7.webp"
+    ]
+  },
+  {
+    "id": "pgi-ui",
+    "title": "Piranha Games Inc.",
+    "category": "ui",
+    "year": "2017",
+    "description": "Corporate Website Design",
+    "thumbnail": "/images/ui/pgi-homepage.webp",
+    "images": [
+      "/images/ui/pgi-homepage.webp",
+      "/images/ui/pgi-studio.webp",
+      "/images/ui/pgi-careers.webp"
+    ]
+  },
+  {
+    "id": "transverse-ui",
+    "title": "Transverse",
+    "category": "ui",
+    "year": "2014",
+    "description": "Game Website / E-commerce",
+    "thumbnail": "/images/ui/transverse-homepage.webp",
+    "images": [
+      "/images/ui/transverse-homepage.webp",
+      "/images/ui/transverse-about.webp",
+      "/images/ui/transverse-product.webp",
+      "/images/ui/transverse-checkout.webp",
+      "/images/ui/transverse-social.webp"
+    ]
+  },
+  {
+    "id": "ctd-ui",
+    "title": "Connect the Doc",
+    "category": "ui",
+    "year": "2020",
+    "description": "SaaS Website Design",
+    "thumbnail": "/images/ui/ctd-img1.webp",
+    "images": [
+      "/images/ui/ctd-img1.webp",
+      "/images/ui/ctd-img2.webp"
+    ]
+  },
+  {
+    "id": "hs-bb-ui",
+    "title": "Healthsoothe / BidBuddy",
+    "category": "ui",
+    "year": "2020",
+    "description": "Web App Design",
+    "thumbnail": "/images/ui/hs-img1.webp",
+    "images": [
+      "/images/ui/hs-img1.webp",
+      "/images/ui/hs-img2.webp",
+      "/images/ui/bb-img1.webp",
+      "/images/ui/bb-img2.webp"
+    ]
+  },
+  {
+    "id": "mwol-moonwalker-ui",
+    "title": "MWO Legends: Moonwalker",
+    "category": "ui",
+    "year": "2023",
+    "description": "Product Page Design",
+    "thumbnail": "/images/ui/mwomercs-legends-moonwalker.webp",
+    "images": [
+      "/images/ui/mwomercs-legends-moonwalker.webp",
+      "/images/ui/mwomercs-legends-moonwalker2.webp"
+    ]
+  },
+  {
+    "id": "trypaud-logo",
+    "title": "TryPaud",
+    "category": "logos",
+    "year": "2025",
+    "description": "Design / Development / Art Direction",
+    "thumbnail": "/images/logos/trypaud-colour-logo-example.webp",
+    "images": [
+      "/images/logos/trypaud-colour-logo-example.webp",
+      "/images/logos/trypaud-black-logo-example.webp"
+    ]
+  },
+  {
+    "id": "kwc-logo",
+    "title": "KirkWood Carpentry",
+    "category": "logos",
+    "year": "2025",
+    "description": "Design / Development / Art Direction",
+    "thumbnail": "/images/logos/kwc-logo-colour-example.webp",
+    "images": [
+      "/images/logos/kwc-logo-colour-example.webp",
+      "/images/logos/kwc-logo-longform-colour-example.webp"
+    ]
+  },
+  {
+    "id": "mw5-clans-logo",
+    "title": "MechWarrior 5: Clans",
+    "category": "logos",
+    "year": "2024",
+    "description": "Game Logo Design",
+    "thumbnail": "/images/logos/mw5-clans-logo-example.webp",
+    "images": [
+      "/images/logos/mw5-clans-logo-example.webp",
+      "/images/icons/mw5-clans-icon.webp"
+    ]
+  },
+  {
+    "id": "ss-logo",
+    "title": "Solaris Showdown",
+    "category": "logos",
+    "year": "2023",
+    "description": "Game Logo Design",
+    "thumbnail": "/images/logos/ss-logo-example.webp",
+    "images": [
+      "/images/logos/ss-logo-example.webp",
+      "/images/icons/mw5-dlc6-icon.webp"
+    ]
+  },
+  {
+    "id": "mwol-logo",
+    "title": "MWO Legends",
+    "category": "logos",
+    "year": "2022",
+    "description": "Game Logo Design",
+    "thumbnail": "/images/logos/mwol-logo-example.webp",
+    "images": [
+      "/images/logos/mwol-logo-example.webp",
+      "/images/icons/mwo-icon.webp"
+    ]
+  },
+  {
+    "id": "tdg-logo",
+    "title": "The Devil's Gambit",
+    "category": "logos",
+    "year": "2022",
+    "description": "Game DLC Logo Design",
+    "thumbnail": "/images/logos/tdg-logo-example.webp",
+    "images": [
+      "/images/logos/tdg-logo-example.webp",
+      "/images/icons/mw5-dlc5-icon.webp"
+    ]
+  },
+  {
+    "id": "ror-logo",
+    "title": "Rise of Rasalhague",
+    "category": "logos",
+    "year": "2021",
+    "description": "Game DLC Logo Design",
+    "thumbnail": "/images/logos/ror-logo-example.webp",
+    "images": [
+      "/images/logos/ror-logo-example.webp",
+      "/images/icons/mw5-dlc4-icon.webp"
+    ]
+  },
+  {
+    "id": "lotkl-logo",
+    "title": "Legend of the Kestrel Lancers",
+    "category": "logos",
+    "year": "2021",
+    "description": "Game DLC Logo Design",
+    "thumbnail": "/images/logos/lotkl-logo-example.webp",
+    "images": [
+      "/images/logos/lotkl-logo-example.webp",
+      "/images/icons/mw5-dlc2-icon.webp"
+    ]
+  },
+  {
+    "id": "mw5-mercs-logo",
+    "title": "MechWarrior 5: Mercenaries",
+    "category": "logos",
+    "year": "2019",
+    "description": "Game Logo Design",
+    "thumbnail": "/images/logos/mw5-logo-example.webp",
+    "images": [
+      "/images/logos/mw5-logo-example.webp",
+      "/images/icons/mw5-icon.webp"
+    ]
+  },
+  {
+    "id": "mw5-dev-tee",
+    "title": "MW5 Dev Team T-Shirt",
+    "category": "branding",
+    "year": "2024",
+    "description": "Apparel / Merchandise Design",
+    "thumbnail": "/images/branding/mw5-dev-tee.webp",
+    "images": [
+      "/images/branding/mw5-dev-tee.webp",
+      "/images/branding/mw5-dev-tee2.webp",
+      "/images/branding/mw5-dev-tee-back.webp"
+    ]
+  },
+  {
+    "id": "clans-game-manual",
+    "title": "Clans Game Manual",
+    "category": "branding",
+    "year": "2024",
+    "description": "Print / Publication Design",
+    "thumbnail": "/images/branding/Mechwarrior5-CLANS-game-manual-1.webp",
+    "images": [
+      "/images/branding/Mechwarrior5-CLANS-game-manual-1.webp",
+      "/images/branding/Mechwarrior5-CLANS-game-manual-3.webp",
+      "/images/branding/Mechwarrior5-CLANS-game-manual-5.webp"
+    ]
+  },
+  {
+    "id": "mercs-game-manual",
+    "title": "Mercenaries Game Manual",
+    "category": "branding",
+    "year": "2019",
+    "description": "Print / Publication Design",
+    "thumbnail": "/images/branding/GameManual_v2_5_Page_01.webp",
+    "images": [
+      "/images/branding/GameManual_v2_5_Page_01.webp",
+      "/images/branding/GameManual_v2_5_Page_04.webp",
+      "/images/branding/GameManual_v2_5_Page_08.webp",
+      "/images/branding/GameManual_v2_5_Page_13.webp"
+    ]
+  },
+  {
+    "id": "technical-manual",
+    "title": "Technical Manual",
+    "category": "branding",
+    "year": "2024",
+    "description": "Print / Publication Design",
+    "thumbnail": "/images/branding/technical-manual-2024-v01_Page_01.webp",
+    "images": [
+      "/images/branding/technical-manual-2024-v01_Page_01.webp",
+      "/images/branding/technical-manual-2024-v01_Page_02.webp",
+      "/images/branding/technical-manual-2024-v01_Page_66.webp"
+    ]
+  },
+  {
+    "id": "columbia-brand",
+    "title": "Columbia College Brand Guidelines",
+    "category": "branding",
+    "year": "2020",
+    "description": "Brand Guidelines / Identity System",
+    "thumbnail": "/images/branding/Columbia_College_Brand_Guidelines_Final_Page_01.webp",
+    "images": [
+      "/images/branding/Columbia_College_Brand_Guidelines_Final_Page_01.webp",
+      "/images/branding/Columbia_College_Brand_Guidelines_Final_Page_02.webp",
+      "/images/branding/Columbia_College_Brand_Guidelines_Final_Page_04.webp",
+      "/images/branding/Columbia_College_Brand_Guidelines_Final_Page_11.webp"
+    ]
+  }
+]

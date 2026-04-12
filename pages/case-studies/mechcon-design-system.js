@@ -1,5 +1,4 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
-import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
 
 export default function CaseStudy() {
@@ -9,7 +8,7 @@ export default function CaseStudy() {
       description="Mech_Con was a 2-day gaming event celebrating the BattleTech universe and Piranha Games MechWarrior titles taking place between 2016 - 2018."
       heroImage="/images/case-studies/mechcon-img-lg-case-study2.webp"
     >
-      <div className={styles.caseStudyContainer}>
+      <div>
         <h2>
           Mech_Con was a 2-day Gaming event celebrating the BattleTech universe
           and Piranha Games MechWarrior titles taking place between 2016 - 2018.
@@ -27,12 +26,11 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Image showing Mech_Con 2018 brand elements.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study2-mechcon-branding-elements.webp"
           height={1080}
@@ -40,10 +38,9 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>Mech_Con website.</span>
+      <div>
+        <span className="text-secondary text-sm">Mech_Con website.</span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study2-mechcon-website-elements.webp"
           height={1080}
@@ -51,7 +48,7 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           Step one involved updating the logo from Mech_Con 2017 and creating a
           style-guide. I broke open the sketch pad and ideated on a design, a
@@ -69,12 +66,11 @@ export default function CaseStudy() {
           with a consistent look and feel.{' '}
         </p>
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Image showing Mech_Con 2018 styleguide components.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/mechcon-styleguide-case-study2.webp"
           height={1080}
@@ -82,10 +78,9 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>Event components.</span>
+      <div>
+        <span className="text-secondary text-sm">Event components.</span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study2-mechcon-event-elements.webp"
           height={1080}
@@ -93,12 +88,9 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
-          Tournament competitors.
-        </span>
+      <div>
+        <span className="text-secondary text-sm">Tournament competitors.</span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-2-team-tees.webp"
           height={1080}
@@ -106,7 +98,7 @@ export default function CaseStudy() {
           alt="Logo"
         />
       </div>
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           Custom made player shirts were created for MechWarrior Online
           tournament teams outside of the Mech_Con brand. The shirts

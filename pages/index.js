@@ -1,16 +1,14 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
-import styles from '@/components/contactForm.module.css';
-import stylesLayout from '@/components/layout.module.css';
 import useScrollTo from '@/components/useScrollTo';
 import PartnerLogos from '@/components/PartnerLogos';
 import Galleries from '@/components/Galleries';
 import CaseStudies from '@/components/CaseStudies';
 import AboutMe from '@/components/AboutMe';
+import Hero from '@/components/Hero';
 
 export default function Home() {
-  // Scroll to target function
   const { scrollToTarget } = useScrollTo({ targetId: 'collaborate' });
 
   return (
@@ -18,56 +16,30 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <div className={stylesLayout.videoReelHolder}>
-          <div className={stylesLayout.videoReelContainer}>
-            <video
-              poster="/images/header-video-poster.webp"
-              className={stylesLayout.videoReel}
-              width="1920"
-              height="auto"
-              autoPlay
-              muted
-              loop
-              preload="auto"
-            >
-              <source src="/video/header-video.mp4" type="video/mp4" />
-              <track
-                src="/path/to/captions.vtt"
-                kind="subtitles"
-                srcLang="en"
-                label="English"
-              />
-              Your browser does not support the video tag.
-            </video>
-            <button
-              onClick={scrollToTarget}
-              className={`${stylesLayout.primaryBtn} ${stylesLayout.headerBtn}`}
-            >
-              let's collaborate{' '}
-              <span className={`${styles.arrowIcoHTF}`}>&#11157;</span>
-            </button>
-          </div>
-        </div>
 
-        <div className={`${stylesLayout.containerHome}`}>
-          <PartnerLogos />
+      {/* Hero — static Artemis II image */}
+      <Hero scrollToTarget={scrollToTarget} />
 
-          <CaseStudies />
+      {/* Main homepage sections */}
+      <PartnerLogos />
 
-          <AboutMe />
+      <CaseStudies />
 
-          <div id="collaborate"></div>
-          <div className={styles.contactFormContainer}>
-            <h1>Let's Collaborate</h1>
-            <div className={styles.contactFormHolder}>
-              <ContactForm />
-            </div>
-          </div>
+      <AboutMe />
 
-          <Galleries />
+      {/* Collaborate / Contact section */}
+      <section
+        id="collaborate"
+        className="form-section"
+        aria-label="Contact form"
+      >
+        <h1>Let&apos;s Collaborate</h1>
+        <div className="form-container">
+          <ContactForm />
         </div>
       </section>
+
+      <Galleries />
     </Layout>
   );
 }

@@ -1,8 +1,6 @@
-import Head from 'next/head';
-import utilStyles from '@/styles/utils.module.css';
-import Layout, { siteTitle } from '@/components/Layout';
-import styles from '@/components/backgroundImage.module.css';
 import ImageCarousel from '@/components/ImageCarousel';
+import PortfolioItem from '@/components/PortfolioItem';
+import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
 
 const images = [
   '/images/ui/mw5-clans-homepage.webp',
@@ -64,147 +62,84 @@ const images8 = [
 
 export default function Websites() {
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
-        <h1>UI / Web</h1>
+    <PortfolioGalleryTemplate title="UI / Web">
+      <PortfolioItem
+        date="2024"
+        title="Mechwarrior 5: Clans"
+        launchUrl="https://mw5clans.com"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images} />
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2024</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Mechwarrior 5:Clans{' '}
-          <a className={utilStyles.launch} href="https://mw5clans.com">
-            Launch
-          </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
-        <a className={styles.imageLink} href="https://mw5clans.com">
-          <ImageCarousel images={images} />
-        </a>
+      <PortfolioItem
+        date="2021"
+        title="Mechwarrior 5: Mercs"
+        launchUrl="https://mw5mercs.com"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images1} />
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2021</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Mechwarrior 5:Mercs{' '}
-          <a className={utilStyles.launch} href="https://mw5mercs.com">
-            Launch
-          </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
-        <a className={styles.imageLink} href="https://mw5mercs.com">
-          <ImageCarousel images={images1} />
-        </a>
+      <PortfolioItem
+        date="2018"
+        title="Mechcon"
+        launchUrl="https://mechwarrior.com/mechcon"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images2} />
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2018</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Mechcon{' '}
-          <a
-            className={utilStyles.launch}
-            href="https://mechwarrior.com/mechcon"
-          >
-            Launch
-          </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
-        <a className={styles.imageLink} href="https://mechwarrior.com/mechcon">
-          <ImageCarousel images={images2} />
-        </a>
+      <PortfolioItem
+        date="2023"
+        title="MWO Legends Product Page"
+        launchUrl="https://mwomercs.com/legends/moonwalker"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images8} />
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2023</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          MWO Legends Product Page{' '}
-          <a
-            className={utilStyles.launch}
-            href="https://mwomercs.com/legends/moonwalker"
-          >
-            Launch
-          </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
-        <a
-          className={styles.imageLink}
-          href="https://mwomercs.com/legends/moonwalker"
-        >
-          <ImageCarousel images={images8} />
-        </a>
+      <PortfolioItem
+        date="2013 - 2024"
+        title="MWO Product Pages"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images3} />
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2013 - 2024</span>
-        <h3 className={utilStyles.header3Portfolio}>MWO Product Pages</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
-        <a className={styles.imageLink} href="https://mwomercs.com/store">
-          <ImageCarousel images={images3} />
-        </a>
+      <PortfolioItem
+        date="2017"
+        title="Piranha Games"
+        launchUrl="https://piranhagames.com/"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images4} />
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2017</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Piranha Games{' '}
-          <a className={utilStyles.launch} href="https://piranhagames.com/">
-            Launch
-          </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
-        <a className={styles.imageLink} href="https://piranhagames.com/">
-          <ImageCarousel images={images4} />
-        </a>
+      <PortfolioItem
+        date="2014"
+        title="Transverse [Crowd Funding Site]"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images5} />
+      </PortfolioItem>
 
-        <span className={utilStyles.datePortfolio}>2014</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Transverse [Crowd Funding Site]
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
+      <PortfolioItem
+        date="2012"
+        title="Connect the Doc"
+        launchUrl="https://connectthedoc.com/"
+        description="[ UI / UX / Front End ]"
+      >
+        <ImageCarousel images={images6} />
+      </PortfolioItem>
 
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images5} />
-        </div>
-
-        <span className={utilStyles.datePortfolio}>2012</span>
-        <h3 className={utilStyles.header3Portfolio}>
-          Connect the doc{' '}
-          <a className={utilStyles.launch} href="https://connectthedoc.com/">
-            Launch
-          </a>
-        </h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Front End ]
-        </p>
-
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images6} />
-        </div>
-
-        <span className={utilStyles.datePortfolio}>2009</span>
-        <h3 className={utilStyles.header3Portfolio}>SaaS Desktop Apps</h3>
-        <p className={utilStyles.descriptionPortfolio}>
-          {' '}
-          [ UI / UX / Animation]
-        </p>
-
-        <div className={styles.imageBg}>
-          <ImageCarousel images={images7} />
-        </div>
-      </section>
-    </Layout>
+      <PortfolioItem
+        date="2009"
+        title="SaaS Desktop Apps"
+        description="[ UI / UX / Animation ]"
+      >
+        <ImageCarousel images={images7} />
+      </PortfolioItem>
+    </PortfolioGalleryTemplate>
   );
 }

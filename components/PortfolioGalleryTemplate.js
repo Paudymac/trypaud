@@ -7,10 +7,10 @@ export default function PortfolioGalleryTemplate({ title, children }) {
       <Head>
         <title>{title ? `${title} - ${siteTitle}` : siteTitle}</title>
       </Head>
-      <section>
+      <div className="container section">
         {title && <h1>{title}</h1>}
         {children}
-      </section>
+      </div>
     </Layout>
   );
 }

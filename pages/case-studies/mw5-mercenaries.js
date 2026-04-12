@@ -1,5 +1,4 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
-import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
 
 export default function CaseStudy() {
@@ -9,7 +8,7 @@ export default function CaseStudy() {
       description="MechWarrior 5 Mercenaries represented a shift for Piranha games in game development from running a live services game to developing a stand-a-lone game accessible on major platforms."
       heroImage="/images/case-studies/mw5-img-lg-case-study3.webp"
     >
-      <div className={styles.caseStudyContainer}>
+      <div>
         <h2>
           MechWarrior 5 Mercenaries represented a shift for Piranha games in
           game development from running a live services game to developing a
@@ -22,12 +21,9 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
-          Modern Mercenaries logo.
-        </span>
+      <div>
+        <span className="text-secondary text-sm">Modern Mercenaries logo.</span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-3-mercs-logo-img3.webp"
           height={1080}
@@ -36,7 +32,7 @@ export default function CaseStudy() {
         />
       </div>
 
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           From the logo a design system was developed including a shorter
           version of the logo, colour schema and typography. Key Art and an
@@ -46,12 +42,11 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Components of Mercs design system.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-3-mercs-brand-guide-img4.webp"
           height={1080}
@@ -60,7 +55,7 @@ export default function CaseStudy() {
         />
       </div>
 
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           The homepage design wanted to utilise the behemoth Atlas Mech acting
           as the totem Mech for the game. I added subtle animation to bring it
@@ -68,12 +63,11 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           MW5 Mercs Homepage and DLC 1.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-3-mercs-content-img1.webp"
           height={1080}
@@ -82,7 +76,7 @@ export default function CaseStudy() {
         />
       </div>
 
-      <div className={styles.caseStudyContainer}>
+      <div>
         <p>
           The goal was to keep things simple. The site had look good on mobile
           just as much as desktop. Traffic was being driven from visuals on
@@ -93,12 +87,11 @@ export default function CaseStudy() {
         </p>
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
+      <div>
+        <span className="text-secondary text-sm">
           Mercs call to actions on mobile devices.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-3-mercs-mobile-img2.webp"
           height={1080}
