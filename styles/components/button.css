@@ -22,17 +22,16 @@
     transition:
       background-color var(--duration-fast) var(--ease-default),
       color var(--duration-fast) var(--ease-default),
-      border-color var(--duration-fast) var(--ease-default),
-      box-shadow var(--duration-fast) var(--ease-default),
-      transform var(--duration-fast) var(--ease-default);
+      border-color var(--duration-fast) var(--ease-default);
     white-space: nowrap;
     user-select: none;
     -webkit-user-select: none;
     text-decoration: none;
   }
 
-  .btn:active {
-    transform: scale(0.98);
+  .btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 
   .btn:disabled,
@@ -75,12 +74,12 @@
 
   /* --- Accent: Red CTA --- */
   .btn-accent {
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-hover);
     color: #fff;
   }
 
   .btn-accent:hover {
-    background-color: var(--color-accent-hover);
+    background-color: var(--color-accent);
     color: #fff;
   }
 
@@ -118,7 +117,7 @@
   /* --- Icon button --- */
   .btn-icon {
     padding: var(--space-2);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     aspect-ratio: 1;
   }
 

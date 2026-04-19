@@ -3,6 +3,7 @@ import utilStyles from '@/styles/utils.module.css';
 import Layout, { siteTitle } from '@/components/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowLeftIcon } from '@/components/NavIcons';
 
 export default function Logos() {
   return (
@@ -67,7 +68,17 @@ export default function Logos() {
         />
         <br />
       </section>
-      <Link href="/">&larr; home</Link>
+      <Link
+        href="/"
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 'var(--space-2)',
+        }}
+      >
+        <ArrowLeftIcon width={14} height={14} />
+        home
+      </Link>
     </Layout>
   );
 }

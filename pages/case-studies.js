@@ -5,7 +5,9 @@ import CaseStudies from '@/components/CaseStudies';
 const CaseStudiesPage = () => {
   return (
     <Layout>
-      <CaseStudies />
+      <div className="container container-wide">
+        <CaseStudies />
+      </div>
     </Layout>
   );
 };

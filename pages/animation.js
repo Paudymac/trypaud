@@ -3,7 +3,10 @@ import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
 
 export default function MotionGraphics() {
   return (
-    <PortfolioGalleryTemplate title="Animation">
+    <PortfolioGalleryTemplate
+      title="Animation"
+      description="Motion design, title sequences, and promotional trailers."
+    >
       <PortfolioItem
         date="2024"
         title="Solaris Showdown Launch Trailer"

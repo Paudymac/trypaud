@@ -26,7 +26,10 @@ export async function getStaticProps() {
 
 export default function Icons({ images }) {
   return (
-    <PortfolioGalleryTemplate title="Icons">
+    <PortfolioGalleryTemplate
+      title="Icons"
+      description="Glyph systems, player icons, and pictogram sets."
+    >
       <PortfolioItem
         date="2014 - 2024"
         title="MWO Player Icons"

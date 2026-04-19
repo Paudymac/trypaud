@@ -1,43 +1,40 @@
-import Head from 'next/head';
+'use client';
+
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Analytics } from '@vercel/analytics/react';
-import { useScrollToCollaborate } from '@/lib/scrollToCollaborate';
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import ThemeToggle from './ThemeToggle';
-import ThemeScript from './ThemeScript';
-import { TrefoilMark } from './TrefoilLogo';
-import NavMegaPanel from './NavMegaPanel';
-import BackToTop from './BackToTop';
-import { galleryLinks, caseStudyLinks, isGalleryRoute } from './NavData';
-import { ChevronDownIcon, ArrowLeftIcon, ArrowUpRightIcon } from './NavIcons';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
+import { TrefoilMark } from '@/components/TrefoilLogo';
+import NavMegaPanel from '@/components/NavMegaPanel';
+import {
+  galleryLinks,
+  caseStudyLinks,
+  isGalleryRoute,
+} from '@/components/NavData';
+import { ChevronDownIcon } from '@/components/NavIcons';
 
-export const siteTitle = 'TryPaud Portfolio';
-
-export default function Layout({ children, home }) {
-  const router = useRouter();
+export default function SiteHeader() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState(null);
   const [openMenu, setOpenMenu] = useState(null);
   const closeTimer = useRef(null);
 
-  const isChildCaseStudiesPage = router.pathname.startsWith('/case-studies/');
-
   useEffect(() => {
-    const handleScroll = () => {
+    const onScroll = () => {
       setIsScrolled(window.scrollY > 50);
       setOpenMenu(null);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
     setIsMenuOpen(false);
     setOpenMobileGroup(null);
     setOpenMenu(null);
-  }, [router.pathname]);
+  }, [pathname]);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -66,55 +63,31 @@ export default function Layout({ children, home }) {
 
   const handlePanelItemClick = () => setOpenMenu(null);
 
-  const isActiveLink = (href) => router.pathname === href;
-  const inGallery = isGalleryRoute(router.pathname);
-  const inCaseStudies = router.pathname.startsWith('/case-studies');
+  const isActive = (href) => pathname === href;
+  const inGallery = isGalleryRoute(pathname);
+  const inCaseStudies = pathname?.startsWith('/case-studies');
 
-  const { handleCollaborateClick } = useScrollToCollaborate();
+  const handleCollaborateClick = useCallback(() => {
+    const el = document.getElementById('collaborate');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleMobileGroup = (key) =>
     setOpenMobileGroup((curr) => (curr === key ? null : key));
 
+  // Only open the mega panel when focus arrives via keyboard (not mouse).
   const handleTriggerFocus = (key) => (e) => {
     if (e.target.matches(':focus-visible')) openMenuNow(key);
   };
 
   return (
-    <div>
-      <Head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="alternate icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="TryPaud — Design portfolio of Padraic McAteer. 17+ years of UI, branding, and visual design."
-        />
-        <meta
-          property="og:image"
-          content="/images/logos/trypaud-black-logo-example.webp"
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="googlebot" content="notranslate" />
-        <meta name="google" content="notranslate" />
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <ThemeScript />
-      </Head>
-
-      {/* Skip to content link for accessibility */}
-      <a href="#main-content" className="skip-link">
-        Skip to content
-      </a>
-
-      {/* ---- Header ---- */}
+    <>
       <header
         className="site-header"
         data-scrolled={isScrolled}
         data-menu-open={openMenu !== null}
         role="banner"
       >
-        {/* Desktop nav */}
         <nav className="nav-container" aria-label="Main navigation">
           <Link href="/" className="nav-logo" aria-label="TryPaud home">
             <TrefoilMark size={32} />
@@ -169,8 +142,8 @@ export default function Layout({ children, home }) {
 
             <Link
               href="/about"
-              className={`nav-link ${isActiveLink('/about') ? 'nav-link-active' : ''}`}
-              aria-current={isActiveLink('/about') ? 'page' : undefined}
+              className={`nav-link ${isActive('/about') ? 'nav-link-active' : ''}`}
+              aria-current={isActive('/about') ? 'page' : undefined}
               onMouseEnter={scheduleClose}
             >
               About
@@ -189,7 +162,6 @@ export default function Layout({ children, home }) {
           </div>
         </nav>
 
-        {/* Mobile nav */}
         <div className="mobile-nav">
           <Link href="/" className="nav-logo" aria-label="TryPaud home">
             <TrefoilMark size={28} />
@@ -199,7 +171,7 @@ export default function Layout({ children, home }) {
             <ThemeToggle />
             <button
               className="mobile-menu-btn"
-              onClick={toggleMenu}
+              onClick={() => setIsMenuOpen((v) => !v)}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               type="button"
@@ -215,7 +187,6 @@ export default function Layout({ children, home }) {
           </div>
         </div>
 
-        {/* Mobile menu panel */}
         <div
           id="mobile-menu"
           className={`mobile-menu ${isMenuOpen ? 'mobile-menu-open' : ''}`}
@@ -251,9 +222,7 @@ export default function Layout({ children, home }) {
                       <Link
                         href={link.href}
                         className="mobile-menu-link"
-                        aria-current={
-                          isActiveLink(link.href) ? 'page' : undefined
-                        }
+                        aria-current={isActive(link.href) ? 'page' : undefined}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {link.label}
@@ -306,7 +275,7 @@ export default function Layout({ children, home }) {
               <Link
                 href="/about"
                 className="mobile-menu-link"
-                aria-current={isActiveLink('/about') ? 'page' : undefined}
+                aria-current={isActive('/about') ? 'page' : undefined}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
@@ -336,61 +305,6 @@ export default function Layout({ children, home }) {
         onMouseLeave={scheduleClose}
         onItemClick={handlePanelItemClick}
       />
-
-      {/* ---- Main content ---- */}
-      <main id="main-content" role="main">
-        {children}
-      </main>
-
-      {/* ---- Back to home (non-home pages) ---- */}
-      {!home && !isChildCaseStudiesPage && (
-        <div className="case-study-back">
-          <Link href="/" className="btn btn-secondary">
-            <ArrowLeftIcon width={14} height={14} />
-            Back to home
-          </Link>
-        </div>
-      )}
-
-      {/* ---- Footer ---- */}
-      <footer className="site-footer-wrapper" role="contentinfo">
-        <div className="site-footer">
-          <nav className="footer-nav" aria-label="Footer navigation">
-            <Link
-              href="https://www.linkedin.com/in/padraic-mcateer-trypaud/"
-              className="footer-link"
-            >
-              LinkedIn
-            </Link>
-            <Link href="mailto:paudy@trypaud.com" className="footer-link">
-              Email
-            </Link>
-            <Link href="/PadraicMcAteer_CV_2025.pdf" className="footer-link">
-              CV
-            </Link>
-          </nav>
-
-          <div className="footer-brand">
-            <Link href="/" className="footer-logo" aria-label="TryPaud home">
-              <TrefoilMark size={64} />
-            </Link>
-            <button
-              onClick={handleCollaborateClick}
-              className="btn btn-accent"
-              type="button"
-            >
-              Let&apos;s Collaborate
-              <ArrowUpRightIcon width={16} height={16} />
-            </button>
-          </div>
-        </div>
-        <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} TryPaud. All rights reserved.
-        </p>
-      </footer>
-
-      <BackToTop />
-      <Analytics />
-    </div>
+    </>
   );
 }

@@ -1,5 +1,9 @@
-import { useIntersectionObserver } from './useIntersectionObserver';
+'use client';
+
+import Image from 'next/image';
 import Link from 'next/link';
+import { useIntersectionObserver } from './useIntersectionObserver';
+import { ArrowUpRightIcon } from './NavIcons';
 
 const caseStudies = [
   {
@@ -35,11 +39,22 @@ const CaseStudyCard = ({ study, index }) => {
       ref={ref}
       href={study.href}
       className={`case-study-card animate-hidden ${isVisible ? `animate-visible delay-${index + 1}` : ''}`}
-      style={{ backgroundImage: `url(${study.image})` }}
     >
+      <Image
+        src={study.image}
+        alt={`${study.title} — ${study.desc}`}
+        fill
+        sizes="(min-width: 1200px) 50vw, (min-width: 768px) 50vw, 100vw"
+        className="case-study-card-image"
+      />
       <div className="case-study-card-overlay">
-        <h3>{study.title}</h3>
-        <span className="case-study-card-desc">{study.desc}</span>
+        <div className="case-study-card-content">
+          <span className="case-study-card-index" aria-hidden="true">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <h3 className="case-study-card-title">{study.title}</h3>
+          <span className="case-study-card-desc">{study.desc}</span>
+        </div>
       </div>
     </Link>
   );
@@ -47,8 +62,20 @@ const CaseStudyCard = ({ study, index }) => {
 
 const CaseStudies = () => {
   return (
-    <section className="case-studies-section" aria-label="Case studies">
-      <h2>Case Studies</h2>
+    <section
+      className="case-studies-section bleed-wide"
+      aria-label="Case studies"
+    >
+      <header className="home-section-header">
+        <div className="home-section-header-text">
+          <span className="home-section-eyebrow">Selected work</span>
+          <h2 className="home-section-title">Case Studies</h2>
+        </div>
+        <Link href="/case-studies" className="home-section-action">
+          View all
+          <ArrowUpRightIcon width={14} height={14} />
+        </Link>
+      </header>
       <div className="case-studies-grid">
         {caseStudies.map((study, i) => (
           <CaseStudyCard key={study.href} study={study} index={i} />

@@ -7,6 +7,13 @@ export default function CaseStudy() {
       title="Mech_Con Design System"
       description="Mech_Con was a 2-day gaming event celebrating the BattleTech universe and Piranha Games MechWarrior titles taking place between 2016 - 2018."
       heroImage="/images/case-studies/mechcon-img-lg-case-study2.webp"
+      year="2016 – 2018"
+      client="Piranha Games"
+      roles={['Event Branding', 'Design System', 'Web Design', 'Frontend Dev']}
+      nextStudy={{
+        href: '/case-studies/design-of-clans',
+        title: 'Design of Clans',
+      }}
     >
       <div>
         <h2>

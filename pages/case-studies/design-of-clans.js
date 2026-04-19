@@ -7,6 +7,22 @@ export default function CaseStudy() {
       title="Design of Clans"
       description="The challenge was to create a brand and player experience to support the release of MECHWARRIOR 5: CLANS."
       heroImage="/images/case-studies/clans-img-lg-case-study4.webp"
+      year="2024"
+      client="Piranha Games"
+      roles={[
+        'Discovery',
+        'Competition Analysis',
+        'Branding',
+        'Logo Design',
+        'Wireframes',
+        'Mockups',
+        'Frontend Dev',
+      ]}
+      launchUrl="https://mw5clans.com"
+      nextStudy={{
+        href: '/case-studies/mw5-mercenaries',
+        title: 'MW5 Mercenaries Marketing',
+      }}
     >
       <div>
         <h2>
@@ -14,17 +30,6 @@ export default function CaseStudy() {
           place in the Mechwarrior Universe however it is a completely different
           game from MW5 Mercenaries.{' '}
         </h2>
-        <h3>My Role</h3>
-        <ul>
-          <li>Discovery</li>
-          <li>Competition Analysis</li>
-          <li>Branding</li>
-          <li>Logo Design</li>
-          <li>Content</li>
-          <li>Wireframes</li>
-          <li>Mockups</li>
-          <li>Frontend Dev</li>
-        </ul>
         <p>
           The challenge was to create a brand and marketing experience to
           support the release of MECHWARRIOR 5: CLANS. It features a new story

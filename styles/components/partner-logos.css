@@ -1,25 +1,23 @@
 @layer components {
   /* ========================================
      PARTNER LOGOS
+     Two variants per partner (light / dark). The right one shows
+     based on [data-theme]. A gentle opacity on the set, bumped on
+     hover — no grayscale filter since the variants are pre-tuned.
      ======================================== */
 
   .partners-section {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: var(--space-8) var(--space-4);
-  }
-
-  .partners-section h2 {
-    margin-bottom: var(--space-4);
+    padding-block: var(--section-py);
   }
 
   .partners-grid {
+    container-type: inline-size;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: var(--space-1);
     background-color: var(--color-surface-1);
     border: 1px solid var(--color-border-subtle);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     padding: var(--space-2);
   }
 
@@ -30,34 +28,29 @@
     padding: var(--space-4);
   }
 
-  .partners-grid img {
+  .partner-logo {
     margin: 0 auto;
     max-height: 120px;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition:
-      filter var(--duration-normal) var(--ease-default),
-      opacity var(--duration-normal) var(--ease-default);
+    opacity: 0.75;
+    transition: opacity var(--duration-normal) var(--ease-default);
   }
 
-  .partners-grid img:hover {
-    filter: grayscale(0%);
+  .partners-grid li:hover .partner-logo {
     opacity: 1;
   }
 
-  @media (max-width: 1280px) {
-    .partners-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  /* Theme-based swap — show the variant that matches [data-theme].
+     Both images render in the DOM for a clean fade between modes. */
+  [data-theme='dark'] .partner-logo-light {
+    display: none;
+  }
+  [data-theme='light'] .partner-logo-dark {
+    display: none;
   }
 
-  @media (max-width: 500px) {
-    .partners-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .partners-grid img {
+  @container (max-width: 500px) {
+    .partner-logo {
       max-height: 150px;
     }
   }

@@ -4,9 +4,16 @@ import Image from 'next/image';
 export default function CaseStudy() {
   return (
     <CaseStudyTemplate
-      title="The User Interface for purchasing MWO Legends content"
+      title="UI for MWO Product Pages"
       description="MechWarrior Online is a live services tactical shooter with a persistent player base spanning the globe based on the popular BattleTech Universe."
       heroImage="/images/case-studies/mwo-product-img-lg-art-case-study1.webp"
+      year="2013 – 2024"
+      client="Piranha Games"
+      roles={['UI Design', 'UX', 'E-commerce', 'Frontend Dev']}
+      nextStudy={{
+        href: '/case-studies/mechcon-design-system',
+        title: 'Mech_Con Design System',
+      }}
     >
       <div>
         <h2>

@@ -94,10 +94,7 @@
     "year": "2020",
     "description": "SaaS Website Design",
     "thumbnail": "/images/ui/ctd-img1.webp",
-    "images": [
-      "/images/ui/ctd-img1.webp",
-      "/images/ui/ctd-img2.webp"
-    ]
+    "images": ["/images/ui/ctd-img1.webp", "/images/ui/ctd-img2.webp"]
   },
   {
     "id": "hs-bb-ui",

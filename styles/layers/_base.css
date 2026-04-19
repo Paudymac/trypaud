@@ -10,9 +10,35 @@
   }
 
   body {
+    font-family: var(--font-family);
     font-size: var(--text-base);
     line-height: var(--leading-normal);
     background-color: var(--color-surface-0);
+  }
+
+  /* Force Barlow on elements browsers default to monospace, italic-serif,
+     or system fonts. No serif anywhere on the site. */
+  code,
+  kbd,
+  samp,
+  pre,
+  tt,
+  var,
+  dfn,
+  cite,
+  blockquote,
+  q,
+  em,
+  i,
+  address {
+    font-family: var(--font-family);
+  }
+
+  /* Universal belt-and-braces: every element inherits font-family from its
+     ancestor. :where() keeps specificity at 0 so third-party icon fonts
+     (e.g. slick-carousel's :before pseudos) can still win via direct rules. */
+  :where(*, *::before, *::after) {
+    font-family: inherit;
   }
 
   /* --- Typography --- */
@@ -29,31 +55,21 @@
   }
 
   h1 {
-    font-size: var(--text-4xl);
+    font-size: var(--step-4xl);
     letter-spacing: var(--tracking-tight);
     text-transform: none;
   }
 
   h2 {
-    font-size: var(--text-2xl);
+    font-size: var(--step-2xl);
   }
 
   h3 {
-    font-size: var(--text-xl);
+    font-size: var(--step-xl);
   }
 
   h4 {
-    font-size: var(--text-lg);
-  }
-
-  @media (max-width: 1024px) {
-    h1 { font-size: var(--text-3xl); }
-    h2 { font-size: var(--text-xl); }
-    h3 { font-size: var(--text-lg); }
-  }
-
-  @media (max-width: 600px) {
-    h1 { font-size: var(--text-2xl); }
+    font-size: var(--step-lg);
   }
 
   /* --- Links --- */

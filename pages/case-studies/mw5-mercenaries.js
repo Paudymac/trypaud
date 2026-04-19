@@ -7,6 +7,14 @@ export default function CaseStudy() {
       title="MW5 Mercenaries"
       description="MechWarrior 5 Mercenaries represented a shift for Piranha games in game development from running a live services game to developing a stand-a-lone game accessible on major platforms."
       heroImage="/images/case-studies/mw5-img-lg-case-study3.webp"
+      year="2021"
+      client="Piranha Games"
+      roles={['Marketing', 'Visual Design', 'Web Design', 'Frontend Dev']}
+      launchUrl="https://mw5mercs.com"
+      nextStudy={{
+        href: '/case-studies/ui-mwo-product-pages',
+        title: 'UI for MWO Product Pages',
+      }}
     >
       <div>
         <h2>

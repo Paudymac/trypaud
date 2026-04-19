@@ -24,22 +24,25 @@
     --space-24: 6rem;
     --space-32: 8rem;
 
-    /* --- Typography scale --- */
-    --font-family: var(--font-barlow), -apple-system, BlinkMacSystemFont,
-      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    /* --- Typography scale ---
+       Barlow everywhere. If --font-barlow hasn't loaded (or the CSS var
+       hasn't reached this element's scope yet), fall through to a system
+       sans stack — never a browser-default serif. */
+    --font-family:
+      var(--font-barlow, -apple-system), BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
 
-    --text-xs: 0.75rem;     /* 12px */
-    --text-sm: 0.875rem;    /* 14px */
-    --text-base: 1rem;      /* 16px */
-    --text-lg: 1.125rem;    /* 18px */
-    --text-xl: 1.25rem;     /* 20px */
-    --text-2xl: 1.5rem;     /* 24px */
-    --text-3xl: 2rem;       /* 32px */
-    --text-4xl: 2.5rem;     /* 40px */
-    --text-5xl: 3rem;       /* 48px */
-    --text-6xl: 3.75rem;    /* 60px */
+    --text-xs: 0.75rem; /* 12px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-base: 1rem; /* 16px */
+    --text-lg: 1.125rem; /* 18px */
+    --text-xl: 1.25rem; /* 20px */
+    --text-2xl: 1.5rem; /* 24px */
+    --text-3xl: 2rem; /* 32px */
+    --text-4xl: 2.5rem; /* 40px */
+    --text-5xl: 3rem; /* 48px */
+    --text-6xl: 3.75rem; /* 60px */
 
     --leading-tight: 1.2;
     --leading-snug: 1.375;
@@ -70,9 +73,12 @@
     /* --- Shadows --- */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
     /* --- Transitions --- */
     --duration-fast: 150ms;
@@ -87,7 +93,28 @@
     --max-width: 80rem;
     --max-width-narrow: 60rem;
     --max-width-wide: 96rem;
+    --max-width-bleed: 120rem;
     --header-height: 3.5rem;
+
+    /* Fluid gutter — scales from 1rem (mobile) to 3rem (widescreen) */
+    --gutter: clamp(1rem, 1.2vw + 0.5rem, 3rem);
+    /* Extra-generous gutter for full-bleed sections on widescreen */
+    --gutter-wide: clamp(1rem, 3vw, 5rem);
+
+    /* Fluid vertical section padding */
+    --section-py: clamp(3rem, 6vw, 7rem);
+    --section-py-lg: clamp(4rem, 9vw, 10rem);
+
+    /* Fluid typography scale — scales smoothly between mobile + widescreen */
+    --step-xs: clamp(0.75rem, 0.7rem + 0.15vw, 0.875rem);
+    --step-sm: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+    --step-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --step-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+    --step-xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.75rem);
+    --step-2xl: clamp(1.5rem, 1.2rem + 1.4vw, 2.5rem);
+    --step-3xl: clamp(2rem, 1.5rem + 2.4vw, 3.75rem);
+    --step-4xl: clamp(2.5rem, 1.8rem + 3.4vw, 5rem);
+    --step-5xl: clamp(3rem, 2rem + 5vw, 6.5rem);
 
     /* --- Z-index scale --- */
     --z-base: 0;
@@ -109,46 +136,49 @@
     color-scheme: dark;
 
     /* Surfaces */
-    --color-surface-0: #0C0E14;
+    --color-surface-0: #0c0e14;
     --color-surface-1: #151820;
-    --color-surface-2: #1E2130;
-    --color-surface-3: #282C3A;
+    --color-surface-2: #1e2130;
+    --color-surface-3: #282c3a;
     --color-surface-4: #323644;
 
     /* Borders */
-    --color-border: #3A3F50;
-    --color-border-subtle: #2A2E3C;
+    --color-border: #3a3f50;
+    --color-border-subtle: #2a2e3c;
 
     /* Text */
-    --color-text-primary: #F0F1F4;
-    --color-text-secondary: #9CA3B4;
-    --color-text-tertiary: #6B7280;
-    --color-text-inverse: #0C0E14;
+    --color-text-primary: #f0f1f4;
+    --color-text-secondary: #9ca3b4;
+    --color-text-tertiary: #6b7280;
+    --color-text-inverse: #0c0e14;
 
-    /* Primary — Steel blue */
-    --color-primary: #4BA3D4;
-    --color-primary-hover: #6BB8E4;
-    --color-primary-active: #3690C0;
-    --color-primary-subtle: rgba(75, 163, 212, 0.12);
+    /* Primary — Steel blue. Hover brighter, active darker. */
+    --color-primary: #4ba3d4;
+    --color-primary-hover: #3690c0;
+    --color-primary-active: #2677a5;
+    --color-primary-subtle: rgba(75, 163, 212, 0.14);
 
-    /* Accent — Signal red */
-    --color-accent: #EF4444;
-    --color-accent-hover: #F87171;
-    --color-accent-active: #DC2626;
-    --color-accent-subtle: rgba(239, 68, 68, 0.12);
+    /* Accent — Signal red. Hover brighter, active darker. */
+    --color-accent: #e11d2c;
+    --color-accent-hover: #b91c1c;
+    --color-accent-active: #991b1b;
+    --color-accent-subtle: rgba(225, 29, 44, 0.14);
 
     /* Semantic */
-    --color-success: #34D399;
-    --color-warning: #FBBF24;
-    --color-error: #F87171;
-    --color-info: #60A5FA;
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+    --color-error: #f87171;
+    --color-info: #60a5fa;
 
     /* Shadows (darker for dark theme) */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    --shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    --shadow-xl:
+      0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
 
     /* Overlay */
     --color-overlay: rgba(0, 0, 0, 0.7);
@@ -163,46 +193,49 @@
     color-scheme: light;
 
     /* Surfaces */
-    --color-surface-0: #FFFFFF;
-    --color-surface-1: #F4F5F8;
-    --color-surface-2: #E8EAF0;
-    --color-surface-3: #D1D5DE;
-    --color-surface-4: #BCC1CD;
+    --color-surface-0: #ffffff;
+    --color-surface-1: #f4f5f8;
+    --color-surface-2: #e8eaf0;
+    --color-surface-3: #d1d5de;
+    --color-surface-4: #bcc1cd;
 
     /* Borders */
-    --color-border: #C4C9D4;
-    --color-border-subtle: #DDE0E8;
+    --color-border: #c4c9d4;
+    --color-border-subtle: #dde0e8;
 
     /* Text */
-    --color-text-primary: #1A1D28;
-    --color-text-secondary: #4B5268;
-    --color-text-tertiary: #6B7280;
-    --color-text-inverse: #F0F1F4;
+    --color-text-primary: #1a1d28;
+    --color-text-secondary: #4b5268;
+    --color-text-tertiary: #6b7280;
+    --color-text-inverse: #f0f1f4;
 
     /* Primary — Deep steel blue */
-    --color-primary: #1D6FA5;
-    --color-primary-hover: #155A87;
-    --color-primary-active: #0E4468;
+    --color-primary: #1d6fa5;
+    --color-primary-hover: #155a87;
+    --color-primary-active: #0e4468;
     --color-primary-subtle: rgba(29, 111, 165, 0.08);
 
     /* Accent — Signal red */
-    --color-accent: #B91C1C;
-    --color-accent-hover: #991B1B;
-    --color-accent-active: #7F1D1D;
+    --color-accent: #b91c1c;
+    --color-accent-hover: #991b1b;
+    --color-accent-active: #7f1d1d;
     --color-accent-subtle: rgba(185, 28, 28, 0.08);
 
     /* Semantic */
     --color-success: #059669;
-    --color-warning: #D97706;
-    --color-error: #DC2626;
-    --color-info: #2563EB;
+    --color-warning: #d97706;
+    --color-error: #dc2626;
+    --color-info: #2563eb;
 
     /* Shadows (lighter for light theme) */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
     /* Overlay */
     --color-overlay: rgba(0, 0, 0, 0.5);

@@ -7,11 +7,15 @@ const barlow = Barlow({
   style: ['normal', 'italic'],
   subsets: ['latin'],
   variable: '--font-barlow',
+  display: 'swap',
 });
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={barlow.variable}>
+    <div
+      className={barlow.variable}
+      style={{ fontFamily: 'var(--font-family)' }}
+    >
       <Component {...pageProps} />
     </div>
   );

@@ -65,12 +65,6 @@
 
   .footer-logo {
     color: var(--color-text-primary);
-    opacity: 0.6;
-    transition: opacity var(--duration-fast) var(--ease-default);
-  }
-
-  .footer-logo:hover {
-    opacity: 1;
   }
 
   .footer-logo svg {

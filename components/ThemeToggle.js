@@ -1,10 +1,7 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
-/**
- * ThemeToggle — switches between dark/light themes.
- * Persists choice in localStorage; respects prefers-color-scheme as fallback.
- * Default is dark mode.
- */
 export default function ThemeToggle() {
   const [theme, setTheme] = useState('dark');
   const [mounted, setMounted] = useState(false);

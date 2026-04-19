@@ -113,14 +113,14 @@
     padding: var(--space-2) var(--space-4);
     background: var(--color-primary);
     color: #fff;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: var(--text-sm);
   }
 
-  .skip-link:focus {
+  .skip-link:focus-visible {
     top: var(--space-2);
   }
 }

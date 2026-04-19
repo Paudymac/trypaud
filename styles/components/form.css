@@ -4,20 +4,16 @@
      ======================================== */
 
   .form-section {
-    max-width: var(--max-width-narrow);
-    margin: 0 auto;
-    padding: var(--space-16) var(--space-4);
-  }
-
-  .form-section h1 {
-    margin-bottom: var(--space-8);
+    padding-block: var(--section-py);
   }
 
   .form-container {
     background-color: var(--color-surface-1);
     border: 1px solid var(--color-border-subtle);
-    border-radius: var(--radius-xl);
-    padding: var(--space-8);
+    border-radius: 0;
+    padding: clamp(var(--space-6), 3vw, var(--space-10));
+    max-width: var(--max-width-narrow);
+    margin-inline: auto;
   }
 
   @media (max-width: 600px) {
@@ -36,19 +32,27 @@
 
   .form-message {
     padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
   }
 
   .form-message-success {
-    background-color: color-mix(in srgb, var(--color-success) 15%, var(--color-surface-1));
+    background-color: color-mix(
+      in srgb,
+      var(--color-success) 15%,
+      var(--color-surface-1)
+    );
     color: var(--color-success);
     border: 1px solid color-mix(in srgb, var(--color-success) 30%, transparent);
   }
 
   .form-message-error {
-    background-color: color-mix(in srgb, var(--color-error) 15%, var(--color-surface-1));
+    background-color: color-mix(
+      in srgb,
+      var(--color-error) 15%,
+      var(--color-surface-1)
+    );
     color: var(--color-error);
     border: 1px solid color-mix(in srgb, var(--color-error) 30%, transparent);
   }
