@@ -62,10 +62,8 @@
     display: grid;
     grid-template-columns:
       [full-start] minmax(var(--gutter), 1fr)
-      [content-start] min(
-        100% - var(--gutter) * 2,
-        var(--max-width-wide)
-      ) [content-end]
+      [content-start] min(100% - var(--gutter) * 2, var(--max-width-wide))
+      [content-end]
       minmax(var(--gutter), 1fr) [full-end];
     padding-block: clamp(3rem, 6vw, 7rem) clamp(2rem, 4vw, 5rem);
   }

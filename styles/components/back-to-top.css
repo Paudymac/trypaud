@@ -19,7 +19,10 @@
     padding: 0;
 
     background-color: var(--color-surface-2);
-    color: var(--color-text-primary);
+    /* Match the nav menu item idle colour so the arrow reads as a
+       peer of the main nav links rather than body copy. */
+    color: var(--color-text-secondary);
+    stroke: var(--color-text-secondary);
     border: 2px solid var(--color-border);
     border-radius: var(--radius-full);
     box-shadow:
@@ -62,8 +65,9 @@
   .back-to-top:hover,
   .back-to-top:focus-visible {
     background-color: var(--color-surface-3);
-    border-color: var(--color-primary);
+    border-color: var(--color-accent);
     color: var(--color-primary);
+    stroke: var(--color-primary);
   }
 
   .back-to-top:active {

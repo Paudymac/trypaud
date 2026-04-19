@@ -1,30 +1,25 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Head from 'next/head';
 import Layout, { siteTitle } from '@/components/Layout';
 import Lightbox from '@/components/Lightbox';
 import fs from 'fs';
 import path from 'path';
 
-const ITEMS_PER_PAGE = 16;
+const ITEMS_PER_PAGE = 18;
 
 const CATEGORIES = [
   { key: 'all', label: 'All' },
   { key: 'ui', label: 'UI / Web' },
   { key: 'logos', label: 'Logos' },
   { key: 'branding', label: 'Branding' },
-  { key: 'icons', label: 'Icons' },
-  { key: 'animation', label: 'Animation' },
   { key: 'illustration', label: 'Illustration' },
+  { key: 'icons', label: 'Icons' },
 ];
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), 'data', 'gallery-items.json');
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  const allItems = JSON.parse(fileContent);
-
-  return {
-    props: { allItems },
-  };
+  const allItems = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return { props: { allItems } };
 }
 
 export default function Gallery({ allItems }) {
@@ -39,40 +34,42 @@ export default function Gallery({ allItems }) {
 
   const sentinelRef = useRef(null);
 
-  // Filter items by category
+  // Counts per category for filter chips
+  const categoryCounts = useMemo(() => {
+    const base = { all: allItems.length };
+    for (const item of allItems) {
+      base[item.category] = (base[item.category] || 0) + 1;
+    }
+    return base;
+  }, [allItems]);
+
   const filteredItems =
     activeCategory === 'all'
       ? allItems
       : allItems.filter((item) => item.category === activeCategory);
 
-  // Items currently visible (infinite scroll slice)
   const visibleItems = filteredItems.slice(0, visibleCount);
   const hasMore = visibleCount < filteredItems.length;
 
-  // Reset visible count when category changes
   useEffect(() => {
     setVisibleCount(ITEMS_PER_PAGE);
   }, [activeCategory]);
 
-  // Infinite scroll via IntersectionObserver
   useEffect(() => {
     const sentinel = sentinelRef.current;
     if (!sentinel || !hasMore) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setVisibleCount((prev) => prev + ITEMS_PER_PAGE);
         }
       },
-      { rootMargin: '200px' }
+      { rootMargin: '400px' }
     );
-
     observer.observe(sentinel);
     return () => observer.disconnect();
   }, [hasMore, activeCategory]);
 
-  // Lightbox handlers
   const openLightbox = useCallback((item) => {
     setLightbox({
       isOpen: true,
@@ -110,67 +107,85 @@ export default function Gallery({ allItems }) {
         />
       </Head>
 
-      <div className="container section">
-        <h1>Gallery</h1>
-        <p
-          className="text-secondary"
-          style={{ marginBottom: 'var(--space-6)' }}
-        >
-          {filteredItems.length} project{filteredItems.length !== 1 ? 's' : ''}
-        </p>
+      {/* Full-bleed header — matches portfolio sub-pages */}
+      <header className="portfolio-header">
+        <div className="portfolio-header-inner">
+          <span className="portfolio-eyebrow">Gallery</span>
+          <h1 className="portfolio-title">All work</h1>
+          <p className="portfolio-description">
+            A running index of projects across UI, branding, illustration and
+            iconography — {allItems.length} pieces from 2009 through today.
+          </p>
+        </div>
+      </header>
 
-        {/* Category filters */}
+      <div className="gallery-page">
+        {/* Category filter chips — sticky on scroll, horizontal-scroll on mobile */}
         <div
           className="gallery-filters"
           role="toolbar"
           aria-label="Filter by category"
         >
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.key}
-              className={`gallery-filter-btn ${activeCategory === cat.key ? 'gallery-filter-btn-active' : ''}`}
-              onClick={() => setActiveCategory(cat.key)}
-              aria-pressed={activeCategory === cat.key}
-              type="button"
-            >
-              {cat.label}
-            </button>
-          ))}
+          {CATEGORIES.map((cat) => {
+            const count = categoryCounts[cat.key] ?? 0;
+            if (count === 0 && cat.key !== 'all') return null;
+            return (
+              <button
+                key={cat.key}
+                className={`gallery-filter-btn ${
+                  activeCategory === cat.key ? 'gallery-filter-btn-active' : ''
+                }`}
+                onClick={() => setActiveCategory(cat.key)}
+                aria-pressed={activeCategory === cat.key}
+                type="button"
+              >
+                <span>{cat.label}</span>
+                <span className="gallery-filter-count" aria-hidden="true">
+                  {count}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Gallery grid */}
-        <div className="gallery-grid" role="list">
+        {/* Grid */}
+        <ul className="gallery-grid" role="list">
           {visibleItems.map((item) => (
-            <button
-              key={item.id}
-              className="gallery-item"
-              onClick={() => openLightbox(item)}
-              role="listitem"
-              aria-label={`View ${item.title}`}
-              type="button"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={item.thumbnail}
-                alt={item.title}
-                className="gallery-item-image"
-                loading="lazy"
-                width="560"
-                height="420"
-              />
-              <div className="gallery-item-overlay">
-                <div>
-                  <div className="gallery-item-title">{item.title}</div>
-                  <div className="gallery-item-category">
-                    {item.category} &middot; {item.year}
-                  </div>
+            <li key={item.id}>
+              <button
+                className="gallery-item"
+                onClick={() => openLightbox(item)}
+                aria-label={`Open ${item.title} — ${item.images.length} image${item.images.length !== 1 ? 's' : ''}`}
+                type="button"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.thumbnail}
+                  alt=""
+                  className="gallery-item-image"
+                  loading="lazy"
+                  width="560"
+                  height="420"
+                />
+                <div className="gallery-item-overlay">
+                  <span className="gallery-item-meta">
+                    <span className="gallery-item-category">
+                      {item.category === 'ui' ? 'UI / Web' : item.category}
+                    </span>
+                    <span className="gallery-item-year">{item.year}</span>
+                  </span>
+                  <span className="gallery-item-title">{item.title}</span>
                 </div>
-              </div>
-            </button>
+                {item.images.length > 1 && (
+                  <span className="gallery-item-count" aria-hidden="true">
+                    {item.images.length}
+                  </span>
+                )}
+              </button>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        {/* Infinite scroll sentinel */}
         {hasMore && (
           <>
             <div
@@ -184,7 +199,6 @@ export default function Gallery({ allItems }) {
           </>
         )}
 
-        {/* Empty state */}
         {filteredItems.length === 0 && (
           <p
             className="text-secondary text-center"
@@ -195,7 +209,6 @@ export default function Gallery({ allItems }) {
         )}
       </div>
 
-      {/* Lightbox overlay */}
       <Lightbox
         images={lightbox.images}
         currentIndex={lightbox.index}

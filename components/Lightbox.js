@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 
 /**
  * Lightbox — full-screen image overlay with prev/next navigation.
@@ -50,6 +50,31 @@ export default function Lightbox({
     };
   }, [isOpen]);
 
+  // Touch swipe: horizontal swipe navigates prev/next, vertical swipe down closes
+  const touchStart = useRef({ x: 0, y: 0, t: 0 });
+
+  const handleTouchStart = (e) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY, t: Date.now() };
+  };
+
+  const handleTouchEnd = (e) => {
+    const t = e.changedTouches[0];
+    if (!t) return;
+    const dx = t.clientX - touchStart.current.x;
+    const dy = t.clientY - touchStart.current.y;
+    const dt = Date.now() - touchStart.current.t;
+    if (dt > 600) return; // too slow, ignore
+    const ax = Math.abs(dx);
+    const ay = Math.abs(dy);
+    if (ax > 50 && ax > ay * 1.5) {
+      if (dx < 0) onNext();
+      else onPrev();
+    } else if (dy > 80 && ay > ax * 1.5) {
+      onClose();
+    }
+  };
+
   if (!isOpen || images.length === 0) return null;
 
   const handleBackdropClick = (e) => {
@@ -65,6 +90,8 @@ export default function Lightbox({
       aria-modal="true"
       aria-label={title || 'Image viewer'}
       onClick={handleBackdropClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Close button */}
       <button

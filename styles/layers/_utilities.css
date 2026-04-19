@@ -49,14 +49,10 @@
         0,
         calc((var(--max-width-bleed) - var(--max-width-wide)) / 2)
       )
-      [content-start] min(
-        100% - var(--gutter) * 2,
-        var(--max-width-wide)
-      ) [content-end]
-      minmax(
-        0,
-        calc((var(--max-width-bleed) - var(--max-width-wide)) / 2)
-      ) [wide-end]
+      [content-start] min(100% - var(--gutter) * 2, var(--max-width-wide))
+      [content-end]
+      minmax(0, calc((var(--max-width-bleed) - var(--max-width-wide)) / 2))
+      [wide-end]
       minmax(var(--gutter), 1fr) [full-end];
     row-gap: 0;
   }
