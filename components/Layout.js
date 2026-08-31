@@ -234,7 +234,6 @@ export default function Layout({ children, home }) {
             </button>
           </div>
         </div>
-
       </header>
 
       <MobileMenu

@@ -196,7 +196,6 @@ export default function SiteHeader() {
             </button>
           </div>
         </div>
-
       </header>
 
       <MobileMenu
