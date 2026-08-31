@@ -1,0 +1,963 @@
+@layer components {
+  /* ========================================================================
+     HOME — the continuous 12-column sheet ("Hull & Void", turn 11)
+     One grid runs the whole page. Structure from 2px rules and visible
+     rails; curves only as pills, circular plates and triangles.
+     ======================================================================== */
+
+  .sheet {
+    position: relative;
+    overflow-x: clip;
+  }
+
+  /* NOTE: main must NOT get a z-index here — it would trap fixed overlays
+     (the Lightbox) inside a stacking context below the sticky header.
+     The backdrop sits at z-index:-1 instead, which paints above the body
+     background but below all in-flow content. */
+
+  /* --- Ambient backdrop: a canvas starfield of knot-particles + the mark's
+         construction geometry, fixed to the viewport behind every band.
+         The field lives in AmbientBackground.js — per-star depth, twinkle,
+         drift, pointer parallax/glow and click ripples all render on one
+         canvas. Only the construction geometry still parallaxes via the
+         --px/--py custom properties below. --- */
+  .ambient-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+    color: var(--color-text-primary);
+  }
+
+  .ambient-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ambient-mark {
+    position: absolute;
+    aspect-ratio: 1;
+    /* The geometry drifts with the pointer too, gently */
+    transform: translate3d(
+      calc(var(--px, 0) * var(--mark-amt, 10px)),
+      calc(var(--py, 0) * var(--mark-amt, 10px)),
+      0
+    );
+    transition: transform 900ms var(--ease-out);
+  }
+
+  .ambient-mark-primary {
+    --mark-amt: 16px;
+  }
+
+  .ambient-mark-secondary {
+    --mark-amt: 9px;
+  }
+
+  .ambient-mark-primary {
+    width: min(78vw, 1240px);
+    right: -30vw;
+    top: -42vh;
+    opacity: 0.11;
+  }
+
+  .ambient-mark-secondary {
+    width: min(50vw, 800px);
+    left: -14vw;
+    bottom: -22vh;
+    opacity: 0.085;
+  }
+
+  .ambient-spin {
+    transform-origin: 50% 50%;
+    transform-box: view-box;
+  }
+
+  [data-theme='hull'] .ambient-mark-primary,
+  [data-theme='light'] .ambient-mark-primary {
+    opacity: 0.13;
+  }
+
+  [data-theme='hull'] .ambient-mark-secondary,
+  [data-theme='light'] .ambient-mark-secondary {
+    opacity: 0.1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ambient-mark-primary .ambient-spin {
+      animation: circles-rotate var(--duration-ambient) linear infinite;
+    }
+
+    .ambient-mark-secondary .ambient-spin {
+      animation: circles-rotate var(--duration-ambient-2) linear infinite
+        reverse;
+    }
+  }
+
+  /* --- Rules between sections --- */
+  .sheet-rule {
+    position: relative;
+    height: var(--rule-structural);
+    background: var(--color-border);
+    border: none;
+    margin: 0;
+  }
+
+  /* --- Shared band bits --- */
+  .band-label {
+    grid-column: 1 / 2;
+    padding-left: var(--gutter);
+    position: relative;
+  }
+
+  .margin-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    writing-mode: vertical-rl;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-brand);
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  /* The only triangles outside imagery are functional: a solid blue
+     triangle appears exclusively inside something that navigates.
+     (Decorative outline markers were removed — they read as noise.) */
+  .nav-cue {
+    flex: none;
+    color: var(--color-primary);
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      transform var(--duration-fast) var(--ease-out);
+  }
+
+  @keyframes circles-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ========================================================================
+     HERO band — cols 2–9 copy, cols 10–13 the circular plate
+     ======================================================================== */
+  .hero-band {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: hidden;
+  }
+
+  .hero-main {
+    grid-column: 2 / 9;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-right: 40px;
+    z-index: 1;
+  }
+
+  .hero-display {
+    font-size: var(--step-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    margin: 0;
+    color: var(--color-text-primary);
+    text-wrap: balance;
+  }
+
+  .hero-body {
+    font-size: var(--step-base);
+    line-height: var(--leading-normal);
+    max-width: 38ch;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 8px;
+  }
+
+  .hero-plate-col {
+    grid-column: 10 / 13;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -96px; /* the plate crosses the section rule — the system's signature */
+    padding-right: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+  }
+
+  /* --- Plates --- */
+  .plate-circle {
+    position: relative;
+    border-radius: var(--radius-plate);
+    overflow: hidden;
+    /* Curved edges alias hardest — 1.5px keeps the circle smooth */
+    border: 1.5px solid var(--color-border);
+    transition: border-color var(--duration-fast) var(--ease-default);
+  }
+
+  /* The hero plate is an instrument: a strong-edged porthole inside a
+     hairline orbit ring, with a signal-red satellite circling it. */
+  .hero-orbit {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* The hero porthole stays plain — the animated orbit treatment lives on
+     the about page portrait instead. */
+
+  .hero-plate {
+    width: 240px;
+    height: 240px;
+    border-color: var(--color-border-strong);
+  }
+
+  .plate-image {
+    object-fit: cover;
+    filter: var(--image-filter);
+  }
+
+  .plate-credit {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.7;
+    color: var(--color-text-tertiary);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .plate-credit svg {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: -1px;
+  }
+
+  /* --- Hero plate as a live instrument ----------------------------------
+     The porthole links out to the NASA Flickr archive the photograph
+     belongs to, and joins the plate hover grammar: blue edge for the
+     structure, while the mono credit — the plate's data readout — takes
+     the signal-red grace note (see _tokens.css). */
+  .hero-plate-link {
+    display: flex;
+    flex-direction: column;
+    align-items: inherit; /* follows .hero-plate-col: end desktop, start mobile */
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .hero-plate-link:hover .plate-circle,
+  .hero-plate-link:focus-visible .plate-circle {
+    border-color: var(--color-primary);
+  }
+
+  .hero-plate-link:hover .plate-credit,
+  .hero-plate-link:focus-visible .plate-credit {
+    color: var(--color-accent);
+  }
+
+  /* Power-on reveal. VOID rests slightly dimmed; HULL rests in the
+     theme's mono print. Hover resolves both to the plain photograph. */
+  .hero-plate .plate-image {
+    filter: brightness(0.85) saturate(0.9);
+    transition: filter var(--duration-normal) var(--ease-default);
+  }
+
+  [data-theme='hull'] .hero-plate .plate-image,
+  [data-theme='light'] .hero-plate .plate-image {
+    filter: var(--image-filter);
+  }
+
+  /* After the theme rules — same specificity, hover must win */
+  .hero-plate-link:hover .plate-image,
+  .hero-plate-link:focus-visible .plate-image {
+    filter: none;
+  }
+
+  /* ========================================================================
+     WORK band — heading row, then three plates on a 2px top rule
+     ======================================================================== */
+  .work-band {
+    position: relative;
+  }
+
+  /* A slim strip holding only the margin label — the heading itself lives
+     inside the plates grid below, so title and studies are one drawn box. */
+  .work-heading-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-top: 40px;
+    align-items: end;
+  }
+
+  /* --- Header row of the box: title cell + action cell. The title sits on
+     the same 22px cell padding as the plate captions beneath it, and the
+     cell's right rule continues the col-9 vertical that separates the
+     plates from the index below — the heading hangs from the structure it
+     introduces instead of floating above it. --- */
+  .work-head {
+    grid-column: 1 / 9;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px 22px 18px;
+    border-right: var(--rule-structural) solid var(--color-border);
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
+  }
+
+  .work-title {
+    font-size: var(--step-2xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+
+  .work-head-action {
+    grid-column: 9 / 13;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 22px 22px 18px;
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
+  }
+
+  .work-plates {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 12px;
+    border-top: var(--rule-structural) solid var(--color-border);
+  }
+
+  .work-plate {
+    display: block;
+    padding: 22px 22px 28px;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color var(--duration-fast) var(--ease-default);
+  }
+
+  /* Surface answer: the whole ruled cell lifts faintly under the pointer —
+     mixed from text ink so it reads pale in void and dusky in hull. */
+  .work-plate:hover,
+  .work-plate:focus-visible {
+    background-color: color-mix(
+      in srgb,
+      var(--color-text-primary) 5%,
+      transparent
+    );
+  }
+
+  /* nth-of-type, not nth-child: the header cells precede the plates, but
+     the plates are the grid's only <a> children. */
+  .work-plate:nth-of-type(1) {
+    grid-column: 1 / 5;
+    border-right: var(--rule-structural) solid var(--color-border);
+  }
+
+  .work-plate:nth-of-type(2) {
+    grid-column: 5 / 9;
+    border-right: var(--rule-structural) solid var(--color-border);
+  }
+
+  .work-plate-media {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  /* The triangle plate matches the mark's geometry: equilateral
+     (width = height x 2/sqrt(3) = 208px at 180 tall), centred, and clipped
+     clean — no backing block behind it. */
+  .work-plate-media-triangle {
+    width: 208px;
+    margin-inline: auto;
+    background: transparent;
+    /* Let the hover outline's 2px bleed past the box — the image is
+       already clipped by its own polygon, so nothing else can escape. */
+    overflow: visible;
+  }
+
+  .plate-image-triangle {
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+
+  /* The triangle's edge: clip-path can't take a border, so a masked overlay
+     draws the same edge the circle plates carry. Present at rest — the shape
+     is the object, so its outline is always there — and it turns blue on
+     hover exactly like .plate-circle. Previously the outline only existed on
+     hover, which made "outline" read as the interactive signal. The overlay
+     bleeds 2px past the media box so the stroke sits centred on the clipped
+     image edge. */
+  .work-plate-media-triangle::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    pointer-events: none;
+    background: var(--color-border-strong);
+    transition: background-color var(--duration-fast) var(--ease-default);
+    -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 184'><polygon points='106,4 208.3,181 3.7,181' fill='none' stroke='black' stroke-width='2'/></svg>");
+    mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 212 184'><polygon points='106,4 208.3,181 3.7,181' fill='none' stroke='black' stroke-width='2'/></svg>");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  /* Mirrors .work-plate-circle: void needs the strong edge under a dark
+     photograph, hull does not. */
+  [data-theme='hull'] .work-plate-media-triangle::after,
+  [data-theme='light'] .work-plate-media-triangle::after {
+    background: transparent;
+  }
+
+  .work-plate:hover .work-plate-media-triangle::after,
+  .work-plate:focus-visible .work-plate-media-triangle::after {
+    background: var(--color-primary);
+  }
+
+  .work-plate-media-circle {
+    display: grid;
+    place-items: center;
+  }
+
+  /* In void the mostly-dark photograph needs the strong edge or it vanishes */
+  .work-plate-circle {
+    width: 180px;
+    height: 180px;
+    border-color: var(--color-border-strong);
+  }
+
+  [data-theme='hull'] .work-plate-circle,
+  [data-theme='light'] .work-plate-circle {
+    border-color: transparent;
+  }
+
+  .work-plate:hover .plate-circle,
+  .work-plate:focus-visible .plate-circle {
+    border-color: var(--color-primary);
+  }
+
+  .work-plate-title {
+    font-size: var(--step-xl);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    margin-top: 16px;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .work-plate:hover .work-plate-title,
+  .work-plate:focus-visible .work-plate-title {
+    color: var(--color-primary);
+  }
+
+  .work-plate-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    margin: 6px 0 0;
+  }
+
+  /* --- Index rows, cols 9–13.
+     The column carries no inline padding: each row runs the full column
+     width, so its divider (and hover fill) lands on the left plate's rule
+     and the grid's right edge. The rows carry the inset themselves. --- */
+  .work-index {
+    grid-column: 9 / 13;
+    padding: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .index-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding: 16px 22px;
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
+    text-decoration: none;
+    transition: background-color var(--duration-fast) var(--ease-default);
+  }
+
+  .index-row:hover,
+  .index-row:focus-visible {
+    background-color: color-mix(
+      in srgb,
+      var(--color-text-primary) 5%,
+      transparent
+    );
+  }
+
+  .index-row-title {
+    font-size: 17px;
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .index-row:hover .index-row-title,
+  .index-row:focus-visible .index-row-title {
+    color: var(--color-primary);
+  }
+
+  .index-row-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  /* Grace note (see _tokens.css): the row's datum lights signal-red while
+     the title answers blue. */
+  .index-row:hover .index-row-meta,
+  .index-row:focus-visible .index-row-meta {
+    color: var(--color-accent);
+  }
+
+  .work-galleries-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    /* The parent column dropped its inline padding; the note keeps its own */
+    padding-inline: 22px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-normal);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .work-galleries-note:hover,
+  .work-galleries-note:focus-visible {
+    color: var(--color-primary);
+  }
+
+  .work-galleries-note:hover .nav-cue,
+  .work-galleries-note:focus-visible .nav-cue {
+    transform: translateX(4px);
+  }
+
+  /* Fingers get a full-height row on these 10px mono links */
+  @media (pointer: coarse) {
+    .work-galleries-note,
+    .about-more {
+      padding-block: var(--space-3);
+    }
+  }
+
+  /* ========================================================================
+     ABOUT band — pull-quote + paragraph, stat column right
+     ======================================================================== */
+  .about-band {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 60px 0 64px;
+    align-items: start;
+    overflow: hidden;
+  }
+
+  .about-main {
+    grid-column: 2 / 9;
+    padding-right: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pull-quote {
+    font-size: clamp(1.375rem, 1.1rem + 1.3vw, 2rem);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-snug);
+    letter-spacing: -0.022em;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .about-para {
+    font-size: var(--step-sm);
+    line-height: var(--leading-normal);
+    max-width: 52ch;
+    color: var(--color-text-secondary);
+    margin: 22px 0 0;
+  }
+
+  .about-more {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 18px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .about-more::after {
+    content: '→';
+    padding-left: 0.5em;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .about-more:hover,
+  .about-more:focus-visible {
+    color: var(--color-primary-hover);
+  }
+
+  .about-more:hover::after,
+  .about-more:focus-visible::after {
+    transform: translateX(4px);
+  }
+
+  .about-stats {
+    grid-column: 10 / 13;
+    padding-right: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .about-stat-number {
+    /* 40px floor on small phones, 64px from ~1024px up */
+    font-size: clamp(2.5rem, 2vw + 1.75rem, 4rem);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--color-text-primary);
+  }
+
+  .about-stat-unit {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+  }
+
+  .about-stat-rule {
+    height: var(--rule-structural);
+    width: 100%;
+    background: var(--color-border);
+  }
+
+  .about-stat-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.9;
+    color: var(--color-text-secondary);
+  }
+
+  .about-stat-open {
+    color: var(--color-accent);
+  }
+
+  /* ========================================================================
+     CONTACT band — surface-1, "Send a signal." + the form at #collaborate
+     ======================================================================== */
+  .contact-band {
+    position: relative;
+    overflow: hidden;
+    border-top: var(--rule-structural) solid var(--color-border);
+    background-color: var(--color-surface-1);
+    background-image: var(--texture-hull);
+  }
+
+  /* The band's texture: the solid mini-knot (the mark's own ≤24px form)
+     repeating on a 20px grid — a quiet monogram wallpaper. Colours are
+     baked per theme since data URIs can't read currentColor. */
+  .contact-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><g fill='%23d3d6dc' transform='translate(10 10) scale(.32) translate(-50 -50)'><path d='M43.2,53.93 A22,22 0 0 1 50,42.15 A22,22 0 0 1 56.8,53.92 A22,22 0 0 1 43.2,53.93 Z'/></g></svg>");
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    opacity: 0.025;
+    /* Diagonal wash from the top-left: the pattern fades in across the
+       band — the surface itself does the graduating, so it reads as a
+       light wash in hull and a dark one in void with one rule. */
+    -webkit-mask-image: linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 38%,
+      black 72%
+    );
+    mask-image: linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 38%,
+      black 72%
+    );
+  }
+
+  [data-theme='hull'] .contact-band::before,
+  [data-theme='light'] .contact-band::before {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><g fill='%2317181c' transform='translate(10 10) scale(.32) translate(-50 -50)'><path d='M43.2,53.93 A22,22 0 0 1 50,42.15 A22,22 0 0 1 56.8,53.92 A22,22 0 0 1 43.2,53.93 Z'/></g></svg>");
+    opacity: 0.03;
+  }
+
+  .contact-band .contact-head,
+  .contact-band .contact-form-row {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-head {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 56px 0 44px;
+    align-items: center;
+  }
+
+  .contact-copy {
+    grid-column: 2 / 9;
+  }
+
+  .contact-title {
+    font-size: var(--step-3xl);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.035em;
+    line-height: 1;
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+
+  .contact-sub {
+    font-size: var(--step-sm);
+    line-height: var(--leading-normal);
+    max-width: 40ch;
+    color: var(--color-text-secondary);
+    margin: 12px 0 0;
+  }
+
+  .contact-form-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-bottom: 64px;
+  }
+
+  .contact-form-col {
+    grid-column: 2 / 9;
+    padding-right: 40px;
+  }
+
+  /* ========================================================================
+     RESPONSIVE — 8 columns at 768–1199, single column below 768
+     ======================================================================== */
+  @media (max-width: 1199px) {
+    .hero-band,
+    .work-heading-row,
+    .work-plates,
+    .about-band,
+    .contact-head,
+    .contact-form-row {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    /* Margin labels move above their sections */
+    .band-label {
+      grid-column: 1 / -1;
+      padding: 0 var(--gutter) 16px;
+    }
+
+    .margin-label {
+      writing-mode: horizontal-tb;
+    }
+
+    .hero-band {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+
+    .hero-main {
+      grid-column: 1 / 6;
+      padding-left: var(--gutter);
+    }
+
+    .hero-plate-col {
+      grid-column: 6 / 9;
+      margin-bottom: 0;
+    }
+
+    /* Header splits at col 5 so its right rule continues plate 1's */
+    .work-head {
+      grid-column: 1 / 5;
+    }
+
+    .work-head-action {
+      grid-column: 5 / 9;
+    }
+
+    /* Work plates go 2-up; the index takes a full row beneath */
+    .work-plate:nth-of-type(1) {
+      grid-column: 1 / 5;
+    }
+
+    .work-plate:nth-of-type(2) {
+      grid-column: 5 / 9;
+      border-right: none;
+    }
+
+    .work-index {
+      grid-column: 1 / 9;
+      border-top: var(--rule-structural) solid var(--color-border);
+    }
+
+    .about-main {
+      grid-column: 1 / 6;
+      padding-left: var(--gutter);
+    }
+
+    .about-stats {
+      grid-column: 6 / 9;
+    }
+
+    .contact-copy {
+      grid-column: 1 / 6;
+      padding-left: var(--gutter);
+    }
+
+    .contact-form-col {
+      grid-column: 1 / 8;
+      padding-left: var(--gutter);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .ambient-mark-primary {
+      width: 90vw;
+      right: -30vw;
+    }
+
+    .ambient-mark-secondary {
+      display: none;
+    }
+
+    .hero-band,
+    .work-heading-row,
+    .work-plates,
+    .about-band,
+    .contact-head,
+    .contact-form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-band {
+      padding-top: 40px;
+      padding-bottom: 48px;
+    }
+
+    .hero-main {
+      grid-column: 1;
+      padding-right: var(--gutter);
+    }
+
+    .hero-display {
+      font-size: var(--step-3xl);
+    }
+
+    .hero-plate-col {
+      grid-column: 1;
+      align-items: flex-start;
+      padding-left: var(--gutter);
+      margin-top: 32px;
+    }
+
+    .hero-plate {
+      width: 200px;
+      height: 200px;
+    }
+
+    .plate-credit {
+      text-align: left;
+    }
+
+    .work-head {
+      grid-column: 1;
+      border-right: none;
+      border-bottom: none;
+      padding-bottom: 4px;
+    }
+
+    .work-head-action {
+      grid-column: 1;
+      justify-content: flex-start;
+      padding: 0 22px 18px;
+    }
+
+    .work-plate:nth-of-type(1),
+    .work-plate:nth-of-type(2) {
+      grid-column: 1;
+      border-right: none;
+      border-bottom: var(--rule-structural) solid var(--color-border);
+    }
+
+    .work-index {
+      grid-column: 1;
+      border-top: none;
+    }
+
+    .about-main {
+      grid-column: 1;
+      padding-right: var(--gutter);
+    }
+
+    .about-stats {
+      grid-column: 1;
+      padding-left: var(--gutter);
+      margin-top: 32px;
+    }
+
+    .contact-copy {
+      grid-column: 1;
+      padding-right: var(--gutter);
+    }
+
+    .contact-form-col {
+      grid-column: 1;
+      padding-right: var(--gutter);
+    }
+  }
+}

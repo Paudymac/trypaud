@@ -1,16 +1,16 @@
 @layer tokens {
-  /* ========================================
-     DESIGN TOKENS — TryPaud v2
-     Steel / Aluminium palette with blue + red UI
-     ======================================== */
+  /* ========================================================================
+     TryPaud v3 — "Hull & Void"
+     Drop-in replacement for styles/layers/_tokens.css.
+     Every variable name from v2 is preserved, so nothing downstream breaks.
+     VOID (black) is the default theme; HULL (aluminium) is the light theme.
+     ======================================================================== */
 
   :root {
-    /* --- Spacing scale (4px base) --- */
+    /* --- Spacing (4px base) — unchanged from v2 --- */
     --space-0: 0;
     --space-px: 1px;
-    --space-0-5: 0.125rem;
     --space-1: 0.25rem;
-    --space-1-5: 0.375rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
     --space-4: 1rem;
@@ -24,99 +24,103 @@
     --space-24: 6rem;
     --space-32: 8rem;
 
-    /* --- Typography scale ---
-       Barlow everywhere. If --font-barlow hasn't loaded (or the CSS var
-       hasn't reached this element's scope yet), fall through to a system
-       sans stack — never a browser-default serif. */
+    /* --- Type ---------------------------------------------------------- */
+    /* The fallback inside var() matters: without it, a missing --font-sora
+       makes this guaranteed-invalid at :root and the page falls to serif. */
     --font-family:
-      var(--font-barlow, -apple-system), BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+      var(--font-sora, system-ui), system-ui, -apple-system, sans-serif;
+    /* Display face = the wordmark face (Exo 2). Large headers speak in the
+       logo's voice; body and small headings stay Sora. Only 800 is loaded,
+       so anything using this must be --font-bold. */
+    --font-display: var(--font-wordmark, var(--font-family));
+    --font-mono: ui-monospace, Menlo, 'SF Mono', monospace;
 
-    --text-xs: 0.75rem; /* 12px */
-    --text-sm: 0.875rem; /* 14px */
-    --text-base: 1rem; /* 16px */
-    --text-lg: 1.125rem; /* 18px */
-    --text-xl: 1.25rem; /* 20px */
-    --text-2xl: 1.5rem; /* 24px */
-    --text-3xl: 2rem; /* 32px */
-    --text-4xl: 2.5rem; /* 40px */
-    --text-5xl: 3rem; /* 48px */
-    --text-6xl: 3.75rem; /* 60px */
-
-    --leading-tight: 1.2;
-    --leading-snug: 1.375;
-    --leading-normal: 1.6;
-    --leading-relaxed: 1.75;
-
-    --tracking-tight: -0.02em;
-    --tracking-normal: 0;
-    --tracking-wide: 0.05em;
-    --tracking-wider: 0.1em;
-    --tracking-widest: 0.15em;
+    /* Display extrusion — nine hard copies, zero blur, each a sub-pixel
+       step further down-LEFT, so a display header reads as a solid slab
+       lit from the top-right. Nine sub-pixel steps rather than a few
+       whole-pixel ones: the diagonal flank then antialiases smooth
+       instead of staircasing. Offsets are in em so the depth stays
+       proportional to the fluid size instead of smearing on mobile.
+       Structural blue — swap --display-extrude to --color-accent for
+       the louder signal-red version. */
+    --display-extrude: var(--color-primary);
+    --display-depth:
+      -0.005em 0.005em 0 var(--display-extrude),
+      -0.01em 0.01em 0 var(--display-extrude),
+      -0.015em 0.015em 0 var(--display-extrude),
+      -0.02em 0.02em 0 var(--display-extrude),
+      -0.025em 0.025em 0 var(--display-extrude),
+      -0.03em 0.03em 0 var(--display-extrude),
+      -0.035em 0.035em 0 var(--display-extrude),
+      -0.04em 0.04em 0 var(--display-extrude),
+      -0.045em 0.045em 0 var(--display-extrude);
 
     --font-normal: 400;
-    --font-medium: 500;
+    --font-medium: 600;
+    --font-bold: 800;
+    /* v2 aliases kept so existing components don't break */
     --font-semibold: 600;
-    --font-bold: 700;
     --font-extrabold: 800;
 
-    /* --- Border radius --- */
+    --leading-display: 0.88;
+    --leading-tight: 1;
+    --leading-snug: 1.28;
+    --leading-normal: 1.6;
+
+    /* Sora's flat-cut terminals collide sooner than Archivo's — keep looser */
+    --tracking-display: -0.035em;
+    --tracking-tight: -0.03em;
+    --tracking-normal: 0;
+    --tracking-data: 0.14em;
+    --tracking-brand: 0.16em;
+
+    /* Fluid scale — display is deliberately enormous */
+    --step-data: clamp(0.625rem, 0.6rem + 0.1vw, 0.6875rem); /* 10–11px mono */
+    --step-sm: clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem);
+    --step-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+    --step-lg: clamp(1rem, 0.94rem + 0.3vw, 1.125rem);
+    --step-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.3125rem); /* card title */
+    --step-2xl: clamp(1.5rem, 1.2rem + 1.3vw, 2.125rem); /* section h2 */
+    --step-3xl: clamp(2rem, 1.4rem + 2.6vw, 3.125rem);
+    --step-4xl: clamp(2.5rem, 1.4rem + 4.6vw, 5.75rem); /* hero display */
+
+    /* --- Radius — zero everywhere except pills and plates --------------- */
     --radius-none: 0;
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --radius-2xl: 24px;
-    --radius-full: 9999px;
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
+    --radius-pill: 999px; /* anything clickable */
+    --radius-plate: 50%; /* circular image plates */
 
-    /* --- Shadows --- */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --shadow-md:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    --shadow-lg:
-      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    --shadow-xl:
-      0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    /* --- Rules (there are no shadows in this system) --------------------
+       Hairline pass (2026-08): structural rules dropped from 2px to 1px,
+       row rules to 0.5px (renders as a crisp hairline on hi-dpi, a light
+       1px on 1x displays). */
+    --rule-structural: 1px;
+    --rule-row: 0.5px;
+    /* v2 shadow names kept, neutralised — nothing floats */
+    --shadow-xs: none;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
 
-    /* --- Transitions --- */
+    /* --- Motion --------------------------------------------------------- */
     --duration-fast: 150ms;
     --duration-normal: 250ms;
     --duration-slow: 400ms;
     --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
-    --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
-    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-ambient: 300s; /* background construction circles */
+    --duration-ambient-2: 420s; /* second, counter-rotating layer */
 
-    /* --- Layout --- */
-    --max-width: 80rem;
-    --max-width-narrow: 60rem;
-    --max-width-wide: 96rem;
-    --max-width-bleed: 120rem;
-    --header-height: 3.5rem;
+    /* --- Layout --------------------------------------------------------- */
+    --max-width: 90rem;
+    --grid-columns: 12;
+    --gutter: clamp(1rem, 1.4vw + 0.5rem, 1.375rem);
+    --section-py: clamp(3rem, 6vw, 5rem);
+    --header-height: 3.75rem;
 
-    /* Fluid gutter — scales from 1rem (mobile) to 3rem (widescreen) */
-    --gutter: clamp(1rem, 1.2vw + 0.5rem, 3rem);
-    /* Extra-generous gutter for full-bleed sections on widescreen */
-    --gutter-wide: clamp(1rem, 3vw, 5rem);
-
-    /* Fluid vertical section padding */
-    --section-py: clamp(3rem, 6vw, 7rem);
-    --section-py-lg: clamp(4rem, 9vw, 10rem);
-
-    /* Fluid typography scale — scales smoothly between mobile + widescreen */
-    --step-xs: clamp(0.75rem, 0.7rem + 0.15vw, 0.875rem);
-    --step-sm: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
-    --step-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-    --step-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
-    --step-xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.75rem);
-    --step-2xl: clamp(1.5rem, 1.2rem + 1.4vw, 2.5rem);
-    --step-3xl: clamp(2rem, 1.5rem + 2.4vw, 3.75rem);
-    --step-4xl: clamp(2.5rem, 1.8rem + 3.4vw, 5rem);
-    --step-5xl: clamp(3rem, 2rem + 5vw, 6.5rem);
-
-    /* --- Z-index scale --- */
     --z-base: 0;
     --z-dropdown: 100;
     --z-sticky: 200;
@@ -125,120 +129,175 @@
     --z-modal: 500;
     --z-toast: 600;
     --z-skip: 700;
+
+    /* --- v2 compatibility aliases ---------------------------------------
+       Legacy component CSS still references these. Values are remapped to
+       the v3 system; retire them as each component file is rewritten. */
+    --space-0-5: 0.125rem;
+    --space-1-5: 0.375rem;
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    --leading-relaxed: 1.75;
+    --tracking-wide: 0.05em;
+    --tracking-wider: 0.1em;
+    --tracking-widest: 0.14em;
+    --radius-xl: 0;
+    --radius-2xl: 0;
+    --radius-full: 999px;
+    --max-width-narrow: 60rem;
+    --max-width-wide: 90rem;
+    --max-width-bleed: 120rem;
+    --gutter-wide: clamp(1rem, 3vw, 5rem);
+    --section-py-lg: clamp(4rem, 9vw, 8rem);
+    --step-xs: clamp(0.6875rem, 0.65rem + 0.15vw, 0.75rem);
+    --step-5xl: var(--step-4xl);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-spring: var(--ease-default); /* nothing bounces in this system */
   }
 
-  /* ========================================
-     DARK THEME (default)
-     Deep, refined darks with luminous accents
-     ======================================== */
+  /* ======================================================================
+     VOID — default. The inside of the craft: matte black, no sheen.
+     ====================================================================== */
   :root,
+  [data-theme='void'],
   [data-theme='dark'] {
     color-scheme: dark;
 
-    /* Surfaces */
-    --color-surface-0: #0c0e14;
-    --color-surface-1: #151820;
-    --color-surface-2: #1e2130;
-    --color-surface-3: #282c3a;
-    --color-surface-4: #323644;
+    --color-surface-0: #0b0b0d; /* page ground */
+    --color-surface-1: #111113; /* raised block / contact band */
+    --color-surface-2: #1b1b1e; /* plate backing */
+    --color-surface-3: #232326;
+    --color-surface-4: #2b2b2f;
+    --color-surface-footer: #08080a; /* footer strip — darker than the ground */
 
-    /* Borders */
-    --color-border: #3a3f50;
-    --color-border-subtle: #2a2e3c;
+    --color-border: rgba(236, 237, 240, 0.09); /* structural rules */
+    --color-border-strong: rgba(
+      236,
+      237,
+      240,
+      0.22
+    ); /* plate edges, outlined pills */
+    --color-border-subtle: rgba(236, 237, 240, 0.06); /* row rules */
+    --color-rail: rgba(236, 237, 240, 0.06); /* column rails */
+    /* Detached instrument rings (CTA orbit, porthole dials) — brighter than
+       border-strong (a 1px-class ring at 0.22 disappears into the matte
+       black), and opaque: translucent strokes antialias dimmer at the edge
+       and shift over imagery */
+    --color-ring: #606163;
+    /* Colored hairlines read darker and grayer than the same hex as text
+       or fill (no subpixel AA, edge pixels blend into the ground), so the
+       ring tokens run LIGHTER + more saturated than the brand colours they
+       must be mistaken for. Tuned per theme — the correction always goes
+       toward brightness, so HULL cannot borrow its (darker) hover tier. */
+    /* Not the hover tiers (#74bce8 / #ff5f54) — those are tints, and at
+       hairline width they read faded. Full chroma, a touch lighter than
+       the brand colours they must be mistaken for. */
+    --color-ring-primary: #4fb0ec;
+    --color-ring-accent: #ff4438;
 
-    /* Text */
-    --color-text-primary: #f0f1f4;
-    --color-text-secondary: #9ca3b4;
-    --color-text-tertiary: #6b7280;
-    --color-text-inverse: #0c0e14;
+    /* Softened from #ecedf0 — full white glares on the matte black */
+    --color-text-primary: #d3d6dc;
+    --color-text-secondary: rgba(211, 214, 220, 0.83);
+    --color-text-tertiary: rgba(211, 214, 220, 0.55); /* min for 10px labels */
+    --color-text-inverse: #0b0b0d;
 
-    /* Primary — Steel blue. Hover brighter, active darker. */
-    --color-primary: #4ba3d4;
-    --color-primary-hover: #3690c0;
-    --color-primary-active: #2677a5;
-    --color-primary-subtle: rgba(75, 163, 212, 0.14);
+    /* Blue = structure: links, active nav, focus, secondary action */
+    --color-primary: #52a9de;
+    --color-primary-hover: #74bce8;
+    --color-primary-active: #3d94c9;
+    --color-primary-subtle: rgba(82, 169, 222, 0.14);
 
-    /* Accent — Signal red. Hover brighter, active darker. */
-    --color-accent: #e11d2c;
-    --color-accent-hover: #b91c1c;
-    --color-accent-active: #991b1b;
-    --color-accent-subtle: rgba(225, 29, 44, 0.14);
+    /* Red = signal: primary action, live status, current item. Never a rule.
+       One sanctioned extension — the grace note: a mono DATA chip (year, ×N,
+       index) lights red while its link is hovered, under the blue that the
+       structure (title, edge, ring) answers with. The readout goes live when
+       the pointer designates the item; navigating commits it to the red it
+       carries as "current". Red is never the sole hover signal, prose never
+       takes it, and a chip outside any link (a static header datum, a live
+       counter) may rest red instead — it has no sleep state to wake from. */
+    --color-accent: #f23d31;
+    --color-accent-hover: #ff5f54;
+    --color-accent-active: #d32a20;
+    --color-accent-subtle: rgba(242, 61, 49, 0.14);
 
-    /* Semantic */
     --color-success: #34d399;
     --color-warning: #fbbf24;
-    --color-error: #f87171;
-    --color-info: #60a5fa;
+    --color-error: #f23d31;
+    --color-info: #52a9de;
 
-    /* Shadows (darker for dark theme) */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-md:
-      0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-    --shadow-lg:
-      0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    --shadow-xl:
-      0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    --color-overlay: rgba(0, 0, 0, 0.72);
+    --color-backdrop: rgba(11, 11, 13, 0.88);
 
-    /* Overlay */
-    --color-overlay: rgba(0, 0, 0, 0.7);
-    --color-backdrop: rgba(12, 14, 20, 0.85);
+    /* The mark's cut must match whatever it sits on */
+    --knot-cut: var(--color-surface-0);
+    --texture-hull: none;
+    --image-filter: none; /* photography runs in full colour */
   }
 
-  /* ========================================
-     LIGHT THEME
-     Steel / aluminium neutrals
-     ======================================== */
+  /* ======================================================================
+     HULL — light. The outside of the craft: brushed aluminium.
+     ====================================================================== */
+  [data-theme='hull'],
   [data-theme='light'] {
     color-scheme: light;
 
-    /* Surfaces */
-    --color-surface-0: #ffffff;
-    --color-surface-1: #f4f5f8;
-    --color-surface-2: #e8eaf0;
-    --color-surface-3: #d1d5de;
-    --color-surface-4: #bcc1cd;
+    --color-surface-0: #dfe0e3;
+    --color-surface-1: #ebebee;
+    --color-surface-2: #e4e4e7;
+    --color-surface-3: #d4d4d8;
+    --color-surface-4: #c4c4c9;
+    --color-surface-footer: #d2d3d7; /* footer strip — darker than the ground */
 
-    /* Borders */
-    --color-border: #c4c9d4;
-    --color-border-subtle: #dde0e8;
+    --color-border: rgba(23, 24, 28, 0.18);
+    --color-border-strong: rgba(23, 24, 28, 0.38);
+    --color-border-subtle: rgba(23, 24, 28, 0.09);
+    --color-rail: rgba(23, 24, 28, 0.07);
+    --color-ring: #8b8c8f;
+    /* HULL's hover tier darkens, so the hairline correction (lighter +
+       more chroma than the brand hex) needs its own values here */
+    --color-ring-primary: #2a8ed8;
+    --color-ring-accent: #e02b1d;
 
-    /* Text */
-    --color-text-primary: #1a1d28;
-    --color-text-secondary: #4b5268;
-    --color-text-tertiary: #6b7280;
-    --color-text-inverse: #f0f1f4;
+    --color-text-primary: #17181c;
+    --color-text-secondary: rgba(23, 24, 28, 0.72);
+    --color-text-tertiary: rgba(23, 24, 28, 0.55);
+    --color-text-inverse: #f2f2f4;
 
-    /* Primary — Deep steel blue */
-    --color-primary: #1d6fa5;
-    --color-primary-hover: #155a87;
-    --color-primary-active: #0e4468;
-    --color-primary-subtle: rgba(29, 111, 165, 0.08);
+    /* Saturation raised (~61% → ~74%) at matched luminance so links keep
+       their contrast on the warm-grey surfaces but read bluer, closer in
+       character to the VOID primary */
+    --color-primary: #1d79be;
+    --color-primary-hover: #1a68a8;
+    --color-primary-active: #14588f;
+    --color-primary-subtle: rgba(29, 121, 190, 0.1);
 
-    /* Accent — Signal red */
-    --color-accent: #b91c1c;
-    --color-accent-hover: #991b1b;
-    --color-accent-active: #7f1d1d;
-    --color-accent-subtle: rgba(185, 28, 28, 0.08);
+    --color-accent: #cb241d;
+    --color-accent-hover: #ad1b15;
+    --color-accent-active: #8e130e;
+    --color-accent-subtle: rgba(203, 36, 29, 0.1);
 
-    /* Semantic */
     --color-success: #059669;
-    --color-warning: #d97706;
-    --color-error: #dc2626;
-    --color-info: #2563eb;
+    --color-warning: #b45309;
+    --color-error: #cb241d;
+    --color-info: #1d79be;
 
-    /* Shadows (lighter for light theme) */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --shadow-md:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    --shadow-lg:
-      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    --shadow-xl:
-      0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --color-overlay: rgba(23, 24, 28, 0.5);
+    --color-backdrop: rgba(223, 224, 227, 0.88);
 
-    /* Overlay */
-    --color-overlay: rgba(0, 0, 0, 0.5);
-    --color-backdrop: rgba(255, 255, 255, 0.85);
+    --knot-cut: var(--color-surface-0);
+    /* The handoff's 3px brushed-line texture is retired — it fought the
+       starfield and read as stray grey lines. Flat aluminium instead.
+       To bring a whisper of it back:
+       repeating-linear-gradient(90deg, #e2e2e5 0 3px, #dcdce0 3px 6px) */
+    --texture-hull: none;
+    --image-filter: grayscale(1) contrast(1.08); /* photography prints mono */
   }
 }

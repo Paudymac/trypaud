@@ -1,51 +1,61 @@
 'use client';
 
 import Link from 'next/link';
-import { useCallback } from 'react';
-import { TrefoilMark } from '@/components/TrefoilLogo';
-import { ArrowUpRightIcon } from '@/components/NavIcons';
+import TrefoilKnot from '@/components/TrefoilKnot';
+import { LinkedInIcon, MailIcon, FileTextIcon } from '@/components/NavIcons';
 
+/**
+ * SiteFooter — the footer strip: mark (cut = surface-1), three blue mono
+ * links, copyright right-aligned above a 2px rule.
+ */
 export default function SiteFooter() {
-  const handleCollaborateClick = useCallback(() => {
-    const el = document.getElementById('collaborate');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, []);
-
   return (
     <footer className="site-footer-wrapper" role="contentinfo">
-      <div className="site-footer">
-        <nav className="footer-nav" aria-label="Footer navigation">
-          <Link
+      <div className="footer-strip">
+        <Link
+          href="/"
+          className="footer-mark mark-hover"
+          aria-label="TryPaud home"
+        >
+          <TrefoilKnot
+            size={44}
+            knotInk="var(--color-text-primary)"
+            triangleInk="var(--color-text-primary)"
+          />
+          <span className="footer-tagline">
+            Three loops, one line.
+            <br />
+            Try Paud.
+          </span>
+        </Link>
+        <nav className="footer-links" aria-label="Footer navigation">
+          <a
             href="https://www.linkedin.com/in/padraic-mcateer-trypaud/"
             className="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
+            <LinkedInIcon width={14} height={14} />
             LinkedIn
-          </Link>
-          <Link href="mailto:paudy@trypaud.com" className="footer-link">
+          </a>
+          <a href="mailto:paudy@trypaud.com" className="footer-link">
+            <MailIcon width={14} height={14} />
             Email
-          </Link>
-          <Link href="/PadraicMcAteer_CV_2025.pdf" className="footer-link">
-            CV
-          </Link>
-        </nav>
-
-        <div className="footer-brand">
-          <Link href="/" className="footer-logo" aria-label="TryPaud home">
-            <TrefoilMark size={64} />
-          </Link>
-          <button
-            onClick={handleCollaborateClick}
-            className="btn btn-accent"
-            type="button"
+          </a>
+          <a
+            href="/PadraicMcAteer_CV_2025.pdf"
+            className="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Let&apos;s Collaborate
-            <ArrowUpRightIcon width={16} height={16} />
-          </button>
-        </div>
+            <FileTextIcon width={14} height={14} />
+            CV
+          </a>
+        </nav>
+        <p className="footer-copyright">
+          © {new Date().getFullYear()} TRYPAUD
+        </p>
       </div>
-      <p className="footer-copyright">
-        &copy; {new Date().getFullYear()} TryPaud. All rights reserved.
-      </p>
     </footer>
   );
 }

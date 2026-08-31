@@ -83,9 +83,17 @@ function CaseStudiesContent({ onItemClick }) {
         className="nav-panel-feature"
         onClick={onItemClick}
       >
+        {/* Study count inside the porthole glass — same instrument
+            language as the /gallery filter dials */}
+        <div
+          className="nav-panel-feature-icon nav-panel-feature-dial"
+          aria-hidden="true"
+        >
+          {String(caseStudyLinks.length).padStart(2, '0')}
+        </div>
         <div className="nav-panel-feature-text">
           <strong>All Case Studies</strong>
-          <span>Selected client work with context &amp; outcomes</span>
+          <span>Four long-form write-ups, brief to shipped result</span>
         </div>
         <ArrowRightIcon
           className="nav-panel-feature-arrow"
@@ -102,7 +110,7 @@ function CaseStudiesContent({ onItemClick }) {
             className="nav-panel-case"
             onClick={onItemClick}
           >
-            <div className="nav-panel-case-thumb">
+            <div className="nav-panel-case-thumb notch notch-sm">
               <Image
                 src={link.image}
                 alt=""
@@ -113,7 +121,10 @@ function CaseStudiesContent({ onItemClick }) {
             </div>
             <div className="nav-panel-case-text">
               <strong>{link.label}</strong>
-              <span>{link.desc}</span>
+              <span>
+                <span className="nav-panel-case-num">{link.num}</span> /{' '}
+                {link.desc}
+              </span>
             </div>
           </Link>
         ))}

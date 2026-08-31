@@ -15,15 +15,14 @@
 
 /* --- Component imports --- */
 @import './components/button.css';
-@import './components/card.css';
+@import './components/icon.css';
+@import './components/notch.css';
 @import './components/nav.css';
-@import './components/hero.css';
+@import './components/home.css';
 @import './components/gallery.css';
 @import './components/form.css';
 @import './components/footer.css';
 @import './components/case-study.css';
-@import './components/partner-logos.css';
-@import './components/about.css';
 @import './components/about-page.css';
 @import './components/logo.css';
 @import './components/back-to-top.css';

@@ -1,24 +1,16 @@
 import '../styles/v2-global.css';
-import { Barlow } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import BackToTop from '@/components/BackToTop';
-
-const barlow = Barlow({
-  weight: ['400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  variable: '--font-barlow',
-  display: 'swap',
-});
+import { sora, exo2 } from '@/lib/fonts';
 
 export const metadata = {
   metadataBase: new URL('https://trypaud.com'),
   title: {
     default: 'TryPaud — Design portfolio of Padraic McAteer',
-    template: '%s · TryPaud',
+    template: '%s / TryPaud',
   },
   description:
-    'Senior designer and front-end developer with 17+ years across UI, branding, illustration and visual storytelling.',
+    'Padraic McAteer designs, draws and builds — eighteen years across UI, identity, illustration and motion. Three loops, one line. Try Paud.',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -43,11 +35,16 @@ export const viewport = {
   colorScheme: 'dark light',
 };
 
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
+/* VOID is the default; migrate v2 stored values (dark→void, light→hull). */
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark')t='void';if(t==='light')t='hull';if(t!=='void'&&t!=='hull')t='void';localStorage.setItem('theme',t);document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','void');}})();`;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={barlow.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${sora.variable} ${exo2.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

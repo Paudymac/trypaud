@@ -1,4 +1,9 @@
 @layer base {
+  /* ========================================================================
+     BASE — TryPaud v3 "Hull & Void"
+     Sora only. Mono for data. Structure from rules, never shadows.
+     ======================================================================== */
+
   html {
     font-family: var(--font-family);
     font-size: 16px;
@@ -11,34 +16,42 @@
 
   body {
     font-family: var(--font-family);
-    font-size: var(--text-base);
+    font-size: var(--step-base);
     line-height: var(--leading-normal);
-    background-color: var(--color-surface-0);
+    /* MUST stay transparent: the page ground lives on <html> (the canvas
+       background), and the fixed ambient starfield sits at z-index:-1 —
+       above the canvas, below content. An opaque body would cover it. */
+    background-color: transparent;
+    /* Sticky footer: shells stretch to the viewport, main takes the slack,
+       so short pages never leave a gap under the footer. */
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Force Barlow on elements browsers default to monospace, italic-serif,
-     or system fonts. No serif anywhere on the site. */
+  /* Pages-router wrapper + its Layout shell join the flex chain */
+  #__next,
+  .site-shell {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
+  main#main-content {
+    flex: 1 0 auto;
+  }
+
+  /* Everything inherits Sora unless it is data — data is mono. */
+  :where(*, *::before, *::after) {
+    font-family: inherit;
+  }
+
   code,
   kbd,
   samp,
   pre,
-  tt,
-  var,
-  dfn,
-  cite,
-  blockquote,
-  q,
-  em,
-  i,
-  address {
-    font-family: var(--font-family);
-  }
-
-  /* Universal belt-and-braces: every element inherits font-family from its
-     ancestor. :where() keeps specificity at 0 so third-party icon fonts
-     (e.g. slick-carousel's :before pseudos) can still win via direct rules. */
-  :where(*, *::before, *::after) {
-    font-family: inherit;
+  tt {
+    font-family: var(--font-mono);
   }
 
   /* --- Typography --- */
@@ -49,15 +62,26 @@
   h5,
   h6 {
     color: var(--color-text-primary);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wider);
     font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    text-wrap: balance;
+  }
+
+  /* Large headers carry the wordmark face — the logo's voice at scale.
+     h3 and below stay Sora so body-adjacent type keeps its rhythm. */
+  h1,
+  h2 {
+    font-family: var(--font-display);
   }
 
   h1 {
     font-size: var(--step-4xl);
-    letter-spacing: var(--tracking-tight);
-    text-transform: none;
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    /* Only the display level is extruded — h2 down stay flat, or the page
+       turns into a stack of competing slabs. */
+    text-shadow: var(--display-depth);
   }
 
   h2 {
@@ -66,24 +90,37 @@
 
   h3 {
     font-size: var(--step-xl);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
 
   h4 {
     font-size: var(--step-lg);
   }
 
-  /* --- Links --- */
+  p {
+    text-wrap: pretty;
+  }
+
+  /* --- Links: blue is structure --- */
   a {
     color: var(--color-primary);
     transition: color var(--duration-fast) var(--ease-default);
   }
 
-  a:hover {
+  a:hover,
+  a:focus-visible {
     color: var(--color-primary-hover);
   }
 
   a:active {
     color: var(--color-primary-active);
+  }
+
+  /* --- Focus: 2px blue ring, everywhere --- */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 
   /* --- Images --- */
@@ -98,37 +135,84 @@
     max-width: 100%;
   }
 
+  /* --- Rules --- */
+  hr {
+    border: none;
+    height: var(--rule-structural);
+    background: var(--color-border);
+    margin: 0;
+  }
+
   /* --- Form elements --- */
   label {
     display: block;
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
+    font-family: var(--font-mono);
+    font-size: var(--step-data);
+    font-weight: var(--font-medium);
     text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-1);
+    letter-spacing: var(--tracking-data);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-2);
   }
 
+  /* Fields: translucent fill, 12px notch off the top-right corner (the
+     triangle's angle). This is where the notch started; it is now the
+     system's rectangle — see components/notch.css, which applies the same
+     cut to every rectangular plate. Inputs can't take pseudo-elements, so
+     here the border is drawn as background strips on the field itself —
+     including the diagonal along the cut — and --field-border lets :focus
+     repaint the whole outline at once. */
   input,
   textarea {
+    --field-border: var(--color-border);
     width: 100%;
     padding: var(--space-3) var(--space-4);
-    font-size: var(--text-base);
-    background-color: var(--color-surface-2);
+    font-size: var(--step-base);
     color: var(--color-text-primary);
-    border: 1px solid var(--color-border-subtle);
+    border: none;
     border-radius: 0;
-    transition:
-      border-color var(--duration-fast) var(--ease-default),
-      box-shadow var(--duration-fast) var(--ease-default),
-      background-color var(--duration-normal) var(--ease-default);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    /* Solid, matching the contact band surface — cancels the monogram
+       pattern completely inside the field */
+    background-color: var(--color-surface-1);
+    background-image:
+      /* top edge, stopping at the notch */
+      linear-gradient(var(--field-border), var(--field-border)),
+      /* right edge, starting below the notch */
+      linear-gradient(var(--field-border), var(--field-border)),
+      /* bottom edge */
+      linear-gradient(var(--field-border), var(--field-border)),
+      /* left edge */
+      linear-gradient(var(--field-border), var(--field-border)),
+      /* the diagonal along the cut */
+      linear-gradient(
+        45deg,
+        transparent calc(50% - 0.5px),
+        var(--field-border) calc(50% - 0.5px),
+        var(--field-border) calc(50% + 0.5px),
+        transparent calc(50% + 0.5px)
+      );
+    background-repeat: no-repeat;
+    background-position:
+      left 0 top 0,
+      right 0 top 12px,
+      left 0 bottom 0,
+      left 0 top 0,
+      right 0 top 0;
+    background-size:
+      calc(100% - 11px) 1px,
+      1px calc(100% - 12px),
+      100% 1px,
+      1px 100%,
+      12px 12px;
+    transition: background-color var(--duration-normal) var(--ease-default);
     outline: none;
   }
 
-  input:focus,
-  textarea:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px var(--color-primary-subtle);
+  input:focus-visible,
+  textarea:focus-visible {
+    --field-border: var(--color-primary);
+    outline: none;
   }
 
   input::placeholder,
@@ -147,7 +231,7 @@
     color: var(--color-text-primary);
   }
 
-  /* --- Scrollbar styling (Webkit) --- */
+  /* --- Scrollbar (Webkit) --- */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -159,7 +243,7 @@
 
   ::-webkit-scrollbar-thumb {
     background: var(--color-surface-4);
-    border-radius: var(--radius-full);
+    border-radius: 0;
   }
 
   ::-webkit-scrollbar-thumb:hover {

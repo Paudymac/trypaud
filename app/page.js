@@ -1,9 +1,8 @@
 import Hero from '@/components/Hero';
-import PartnerLogos from '@/components/PartnerLogos';
 import CaseStudies from '@/components/CaseStudies';
 import AboutMe from '@/components/AboutMe';
-import Galleries from '@/components/Galleries';
 import ContactForm from '@/components/ContactForm';
+import AmbientBackground from '@/components/ui/AmbientBackground';
 import SiteHeader from './_components/SiteHeader';
 import SiteFooter from './_components/SiteFooter';
 
@@ -15,36 +14,34 @@ export default function HomePage() {
       </a>
       <SiteHeader />
 
-      <main id="main-content" className="page-grid" role="main">
-        <Hero />
+      {/* One continuous sheet over the ambient space backdrop. */}
+      <main id="main-content" className="sheet" role="main">
+        <AmbientBackground />
 
-        <PartnerLogos />
-        <hr className="home-rule bleed-wide" />
+        <Hero />
+        <hr className="sheet-rule" />
 
         <CaseStudies />
-        <hr className="home-rule bleed-wide" />
+        <hr className="sheet-rule" />
 
         <AboutMe />
-        <hr className="home-rule bleed-wide" />
 
-        <section
-          id="collaborate"
-          className="form-section bleed-wide"
-          aria-label="Contact form"
-        >
-          <header className="home-section-header">
-            <div className="home-section-header-text">
-              <span className="home-section-eyebrow">Contact</span>
-              <h2 className="home-section-title">Let&apos;s Collaborate</h2>
+        <section id="collaborate" className="contact-band" aria-label="Contact">
+          <div className="contact-head">
+            <div className="contact-copy">
+              <h2 className="contact-title">Go on — try Paud.</h2>
+              <p className="contact-sub">
+                Tell me what you&apos;re making. Usually back within a day.{' '}
+                <a href="mailto:paudy@trypaud.com">paudy@trypaud.com</a>
+              </p>
             </div>
-          </header>
-          <div className="form-container">
-            <ContactForm />
+          </div>
+          <div className="contact-form-row">
+            <div className="contact-form-col">
+              <ContactForm />
+            </div>
           </div>
         </section>
-        <hr className="home-rule bleed-wide" />
-
-        <Galleries />
       </main>
 
       <SiteFooter />

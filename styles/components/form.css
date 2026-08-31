@@ -1,26 +1,8 @@
 @layer components {
-  /* ========================================
-     FORM / CONTACT
-     ======================================== */
-
-  .form-section {
-    padding-block: var(--section-py);
-  }
-
-  .form-container {
-    background-color: var(--color-surface-1);
-    border: 1px solid var(--color-border-subtle);
-    border-radius: 0;
-    padding: clamp(var(--space-6), 3vw, var(--space-10));
-    max-width: var(--max-width-narrow);
-    margin-inline: auto;
-  }
-
-  @media (max-width: 600px) {
-    .form-container {
-      padding: var(--space-4);
-    }
-  }
+  /* ========================================================================
+     FORM — fields on the sheet. Mono labels, 2px rules, no shadows.
+     Base input/label/textarea styling lives in _base.css.
+     ======================================================================== */
 
   .form-group {
     margin-bottom: var(--space-6);
@@ -30,40 +12,46 @@
     margin-bottom: var(--space-8);
   }
 
+  /* Honeypot — visually removed, still in the accessibility tree order */
+  .form-honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
   .form-message {
     padding: var(--space-3) var(--space-4);
-    border-radius: 0;
-    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    font-size: var(--step-data);
     font-weight: var(--font-medium);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: var(--rule-structural) solid;
   }
 
   .form-message-success {
-    background-color: color-mix(
-      in srgb,
-      var(--color-success) 15%,
-      var(--color-surface-1)
-    );
     color: var(--color-success);
-    border: 1px solid color-mix(in srgb, var(--color-success) 30%, transparent);
+    border-color: var(--color-success);
   }
 
   .form-message-error {
-    background-color: color-mix(
-      in srgb,
-      var(--color-error) 15%,
-      var(--color-surface-1)
-    );
     color: var(--color-error);
-    border: 1px solid color-mix(in srgb, var(--color-error) 30%, transparent);
+    border-color: var(--color-error);
   }
 
-  /* Honeypot */
-  .form-honeypot {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-    height: 0;
-    width: 0;
-    overflow: hidden;
+  /* Legacy wrappers still used on pages-router routes */
+  .form-section {
+    padding-block: var(--section-py);
+  }
+
+  .form-container {
+    max-width: var(--max-width-narrow);
+    margin-inline: auto;
   }
 }

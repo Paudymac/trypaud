@@ -1,8 +1,10 @@
 @layer components {
-  /* ========================================
-     BUTTON DESIGN SYSTEM
-     Primary, Secondary, Accent, Ghost variants
-     ======================================== */
+  /* ========================================================================
+     BUTTONS — pills only. Red = signal (primary action), blue = structure
+     (secondary/outlined). No shadows, no gradients, no scale on hover.
+     (.btn-accent's box-shadow is a hairline ring, not a shadow — the same
+     device the porthole dials use.)
+     ======================================================================== */
 
   .btn {
     display: inline-flex;
@@ -10,131 +12,214 @@
     justify-content: center;
     gap: var(--space-2);
     font-family: var(--font-family);
-    font-weight: var(--font-semibold);
-    font-size: var(--text-sm);
-    line-height: 1;
+    font-size: 12px;
+    font-weight: var(--font-bold);
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-full);
-    border: 1px solid transparent;
+    line-height: 1;
+    padding: 13px 22px;
+    border: none;
+    border-radius: var(--radius-pill);
     cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
     transition:
       background-color var(--duration-fast) var(--ease-default),
-      color var(--duration-fast) var(--ease-default),
-      border-color var(--duration-fast) var(--ease-default);
-    white-space: nowrap;
-    user-select: none;
-    -webkit-user-select: none;
-    text-decoration: none;
+      border-color var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default);
   }
 
-  .btn:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+  .btn svg {
+    flex: none;
   }
 
-  .btn:disabled,
-  .btn[aria-disabled='true'] {
+  .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    pointer-events: none;
   }
 
-  /* --- Primary: Steel blue --- */
-  .btn-primary {
-    background-color: var(--color-primary);
-    color: #fff;
-  }
-
-  .btn-primary:hover {
-    background-color: var(--color-primary-hover);
-    color: #fff;
-  }
-
-  .btn-primary:active {
-    background-color: var(--color-primary-active);
-  }
-
-  /* --- Secondary: Surface with border --- */
-  .btn-secondary {
-    background-color: var(--color-surface-2);
-    color: var(--color-text-primary);
-    border-color: var(--color-border);
-  }
-
-  .btn-secondary:hover {
-    background-color: var(--color-surface-3);
-    color: var(--color-text-primary);
-  }
-
-  .btn-secondary:active {
-    background-color: var(--color-surface-4);
-  }
-
-  /* --- Accent: Red CTA --- */
+  /* --- Primary action: the signal red fill.
+     Red at rest, so hover deepens within red rather than introducing blue.
+     Hover never adds a new hue — it either brings blue in, or deepens what
+     is already there. That is what keeps red buttons legal under a system
+     where blue owns the hover channel. --- */
   .btn-accent {
-    background-color: var(--color-accent-hover);
-    color: #fff;
-  }
-
-  .btn-accent:hover {
     background-color: var(--color-accent);
-    color: #fff;
+    color: var(--color-text-inverse);
   }
 
-  .btn-accent:active {
+  .btn-accent:hover:not(:disabled),
+  .btn-accent:focus-visible:not(:disabled) {
+    background-color: var(--color-accent-hover);
+    color: var(--color-text-inverse);
+  }
+
+  .btn-accent:active:not(:disabled) {
     background-color: var(--color-accent-active);
   }
 
-  /* --- Ghost: Transparent with primary text --- */
-  .btn-ghost {
+  /* Every signal button wears the porthole filters' detached outer ring,
+     squared to the pill radius. Like the selected dials, the ring wears
+     its button's own hue at rest — signal red around the red pill,
+     structural blue around the blue outline — and answers the pointer in
+     structural blue like every instrument ring on the site. The click IS
+     the movement: pressing pulls the ring in so it seats flush on the
+     pill, and releasing springs it back out.
+     .btn-ring opts any other button into the same ring — e.g.
+     `btn btn-secondary btn-ring` keeps the blue outline but adds the
+     instrument ring. */
+  .btn-accent,
+  .btn-ring {
+    position: relative;
+  }
+
+  .btn-accent::before,
+  .btn-ring::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: var(--radius-pill);
+    pointer-events: none;
+    /* This transition runs on release — slower than the press below, so the
+       ring seats instantly under the finger but visibly rides back out */
+    transition:
+      inset var(--duration-normal) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-default);
+  }
+
+  /* Rest hue matches the button, exactly like the selected porthole dials.
+     1.5px spread, not 1px — the curved spread antialiases thinner than
+     drawn, and at fractional display scaling a 1px ring can fall below
+     one device pixel and vanish. */
+  .btn-accent::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-accent);
+  }
+
+  .btn-ring::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
+  }
+
+  /* Hover pulls the ring to structural blue — a hue change on the red
+     button; the blue button's ring holds while its body answers instead */
+  .btn-accent:hover:not(:disabled)::before,
+  .btn-accent:focus-visible:not(:disabled)::before,
+  .btn-ring:hover:not(:disabled)::before,
+  .btn-ring:focus-visible:not(:disabled)::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
+  }
+
+  /* inset: 0 seats the ring's inner edge on the pill edge itself — any
+     negative inset leaves a visible slit of ground between ring and pill */
+  .btn-accent:active:not(:disabled)::before,
+  .btn-ring:active:not(:disabled)::before {
+    inset: 0;
+    box-shadow: 0 0 0 1.5px var(--color-primary);
+    /* Press seats fast — a latch engaging, not an animation playing */
+    transition:
+      inset 80ms var(--ease-out),
+      box-shadow 80ms var(--ease-default);
+  }
+
+  /* The small header pills orbit tighter — 5px crowds the nav row.
+     The press rule above already seats them at inset: 0. */
+  .btn-sm.btn-accent::before,
+  .btn-sm.btn-ring::before {
+    inset: -4px;
+  }
+
+  /* --- Recording light: the send button's live-status dot while a
+     message is going out. Inherits the button's ink (white on the red
+     pill) and blinks hard on/off — a tally light, not a fade. --- */
+  .btn-rec-dot {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: rec-blink 1s step-end infinite;
+  }
+
+  @keyframes rec-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-rec-dot {
+      animation: none;
+    }
+  }
+
+  /* --- Secondary: 2px blue outline, transparent fill.
+     The outline is an inset box-shadow, not a border — borders stair-step
+     on the pill curve at fractional display scaling, shadow rings don't. --- */
+  .btn-secondary {
     background-color: transparent;
+    box-shadow: inset 0 0 0 var(--rule-structural) var(--color-primary);
     color: var(--color-primary);
+    transition:
+      background-color var(--duration-fast) var(--ease-default),
+      box-shadow var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default);
   }
 
-  .btn-ghost:hover {
+  .btn-secondary:hover:not(:disabled),
+  .btn-secondary:focus-visible:not(:disabled) {
+    box-shadow: inset 0 0 0 var(--rule-structural) var(--color-primary-hover);
+    color: var(--color-primary-hover);
     background-color: var(--color-primary-subtle);
-    color: var(--color-primary);
   }
 
-  .btn-ghost:active {
-    background-color: var(--color-primary-subtle);
+  .btn-secondary:active:not(:disabled) {
+    box-shadow: inset 0 0 0 var(--rule-structural) var(--color-primary-active);
     color: var(--color-primary-active);
+    background-color: var(--color-primary-subtle);
   }
 
   /* --- Sizes --- */
   .btn-sm {
-    font-size: var(--text-xs);
-    padding: var(--space-2) var(--space-4);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 8px 16px;
   }
 
   .btn-lg {
-    font-size: var(--text-base);
-    padding: var(--space-4) var(--space-8);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 15px 26px;
   }
 
-  /* --- Icon button --- */
+  /* --- Icon button: 42px circle, 2px strong edge --- */
   .btn-icon {
-    padding: var(--space-2);
-    border-radius: 0;
-    aspect-ratio: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    background: transparent;
+    border: var(--rule-structural) solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition:
+      border-color var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default);
   }
 
-  .btn-icon svg {
-    width: 1.25rem;
-    height: 1.25rem;
+  .btn-icon:hover,
+  .btn-icon:focus-visible {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
   }
 
-  @media (max-width: 1024px) {
-    .btn {
-      font-size: var(--text-xs);
-      padding: var(--space-2-5, 0.625rem) var(--space-5);
-    }
-
-    .btn-lg {
-      font-size: var(--text-sm);
-      padding: var(--space-3) var(--space-6);
-    }
+  .btn-icon:active {
+    border-color: var(--color-primary-active);
+    color: var(--color-primary-active);
   }
 }

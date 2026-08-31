@@ -1,163 +1,34 @@
 @layer components {
-  /* ========================================
-     CASE STUDIES
-     Home cards grid + detail template (v2)
-     ======================================== */
+  /* ========================================================================
+     CASE STUDY DETAIL — academic sheet
+     Banner → mono meta strip → numbered sections on the 12-column grid →
+     next-study band. Structure from hairlines and the grid; the section
+     numbers are CSS counters, so page content needs no markup changes.
+     ======================================================================== */
 
-  /* --- Home page case study grid ------------------------------------ */
-  .case-studies-section {
-    padding-block: var(--section-py);
-  }
-
-  .case-studies-grid {
-    container-type: inline-size;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--gutter);
-  }
-
-  @container (min-width: 720px) {
-    .case-studies-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @container (min-width: 1600px) {
-    .case-studies-grid {
-      grid-template-columns: 7fr 5fr;
-    }
-    .case-studies-grid > :nth-child(even) {
-      grid-column: 2;
-    }
-  }
-
-  .case-study-card {
-    position: relative;
-    display: block;
-    border-radius: 0;
-    overflow: hidden;
-    aspect-ratio: 16 / 10;
-    isolation: isolate;
-    border: 1px solid var(--color-border-subtle);
-    transition: border-color var(--duration-normal) var(--ease-default);
-  }
-
-  .case-study-card:hover,
-  .case-study-card:focus-visible {
-    border-color: var(--color-primary);
-  }
-
-  .case-study-card-image {
-    object-fit: cover;
-    object-position: top center;
-    transform: scale(1.02);
-    transition: transform var(--duration-slow) var(--ease-out);
-    z-index: 0;
-  }
-
-  .case-study-card:hover .case-study-card-image,
-  .case-study-card:focus-visible .case-study-card-image {
-    transform: scale(1.06);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .case-study-card-image,
-    .case-study-card:hover .case-study-card-image {
-      transform: none;
-      transition: none;
-    }
-  }
-
-  .case-study-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(var(--space-5), 3vw, var(--space-10));
-    z-index: 1;
-  }
-
-  /* Stacked + centred: number / title / category */
-  .case-study-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: var(--space-3);
-    transition: transform var(--duration-normal) var(--ease-out);
-  }
-
-  .case-study-card:hover .case-study-card-content,
-  .case-study-card:focus-visible .case-study-card-content {
-    transform: translateY(-3px);
-  }
-
-  /* Editorial index in accent red */
-  .case-study-card-index {
-    font-size: clamp(1rem, 0.7rem + 0.6vw, 1.25rem);
-    font-weight: var(--font-extrabold);
-    color: var(--color-accent);
-    letter-spacing: var(--tracking-widest);
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-    padding: 0.35em 0.7em;
-    border: 2px solid color-mix(in srgb, var(--color-accent) 65%, transparent);
-    border-radius: var(--radius-full);
-    pointer-events: none;
-  }
-
-  .case-study-card-title {
-    color: #fff;
-    margin: 0;
-    font-size: clamp(1.5rem, 0.9rem + 1.9vw, 2.6rem);
-    font-weight: var(--font-extrabold);
-    text-transform: none;
-    letter-spacing: -0.02em;
-    line-height: 1;
-  }
-
-  @media (min-width: 1024px) {
-    .case-study-card-title {
-      white-space: nowrap;
-    }
-  }
-
-  .case-study-card-desc {
-    color: var(--color-primary);
-    font-size: var(--step-xs);
-    font-weight: var(--font-semibold);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
-  }
-
-  /* ====================================================================
-     CASE STUDY DETAIL PAGE (v2)
-     Full-bleed hero → meta bar → article → next study
-     ==================================================================== */
-
-  /* Hero ------------------------------------------------------------- */
+  /* --- Banner --------------------------------------------------------
+     The photography is dark, so the banner is pinned to the void ground
+     in BOTH themes — dark scrim, light text. Theme tokens would flip the
+     scrim light in hull and sink the type into the image. */
   .cs-hero {
     position: relative;
     width: 100vw;
     margin-inline: calc(50% - 50vw);
-    min-height: clamp(26rem, 70vh, 44rem);
+    min-height: clamp(22rem, 56vh, 38rem);
     display: grid;
     align-items: end;
     isolation: isolate;
     overflow: hidden;
-    background-color: var(--color-surface-0);
+    background-color: #0b0b0d;
+    border-bottom: var(--rule-structural) solid var(--color-border);
   }
 
   .cs-hero-image {
     object-fit: cover;
     object-position: center;
     z-index: 0;
+    /* Banner photography runs mono; article imagery below keeps its color */
+    filter: grayscale(1);
   }
 
   .cs-hero-overlay {
@@ -167,15 +38,15 @@
     background:
       linear-gradient(
         to top,
-        var(--color-surface-0) 0%,
-        color-mix(in srgb, var(--color-surface-0) 70%, transparent) 25%,
-        color-mix(in srgb, var(--color-surface-0) 20%, transparent) 55%,
+        #0b0b0d 0%,
+        rgba(11, 11, 13, 0.7) 25%,
+        rgba(11, 11, 13, 0.2) 55%,
         transparent 80%
       ),
       linear-gradient(
         to right,
-        color-mix(in srgb, var(--color-surface-0) 55%, transparent) 0%,
-        color-mix(in srgb, var(--color-surface-0) 20%, transparent) 35%,
+        rgba(11, 11, 13, 0.55) 0%,
+        rgba(11, 11, 13, 0.2) 35%,
         transparent 65%
       );
   }
@@ -183,131 +54,98 @@
   .cs-hero-content {
     position: relative;
     z-index: 2;
-    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
-    margin-inline: auto;
-    padding-block: clamp(3rem, 7vw, 6rem);
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+    grid-template-columns: repeat(12, 1fr);
     align-items: end;
-  }
-
-  @media (min-width: 1024px) {
-    .cs-hero-content {
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: clamp(var(--space-8), 6vw, var(--space-16));
-    }
+    padding-block: clamp(2.5rem, 6vw, 5rem);
   }
 
   .cs-hero-main {
+    grid-column: 2 / 10;
     min-width: 0;
   }
 
   .cs-eyebrow {
     display: inline-block;
-    font-size: var(--step-xs);
-    font-weight: var(--font-semibold);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-brand);
     text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
-    color: var(--color-primary);
+    /* void blue in both themes — hull's darker primary sinks into the scrim */
+    color: #52a9de;
     margin-bottom: var(--space-4);
   }
 
   .cs-title {
-    font-size: clamp(3rem, 2.25rem + 5.5vw, 8.5rem);
-    font-weight: var(--font-extrabold);
+    /* No extrusion here — the study hero already carries a photographic
+       banner behind it, and a second depth cue turns it to mud. */
+    text-shadow: none;
+    font-size: var(--step-4xl);
+    font-weight: var(--font-bold);
     text-transform: none;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
-    margin-bottom: var(--space-6);
+    letter-spacing: var(--tracking-tight);
+    line-height: 0.92;
+    margin-bottom: var(--space-5);
     max-width: 16ch;
+    color: #d3d6dc; /* light over the dark banner in both themes */
+    text-wrap: balance;
   }
 
   .cs-lead {
-    font-size: var(--step-xl);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-snug);
-    max-width: 48ch;
+    font-size: var(--step-lg);
+    color: rgba(211, 214, 220, 0.72); /* light over the dark banner */
+    line-height: var(--leading-normal);
+    max-width: 46ch;
   }
 
-  /* Decorative year anchor on the right — editorial counterweight */
-  .cs-hero-year {
-    display: none;
-    font-size: clamp(5rem, 10vw, 12rem);
-    font-weight: var(--font-extrabold);
-    letter-spacing: -0.05em;
-    line-height: 0.82;
-    color: var(--color-text-primary);
-    opacity: 0.12;
-    font-variant-numeric: tabular-nums;
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
-  }
-
-  @media (min-width: 1024px) {
-    .cs-hero-year {
-      display: block;
-      align-self: end;
-    }
-  }
-
-  /* Meta bar --------------------------------------------------------- */
+  /* --- Meta strip: mono data columns on hairlines -------------------- */
   .cs-meta {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
-    background-color: var(--color-surface-1);
-    border-block: 1px solid var(--color-border-subtle);
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
   }
 
   .cs-meta-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 0;
-    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
-    margin: 0 auto;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    margin: 0;
     padding: 0;
   }
 
   .cs-meta-row {
-    padding: var(--space-6) var(--space-4);
-    border-right: 1px solid var(--color-border-subtle);
+    grid-column: span 2;
+    padding: 20px var(--gutter) 22px;
+    border-right: var(--rule-row) solid var(--color-border-subtle);
+  }
+
+  .cs-meta-row:first-child {
+    grid-column: 2 / span 2;
+  }
+
+  .cs-meta-row-wide {
+    grid-column: span 4;
   }
 
   .cs-meta-row:last-child {
     border-right: none;
   }
 
-  .cs-meta-row-wide {
-    grid-column: span 2;
-  }
-
-  @media (max-width: 900px) {
-    .cs-meta-row {
-      border-right: none;
-      border-bottom: 1px solid var(--color-border-subtle);
-      padding: var(--space-4);
-    }
-    .cs-meta-row:last-child {
-      border-bottom: none;
-    }
-    .cs-meta-row-wide {
-      grid-column: span 1;
-    }
-  }
-
   .cs-meta-row dt {
-    font-size: var(--step-xs);
-    font-weight: var(--font-semibold);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
     text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
+    letter-spacing: var(--tracking-data);
     color: var(--color-text-tertiary);
     margin-bottom: var(--space-2);
   }
 
   .cs-meta-row dd {
     font-size: var(--step-sm);
-    font-weight: var(--font-medium);
+    font-weight: var(--font-normal);
     color: var(--color-text-primary);
     margin: 0;
     line-height: var(--leading-snug);
@@ -318,169 +156,296 @@
     align-items: center;
     gap: 0.35em;
     color: var(--color-primary);
-    font-weight: var(--font-semibold);
+    font-weight: var(--font-medium);
+    text-decoration: none;
   }
 
-  .cs-meta-link:hover {
-    color: var(--color-accent);
+  .cs-meta-link svg {
+    flex: none;
+    transition: transform var(--duration-fast) var(--ease-out);
   }
 
-  /* Article --------------------------------------------------------- */
+  .cs-meta-link:hover,
+  .cs-meta-link:focus-visible {
+    color: var(--color-primary-hover);
+  }
+
+  .cs-meta-link:hover svg,
+  .cs-meta-link:focus-visible svg {
+    transform: translate(2px, -2px);
+  }
+
+  @media (max-width: 900px) {
+    /* Banner drops the 12-col grid: full width on the gutter */
+    .cs-hero-content {
+      grid-template-columns: 1fr;
+      padding-inline: var(--gutter);
+    }
+
+    .cs-hero-main {
+      grid-column: 1;
+    }
+
+    .cs-meta-list {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-meta-row,
+    .cs-meta-row:first-child,
+    .cs-meta-row-wide {
+      grid-column: auto;
+      border-right: none;
+      border-bottom: var(--rule-row) solid var(--color-border-subtle);
+      padding: var(--space-4) var(--gutter);
+    }
+
+    .cs-meta-row-wide {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* --- Article: numbered sections on the sheet ----------------------
+     Each top-level <div> is one numbered section. The number is a CSS
+     counter placed in column 1 (the margin-label position), copy sits in
+     cols 2–9 at a capped measure, imagery spreads to col 12. */
   .cs-article {
-    width: min(100% - var(--gutter) * 2, 44rem);
-    margin-inline: auto;
-    padding-block: clamp(3rem, 7vw, 6rem);
+    width: 100%;
+    padding: 0;
+    counter-reset: cs-section cs-fig;
+  }
+
+  .cs-article > div {
+    counter-increment: cs-section;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: row;
+    row-gap: var(--space-5);
+    padding-block: clamp(3rem, 5vw, 4.5rem);
+    border-top: var(--rule-row) solid var(--color-border-subtle);
+  }
+
+  .cs-article > div:first-child {
+    border-top: none;
+  }
+
+  .cs-article > div::before {
+    content: counter(cs-section, decimal-leading-zero);
+    grid-column: 1 / 2;
+    grid-row: 1;
+    padding-left: var(--gutter);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    color: var(--color-text-tertiary);
+    line-height: 1.6;
+  }
+
+  .cs-article > div > * {
+    grid-column: 2 / 9;
+    min-width: 0;
+    margin: 0;
   }
 
   .cs-article h2 {
+    grid-column: 2 / 11;
     font-size: var(--step-2xl);
-    margin-top: var(--space-12);
-    margin-bottom: var(--space-4);
+    font-weight: var(--font-bold);
     text-transform: none;
     letter-spacing: var(--tracking-tight);
-    line-height: var(--leading-snug);
-  }
-
-  .cs-article h2:first-child {
-    margin-top: 0;
+    line-height: 1.15;
+    color: var(--color-text-primary);
+    text-wrap: balance;
+    max-width: 30ch;
   }
 
   .cs-article h3 {
-    font-size: var(--step-xl);
-    margin-top: var(--space-10);
-    margin-bottom: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--step-data);
+    font-weight: var(--font-medium);
     text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
+    letter-spacing: var(--tracking-data);
     color: var(--color-text-primary);
+    margin-top: var(--space-4);
   }
 
   .cs-article p {
     font-size: var(--step-base);
     color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-5);
-    max-width: 68ch;
+    line-height: 1.7;
+    max-width: 60ch;
   }
 
   .cs-article ul,
   .cs-article ol {
-    padding-left: var(--space-6);
-    margin-bottom: var(--space-6);
+    padding-left: var(--space-5);
     list-style: disc;
   }
 
   .cs-article li {
     font-size: var(--step-base);
     color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
+    line-height: 1.7;
     margin-bottom: var(--space-2);
   }
 
-  /* Images bleed wider than the text column on desktop */
+  /* Imagery spreads wider than the measure, on the same grid */
+  .cs-article > div > img,
+  .cs-article > div > p:has(img) {
+    grid-column: 2 / 12;
+    max-width: none;
+  }
+
   .cs-article img {
     display: block;
     width: 100%;
-    max-width: none;
     height: auto;
     border-radius: 0;
-    margin-block: var(--space-8);
-    border: 1px solid var(--color-border-subtle);
+    border: var(--rule-row) solid var(--color-border-subtle);
+    margin: 0;
   }
 
-  @media (min-width: 1024px) {
-    .cs-article > div > p > img,
-    .cs-article > div > img,
-    .cs-article img {
-      width: calc(100% + 12vw);
-      margin-inline: -6vw;
-      max-width: calc(100vw - var(--gutter) * 2);
-    }
-  }
-
+  /* Captions read as mono plate credits, set under their image. Each one
+     is a numbered figure — the counter is document-order, which matches
+     the visual order even though the grid moves captions below. */
   .cs-article figcaption,
   .cs-article .text-secondary.text-sm {
     display: block;
-    font-size: var(--step-xs);
-    font-weight: var(--font-medium);
+    grid-column: 2 / 12;
+    order: 2; /* markup puts captions first; the grid sets them below */
+    counter-increment: cs-fig;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-normal);
     text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
+    letter-spacing: 0.08em;
     color: var(--color-text-tertiary);
-    margin-top: var(--space-6);
-    margin-bottom: 0;
+    line-height: 1.7;
+    margin: 0;
   }
 
-  /* Next case study ------------------------------------------------- */
+  /* Blue = structure: the figure number is the sheet's apparatus,
+     not the caption's voice */
+  .cs-article figcaption::before,
+  .cs-article .text-secondary.text-sm::before {
+    content: 'Fig. ' counter(cs-fig, decimal-leading-zero) ' — ';
+    color: var(--color-primary);
+    font-weight: var(--font-medium);
+  }
+
+  @media (max-width: 900px) {
+    .cs-article > div {
+      grid-template-columns: 1fr;
+      row-gap: var(--space-4);
+      padding-inline: var(--gutter);
+    }
+
+    .cs-article > div::before {
+      grid-column: 1;
+      padding-left: 0;
+      margin-bottom: var(--space-2);
+    }
+
+    .cs-article > div > *,
+    .cs-article h2,
+    .cs-article > div > img,
+    .cs-article > div > p:has(img),
+    .cs-article figcaption,
+    .cs-article .text-secondary.text-sm {
+      grid-column: 1;
+    }
+  }
+
+  /* --- Next case study band ------------------------------------------ */
   .cs-next {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
     background-color: var(--color-surface-1);
-    border-top: 1px solid var(--color-border-subtle);
+    border-top: var(--rule-structural) solid var(--color-border);
   }
 
   .cs-next-link {
-    display: block;
-    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
-    margin: 0 auto;
-    padding-block: clamp(3rem, 6vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
     text-decoration: none;
     color: var(--color-text-primary);
-    transition: color var(--duration-fast) var(--ease-default);
-  }
-
-  .cs-next-link:hover {
-    color: var(--color-primary);
   }
 
   .cs-next-eyebrow {
-    display: block;
-    font-size: var(--step-xs);
-    font-weight: var(--font-semibold);
+    grid-column: 2 / 12;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
     text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
+    letter-spacing: var(--tracking-data);
     color: var(--color-text-tertiary);
     margin-bottom: var(--space-3);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  /* Grace note (see _tokens.css): "Study 04" is the target's datum — it
+     lights red while the title answers blue and the arrow nudges. */
+  .cs-next-link:hover .cs-next-eyebrow,
+  .cs-next-link:focus-visible .cs-next-eyebrow {
+    color: var(--color-accent);
   }
 
   .cs-next-title {
+    grid-column: 2 / 12;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-6);
+    /* h3 by document order, display-scale by size — takes the wordmark face */
+    font-family: var(--font-display);
     font-size: var(--step-3xl);
-    font-weight: var(--font-extrabold);
+    font-weight: var(--font-bold);
     text-transform: none;
     letter-spacing: var(--tracking-tight);
     line-height: var(--leading-tight);
     margin: 0;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .cs-next-link:hover .cs-next-title,
+  .cs-next-link:focus-visible .cs-next-title {
+    color: var(--color-primary);
   }
 
   .cs-next-arrow {
     display: inline-flex;
     align-items: center;
-    color: var(--color-accent);
-    transition: transform var(--duration-normal) var(--ease-out);
+    color: var(--color-primary);
+    transition: transform var(--duration-fast) var(--ease-out);
   }
 
-  .cs-next-link:hover .cs-next-arrow {
-    transform: translate(4px, -4px);
+  /* Internal navigation, so the cue points right, not out. 4px is the
+     system-wide nudge. */
+  .cs-next-link:hover .cs-next-arrow,
+  .cs-next-link:focus-visible .cs-next-arrow {
+    transform: translateX(4px);
   }
 
-  /* Back ---------------------------------------------------------- */
+  @media (max-width: 900px) {
+    .cs-next-link {
+      grid-template-columns: 1fr;
+      padding-inline: var(--gutter);
+    }
+
+    .cs-next-eyebrow,
+    .cs-next-title {
+      grid-column: 1;
+    }
+  }
+
+  /* --- Back ----------------------------------------------------------- */
   .cs-back {
     display: flex;
     justify-content: center;
     padding-block: clamp(var(--space-10), 5vw, var(--space-16));
-  }
-
-  /* Reading progress bar ------------------------------------------ */
-  .reading-progress {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    height: 2px;
-    background-color: var(--color-accent);
-    z-index: var(--z-fixed);
-    transition: width 100ms linear;
   }
 
   /* Used by Layout.js "Back to home" on gallery / misc pages */
@@ -488,5 +453,178 @@
     display: flex;
     justify-content: center;
     padding-block: clamp(var(--space-10), 5vw, var(--space-16));
+  }
+
+  /* ========================================================================
+     THE FILE INDEX (/case-studies) — front matter for the academic sheets.
+     A numbered ledger on the 12-column grid: file number in the margin
+     column (same position as the article's section counters), display-face
+     title, mono meta stack, notched mono thumbnail. Hairline rules only.
+     ======================================================================== */
+  .cs-index {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .cs-index-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    padding-block: clamp(2.25rem, 4.5vw, 3.75rem);
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: background-color var(--duration-fast) var(--ease-default);
+  }
+
+  /* Surface answer — same device as the homepage work cells: the whole
+     ledger row lifts faintly, mixed from text ink so it holds in both
+     themes and runs the full row width to the rules. */
+  .cs-index-row:hover,
+  .cs-index-row:focus-visible {
+    background-color: color-mix(
+      in srgb,
+      var(--color-text-primary) 5%,
+      transparent
+    );
+  }
+
+  .cs-index-num {
+    grid-column: 1 / 2;
+    align-self: start;
+    padding-left: var(--gutter);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    color: var(--color-text-tertiary);
+    line-height: 1.6;
+  }
+
+  .cs-index-body {
+    grid-column: 2 / 8;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-right: 40px;
+  }
+
+  /* Display scale takes the wordmark face, matching the next-study band */
+  .cs-index-title {
+    font-family: var(--font-display);
+    font-size: var(--step-3xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    text-wrap: balance;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .cs-index-row:hover .cs-index-title,
+  .cs-index-row:focus-visible .cs-index-title {
+    color: var(--color-primary);
+  }
+
+  .cs-index-summary {
+    font-size: var(--step-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-normal);
+    max-width: 52ch;
+  }
+
+  /* Mono meta stack — the detail page's meta strip, condensed */
+  .cs-index-meta {
+    grid-column: 8 / 10;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-data);
+    color: var(--color-text-tertiary);
+    line-height: 1.6;
+  }
+
+  .cs-index-meta > span:first-child {
+    color: var(--color-text-secondary);
+  }
+
+  /* Notched plate, mono at rest — matches the nav panel and gallery plates */
+  .cs-index-thumb {
+    grid-column: 10 / 13;
+    position: relative;
+    aspect-ratio: 3 / 2;
+    margin-right: var(--gutter);
+    overflow: hidden;
+    background-color: var(--color-surface-2);
+  }
+
+  .cs-index-row:hover .cs-index-thumb,
+  .cs-index-row:focus-visible .cs-index-thumb {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
+  }
+
+  .cs-index-image {
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    transition: opacity var(--duration-normal) var(--ease-default);
+  }
+
+  .cs-index-row:hover .cs-index-image,
+  .cs-index-row:focus-visible .cs-index-image {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    .cs-index-image {
+      opacity: 1;
+    }
+  }
+
+  .cs-index-foot {
+    display: flex;
+    justify-content: center;
+    padding-block: clamp(var(--space-10), 5vw, var(--space-16));
+  }
+
+  @media (max-width: 900px) {
+    .cs-index-row {
+      grid-template-columns: 1fr;
+      row-gap: var(--space-4);
+      padding-inline: var(--gutter);
+    }
+
+    .cs-index-num,
+    .cs-index-body,
+    .cs-index-meta,
+    .cs-index-thumb {
+      grid-column: 1;
+    }
+
+    .cs-index-num {
+      padding-left: 0;
+    }
+
+    .cs-index-body {
+      padding-right: 0;
+    }
+
+    .cs-index-meta {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-4);
+    }
+
+    .cs-index-thumb {
+      margin-right: 0;
+      max-width: 28rem;
+    }
   }
 }

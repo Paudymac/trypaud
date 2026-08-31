@@ -11,7 +11,7 @@ export default function Logos() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <section className={`container ${utilStyles.headingMd}`}>
         <span className={utilStyles.datePortfolio}>2024</span>
         <h3 className={utilStyles.header3Portfolio}>Poster S.D.B.A.</h3>
         <p className={utilStyles.descriptionPortfolio}>
@@ -68,17 +68,19 @@ export default function Logos() {
         />
         <br />
       </section>
-      <Link
-        href="/"
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 'var(--space-2)',
-        }}
-      >
-        <ArrowLeftIcon width={14} height={14} />
-        home
-      </Link>
+      <div className="container">
+        <Link
+          href="/"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 'var(--space-2)',
+          }}
+        >
+          <ArrowLeftIcon className="icon-back" width={14} height={14} />
+          home
+        </Link>
+      </div>
     </Layout>
   );
 }

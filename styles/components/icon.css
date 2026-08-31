@@ -1,0 +1,67 @@
+@layer components {
+  /* ========================================================================
+     ICON CHOREOGRAPHY — directional utilities.
+     The icon, not the container, carries the motion feedback: an arrow
+     nudges along the direction it points on hover, and pushes further,
+     faster, on press — a commit, not a bounce. Translation only: no scale,
+     no shadows, nothing floats (system law).
+     Utilities rather than a blanket `.btn svg` rule so a back-arrow never
+     inherits a forward nudge.
+       .icon-fwd  → right   (continue, see more)
+       .icon-back → left    (return)
+       .icon-ext  → up-right (external / launch / send)
+       .icon-up   → up      (back to top)
+     ======================================================================== */
+
+  .icon-fwd,
+  .icon-back,
+  .icon-ext,
+  .icon-up {
+    flex: none;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  :is(a, button):is(:hover, :focus-visible) .icon-fwd {
+    transform: translateX(3px);
+  }
+
+  :is(a, button):is(:hover, :focus-visible) .icon-back {
+    transform: translateX(-3px);
+  }
+
+  :is(a, button):is(:hover, :focus-visible) .icon-ext {
+    transform: translate(2px, -2px);
+  }
+
+  :is(a, button):is(:hover, :focus-visible) .icon-up {
+    transform: translateY(-2px);
+  }
+
+  /* Press — the same direction, further and quicker */
+  :is(a, button):active .icon-fwd {
+    transform: translateX(6px);
+    transition-duration: 70ms;
+  }
+
+  :is(a, button):active .icon-back {
+    transform: translateX(-6px);
+    transition-duration: 70ms;
+  }
+
+  :is(a, button):active .icon-ext {
+    transform: translate(4px, -4px);
+    transition-duration: 70ms;
+  }
+
+  :is(a, button):active .icon-up {
+    transform: translateY(-5px);
+    transition-duration: 70ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :is(a, button):is(:hover, :focus-visible, :active)
+      :is(.icon-fwd, .icon-back, .icon-ext, .icon-up) {
+      transform: none;
+    }
+  }
+}

@@ -7,12 +7,32 @@ const THRESHOLD = 400;
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
+  const [lift, setLift] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > THRESHOLD);
-    onScroll();
+    let raf = 0;
+    const measure = () => {
+      raf = 0;
+      setVisible(window.scrollY > THRESHOLD);
+      // Dock above the footer: lift the button by however far the footer
+      // has entered the viewport, so it never overlaps the strip.
+      const footer = document.querySelector('.site-footer-wrapper');
+      if (footer) {
+        const overlap = window.innerHeight - footer.getBoundingClientRect().top;
+        setLift(overlap > 0 ? Math.round(overlap) : 0);
+      }
+    };
+    const onScroll = () => {
+      if (!raf) raf = window.requestAnimationFrame(measure);
+    };
+    measure();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
   }, []);
 
   const handleClick = useCallback(() => {
@@ -30,6 +50,7 @@ export default function BackToTop() {
       type="button"
       className="back-to-top"
       data-visible={visible}
+      style={{ '--btt-lift': `${lift}px` }}
       aria-label="Back to top"
       title="Back to top"
       tabIndex={visible ? 0 : -1}

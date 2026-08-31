@@ -8,7 +8,8 @@
   .back-to-top {
     position: fixed;
     right: clamp(var(--space-4), 3vw, var(--space-8));
-    bottom: clamp(var(--space-4), 3vw, var(--space-8));
+    /* --btt-lift (set by BackToTop.js) docks the button above the footer */
+    bottom: calc(clamp(var(--space-4), 3vw, var(--space-8)) + var(--btt-lift, 0px));
     z-index: var(--z-fixed);
 
     display: inline-flex;
@@ -18,17 +19,15 @@
     height: 2.75rem;
     padding: 0;
 
-    background-color: var(--color-surface-2);
+    background-color: color-mix(in srgb, var(--color-surface-2) 70%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     /* Match the nav menu item idle colour so the arrow reads as a
        peer of the main nav links rather than body copy. */
     color: var(--color-text-secondary);
     stroke: var(--color-text-secondary);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-full);
-    box-shadow:
-      inset 0 0 0 1px
-        color-mix(in srgb, var(--color-text-primary) 6%, transparent),
-      var(--shadow-md);
+    border: var(--rule-structural) solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
     cursor: pointer;
 
     opacity: 0;
@@ -60,12 +59,23 @@
 
   .back-to-top svg {
     stroke-width: 2.75;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .back-to-top:hover svg,
+  .back-to-top:focus-visible svg {
+    transform: translateY(-2px);
+  }
+
+  .back-to-top:active svg {
+    transform: translateY(-5px);
+    transition-duration: 70ms;
   }
 
   .back-to-top:hover,
   .back-to-top:focus-visible {
     background-color: var(--color-surface-3);
-    border-color: var(--color-accent);
+    border-color: var(--color-primary);
     color: var(--color-primary);
     stroke: var(--color-primary);
   }
@@ -75,6 +85,11 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .back-to-top:hover svg,
+    .back-to-top:focus-visible svg,
+    .back-to-top:active svg {
+      transform: none;
+    }
     .back-to-top {
       transition:
         opacity 120ms linear,

@@ -9,7 +9,7 @@ export default function CaseStudy({}) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.articleSection}>
+      <section className={`container ${utilStyles.articleSection}`}>
         <h1>Design Process</h1>
         <p>
           My Design Process aims to answer the question being asked. What's

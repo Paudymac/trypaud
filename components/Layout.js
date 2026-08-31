@@ -6,11 +6,20 @@ import { useScrollToCollaborate } from '@/lib/scrollToCollaborate';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ThemeToggle from './ThemeToggle';
 import ThemeScript from './ThemeScript';
-import { TrefoilMark } from './TrefoilLogo';
+import TrefoilKnot from './TrefoilKnot';
 import NavMegaPanel from './NavMegaPanel';
+import MobileMenu from './MobileMenu';
+import AmbientBackground from './ui/AmbientBackground';
 import BackToTop from './BackToTop';
-import { galleryLinks, caseStudyLinks, isGalleryRoute } from './NavData';
-import { ChevronDownIcon, ArrowLeftIcon, ArrowUpRightIcon } from './NavIcons';
+import { isGalleryRoute } from './NavData';
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ChevronDownIcon,
+  LinkedInIcon,
+  MailIcon,
+  FileTextIcon,
+} from './NavIcons';
 
 export const siteTitle = 'TryPaud Portfolio';
 
@@ -73,21 +82,25 @@ export default function Layout({ children, home }) {
   const { handleCollaborateClick } = useScrollToCollaborate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleMobileGroup = (key) =>
-    setOpenMobileGroup((curr) => (curr === key ? null : key));
+  const toggleMobileGroup = useCallback(
+    (key) => setOpenMobileGroup((curr) => (curr === key ? null : key)),
+    []
+  );
+
+  const closeMobileMenu = useCallback(() => setIsMenuOpen(false), []);
 
   const handleTriggerFocus = (key) => (e) => {
     if (e.target.matches(':focus-visible')) openMenuNow(key);
   };
 
   return (
-    <div>
+    <div className="site-shell">
       <Head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="TryPaud — Design portfolio of Padraic McAteer. 17+ years of UI, branding, and visual design."
+          content="Padraic McAteer designs, draws and builds — eighteen years across UI, identity, illustration and motion. Three loops, one line. Try Paud."
         />
         <meta
           property="og:image"
@@ -116,17 +129,15 @@ export default function Layout({ children, home }) {
       >
         {/* Desktop nav */}
         <nav className="nav-container" aria-label="Main navigation">
-          <Link href="/" className="nav-logo" aria-label="TryPaud home">
-            <TrefoilMark size={32} />
-            <span
-              style={{
-                fontSize: 'var(--text-sm)',
-                fontWeight: 'var(--font-bold)',
-                textTransform: 'uppercase',
-                letterSpacing: 'var(--tracking-wider)',
-              }}
-            >
-              TryPaud
+          <Link
+            href="/"
+            className="nav-logo mark-hover"
+            aria-label="TryPaud home"
+          >
+            <TrefoilKnot size={45} />
+            <span className="nav-wordmark">
+              <span className="nav-wordmark-try">try</span>
+              <span className="nav-wordmark-paud">Paud</span>
             </span>
           </Link>
 
@@ -144,8 +155,12 @@ export default function Layout({ children, home }) {
                 aria-expanded={openMenu === 'gallery'}
                 onFocus={handleTriggerFocus('gallery')}
               >
-                Gallery
-                <ChevronDownIcon width={12} height={12} />
+                Work
+                <ChevronDownIcon
+                  className="nav-dropdown-chev"
+                  width={12}
+                  height={12}
+                />
               </Link>
             </div>
 
@@ -162,8 +177,12 @@ export default function Layout({ children, home }) {
                 aria-expanded={openMenu === 'caseStudies'}
                 onFocus={handleTriggerFocus('caseStudies')}
               >
-                Case Studies
-                <ChevronDownIcon width={12} height={12} />
+                Studies
+                <ChevronDownIcon
+                  className="nav-dropdown-chev"
+                  width={12}
+                  height={12}
+                />
               </Link>
             </div>
 
@@ -184,7 +203,8 @@ export default function Layout({ children, home }) {
               className="btn btn-accent btn-sm"
               type="button"
             >
-              Collaborate
+              Hire
+              <ArrowRightIcon className="icon-fwd" width={12} height={12} />
             </button>
           </div>
         </nav>
@@ -192,7 +212,7 @@ export default function Layout({ children, home }) {
         {/* Mobile nav */}
         <div className="mobile-nav">
           <Link href="/" className="nav-logo" aria-label="TryPaud home">
-            <TrefoilMark size={28} />
+            <TrefoilKnot size={32} triangle={false} />
           </Link>
 
           <div className="nav-actions">
@@ -215,120 +235,16 @@ export default function Layout({ children, home }) {
           </div>
         </div>
 
-        {/* Mobile menu panel */}
-        <div
-          id="mobile-menu"
-          className={`mobile-menu ${isMenuOpen ? 'mobile-menu-open' : ''}`}
-          role="navigation"
-          aria-label="Mobile navigation"
-        >
-          <ul className="mobile-menu-list">
-            <li className="mobile-menu-group">
-              <button
-                type="button"
-                className="mobile-menu-group-trigger"
-                aria-expanded={openMobileGroup === 'gallery'}
-                onClick={() => toggleMobileGroup('gallery')}
-              >
-                Gallery
-                <span className="mobile-menu-group-chev" aria-hidden="true">
-                  {openMobileGroup === 'gallery' ? '−' : '+'}
-                </span>
-              </button>
-              {openMobileGroup === 'gallery' && (
-                <ul className="mobile-menu-sublist">
-                  <li>
-                    <Link
-                      href="/gallery"
-                      className="mobile-menu-link mobile-menu-link-featured"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      All Work
-                    </Link>
-                  </li>
-                  {galleryLinks.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="mobile-menu-link"
-                        aria-current={
-                          isActiveLink(link.href) ? 'page' : undefined
-                        }
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-
-            <li className="mobile-menu-group">
-              <button
-                type="button"
-                className="mobile-menu-group-trigger"
-                aria-expanded={openMobileGroup === 'caseStudies'}
-                onClick={() => toggleMobileGroup('caseStudies')}
-              >
-                Case Studies
-                <span className="mobile-menu-group-chev" aria-hidden="true">
-                  {openMobileGroup === 'caseStudies' ? '−' : '+'}
-                </span>
-              </button>
-              {openMobileGroup === 'caseStudies' && (
-                <ul className="mobile-menu-sublist">
-                  <li>
-                    <Link
-                      href="/case-studies"
-                      className="mobile-menu-link mobile-menu-link-featured"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      All Case Studies
-                    </Link>
-                  </li>
-                  {caseStudyLinks.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="mobile-menu-link"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-
-            <li className="mobile-menu-group">
-              <Link
-                href="/about"
-                className="mobile-menu-link"
-                aria-current={isActiveLink('/about') ? 'page' : undefined}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-
-            <li>
-              <button
-                onClick={() => {
-                  handleCollaborateClick();
-                  setIsMenuOpen(false);
-                }}
-                className="btn btn-accent btn-sm"
-                style={{ marginTop: 'var(--space-4)', width: '100%' }}
-                type="button"
-              >
-                Collaborate
-              </button>
-            </li>
-          </ul>
-        </div>
       </header>
+
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={closeMobileMenu}
+        openGroup={openMobileGroup}
+        onToggleGroup={toggleMobileGroup}
+        onCollaborate={handleCollaborateClick}
+        isActive={isActiveLink}
+      />
 
       <NavMegaPanel
         openMenu={openMenu}
@@ -337,7 +253,8 @@ export default function Layout({ children, home }) {
         onItemClick={handlePanelItemClick}
       />
 
-      {/* ---- Main content ---- */}
+      {/* ---- Main content over the ambient space backdrop ---- */}
+      <AmbientBackground />
       <main id="main-content" role="main">
         {children}
       </main>
@@ -345,48 +262,55 @@ export default function Layout({ children, home }) {
       {/* ---- Back to home (non-home pages) ---- */}
       {!home && !isChildCaseStudiesPage && (
         <div className="case-study-back">
-          <Link href="/" className="btn btn-secondary">
-            <ArrowLeftIcon width={14} height={14} />
+          <Link href="/" className="btn btn-secondary btn-ring">
+            <ArrowLeftIcon className="icon-back" width={14} height={14} />
             Back to home
           </Link>
         </div>
       )}
 
-      {/* ---- Footer ---- */}
+      {/* ---- Footer strip ---- */}
       <footer className="site-footer-wrapper" role="contentinfo">
-        <div className="site-footer">
-          <nav className="footer-nav" aria-label="Footer navigation">
-            <Link
+        <div className="footer-strip">
+          <Link
+            href="/"
+            className="footer-mark mark-hover"
+            aria-label="TryPaud home"
+          >
+            <TrefoilKnot
+              size={44}
+              knotInk="var(--color-text-primary)"
+              triangleInk="var(--color-text-primary)"
+            />
+          </Link>
+          <nav className="footer-links" aria-label="Footer navigation">
+            <a
               href="https://www.linkedin.com/in/padraic-mcateer-trypaud/"
               className="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              <LinkedInIcon width={14} height={14} />
               LinkedIn
-            </Link>
-            <Link href="mailto:paudy@trypaud.com" className="footer-link">
+            </a>
+            <a href="mailto:paudy@trypaud.com" className="footer-link">
+              <MailIcon width={14} height={14} />
               Email
-            </Link>
-            <Link href="/PadraicMcAteer_CV_2025.pdf" className="footer-link">
-              CV
-            </Link>
-          </nav>
-
-          <div className="footer-brand">
-            <Link href="/" className="footer-logo" aria-label="TryPaud home">
-              <TrefoilMark size={64} />
-            </Link>
-            <button
-              onClick={handleCollaborateClick}
-              className="btn btn-accent"
-              type="button"
+            </a>
+            <a
+              href="/PadraicMcAteer_CV_2025.pdf"
+              className="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Let&apos;s Collaborate
-              <ArrowUpRightIcon width={16} height={16} />
-            </button>
-          </div>
+              <FileTextIcon width={14} height={14} />
+              CV
+            </a>
+          </nav>
+          <p className="footer-copyright">
+            © {new Date().getFullYear()} TRYPAUD
+          </p>
         </div>
-        <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} TryPaud. All rights reserved.
-        </p>
       </footer>
 
       <BackToTop />

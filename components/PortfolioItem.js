@@ -51,6 +51,9 @@ export default function PortfolioItem({
       <header className="portfolio-project-header">
         <div className="portfolio-project-meta">
           {date && <span className="portfolio-project-year">{date}</span>}
+          {hasImages && images.length > 1 && (
+            <span className="portfolio-project-plates">×{images.length}</span>
+          )}
           {launchUrl && (
             <a
               href={launchUrl}
@@ -77,8 +80,10 @@ export default function PortfolioItem({
                 type="button"
                 aria-label={`Open image ${i + 1} of ${title}`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img} alt="" loading="lazy" />
+                <span className="portfolio-thumb-media notch">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img} alt="" loading="lazy" />
+                </span>
               </button>
             </li>
           ))}

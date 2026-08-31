@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import BackgroundImage from '@/components/BackgroundImage';
-import styles from '@/components/backgroundImage.module.css';
 import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
 import fs from 'fs';
@@ -35,17 +33,15 @@ export default function Icons({ images }) {
         title="MWO Player Icons"
         description="[ Design / Art Direction ]"
       >
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="icon-swatch-grid">
           {images.map((image, index) => (
-            <div key={index} style={{ textAlign: 'center' }}>
-              <Image
-                src={image}
-                alt={`Icon ${index}`}
-                width={180}
-                height={180}
-              />
-              {/* <p>{image.split('/').pop()}</p>  Display the filename */}
-            </div>
+            <Image
+              key={index}
+              src={image}
+              alt={`Icon ${index}`}
+              width={180}
+              height={180}
+            />
           ))}
         </div>
       </PortfolioItem>
@@ -54,113 +50,57 @@ export default function Icons({ images }) {
         date="2024"
         title="MW5:Clans Icon"
         description="[ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/mw5-clans-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/mw5-clans-icon.webp']}
+      />
 
       <PortfolioItem
         date="2024"
         title="Solaris Icon"
         description="[ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/mw5-dlc6-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/mw5-dlc6-icon.webp']}
+      />
 
       <PortfolioItem
         date="2023"
         title="The Dragons Gambit Dragon"
         description="[ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/mw5-dlc5-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/mw5-dlc5-icon.webp']}
+      />
 
       <PortfolioItem
         date="2022"
         title="Rise of Rasalhague Serpent"
         description="[ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/mw5-dlc4-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/mw5-dlc4-icon.webp']}
+      />
 
       <PortfolioItem
         date="2023"
         title="MWO Atlas Icon"
         description="[ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/mwo-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/mwo-icon.webp']}
+      />
 
       <PortfolioItem
         date="2021"
         title="Legends of the Kestrel Lancers Bird"
         description="[ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/mw5-dlc2-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/mw5-dlc2-icon.webp']}
+      />
 
       <PortfolioItem
         date="2019"
         title="MW5"
         description="[ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/mw5-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/mw5-icon.webp']}
+      />
 
       <PortfolioItem
         date="2012"
         title="Smartt A"
         description="Smartt [ Design / Development / Art Direction ]"
-      >
-        <div className={styles.imageBg}>
-          <BackgroundImage
-            imageUrl="/images/icons/smartt-icon.webp"
-            paddingBottom="56.25%"
-            backgroundPositionY="center"
-          />
-        </div>
-      </PortfolioItem>
+        images={['/images/icons/smartt-icon.webp']}
+      />
     </PortfolioGalleryTemplate>
   );
 }

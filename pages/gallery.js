@@ -34,7 +34,7 @@ export default function Gallery({ allItems }) {
 
   const sentinelRef = useRef(null);
 
-  // Counts per category for filter chips
+  // Counts per category for the porthole dials
   const categoryCounts = useMemo(() => {
     const base = { all: allItems.length };
     for (const item of allItems) {
@@ -100,27 +100,42 @@ export default function Gallery({ allItems }) {
   return (
     <Layout>
       <Head>
-        <title>Gallery - {siteTitle}</title>
+        <title>{`Gallery - ${siteTitle}`}</title>
         <meta
           name="description"
           content="Browse the complete portfolio — UI design, logos, branding, icons, animation, and illustration."
         />
       </Head>
 
-      {/* Full-bleed header — matches portfolio sub-pages */}
-      <header className="portfolio-header">
-        <div className="portfolio-header-inner">
-          <span className="portfolio-eyebrow">Gallery</span>
-          <h1 className="portfolio-title">All work</h1>
-          <p className="portfolio-description">
+      {/* Index head — on the sheet, with the data column right */}
+      <header className="work-index-head">
+        <div className="band-label">
+          <span className="margin-label">W / Index</span>
+        </div>
+        <div className="work-index-main">
+          <span className="eyebrow">Gallery</span>
+          <h1 className="work-index-title">All work</h1>
+          <p className="work-index-desc">
             A running index of projects across UI, branding, illustration and
-            iconography — {allItems.length} pieces from 2009 through today.
+            iconography — 2009 through today.
           </p>
+        </div>
+        <div className="work-index-stats">
+          <div className="about-stat">
+            <span className="about-stat-number">{allItems.length}</span>
+            <span className="about-stat-unit">Pieces</span>
+          </div>
+          <div className="about-stat-rule" aria-hidden="true" />
+          <div className="about-stat-meta">
+            2009 — TODAY
+            <br />
+            SIX GALLERIES
+          </div>
         </div>
       </header>
 
       <div className="gallery-page">
-        {/* Category filter chips — sticky on scroll, horizontal-scroll on mobile */}
+        {/* Porthole dials — one per category, count inside the glass */}
         <div
           className="gallery-filters"
           role="toolbar"
@@ -132,23 +147,21 @@ export default function Gallery({ allItems }) {
             return (
               <button
                 key={cat.key}
-                className={`gallery-filter-btn ${
-                  activeCategory === cat.key ? 'gallery-filter-btn-active' : ''
-                }`}
+                className="porthole-filter"
                 onClick={() => setActiveCategory(cat.key)}
                 aria-pressed={activeCategory === cat.key}
                 type="button"
               >
-                <span>{cat.label}</span>
-                <span className="gallery-filter-count" aria-hidden="true">
+                <span className="porthole-filter-dial" aria-hidden="true">
                   {count}
                 </span>
+                <span className="porthole-filter-label">{cat.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Grid */}
+        {/* Plates */}
         <ul className="gallery-grid" role="list">
           {visibleItems.map((item) => (
             <li key={item.id}>
@@ -158,29 +171,28 @@ export default function Gallery({ allItems }) {
                 aria-label={`Open ${item.title} — ${item.images.length} image${item.images.length !== 1 ? 's' : ''}`}
                 type="button"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.thumbnail}
-                  alt=""
-                  className="gallery-item-image"
-                  loading="lazy"
-                  width="560"
-                  height="420"
-                />
-                <div className="gallery-item-overlay">
-                  <span className="gallery-item-meta">
-                    <span className="gallery-item-category">
-                      {item.category === 'ui' ? 'UI / Web' : item.category}
-                    </span>
-                    <span className="gallery-item-year">{item.year}</span>
-                  </span>
+                <span className="gallery-item-media notch">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.thumbnail}
+                    alt=""
+                    className="gallery-item-image"
+                    loading="lazy"
+                    width="560"
+                    height="420"
+                  />
+                </span>
+                <span className="gallery-item-caption">
                   <span className="gallery-item-title">{item.title}</span>
-                </div>
-                {item.images.length > 1 && (
-                  <span className="gallery-item-count" aria-hidden="true">
-                    {item.images.length}
+                  <span className="gallery-item-data">
+                    {item.images.length > 1 && (
+                      <span className="gallery-item-count">
+                        ×{item.images.length}
+                      </span>
+                    )}
+                    {item.year}
                   </span>
-                )}
+                </span>
               </button>
             </li>
           ))}
@@ -194,7 +206,18 @@ export default function Gallery({ allItems }) {
               aria-hidden="true"
             />
             <div className="gallery-loading" aria-label="Loading more items">
-              <div className="gallery-loading-spinner" />
+              <svg
+                className="gallery-loading-orbit"
+                viewBox="0 0 100 100"
+                aria-hidden="true"
+              >
+                <g fill="none" stroke="currentColor" strokeWidth="3">
+                  <circle cx="50" cy="33" r="22" />
+                  <circle cx="64.72" cy="58.5" r="22" />
+                  <circle cx="35.28" cy="58.5" r="22" />
+                </g>
+              </svg>
+              <span className="gallery-loading-text">Loading</span>
             </div>
           </>
         )}

@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import { ArrowLeftIcon } from '@/components/NavIcons';
 
 export default function Custom404() {
   return (
@@ -23,10 +24,11 @@ export default function Custom404() {
           className="text-secondary text-lg"
           style={{ marginBottom: 'var(--space-8)' }}
         >
-          Page not found
+          Nothing at these coordinates.
         </p>
-        <Link href="/" className="btn btn-primary">
-          Back to home
+        <Link href="/" className="btn btn-accent">
+          <ArrowLeftIcon className="icon-back" width={14} height={14} />
+          Take me home
         </Link>
       </div>
     </Layout>

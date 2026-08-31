@@ -8,7 +8,12 @@
   .about-page-hero {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
-    background-color: var(--color-surface-1);
+    /* Translucent so the ambient starfield reads through the band */
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-1) 70%,
+      transparent
+    );
     border-bottom: 1px solid var(--color-border-subtle);
     padding-block: clamp(3rem, 6vw, 5rem);
   }
@@ -35,24 +40,226 @@
     }
   }
 
+  /* The portrait is a porthole read by an instrument: a 270° graduated
+     bezel, one tick per year of practice, the current year in signal red.
+     Static once drawn — the sweep below is a power-on, not an orbit. */
+  .about-orbit {
+    position: relative;
+    width: min(100%, 380px);
+    margin-inline: auto;
+  }
+
+  .about-dial {
+    position: absolute;
+    inset: -20%;
+    width: 140%;
+    max-width: none; /* the reset clamps svg to 100% — undo it here */
+    height: 140%;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  /* Detached instrument hardware — the same ring grey the porthole dials
+     and CTA orbits wear (see --color-ring in _tokens.css). */
+  .about-dial-arc {
+    stroke: var(--color-ring);
+    /* Same weight as the ticks — thinner and the bezel falls apart into
+       stray dashes instead of reading as one drawn instrument */
+    stroke-width: 1.5px;
+    transition: stroke var(--duration-fast) var(--ease-default);
+  }
+
+  .about-dial-tick {
+    stroke: var(--color-ring);
+    stroke-width: 1.5px;
+    transition: stroke var(--duration-fast) var(--ease-default);
+  }
+
+  /* The current year: a longer tick in the ring-corrected signal red.
+     A static datum, so it rests red — the "live counter" case. */
+  .about-dial-tick-now {
+    stroke: var(--color-ring-accent);
+    stroke-width: 2.5px;
+  }
+
+  .about-dial-label {
+    font-family: var(--font-mono);
+    /* SVG user units — ≈10px at the 380px plate width */
+    font-size: 2px;
+    font-weight: var(--font-medium);
+    letter-spacing: 0.2px;
+    fill: var(--color-text-tertiary);
+  }
+
+  .about-dial-label-now {
+    fill: var(--color-ring-accent);
+  }
+
+  /* Power-on: the arc sweeps clockwise from 2008 and each year tick
+     lights as the sweep reaches it. Linear, so tick delays stay in sync
+     with the arc's angular progress. */
+  @media (prefers-reduced-motion: no-preference) {
+    .about-dial-arc {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: about-dial-sweep 1.1s linear 0.2s forwards;
+    }
+
+    .about-dial-tick {
+      opacity: 0;
+      animation: about-dial-light 0.3s var(--ease-out) forwards;
+      /* 1.1s sweep / 18 intervals ≈ 61ms per year */
+      animation-delay: calc(0.2s + var(--tick-i) * 61ms);
+    }
+
+    .about-dial-label {
+      opacity: 0;
+      animation: about-dial-light 0.4s var(--ease-out) forwards;
+    }
+
+    .about-dial-label:first-of-type {
+      animation-delay: 0.2s;
+    }
+
+    .about-dial-label-now {
+      animation-delay: 1.3s;
+    }
+  }
+
+  @keyframes about-dial-sweep {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes about-dial-light {
+    to {
+      opacity: 1;
+    }
+  }
+
   .about-page-hero-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1;
     overflow: hidden;
-    background-color: var(--color-surface-2);
-    border: 1px solid var(--color-border-subtle);
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border-strong);
   }
 
+  /* The portrait rests in the mono print. Hover acquires the signal —
+     see the scan block below. */
   .about-page-hero-image img {
     object-fit: cover;
     object-position: 68% 22%;
     filter: grayscale(100%) contrast(1.12) brightness(0.9);
-    transition: filter 500ms var(--ease-out);
   }
 
-  .about-page-hero-image:hover img {
-    filter: grayscale(0%) contrast(1) brightness(1);
+  /* --- Signal acquisition ------------------------------------------
+     Hovering the instrument digitises the porthole: a signal-red
+     scanline sweeps down, the colour feed resolves behind it with a
+     breath of CRT interlace, and the bezel answers in structural blue.
+     Mouse-off drops the feed back to the mono print, faster — losing
+     a signal is quicker than finding one. */
+  .about-scan-color {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 350ms var(--ease-default);
+  }
+
+  /* The colour feed — same specificity as the mono grade above, so it
+     must sit after it in the file */
+  .about-scan-color img {
+    filter: none;
+  }
+
+  /* Interlace bands, visible only while the feed resolves */
+  .about-scan-color::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0 2px,
+      rgba(11, 11, 13, 0.25) 2px 3px
+    );
+    opacity: 0;
+  }
+
+  .about-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background-color: var(--color-ring-accent);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .about-orbit:hover .about-scan-color {
+    clip-path: inset(0 0 0 0);
+    transition-duration: 600ms;
+  }
+
+  /* The bezel answers the pointer in blue — the structure's hover
+     voice everywhere else in the system. NOW keeps its red. */
+  .about-orbit:hover .about-dial-arc,
+  .about-orbit:hover .about-dial-tick {
+    stroke: var(--color-ring-primary);
+  }
+
+  .about-orbit:hover .about-dial-tick-now {
+    stroke: var(--color-ring-accent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .about-orbit:hover .about-scan-line {
+      /* Rides the clip edge: same 600ms as the reveal, fading as it
+         reaches the bottom of the glass */
+      animation: about-scan-sweep 600ms var(--ease-default) forwards;
+    }
+
+    .about-orbit:hover .about-scan-color::after {
+      animation: about-scan-interlace 900ms linear forwards;
+    }
+  }
+
+  /* Reduced motion: no sweep, no interlace — the feed crossfades in */
+  @media (prefers-reduced-motion: reduce) {
+    .about-scan-color {
+      clip-path: none;
+      opacity: 0;
+      transition: opacity 350ms var(--ease-default);
+    }
+
+    .about-orbit:hover .about-scan-color {
+      opacity: 1;
+    }
+  }
+
+  @keyframes about-scan-sweep {
+    0% {
+      top: 0;
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      top: calc(100% - 1.5px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes about-scan-interlace {
+    0% {
+      opacity: 0.55;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   .about-page-hero-content {
@@ -70,7 +277,9 @@
   }
 
   .about-page-title {
-    font-size: var(--step-5xl);
+    /* No extrusion — the about page runs quieter than the galleries. */
+    text-shadow: none;
+    font-size: var(--step-3xl);
     font-weight: var(--font-extrabold);
     text-transform: none;
     letter-spacing: var(--tracking-tight);
@@ -125,7 +334,7 @@
   }
 
   .about-page-hero-stat strong {
-    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-size: var(--step-4xl);
     font-weight: var(--font-extrabold);
     letter-spacing: -0.05em;
     line-height: 0.9;
@@ -163,6 +372,32 @@
     color: var(--color-text-primary);
   }
 
+  .about-page-hero-tags a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  /* The gallery-link affordance: a quiet arrow, matching "FULL BIO →" */
+  .about-page-hero-tags a::after {
+    content: ' →';
+    color: var(--color-text-tertiary);
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      padding-left var(--duration-fast) var(--ease-default);
+  }
+
+  .about-page-hero-tags a:hover,
+  .about-page-hero-tags a:focus-visible {
+    color: var(--color-primary);
+  }
+
+  .about-page-hero-tags a:hover::after,
+  .about-page-hero-tags a:focus-visible::after {
+    color: var(--color-primary);
+    padding-left: 4px;
+  }
+
   .about-page-hero-location {
     margin-top: auto;
     display: flex;
@@ -179,7 +414,11 @@
     width: 100vw;
     margin-inline: calc(50% - 50vw);
     border-bottom: 1px solid var(--color-border-subtle);
-    background-color: var(--color-surface-0);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-0) 60%,
+      transparent
+    );
   }
 
   .about-page-meta-list {
@@ -277,10 +516,10 @@
   }
 
   .about-page-bio-mark {
-    font-size: clamp(4rem, 7vw, 6.5rem);
-    line-height: 0.55;
+    display: block;
+    width: clamp(64px, 6vw, 88px);
+    height: auto;
     color: var(--color-accent);
-    font-weight: var(--font-extrabold);
   }
 
   .about-page-bio-quote {
@@ -336,8 +575,8 @@
 
   .about-page-inline-link:hover,
   .about-page-inline-link:focus-visible {
-    color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
+    color: var(--color-primary-hover);
+    border-bottom-color: var(--color-primary-hover);
   }
 
   /* --- CAPABILITIES ----------------------------------------------- */
@@ -362,21 +601,14 @@
     }
   }
 
+  /* Rectangular plate, so it carries the notch (see notch.css). Inert —
+     no hover; the edge is the shape, not an affordance. */
   .about-page-cap {
     display: flex;
     align-items: flex-start;
     gap: var(--space-4);
     padding: var(--space-5);
     background-color: var(--color-surface-1);
-    border: 1px solid var(--color-border-subtle);
-    transition:
-      background-color var(--duration-fast) var(--ease-default),
-      border-color var(--duration-fast) var(--ease-default);
-  }
-
-  .about-page-cap:hover {
-    background-color: var(--color-surface-2);
-    border-color: var(--color-primary);
   }
 
   .about-page-cap-icon {
@@ -387,11 +619,6 @@
     background-color: var(--color-surface-2);
     color: var(--color-primary);
     flex-shrink: 0;
-    transition: color var(--duration-fast) var(--ease-default);
-  }
-
-  .about-page-cap:hover .about-page-cap-icon {
-    color: var(--color-accent);
   }
 
   .about-page-cap-text {
@@ -436,21 +663,17 @@
     color: var(--color-text-primary);
     border-right: 1px solid var(--color-border-subtle);
     border-bottom: 1px solid var(--color-border-subtle);
-    transition:
-      background-color var(--duration-fast) var(--ease-default),
-      color var(--duration-fast) var(--ease-default);
-  }
-
-  .about-page-clients-list li:hover {
-    background-color: var(--color-surface-1);
-    color: var(--color-primary);
   }
 
   /* --- FINAL CTA -------------------------------------------------- */
   .about-page-finalcta {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
-    background-color: var(--color-surface-1);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-1) 70%,
+      transparent
+    );
     border-top: 1px solid var(--color-border-subtle);
   }
 

@@ -4,14 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
-import { TrefoilMark } from '@/components/TrefoilLogo';
+import TrefoilKnot from '@/components/TrefoilKnot';
 import NavMegaPanel from '@/components/NavMegaPanel';
-import {
-  galleryLinks,
-  caseStudyLinks,
-  isGalleryRoute,
-} from '@/components/NavData';
-import { ChevronDownIcon } from '@/components/NavIcons';
+import MobileMenu from '@/components/MobileMenu';
+import { ChevronDownIcon, ArrowRightIcon } from '@/components/NavIcons';
+import { isGalleryRoute } from '@/components/NavData';
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -69,11 +66,17 @@ export default function SiteHeader() {
 
   const handleCollaborateClick = useCallback(() => {
     const el = document.getElementById('collaborate');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 62;
+    window.scrollTo({ top, behavior: 'smooth' });
   }, []);
 
-  const toggleMobileGroup = (key) =>
-    setOpenMobileGroup((curr) => (curr === key ? null : key));
+  const toggleMobileGroup = useCallback(
+    (key) => setOpenMobileGroup((curr) => (curr === key ? null : key)),
+    []
+  );
+
+  const closeMobileMenu = useCallback(() => setIsMenuOpen(false), []);
 
   // Only open the mega panel when focus arrives via keyboard (not mouse).
   const handleTriggerFocus = (key) => (e) => {
@@ -89,17 +92,15 @@ export default function SiteHeader() {
         role="banner"
       >
         <nav className="nav-container" aria-label="Main navigation">
-          <Link href="/" className="nav-logo" aria-label="TryPaud home">
-            <TrefoilMark size={32} />
-            <span
-              style={{
-                fontSize: 'var(--text-sm)',
-                fontWeight: 'var(--font-bold)',
-                textTransform: 'uppercase',
-                letterSpacing: 'var(--tracking-wider)',
-              }}
-            >
-              TryPaud
+          <Link
+            href="/"
+            className="nav-logo mark-hover"
+            aria-label="TryPaud home"
+          >
+            <TrefoilKnot size={45} />
+            <span className="nav-wordmark">
+              <span className="nav-wordmark-try">try</span>
+              <span className="nav-wordmark-paud">Paud</span>
             </span>
           </Link>
 
@@ -117,8 +118,12 @@ export default function SiteHeader() {
                 aria-expanded={openMenu === 'gallery'}
                 onFocus={handleTriggerFocus('gallery')}
               >
-                Gallery
-                <ChevronDownIcon width={12} height={12} />
+                Work
+                <ChevronDownIcon
+                  className="nav-dropdown-chev"
+                  width={12}
+                  height={12}
+                />
               </Link>
             </div>
 
@@ -135,8 +140,12 @@ export default function SiteHeader() {
                 aria-expanded={openMenu === 'caseStudies'}
                 onFocus={handleTriggerFocus('caseStudies')}
               >
-                Case Studies
-                <ChevronDownIcon width={12} height={12} />
+                Studies
+                <ChevronDownIcon
+                  className="nav-dropdown-chev"
+                  width={12}
+                  height={12}
+                />
               </Link>
             </div>
 
@@ -157,14 +166,15 @@ export default function SiteHeader() {
               className="btn btn-accent btn-sm"
               type="button"
             >
-              Collaborate
+              Hire
+              <ArrowRightIcon className="icon-fwd" width={12} height={12} />
             </button>
           </div>
         </nav>
 
         <div className="mobile-nav">
           <Link href="/" className="nav-logo" aria-label="TryPaud home">
-            <TrefoilMark size={28} />
+            <TrefoilKnot size={32} triangle={false} />
           </Link>
 
           <div className="nav-actions">
@@ -187,117 +197,16 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        <div
-          id="mobile-menu"
-          className={`mobile-menu ${isMenuOpen ? 'mobile-menu-open' : ''}`}
-          role="navigation"
-          aria-label="Mobile navigation"
-        >
-          <ul className="mobile-menu-list">
-            <li className="mobile-menu-group">
-              <button
-                type="button"
-                className="mobile-menu-group-trigger"
-                aria-expanded={openMobileGroup === 'gallery'}
-                onClick={() => toggleMobileGroup('gallery')}
-              >
-                Gallery
-                <span className="mobile-menu-group-chev" aria-hidden="true">
-                  {openMobileGroup === 'gallery' ? '−' : '+'}
-                </span>
-              </button>
-              {openMobileGroup === 'gallery' && (
-                <ul className="mobile-menu-sublist">
-                  <li>
-                    <Link
-                      href="/gallery"
-                      className="mobile-menu-link mobile-menu-link-featured"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      All Work
-                    </Link>
-                  </li>
-                  {galleryLinks.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="mobile-menu-link"
-                        aria-current={isActive(link.href) ? 'page' : undefined}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-
-            <li className="mobile-menu-group">
-              <button
-                type="button"
-                className="mobile-menu-group-trigger"
-                aria-expanded={openMobileGroup === 'caseStudies'}
-                onClick={() => toggleMobileGroup('caseStudies')}
-              >
-                Case Studies
-                <span className="mobile-menu-group-chev" aria-hidden="true">
-                  {openMobileGroup === 'caseStudies' ? '−' : '+'}
-                </span>
-              </button>
-              {openMobileGroup === 'caseStudies' && (
-                <ul className="mobile-menu-sublist">
-                  <li>
-                    <Link
-                      href="/case-studies"
-                      className="mobile-menu-link mobile-menu-link-featured"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      All Case Studies
-                    </Link>
-                  </li>
-                  {caseStudyLinks.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="mobile-menu-link"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-
-            <li className="mobile-menu-group">
-              <Link
-                href="/about"
-                className="mobile-menu-link"
-                aria-current={isActive('/about') ? 'page' : undefined}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-
-            <li>
-              <button
-                onClick={() => {
-                  handleCollaborateClick();
-                  setIsMenuOpen(false);
-                }}
-                className="btn btn-accent btn-sm"
-                style={{ marginTop: 'var(--space-4)', width: '100%' }}
-                type="button"
-              >
-                Collaborate
-              </button>
-            </li>
-          </ul>
-        </div>
       </header>
+
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={closeMobileMenu}
+        openGroup={openMobileGroup}
+        onToggleGroup={toggleMobileGroup}
+        onCollaborate={handleCollaborateClick}
+        isActive={isActive}
+      />
 
       <NavMegaPanel
         openMenu={openMenu}

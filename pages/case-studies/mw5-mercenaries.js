@@ -4,8 +4,9 @@ import Image from 'next/image';
 export default function CaseStudy() {
   return (
     <CaseStudyTemplate
+      index="02"
       title="MW5 Mercenaries"
-      description="MechWarrior 5 Mercenaries represented a shift for Piranha games in game development from running a live services game to developing a stand-a-lone game accessible on major platforms."
+      description="Piranha's first stand-alone release in years — a logo, a brand system and a launch site to carry it across every platform."
       heroImage="/images/case-studies/mw5-img-lg-case-study3.webp"
       year="2021"
       client="Piranha Games"
@@ -18,93 +19,92 @@ export default function CaseStudy() {
     >
       <div>
         <h2>
-          MechWarrior 5 Mercenaries represented a shift for Piranha games in
-          game development from running a live services game to developing a
-          stand-a-lone game accessible on major platforms.{' '}
+          After years of running a live-service game, Piranha was shipping a
+          boxed product again. It needed a brand built to travel.
         </h2>
         <p>
-          The task was to create a scalable logo with different marks, a brand
-          guide and a site to drive traffic to every players’ chosen platform
-          when the game and DLC were released.{' '}
+          Mercenaries was the studio&apos;s shift from live-ops to a stand-alone
+          game on the major platforms. I designed a scalable logo with alternate
+          marks, wrote the brand guide, and built the site whose one job was
+          getting each player to their chosen store — for launch and for every
+          DLC after it.
         </p>
       </div>
 
       <div>
-        <span className="text-secondary text-sm">Modern Mercenaries logo.</span>
+        <span className="text-secondary text-sm">The Mercenaries logo.</span>
         <Image
           priority
           src="/images/case-studies/case-study-3-mercs-logo-img3.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="MechWarrior 5 Mercenaries logo"
         />
       </div>
 
       <div>
         <p>
-          From the logo a design system was developed including a shorter
-          version of the logo, colour schema and typography. Key Art and an
-          integrated marketing campaign was created by Californian advertising
-          power house Petrol. Their partnership allowed the marketing team at
-          Piranha to reach our audience in new and innovative ways.
+          The logo grew into a full system — a short mark, colour schema and
+          typography. Key art and the wider campaign came from Petrol, the
+          California agency, and the partnership let Piranha&apos;s marketing
+          team reach players in ways the studio hadn&apos;t tried before.
         </p>
       </div>
 
       <div>
         <span className="text-secondary text-sm">
-          Components of Mercs design system.
+          Pieces of the Mercs design system.
         </span>
         <Image
           priority
           src="/images/case-studies/case-study-3-mercs-brand-guide-img4.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="Components of the Mercenaries brand guide and design system"
         />
       </div>
 
       <div>
         <p>
-          The homepage design wanted to utilise the behemoth Atlas Mech acting
-          as the totem Mech for the game. I added subtle animation to bring it
-          to life with the latest communications about the game below.
+          The homepage belongs to the Atlas — the game&apos;s totem Mech. I gave
+          it subtle animation to bring it to life, with the latest news sitting
+          just below. Simple hierarchy: the icon first, the updates second.
         </p>
       </div>
 
       <div>
         <span className="text-secondary text-sm">
-          MW5 Mercs Homepage and DLC 1.
+          Homepage and the first DLC page.
         </span>
         <Image
           priority
           src="/images/case-studies/case-study-3-mercs-content-img1.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="MW5 Mercenaries homepage and DLC one page designs"
         />
       </div>
 
       <div>
         <p>
-          The goal was to keep things simple. The site had look good on mobile
-          just as much as desktop. Traffic was being driven from visuals on
-          social media which were added to DLC page designs. Interactive game
-          content including video, in game screenshots and basic story
-          narratives were added so players had a good understanding of content
-          in each DLC Pack.
+          The rule throughout was keep it simple. Most traffic arrived from
+          social posts, landed on a DLC page, and needed a fast answer to
+          &ldquo;what&apos;s in this pack?&rdquo; — so each page got video,
+          in-game screenshots and a short story setup, working just as well on a
+          phone as on desktop.
         </p>
       </div>
 
       <div>
         <span className="text-secondary text-sm">
-          Mercs call to actions on mobile devices.
+          Calls to action, pocket-sized.
         </span>
         <Image
           priority
           src="/images/case-studies/case-study-3-mercs-mobile-img2.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="Mercenaries mobile page designs with prominent calls to action"
         />
       </div>
     </CaseStudyTemplate>

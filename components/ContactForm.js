@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { SendIcon } from './NavIcons';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ export default function ContactForm() {
     if (timeSpent < 3000) {
       setStatusMessage({
         type: 'error',
-        text: 'Please take a moment to review your message.',
+        text: 'That was quick — give it one more read, then send.',
       });
       return;
     }
@@ -60,20 +61,22 @@ export default function ContactForm() {
       if (response.ok) {
         setStatusMessage({
           type: 'success',
-          text: 'Message sent successfully!',
+          text: 'Sent. I’m usually back within a day.',
         });
         setFormData({ name: '', email: '', message: '', website: '' });
         setFormLoadTime(Date.now());
       } else {
         setStatusMessage({
           type: 'error',
-          text: data.message || 'Failed to send message.',
+          text:
+            data.message ||
+            'That didn’t send. Try again, or email paudy@trypaud.com directly.',
         });
       }
     } catch {
       setStatusMessage({
         type: 'error',
-        text: 'An error occurred while submitting the form.',
+        text: 'That didn’t send. Try again, or email paudy@trypaud.com directly.',
       });
     } finally {
       setIsSubmitting(false);
@@ -134,7 +137,7 @@ export default function ContactForm() {
           required
           minLength="10"
           maxLength="5000"
-          placeholder="Tell me about your project..."
+          placeholder="What are you making, and what does it need?"
         />
       </div>
 
@@ -150,10 +153,20 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="btn btn-primary btn-lg"
+        className="btn btn-accent btn-lg"
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
+        {isSubmitting ? (
+          <>
+            Sending…
+            <span className="btn-rec-dot" aria-hidden="true" />
+          </>
+        ) : (
+          <>
+            Send it
+            <SendIcon className="icon-ext" width={15} height={15} />
+          </>
+        )}
       </button>
     </form>
   );

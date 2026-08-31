@@ -54,9 +54,19 @@
     padding-bottom: var(--space-1);
   }
 
+  .home-section-action svg {
+    flex: none;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
   .home-section-action:hover,
   .home-section-action:focus-visible {
-    color: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  .home-section-action:hover svg,
+  .home-section-action:focus-visible svg {
+    transform: translateX(4px);
   }
 
   /* Blended horizontal rule between sections */
@@ -83,44 +93,76 @@
      Full-bleed title band + wide list of projects with thumbnail grids
      ==================================================================== */
 
-  .portfolio-header {
-    width: 100vw;
-    margin-inline: calc(50% - 50vw);
-    background-color: var(--color-surface-1);
-    border-bottom: 1px solid var(--color-border-subtle);
-    padding-block: clamp(3rem, 7vw, 6rem);
+  /* ====================================================================
+     WORK INDEX HEAD — title on the sheet, data column right
+     ==================================================================== */
+  .work-index-head {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-block: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
   }
 
-  .portfolio-header-inner {
-    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
-    margin-inline: auto;
+  .work-index-main {
+    grid-column: 2 / 9;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding-right: 40px;
   }
 
-  .portfolio-eyebrow {
-    display: inline-block;
-    font-size: var(--step-xs);
-    font-weight: var(--font-semibold);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
-    color: var(--color-primary);
-    margin-bottom: var(--space-4);
-  }
-
-  .portfolio-title {
-    font-size: var(--step-5xl);
-    font-weight: var(--font-extrabold);
+  .work-index-title {
+    font-size: var(--step-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
     text-transform: none;
-    letter-spacing: var(--tracking-tight);
-    line-height: var(--leading-tight);
     margin: 0;
   }
 
-  .portfolio-description {
-    font-size: var(--step-lg);
+  .work-index-desc {
+    font-size: var(--step-base);
     color: var(--color-text-secondary);
-    max-width: 56ch;
-    margin-top: var(--space-5);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-normal);
+    max-width: 44ch;
+    margin: 0;
+  }
+
+  .work-index-stats {
+    grid-column: 10 / 13;
+    padding-right: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-self: end;
+  }
+
+  @media (max-width: 900px) {
+    .work-index-head {
+      grid-template-columns: 1fr;
+      row-gap: var(--space-6);
+    }
+
+    .work-index-head .band-label {
+      grid-column: 1;
+      padding: 0 var(--gutter);
+    }
+
+    .work-index-head .margin-label {
+      writing-mode: horizontal-tb;
+    }
+
+    .work-index-main {
+      grid-column: 1;
+      padding-inline: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    .work-index-stats {
+      grid-column: 1;
+      padding-inline: var(--gutter);
+    }
   }
 
   .portfolio-list {
@@ -157,21 +199,51 @@
     color: var(--color-text-tertiary);
   }
 
+  /* The project's timestamp is its signal datum, and the header is not a
+     link — a chip with no sleep state rests red (see _tokens.css). Blue
+     here also lied: it sat beside the real blue LAUNCH link and read as
+     one more control. */
   .portfolio-project-year {
-    color: var(--color-primary);
+    color: var(--color-accent);
+  }
+
+  /* Plate count — the same mono ×N data chip the All-work captions carry */
+  .portfolio-project-plates {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    color: var(--color-text-tertiary);
   }
 
   .portfolio-project-launch {
     display: inline-flex;
     align-items: center;
     gap: 0.35em;
-    color: var(--color-accent);
+    color: var(--color-primary);
     transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  /* Fingers get a full-height row on this small launch link */
+  @media (pointer: coarse) {
+    .portfolio-project-launch {
+      padding-block: var(--space-3);
+    }
+  }
+
+  .portfolio-project-launch svg {
+    flex: none;
+    transition: transform var(--duration-fast) var(--ease-out);
   }
 
   .portfolio-project-launch:hover,
   .portfolio-project-launch:focus-visible {
-    color: var(--color-accent-hover);
+    color: var(--color-primary-hover);
+  }
+
+  .portfolio-project-launch:hover svg,
+  .portfolio-project-launch:focus-visible svg {
+    transform: translate(2px, -2px);
   }
 
   .portfolio-project-title {
@@ -199,42 +271,60 @@
     gap: var(--space-2);
   }
 
+  /* 18rem columns can't fit a small phone — match .gallery-grid's floor */
+  @media (max-width: 600px) {
+    .portfolio-project-grid {
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    }
+  }
+
+  /* The button stays unclipped so its focus ring is not cut off; the notch
+     and the edge live on the inner media span. */
   .portfolio-thumb {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .portfolio-thumb-media {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
     background: var(--color-surface-2);
-    border: 1px solid var(--color-border-subtle);
-    padding: 0;
-    cursor: pointer;
     overflow: hidden;
-    transition: border-color var(--duration-fast) var(--ease-default);
   }
 
-  .portfolio-thumb:hover,
-  .portfolio-thumb:focus-visible {
-    border-color: var(--color-primary);
-    outline: none;
+  .portfolio-thumb:hover .portfolio-thumb-media,
+  .portfolio-thumb:focus-visible .portfolio-thumb-media {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
   }
 
-  .portfolio-thumb img {
+  /* Same archival-mono treatment as the All-work plates below: thumbs stay
+     grayscale at all times, hover lifts them out of the ground (0.73 -> 1),
+     and the lightbox is the only place the work shows in colour. */
+  .portfolio-thumb-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform var(--duration-slow) var(--ease-out);
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    transition: opacity var(--duration-normal) var(--ease-default);
   }
 
-  .portfolio-thumb:hover img,
-  .portfolio-thumb:focus-visible img {
-    transform: scale(1.04);
+  .portfolio-thumb:hover .portfolio-thumb-media img,
+  .portfolio-thumb:focus-visible .portfolio-thumb-media img {
+    opacity: 1;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .portfolio-thumb img,
-    .portfolio-thumb:hover img {
-      transform: none;
-      transition: none;
+  /* Touch devices have no hover — thumbs sit at full presence */
+  @media (hover: none) {
+    .portfolio-thumb-media img {
+      opacity: 1;
     }
   }
 
@@ -245,476 +335,413 @@
     gap: var(--space-4);
   }
 
-  /* --- Homepage galleries section ----------------------------------
-     Featured "All Work" card + 2/3-col grid of category tiles.
-     Uses the same semantic icons as the nav mega panel. */
-  .galleries-section {
-    padding-block: var(--section-py);
-  }
-
-  .galleries-layout {
+  /* --- Icon swatch grid -------------------------------------------------
+     A wall of small square glyphs (the MWO player icons). Same archival
+     rule as every plate: mono at rest, each swatch comes to colour under
+     the pointer. */
+  .icon-swatch-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--gutter);
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: var(--space-2);
   }
 
-  @media (min-width: 900px) {
-    .galleries-layout {
-      grid-template-columns: minmax(18rem, 24rem) 1fr;
-      align-items: stretch;
+  .icon-swatch-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--color-surface-2);
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    transition: opacity var(--duration-normal) var(--ease-default);
+  }
+
+  .icon-swatch-grid img:hover {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    .icon-swatch-grid img {
+      opacity: 1;
     }
   }
 
-  /* Featured "All Work" card */
-  .galleries-featured {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-5);
-    padding: clamp(var(--space-6), 2.5vw, var(--space-8));
-    background-color: var(--color-surface-1);
-    border: 1px solid var(--color-border-subtle);
-    border-left: 3px solid var(--color-primary);
-    color: var(--color-text-primary);
-    text-decoration: none;
-    transition:
-      background-color var(--duration-fast) var(--ease-default),
-      border-color var(--duration-fast) var(--ease-default);
-    min-height: 14rem;
+  /* --- Video plate ------------------------------------------------------
+     A player alone on the page ground reads as a hole, so it sits on a
+     notched surface plate the same way images sit on thumb plates. The
+     plate centres itself (auto inline margins on a flex item), and the
+     player is grayscaled at rest so a wall of stills stays monochrome like
+     the rest of the system — colour returns on hover/focus, i.e. whenever
+     someone is actually about to watch it. */
+  .portfolio-video {
+    --notch-size: 14px;
+    --notch-edge: var(--color-border-strong);
+    width: min(100%, 60rem);
+    margin-inline: auto;
+    padding: clamp(0.625rem, 1.4vw, 1.125rem);
+    background: var(--color-surface-2);
   }
 
-  .galleries-featured:hover,
-  .galleries-featured:focus-visible {
-    background-color: var(--color-surface-2);
-    border-left-color: var(--color-accent);
+  .portfolio-video iframe,
+  .portfolio-video video {
+    display: block;
+    /* Overrides the 560x315 attributes — same ratio, fluid width */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: var(--color-surface-0);
+    filter: grayscale(1) contrast(1.06);
+    transition: filter var(--duration-normal) var(--ease-default);
   }
 
-  .galleries-featured-icon {
-    display: grid;
-    place-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    background-color: var(--color-surface-2);
-    color: var(--color-primary);
+  .portfolio-video:hover iframe,
+  .portfolio-video:hover video,
+  .portfolio-video:focus-within iframe,
+  .portfolio-video:focus-within video {
+    filter: none;
   }
 
-  .galleries-featured:hover .galleries-featured-icon {
-    color: var(--color-accent);
+  .portfolio-video:hover,
+  .portfolio-video:focus-within {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
   }
 
-  .galleries-featured-text {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    flex: 1;
+  /* Fullscreen is the one state that can't rely on hover — the player is
+     lifted into the top layer and the pointer may be nowhere near the plate. */
+  .portfolio-video iframe:fullscreen,
+  .portfolio-video video:fullscreen {
+    filter: none;
   }
 
-  .galleries-featured-label {
-    font-size: var(--step-xs);
-    font-weight: var(--font-semibold);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
-    color: var(--color-primary);
-    margin-bottom: var(--space-1);
-  }
-
-  .galleries-featured-title {
-    font-size: var(--step-xl);
-    font-weight: var(--font-bold);
-    text-transform: none;
-    letter-spacing: var(--tracking-tight);
-    line-height: var(--leading-snug);
-    color: var(--color-text-primary);
-    margin: 0;
-  }
-
-  .galleries-featured-desc {
-    font-size: var(--step-sm);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-    margin: 0;
-    max-width: 40ch;
-  }
-
-  .galleries-featured-arrow {
-    position: absolute;
-    top: clamp(var(--space-4), 2.5vw, var(--space-6));
-    right: clamp(var(--space-4), 2.5vw, var(--space-6));
-    color: var(--color-text-tertiary);
-    transition:
-      color var(--duration-fast) var(--ease-default),
-      transform var(--duration-normal) var(--ease-out);
-  }
-
-  .galleries-featured:hover .galleries-featured-arrow,
-  .galleries-featured:focus-visible .galleries-featured-arrow {
-    color: var(--color-accent);
-    transform: translate(3px, -3px);
-  }
-
-  /* Category tiles grid */
-  .galleries-tiles {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-1);
-  }
-
-  @media (min-width: 600px) {
-    .galleries-tiles {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .galleries-tiles {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .galleries-tile {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-3);
-    padding: var(--space-5);
-    height: 100%;
-    background-color: var(--color-surface-1);
-    border: 1px solid var(--color-border-subtle);
-    color: var(--color-text-primary);
-    text-decoration: none;
-    transition:
-      background-color var(--duration-fast) var(--ease-default),
-      border-color var(--duration-fast) var(--ease-default),
-      color var(--duration-fast) var(--ease-default);
-  }
-
-  .galleries-tile:hover,
-  .galleries-tile:focus-visible {
-    background-color: var(--color-surface-2);
-    border-color: var(--color-primary);
-  }
-
-  .galleries-tile-icon {
-    display: grid;
-    place-items: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    background-color: var(--color-surface-2);
-    color: var(--color-text-secondary);
-    flex-shrink: 0;
-    transition:
-      background-color var(--duration-fast) var(--ease-default),
-      color var(--duration-fast) var(--ease-default);
-  }
-
-  .galleries-tile:hover .galleries-tile-icon,
-  .galleries-tile:focus-visible .galleries-tile-icon {
-    background-color: var(--color-surface-0);
-    color: var(--color-primary);
-  }
-
-  .galleries-tile-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    min-width: 0;
-  }
-
-  .galleries-tile-text strong {
-    font-size: var(--step-sm);
-    font-weight: var(--font-bold);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
-    color: inherit;
-  }
-
-  .galleries-tile-text span {
-    font-size: var(--step-xs);
-    font-weight: var(--font-medium);
-    color: var(--color-text-tertiary);
-    text-transform: none;
-    letter-spacing: 0;
-    line-height: var(--leading-snug);
-  }
-
-  /* --- Gallery page wrapper -------------------------------------- */
   .gallery-page {
     width: min(100% - var(--gutter) * 2, var(--max-width-wide));
     margin-inline: auto;
     padding-block: clamp(2rem, 5vw, 4rem);
   }
 
-  /* --- Gallery filter bar ---------------------------------------- */
+  /* --- Porthole dials: the category nav -------------------------------
+     Circular cabin-window buttons — the count sits inside the glass, a
+     mono label beneath, and a detached hairline outer ring. The active
+     dial's glass fills with ink and its outer ring goes structural blue. */
   .gallery-filters {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin-bottom: clamp(var(--space-5), 3vw, var(--space-8));
-    padding-bottom: var(--space-4);
-    border-bottom: 1px solid var(--color-border-subtle);
+    align-items: flex-start;
+    gap: clamp(var(--space-4), 2.5vw, var(--space-8));
+    margin-bottom: clamp(var(--space-6), 3vw, var(--space-10));
+    padding-bottom: clamp(var(--space-4), 2vw, var(--space-6));
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
   }
 
-  /* Horizontal scroll on narrow viewports so chips don't stack 3 rows high */
   @media (max-width: 600px) {
     .gallery-filters {
       flex-wrap: nowrap;
       overflow-x: auto;
       scrollbar-width: none;
-      padding-bottom: var(--space-3);
       margin-inline: calc(-1 * var(--gutter));
       padding-inline: var(--gutter);
     }
+
     .gallery-filters::-webkit-scrollbar {
       display: none;
     }
-    .gallery-filter-btn {
+
+    .porthole-filter {
       flex-shrink: 0;
     }
   }
 
-  .gallery-filter-btn {
-    display: inline-flex;
+  .porthole-filter {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-2);
-    font-size: var(--step-xs);
-    font-weight: var(--font-bold);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wide);
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-full);
-    color: var(--color-text-secondary);
-    background-color: transparent;
-    border: 1px solid var(--color-border-subtle);
-    transition:
-      color var(--duration-fast) var(--ease-default),
-      background-color var(--duration-fast) var(--ease-default),
-      border-color var(--duration-fast) var(--ease-default);
+    gap: var(--space-3);
+    background: transparent;
+    border: none;
+    padding: 6px 6px var(--space-2);
     cursor: pointer;
   }
 
-  .gallery-filter-btn:hover {
-    color: var(--color-text-primary);
-    background-color: var(--color-surface-2);
-    border-color: var(--color-border);
-  }
-
-  .gallery-filter-btn[aria-pressed='true'],
-  .gallery-filter-btn-active {
-    color: #fff;
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-  }
-
-  .gallery-filter-count {
-    display: inline-grid;
+  .porthole-filter-dial {
+    position: relative;
+    display: grid;
     place-items: center;
-    min-width: 1.5em;
-    padding: 0 0.45em;
-    font-size: 0.9em;
-    font-weight: var(--font-bold);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    /* Zero-blur box-shadow rings antialias more smoothly on small circles
+       than CSS borders do. Quiet inner hardware — the detached orbit is
+       the ring that answers the pointer, exactly like the CTA orbit. */
+    border: none;
+    box-shadow: 0 0 0 1.5px var(--color-border-strong);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      background-color var(--duration-fast) var(--ease-default),
+      box-shadow var(--duration-fast) var(--ease-default);
+  }
+
+  .porthole-filter-dial::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    /* Same pattern as the CTA orbit: neutral ring grey at rest, blue on
+       hover, contracts on press. 1.5px min — 1px antialiases sub-pixel
+       on the curve. Slow inset here is the release; press below is fast. */
+    box-shadow: 0 0 0 1.5px var(--color-ring);
+    transition:
+      inset var(--duration-normal) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-default);
+  }
+
+  .porthole-filter-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    text-transform: uppercase;
     color: var(--color-text-tertiary);
-    background-color: var(--color-surface-2);
-    border-radius: var(--radius-full);
+    white-space: nowrap;
+    transition: color var(--duration-fast) var(--ease-default);
   }
 
-  .gallery-filter-btn:hover .gallery-filter-count {
+  .porthole-filter:hover .porthole-filter-dial,
+  .porthole-filter:focus-visible .porthole-filter-dial {
     color: var(--color-text-primary);
-    background-color: var(--color-surface-3);
   }
 
-  .gallery-filter-btn[aria-pressed='true'] .gallery-filter-count {
-    color: var(--color-primary);
-    background-color: #fff;
+  /* The orbit answers the pointer — guarded off selected dials, which
+     are identity and ignore hover entirely */
+  .porthole-filter:hover:not([aria-pressed='true']):not([aria-current='page'])
+    .porthole-filter-dial::before,
+  .porthole-filter:focus-visible:not([aria-pressed='true']):not(
+      [aria-current='page']
+    )
+    .porthole-filter-dial::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
   }
 
-  /* --- Gallery grid ---------------------------------------------- */
+  /* Same press the CTAs have: the orbit pulls in and seats against the
+     dial edge, fast on the way in, riding back out on release. Guarded off
+     the selected dial — identity, not a control, so nothing latches. */
+  .porthole-filter:active:not([aria-pressed='true']):not([aria-current='page'])
+    .porthole-filter-dial::before {
+    /* -1.5px, not 0: the dial wears its own 1.5px edge ring, so the orbit
+       seats against that ring's outer edge — anything further out leaves a
+       slit of ground between the two */
+    inset: -1.5px;
+    box-shadow: 0 0 0 1.5px var(--color-primary);
+    transition:
+      inset 80ms var(--ease-out),
+      box-shadow 80ms var(--ease-default);
+  }
+
+  .porthole-filter:hover .porthole-filter-label,
+  .porthole-filter:focus-visible .porthole-filter-label {
+    color: var(--color-text-secondary);
+  }
+
+  /* Selected: signal-red glass (the system's "current item" colour)
+     inside the structural-blue instrument ring. aria-current carries the
+     same state on the sub-page switcher links that aria-pressed carries
+     on the /gallery filter buttons. */
+  .porthole-filter[aria-current='page'] .porthole-filter-dial,
+  .porthole-filter[aria-pressed='true'] .porthole-filter-dial {
+    background-color: var(--color-accent);
+    /* no ring on the glass itself — the detached outer ring carries it */
+    box-shadow: none;
+    color: var(--color-text-inverse);
+  }
+
+  .porthole-filter[aria-current='page'] .porthole-filter-dial::before,
+  .porthole-filter[aria-pressed='true'] .porthole-filter-dial::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-accent);
+  }
+
+  /* Selected: identity, not a control — hovering it changes nothing.
+     Keyboard focus still gets the blue ring on the detached orbit so the
+     focused dial is findable. */
+  .porthole-filter[aria-current='page']:focus-visible
+    .porthole-filter-dial::before,
+  .porthole-filter[aria-pressed='true']:focus-visible
+    .porthole-filter-dial::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
+  }
+
+  .porthole-filter[aria-current='page'] .porthole-filter-label,
+  .porthole-filter[aria-pressed='true'] .porthole-filter-label {
+    color: var(--color-text-primary);
+  }
+
+  /* --- Porthole switcher on sub-pages ---------------------------------
+     Same dials as the /gallery filter row, but rendered as links between
+     the sibling galleries. It sits directly on the page (no .gallery-page
+     wrapper), so it carries its own width constraint. */
+  .gallery-switch {
+    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
+    margin-inline: auto;
+    padding-top: clamp(var(--space-6), 3vw, var(--space-8));
+    /* .portfolio-list brings its own top padding — no gap stacking */
+    margin-bottom: 0;
+  }
+
+  a.porthole-filter {
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .gallery-switch {
+      width: auto;
+      margin-inline: 0;
+    }
+  }
+
+  /* --- The plates: image + mono caption strip ------------------------- */
   .gallery-grid {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    gap: var(--space-3);
-  }
-
-  @media (min-width: 1200px) {
-    .gallery-grid {
-      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-      gap: var(--space-4);
-    }
+    gap: clamp(var(--space-5), 2.5vw, var(--space-8))
+      clamp(var(--space-4), 2vw, var(--space-6));
   }
 
   @media (max-width: 600px) {
     .gallery-grid {
-      grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-      gap: var(--space-2);
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
     }
   }
 
-  /* --- Gallery item (thumbnail) ---------------------------------- */
   .gallery-item {
-    position: relative;
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    border: 1px solid var(--color-border-subtle);
-    border-radius: 0;
-    background: var(--color-surface-2);
-    overflow: hidden;
-    isolation: isolate;
-    cursor: pointer;
+    background: transparent;
+    border: none;
     padding: 0;
-    transition: border-color var(--duration-fast) var(--ease-default);
+    cursor: pointer;
+    text-align: left;
   }
 
-  .gallery-item:hover,
-  .gallery-item:focus-visible {
-    border-color: var(--color-primary);
-    outline: none;
+  /* Rectangular plate, so it carries the notch (see notch.css). The edge is
+     the ::after there; hover just repaints it blue. */
+  .gallery-item-media {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-surface-2);
   }
 
+  .gallery-item:hover .gallery-item-media,
+  .gallery-item:focus-visible .gallery-item-media {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
+  }
+
+  /* Plates stay in archival mono at ALL times — the lightbox is the only
+     place the work shows in colour. Hover lifts the plate out of the ground
+     instead (0.73 -> 1), so the response is presence, not saturation, and
+     the grid keeps one consistent tone while you sweep across it. */
   .gallery-item-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform var(--duration-slow) var(--ease-out);
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    /* No scale on hover — a zoom re-rasterizes the image every frame and
+       visibly shakes (per the design system: no scale). The lift plus the
+       blue edge is the whole effect. */
+    transition: opacity var(--duration-normal) var(--ease-default);
   }
 
   .gallery-item:hover .gallery-item-image,
   .gallery-item:focus-visible .gallery-item-image {
-    transform: scale(1.05);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .gallery-item-image,
-    .gallery-item:hover .gallery-item-image {
-      transform: none;
-      transition: none;
-    }
-  }
-
-  .gallery-item-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.2) 50%,
-      transparent 80%
-    );
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: var(--space-1);
-    padding: clamp(var(--space-3), 1.5vw, var(--space-5));
-    opacity: 0;
-    transition: opacity var(--duration-normal) var(--ease-out);
-    z-index: 1;
-  }
-
-  .gallery-item:hover .gallery-item-overlay,
-  .gallery-item:focus-visible .gallery-item-overlay {
     opacity: 1;
   }
 
-  /* On touch devices the overlay shows at rest since there's no hover */
+  /* Touch devices have no hover — plates sit at full presence */
   @media (hover: none) {
-    .gallery-item-overlay {
+    .gallery-item-image {
       opacity: 1;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.15) 45%,
-        transparent 75%
-      );
     }
   }
 
-  .gallery-item-meta {
+  .gallery-item-caption {
     display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--step-xs);
-    font-weight: var(--font-bold);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
-  }
-
-  .gallery-item-category {
-    color: var(--color-primary);
-  }
-
-  .gallery-item-year {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .gallery-item-year::before {
-    content: '·';
-    margin-right: var(--space-2);
-    color: rgba(255, 255, 255, 0.4);
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-top: var(--space-3);
   }
 
   .gallery-item-title {
-    font-size: clamp(1rem, 0.8rem + 0.6vw, 1.25rem);
+    font-size: var(--step-sm);
     font-weight: var(--font-bold);
-    color: #fff;
     letter-spacing: -0.01em;
-    line-height: 1.1;
+    color: var(--color-text-primary);
+    transition: color var(--duration-fast) var(--ease-default);
   }
 
-  /* Little badge in the top-right showing image count for multi-image sets */
-  .gallery-item-count {
-    position: absolute;
-    top: var(--space-2);
-    right: var(--space-2);
-    z-index: 2;
-    min-width: 1.75rem;
-    height: 1.75rem;
-    padding: 0 0.5rem;
+  .gallery-item:hover .gallery-item-title,
+  .gallery-item:focus-visible .gallery-item-title {
+    color: var(--color-primary);
+  }
+
+  .gallery-item-data {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--step-xs);
-    font-weight: var(--font-bold);
-    font-variant-numeric: tabular-nums;
-    color: #fff;
-    background-color: color-mix(in srgb, #000 55%, transparent);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-radius: var(--radius-full);
-    pointer-events: none;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+    transition: color var(--duration-fast) var(--ease-default);
   }
 
-  /* --- Infinite scroll sentinel --- */
+  /* The grace note (defined in _tokens.css, born here): the data line
+     lights signal-red under a blue headline. The media border and title
+     have already gone blue above, so red is subordinate, never the sole
+     hover signal. The ×N count inherits so the whole readout — count and
+     year — rests tertiary and lights as one chip. */
+  .gallery-item:hover .gallery-item-data,
+  .gallery-item:focus-visible .gallery-item-data {
+    color: var(--color-accent);
+  }
+
+  /* --- Infinite scroll ------------------------------------------------ */
   .gallery-sentinel {
     height: 1px;
-    width: 100%;
   }
 
   .gallery-loading {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-8) 0;
+    gap: var(--space-3);
+    padding: var(--space-10) 0;
     color: var(--color-text-tertiary);
   }
 
-  .gallery-loading-spinner {
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 2px solid var(--color-border);
-    border-top-color: var(--color-primary);
-    border-radius: var(--radius-full);
-    animation: spin 0.8s linear infinite;
+  .gallery-loading-orbit {
+    width: 26px;
+    height: 26px;
   }
 
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
+  @media (prefers-reduced-motion: no-preference) {
+    .gallery-loading-orbit {
+      animation: circles-rotate 2.4s linear infinite;
     }
+  }
+
+  .gallery-loading-text {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    text-transform: uppercase;
   }
 
   /* --- Lightbox / overlay --- */
@@ -751,6 +778,7 @@
   }
 
   .lightbox-image {
+    filter: none; /* the work always shows in full colour here */
     max-width: 100%;
     max-height: 85vh;
     object-fit: contain;
@@ -764,8 +792,9 @@
     top: var(--space-4);
     right: var(--space-4);
     z-index: 1;
-    width: 2.5rem;
-    height: 2.5rem;
+    /* 44px minimum tap target */
+    width: 2.75rem;
+    height: 2.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -781,7 +810,7 @@
   .lightbox-close:hover,
   .lightbox-close:focus-visible {
     background-color: var(--color-surface-3);
-    color: var(--color-accent);
+    color: var(--color-primary);
   }
 
   .lightbox-nav {
@@ -807,7 +836,8 @@
     cursor: pointer;
   }
 
-  .lightbox-nav:hover {
+  .lightbox-nav:hover,
+  .lightbox-nav:focus-visible {
     background-color: var(--color-surface-3);
   }
 
@@ -819,14 +849,18 @@
     right: var(--space-4);
   }
 
+  /* aria-live position readout — literally live status, the accent's own
+     definition (see _tokens.css), so it rests red like .about-stat-open. */
   .lightbox-counter {
     position: absolute;
     bottom: var(--space-4);
     left: 50%;
     transform: translateX(-50%);
-    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    font-size: 11px;
     font-weight: var(--font-medium);
-    color: var(--color-text-secondary);
+    letter-spacing: var(--tracking-data);
+    color: var(--color-accent);
     background-color: color-mix(
       in srgb,
       var(--color-surface-1) 80%,
@@ -844,6 +878,8 @@
     transform: translateX(-50%);
     text-align: center;
     color: var(--color-text-primary);
+    /* Long titles wrap instead of running under the edge controls */
+    max-width: min(85vw, 40rem);
   }
 
   .lightbox-caption-title {
@@ -857,9 +893,10 @@
   }
 
   @media (max-width: 600px) {
+    /* Tighter inset but never below the 44px tap minimum */
     .lightbox-nav {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
     }
 
     .lightbox-prev {

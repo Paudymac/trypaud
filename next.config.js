@@ -4,6 +4,9 @@ const path = require('path');
 const nextConfig = {
   outputFileTracingRoot: path.join(__dirname),
 
+  // Hide the dev-tools badge — it parks itself over the footer mark
+  devIndicators: false,
+
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920, 2560],

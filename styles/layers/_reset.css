@@ -112,7 +112,7 @@
     z-index: 10000;
     padding: var(--space-2) var(--space-4);
     background: var(--color-primary);
-    color: #fff;
+    color: #0b0b0d; /* ink on the blue pill — white was a 2.6:1 contrast fail */
     border-radius: var(--radius-full);
     font-weight: 600;
     text-transform: uppercase;

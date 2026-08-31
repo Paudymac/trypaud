@@ -1,0 +1,85 @@
+@layer components {
+  /* ========================================================================
+     THE NOTCH — a cut off the top-right corner at the mark's angle.
+     Started life on the contact form fields (_base.css); this is the shared
+     version, so the cut becomes the system's rectangle the way the porthole
+     is its circle and the clipped plate is its triangle.
+
+     THE SHAPE RULE:
+       circle    -> porthole plates, filter dials, icon rings
+       triangle  -> the mark, and the one clipped work plate
+       rectangle -> notched top-right corner (this file)
+
+     clip-path erases real borders, so the edge is drawn as five background
+     strips on an ::after — four sides plus the diagonal along the cut. The
+     strips use currentColor so the edge colour is transitionable: set
+     `color` on the ::after and it animates, which a custom property in a
+     gradient cannot do.
+     ======================================================================== */
+
+  .notch {
+    --notch-size: 12px;
+    --notch-edge: var(--color-border-subtle);
+    /* Hairline at rest; interactive plates thicken it on hover, because a
+       1px line disappears against a saturated photograph. */
+    --notch-weight: 1px;
+    position: relative;
+    border: none;
+    border-radius: 0;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--notch-size)) 0,
+      100% var(--notch-size),
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .notch::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    color: var(--notch-edge);
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      background-size var(--duration-fast) var(--ease-default);
+    background-image:
+      /* top edge, stopping at the notch */
+      linear-gradient(currentColor, currentColor),
+      /* right edge, starting below the notch */ linear-gradient(currentColor, currentColor),
+      /* bottom edge */ linear-gradient(currentColor, currentColor),
+      /* left edge */ linear-gradient(currentColor, currentColor),
+      /* the diagonal along the cut */
+      linear-gradient(
+        45deg,
+        transparent calc(50% - var(--notch-weight) / 2),
+        currentColor calc(50% - var(--notch-weight) / 2),
+        currentColor calc(50% + var(--notch-weight) / 2),
+        transparent calc(50% + var(--notch-weight) / 2)
+      );
+    background-repeat: no-repeat;
+    background-position:
+      left 0 top 0,
+      right 0 top var(--notch-size),
+      left 0 bottom 0,
+      left 0 top 0,
+      right 0 top 0;
+    background-size:
+      calc(100% - var(--notch-size) + var(--notch-weight)) var(--notch-weight),
+      var(--notch-weight) calc(100% - var(--notch-size)),
+      100% var(--notch-weight),
+      var(--notch-weight) 100%,
+      var(--notch-size) var(--notch-size);
+  }
+
+  /* Smaller plates want a smaller bite so the cut stays proportional */
+  .notch-sm {
+    --notch-size: 9px;
+  }
+
+  .notch-lg {
+    --notch-size: 18px;
+  }
+}
