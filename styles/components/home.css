@@ -865,6 +865,12 @@
   }
 
   @media (max-width: 900px) {
+    /* Phones: the field sits right under small body text while scrolling,
+       so pull the whole star canvas back. Marks are trimmed separately. */
+    .ambient-canvas {
+      opacity: 0.55;
+    }
+
     .ambient-mark-primary {
       width: 90vw;
       right: -30vw;

@@ -25,7 +25,11 @@
     "slick-carousel": "^1.8.1"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
+  },
+  "allowScripts": {
+    "sharp": true,
+    "unrs-resolver": true
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
