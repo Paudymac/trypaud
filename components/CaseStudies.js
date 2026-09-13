@@ -17,7 +17,7 @@ const featured = [
   {
     href: '/case-studies/design-of-clans',
     title: 'Design of Clans',
-    desc: 'Seventeen faction marks, a UI kit and the launch campaign.',
+    desc: 'Brand, logo and launch site for MechWarrior 5: Clans.',
     image: '/images/case-studies/clans-img-sm-case-study4.webp',
     alt: 'Design of Clans — game branding and UI',
     shape: 'triangle',
@@ -25,7 +25,7 @@ const featured = [
   {
     href: '/case-studies/mw5-mercenaries',
     title: 'MW5 Mercenaries',
-    desc: 'The look of a global launch, from key art to storefront.',
+    desc: 'Logo, brand system and launch site for MechWarrior 5: Mercenaries.',
     image: '/images/case-studies/mw5-img-sm-case-study3.webp',
     alt: 'MW5 Mercenaries — marketing and visual design',
     shape: 'circle',
@@ -101,7 +101,9 @@ const CaseStudies = () => {
         {/* The heading is the first row of the same ruled box as the
             studies it introduces — same cell padding, same rules. */}
         <header className="work-head">
-          <h2 className="work-title">Four studies. Start with these two.</h2>
+          <h2 className="work-title">
+            Four case studies. Start with these two.
+          </h2>
         </header>
         <div className="work-head-action">
           <Link href="/gallery" className="btn btn-sm btn-secondary btn-ring">
@@ -132,7 +134,7 @@ const CaseStudies = () => {
             >
               <polygon points="50,20 75.98,65 24.02,65" fill="currentColor" />
             </svg>
-            <span>Six more galleries behind these</span>
+            <span>Six galleries of further work</span>
           </Link>
         </div>
       </div>

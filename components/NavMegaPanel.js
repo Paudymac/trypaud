@@ -93,7 +93,7 @@ function CaseStudiesContent({ onItemClick }) {
         </div>
         <div className="nav-panel-feature-text">
           <strong>All Case Studies</strong>
-          <span>Four long-form write-ups, brief to shipped result</span>
+          <span>Four detailed write-ups, from brief to delivered result</span>
         </div>
         <ArrowRightIcon
           className="nav-panel-feature-arrow"

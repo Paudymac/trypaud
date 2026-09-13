@@ -6,7 +6,7 @@ export default function CaseStudy() {
     <CaseStudyTemplate
       index="01"
       title="Design of Clans"
-      description="A new MechWarrior game needed its own face — brand, logo and launch site for MECHWARRIOR 5: CLANS."
+      description="Brand, logo and launch site for MechWarrior 5: Clans, a new game that needed an identity of its own."
       heroImage="/images/case-studies/clans-img-lg-case-study4.webp"
       year="2024"
       client="Piranha Games"
@@ -27,31 +27,31 @@ export default function CaseStudy() {
     >
       <div>
         <h2>
-          Same universe, completely different game. The brand had to say both at
-          once.
+          The same universe, but a different kind of game. The brand had to say
+          both.
         </h2>
         <p>
-          CLANS is a story-driven campaign you can play with five friends —
-          nothing like the sandbox of MW5 Mercenaries, even though they share a
-          name. My job was the brand and marketing experience for launch, and
-          the first rule was clear: don&apos;t let anyone mistake this for the
-          last game.
+          Clans is a story-driven campaign for up to five players, quite
+          different from the open sandbox of MW5 Mercenaries despite the shared
+          name. I was responsible for the brand and the marketing experience at
+          launch. The first requirement was clear: nobody should mistake this
+          for the previous game.
         </p>
         <p>
-          The story and characters were the real differentiators, so the
-          branding leaned into them everywhere it could. Everything — logo,
-          site, campaign — pointed back at the narrative.
+          The story and characters were the real point of difference, so the
+          branding drew on them wherever it could. The logo, site and campaign
+          all pointed back to the narrative.
         </p>
         <p>
-          My starting point was the classics. Early explorations pulled from
-          MechWarrior 2&apos;s iconic box art: a vertical slice splitting the
-          logo, fire on one side, black negative space on the other.
+          My starting point was the history of the series. Early explorations
+          drew on the MechWarrior 2 box art: a vertical split through the logo,
+          fire on one side and black negative space on the other.
         </p>
       </div>
 
       <div>
         <span className="text-secondary text-sm">
-          The original MechWarrior box art that started it all.
+          The original MechWarrior box art that informed the direction.
         </span>
         <Image
           priority
@@ -64,17 +64,17 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          That box art drove the logo. The MECHWARRIOR 5 half keeps the stencil
-          lettering as a nod to MechWarrior 2; the CLANS half — the invading
-          force in the game — gets modern curves and wider spacing. Two
-          typographic voices, two warring factions. The logo tells the plot
-          before you&apos;ve read a word.
+          That artwork shaped the logo. The MechWarrior 5 half keeps the stencil
+          lettering as a reference to MechWarrior 2. The Clans half, the
+          invading force in the game, uses modern curves and wider spacing. Two
+          typographic voices stand for two opposing factions, so the mark
+          carries the premise of the story on its own.
         </p>
       </div>
 
       <div>
         <span className="text-secondary text-sm">
-          The Clans logo — custom typography, two factions in one mark.
+          The Clans logo: custom typography, two factions in one mark.
         </span>
         <Image
           priority
@@ -100,12 +100,12 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          The website had three jobs: show the character videos and trailers,
-          get players to their preferred store, and feel like the game. I
-          rebuilt themed widgets from the actual game UI as CSS components and
-          used them to frame the site&apos;s content, with a colour scheme drawn
-          from the key art and in-game HUD. Marketing and game visuals, one
-          coherent thing.
+          The website had three jobs: present the character videos and trailers,
+          direct players to their preferred store, and feel like the game. I
+          rebuilt elements of the in-game UI as CSS components and used them to
+          frame the site&apos;s content, with a colour scheme taken from the key
+          art and the in-game HUD. The marketing and the game read as one
+          consistent thing.
         </p>
         <Image
           priority
@@ -131,15 +131,14 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          Mobile got equal care — WebP images and a utility-first CSS setup kept
-          the responsive build quick and the pages fast.
+          The mobile build received the same attention. WebP images and a
+          utility-first CSS setup kept the responsive work efficient and the
+          pages fast.
         </p>
       </div>
 
       <div>
-        <span className="text-secondary text-sm">
-          The same site, pocket-sized.
-        </span>
+        <span className="text-secondary text-sm">The site on mobile.</span>
         <Image
           priority
           src="/images/case-studies/case-study-4-clans-mobile-img2.webp"

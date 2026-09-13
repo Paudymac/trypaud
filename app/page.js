@@ -29,9 +29,9 @@ export default function HomePage() {
         <section id="collaborate" className="contact-band" aria-label="Contact">
           <div className="contact-head">
             <div className="contact-copy">
-              <h2 className="contact-title">Go on — try Paud.</h2>
+              <h2 className="contact-title">Get in touch.</h2>
               <p className="contact-sub">
-                Tell me what you&apos;re making. Usually back within a day.{' '}
+                Tell me about the project. I usually reply within a day.{' '}
                 <a href="mailto:paudy@trypaud.com">paudy@trypaud.com</a>
               </p>
             </div>

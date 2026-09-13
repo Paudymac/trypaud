@@ -34,11 +34,11 @@ export default function NotFound() {
             className="text-secondary text-lg"
             style={{ marginBottom: 'var(--space-8)' }}
           >
-            Nothing at these coordinates.
+            There is no page at this address.
           </p>
           <Link href="/" className="btn btn-accent">
             <ArrowLeftIcon className="icon-back" width={14} height={14} />
-            Take me home
+            Back to the homepage
           </Link>
         </div>
       </main>

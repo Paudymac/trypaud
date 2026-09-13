@@ -23,8 +23,8 @@ export default function Hero() {
         </span>
         <h1 className="hero-display">Design. Build. Ship.</h1>
         <p className="hero-body">
-          Interfaces, identities, illustration and motion — eighteen years of
-          it, and a fair stretch spent on giant fighting robots.
+          Interfaces, identities, illustration and motion. Eighteen years of
+          practice, much of it on the MechWarrior franchise.
         </p>
         <div className="hero-actions">
           <Link href="/gallery" className="btn btn-accent">

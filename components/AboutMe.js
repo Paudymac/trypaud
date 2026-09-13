@@ -23,15 +23,14 @@ const AboutMe = () => {
         className={`about-main animate-hidden ${isVisible ? 'animate-visible' : ''}`}
       >
         <p className="pull-quote">
-          &ldquo;Good design holds the door open. Great design brings people
-          back.&rdquo;
+          Good design is easy to use. Well-made design is easy to come back to.
         </p>
         <p className="about-para">
-          Everything here started the same way — an idea, and a sketch to catch
-          it. The code is just how it ships.
+          Every project here began as a sketch. The design, and the code that
+          delivers it, followed from there.
         </p>
         <Link href="/about" className="about-more">
-          The longer story
+          More about me
         </Link>
       </div>
 
@@ -46,7 +45,7 @@ const AboutMe = () => {
           <br />
           EST. 2008
           <br />
-          <span className="about-stat-open">● OPEN TO IDEAS</span>
+          <span className="about-stat-open">● OPEN TO ENQUIRIES</span>
         </div>
       </div>
     </section>

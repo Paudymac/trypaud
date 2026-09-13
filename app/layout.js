@@ -10,7 +10,7 @@ export const metadata = {
     template: '%s / TryPaud',
   },
   description:
-    'Padraic McAteer designs, draws and builds — eighteen years across UI, identity, illustration and motion. Three loops, one line. Try Paud.',
+    'Portfolio of Padraic McAteer, a senior designer and front-end developer with eighteen years of experience across UI, branding, illustration and motion.',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

@@ -31,7 +31,7 @@ export default function Icons({ images }) {
       <PortfolioItem
         date="2014 - 2024"
         title="MWO Player Icons"
-        description="[ Design / Art Direction ]"
+        description="Design / Art Direction"
       >
         <div className="icon-swatch-grid">
           {images.map((image, index) => (
@@ -49,56 +49,56 @@ export default function Icons({ images }) {
       <PortfolioItem
         date="2024"
         title="MW5:Clans Icon"
-        description="[ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/mw5-clans-icon.webp']}
       />
 
       <PortfolioItem
         date="2024"
         title="Solaris Icon"
-        description="[ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/mw5-dlc6-icon.webp']}
       />
 
       <PortfolioItem
         date="2023"
         title="The Dragons Gambit Dragon"
-        description="[ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/mw5-dlc5-icon.webp']}
       />
 
       <PortfolioItem
         date="2022"
         title="Rise of Rasalhague Serpent"
-        description="[ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/mw5-dlc4-icon.webp']}
       />
 
       <PortfolioItem
         date="2023"
         title="MWO Atlas Icon"
-        description="[ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/mwo-icon.webp']}
       />
 
       <PortfolioItem
         date="2021"
         title="Legends of the Kestrel Lancers Bird"
-        description="[ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/mw5-dlc2-icon.webp']}
       />
 
       <PortfolioItem
         date="2019"
         title="MW5"
-        description="[ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/mw5-icon.webp']}
       />
 
       <PortfolioItem
         date="2012"
         title="Smartt A"
-        description="Smartt [ Design / Development / Art Direction ]"
+        description="Design / Development / Art Direction"
         images={['/images/icons/smartt-icon.webp']}
       />
     </PortfolioGalleryTemplate>

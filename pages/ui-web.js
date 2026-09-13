@@ -67,7 +67,7 @@ export default function Websites() {
     >
       <PortfolioItem
         date="2024"
-        title="Mechwarrior 5: Clans"
+        title="MechWarrior 5: Clans"
         launchUrl="https://mw5clans.com"
         description="UI / UX / Front End"
         images={mw5ClansImages}
@@ -75,7 +75,7 @@ export default function Websites() {
 
       <PortfolioItem
         date="2021"
-        title="Mechwarrior 5: Mercs"
+        title="MechWarrior 5: Mercenaries"
         launchUrl="https://mw5mercs.com"
         description="UI / UX / Front End"
         images={mw5MercsImages}
@@ -83,7 +83,7 @@ export default function Websites() {
 
       <PortfolioItem
         date="2018"
-        title="Mechcon"
+        title="Mech_Con"
         launchUrl="https://mechwarrior.com/mechcon"
         description="UI / UX / Front End"
         images={mechconImages}

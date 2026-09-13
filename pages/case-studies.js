@@ -15,7 +15,7 @@ const CaseStudiesPage = () => {
         <title>{`Case Studies - ${siteTitle}`}</title>
         <meta
           name="description"
-          content="Four long-form design case studies — branding, UI, and marketing across the MechWarrior franchise, from brief to shipped result."
+          content="Four detailed design case studies covering branding, UI and marketing across the MechWarrior franchise, from brief to delivered result."
         />
       </Head>
 
@@ -25,10 +25,10 @@ const CaseStudiesPage = () => {
         </div>
         <div className="work-index-main">
           <span className="eyebrow">Case Studies</span>
-          <h1 className="work-index-title">The case files</h1>
+          <h1 className="work-index-title">Case studies</h1>
           <p className="work-index-desc">
-            Four long-form studies from one franchise — the brief, the drawings,
-            and what shipped. Read them like lab notes.
+            Four detailed studies from one franchise: the brief, the design
+            work, and what was delivered.
           </p>
         </div>
         <div className="work-index-stats">
@@ -88,7 +88,7 @@ const CaseStudiesPage = () => {
           >
             <polygon points="50,20 75.98,65 24.02,65" fill="currentColor" />
           </svg>
-          <span>Six galleries behind these</span>
+          <span>Six galleries of further work</span>
         </Link>
       </div>
     </Layout>

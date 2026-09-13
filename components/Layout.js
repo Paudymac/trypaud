@@ -116,7 +116,7 @@ export default function Layout({ children, home }) {
         <link rel="alternate icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Padraic McAteer designs, draws and builds — eighteen years across UI, identity, illustration and motion. Three loops, one line. Try Paud."
+          content="Portfolio of Padraic McAteer, a senior designer and front-end developer with eighteen years of experience across UI, branding, illustration and motion."
         />
         <meta
           property="og:image"

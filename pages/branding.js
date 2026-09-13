@@ -81,21 +81,21 @@ export default function Branding({ imageData }) {
 
       <PortfolioItem
         date="2020"
-        title="Mechwarrior 5: Mercenaries Tee's"
+        title="MechWarrior 5: Mercenaries Tees"
         description="Design / Print / Art Direction"
         images={mw5DevTee}
       />
 
       <PortfolioItem
         date="2018"
-        title="Mechwarrior 5: Mercenaries Classic Box"
+        title="MechWarrior 5: Mercenaries Classic Box"
         description="Design / Print"
         images={['/images/branding/mw5-box-art.webp']}
       />
 
       <PortfolioItem
         date="2016 – 2018"
-        title="Mechcon Event"
+        title="Mech_Con Event"
         description="Design / Print"
         images={mechconImages}
       />

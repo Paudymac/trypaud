@@ -64,7 +64,7 @@ export const caseStudyLinks = [
     label: 'Design of Clans',
     desc: 'Game branding & UI',
     summary:
-      'A new MechWarrior game needed its own face — brand, logo and launch site for MECHWARRIOR 5: CLANS.',
+      'Brand, logo and launch site for MechWarrior 5: Clans, a new game that needed an identity of its own.',
     year: '2024',
     client: 'Piranha Games',
     discipline: 'Branding / UI / Web',
@@ -76,7 +76,7 @@ export const caseStudyLinks = [
     label: 'MW5 Mercenaries',
     desc: 'Marketing & visual design',
     summary:
-      'Piranha’s first stand-alone release in years — a logo, a brand system and a launch site to carry it across every platform.',
+      'A logo, brand system and launch site for Piranha’s first stand-alone release in years, built to work on every platform.',
     year: '2021',
     client: 'Piranha Games',
     discipline: 'Brand / Marketing',
@@ -88,7 +88,7 @@ export const caseStudyLinks = [
     label: 'UI for MWO',
     desc: 'E-commerce product pages',
     summary:
-      'Eleven years of product pages for MechWarrior Online — designing, measuring, and relentlessly simplifying the store that funds the game.',
+      'Eleven years of product pages for MechWarrior Online: designing, measuring and simplifying the store that funds the game.',
     year: '2013 – 2024',
     client: 'Piranha Games',
     discipline: 'E-commerce UI',
@@ -100,7 +100,7 @@ export const caseStudyLinks = [
     label: 'Mech_Con',
     desc: 'Event design system',
     summary:
-      'One hexagon, stretched across a whole convention — the design system behind Mech_Con 2018.',
+      'The design system behind Mech_Con 2018, built on a single hexagon and applied across the whole convention.',
     year: '2016 – 2018',
     client: 'Piranha Games',
     discipline: 'Design System / Event',

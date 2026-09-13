@@ -11,7 +11,7 @@ export default function MotionGraphics() {
         date="2024"
         title="Solaris Showdown Launch Trailer"
         launchUrl="https://www.youtube.com/embed/fMzvadaovKo?si=B96t4-RfiuYRTGn5"
-        description="[ Motion Graphics / Cards / Typography ]"
+        description="Motion Graphics / Cards / Typography"
       >
         <div className="portfolio-video notch">
           <iframe
@@ -28,9 +28,9 @@ export default function MotionGraphics() {
 
       <PortfolioItem
         date="2023"
-        title="Mechwarrior 5 Clans Teaser Trailer"
+        title="MechWarrior 5: Clans Teaser Trailer"
         launchUrl="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB"
-        description="[ Motion Graphics / Cards / Typography ]"
+        description="Motion Graphics / Cards / Typography"
       >
         <div className="portfolio-video notch">
           <iframe
@@ -47,9 +47,9 @@ export default function MotionGraphics() {
 
       <PortfolioItem
         date="2022"
-        title="Mechwarrior 5 DLC 5 Rise of Rasalhague Promo Trailer"
+        title="MechWarrior 5: Rise of Rasalhague Promo Trailer"
         launchUrl="https://www.youtube.com/embed/XfiI-BJnP2I?si=7_CLiuvzMrflRHjj"
-        description="[ Motion Graphics / Cards / Typography ]"
+        description="Motion Graphics / Cards / Typography"
       >
         <div className="portfolio-video notch">
           <iframe
@@ -66,8 +66,8 @@ export default function MotionGraphics() {
 
       <PortfolioItem
         date="2018"
-        title="MechCon Logo Animation"
-        description="[ Motion Graphics / Design / Branding]"
+        title="Mech_Con Logo Animation"
+        description="Motion Graphics / Design / Branding"
       >
         <div className="portfolio-video notch">
           <video width="560" height="315" controls preload="metadata">
@@ -78,8 +78,8 @@ export default function MotionGraphics() {
 
       <PortfolioItem
         date="2017"
-        title="MWO Tournamnt Logo Animation"
-        description="[ Motion Graphics / Design / Branding]"
+        title="MWO Tournament Logo Animation"
+        description="Motion Graphics / Design / Branding"
       >
         <div className="portfolio-video notch">
           <video width="560" height="315" controls preload="metadata">
@@ -91,7 +91,7 @@ export default function MotionGraphics() {
       <PortfolioItem
         date="2016"
         title="Piranha Games Bumper"
-        description="[ Motion Graphics / Design / Branding]"
+        description="Motion Graphics / Design / Branding"
       >
         <div className="portfolio-video notch">
           <video width="560" height="315" controls preload="metadata">

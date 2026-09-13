@@ -34,7 +34,7 @@ export default function Logos({ imageData }) {
     >
       <PortfolioItem
         date="2024"
-        title="Mechwarrior 5 Clans"
+        title="MechWarrior 5: Clans"
         launchUrl="https://mw5clans.com/"
         description="Design / Development / Art Direction"
         images={mw5Clans}
@@ -42,7 +42,7 @@ export default function Logos({ imageData }) {
 
       <PortfolioItem
         date="2025"
-        title="KirkWood Carpentry"
+        title="Kirkwood Carpentry"
         description="Design / Development / Art Direction"
         images={kirkwoodCarpentry}
       />
@@ -119,7 +119,7 @@ export default function Logos({ imageData }) {
 
       <PortfolioItem
         date="2018"
-        title="MechCon"
+        title="Mech_Con"
         launchUrl="https://mechwarrior.com/mechcon"
         description="Design / Development / Art Direction"
         images={['/images/logos/mc-logo-example.webp']}
@@ -127,7 +127,7 @@ export default function Logos({ imageData }) {
 
       <PortfolioItem
         date="2012"
-        title="Colombia College"
+        title="Columbia College"
         launchUrl="https://www.columbiacollege.ca/"
         description="Design / Development / Art Direction"
         images={['/images/logos/cc-logo-example.webp']}
@@ -143,7 +143,7 @@ export default function Logos({ imageData }) {
 
       <PortfolioItem
         date="2011"
-        title="Connect the doc"
+        title="Connect the Doc"
         launchUrl="https://www.connectthedoc.com/"
         description="Design / Development"
         images={['/images/logos/ctd-logo-example.webp']}

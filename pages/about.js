@@ -16,12 +16,12 @@ const capabilities = [
   {
     Icon: UIWebIcon,
     label: 'UI / Web',
-    desc: 'Product screens, marketing sites, and interface systems — from wireframes to ship.',
+    desc: 'Product screens, marketing sites and interface systems, from wireframe to production.',
   },
   {
     Icon: BrandingIcon,
     label: 'Branding & Logos',
-    desc: 'Identity systems, marks and logotypes — visual languages, game manuals and event collateral.',
+    desc: 'Identity systems, marks and logotypes, along with game manuals and event collateral.',
   },
   {
     Icon: IllustrationIcon,
@@ -41,7 +41,7 @@ const capabilities = [
   {
     Icon: CodeIcon,
     label: 'Front-end',
-    desc: 'React, Next.js and design systems — the code that ships all of the above.',
+    desc: 'React, Next.js and design systems. The code that delivers the work above.',
   },
 ];
 
@@ -77,7 +77,7 @@ export default function AboutPage() {
         <title>{`About - ${siteTitle}`}</title>
         <meta
           name="description"
-          content="Padraic McAteer designs, draws and builds — eighteen years across UI, identity, illustration and motion, a fair stretch of it on giant fighting robots."
+          content="Portfolio of Padraic McAteer, a senior designer and front-end developer with eighteen years of experience across UI, branding, illustration and motion."
         />
       </Head>
 
@@ -162,13 +162,13 @@ export default function AboutPage() {
               Senior designer &amp; front-end developer / 18 years
             </p>
             <p className="about-page-intro">
-              Paudy is what everyone calls me. Ideas are my craft: I sketch
-              them, shape them into interfaces, and build the front-end. From
-              Ireland, for teams anywhere the work is interesting.
+              Most people call me Paudy. I take ideas from first sketch to
+              finished interface, and I build the front-end that delivers them.
+              Based in Ireland, working with teams wherever they are.
             </p>
             <div className="about-page-cta-row">
               <Link href="/#collaborate" className="btn btn-accent">
-                Start something
+                Get in touch
                 <ArrowRightIcon className="icon-fwd" width={14} height={14} />
               </Link>
             </div>
@@ -224,7 +224,7 @@ export default function AboutPage() {
           </div>
           <div className="about-page-meta-row">
             <dt>Availability</dt>
-            <dd>● Open to ideas</dd>
+            <dd>● Open to enquiries</dd>
           </div>
         </dl>
       </aside>
@@ -240,18 +240,18 @@ export default function AboutPage() {
         <div className="about-page-bio-layout">
           <div className="about-page-bio-body">
             <p className="about-page-lead">
-              It always starts with an idea. Drawing was just the fastest way to
-              get one out of my head, and I&apos;ve been doing it since I was
-              small.
+              Every piece of work starts with an idea. Drawing has always been
+              the quickest way to test one, and I have drawn for as long as I
+              can remember.
             </p>
             <p>
-              Eighteen years on, the craft has grown around that: layout,
-              identity, motion, illustration, and the code that ships it all.
-              The belief underneath is simple — good design holds the door open.
-              Great design brings people back.
+              Eighteen years of practice have grown around that habit: layout,
+              identity, motion, illustration, and the code that delivers them.
+              The principle underneath is simple. Good design is easy to use,
+              and well-made design is easy to come back to.
             </p>
             <p>
-              I&apos;ve spent most of the last decade embedded with{' '}
+              I spent most of the last decade with{' '}
               <a
                 href="https://piranhagames.com"
                 target="_blank"
@@ -260,7 +260,7 @@ export default function AboutPage() {
               >
                 Piranha Games
               </a>{' '}
-              on the MechWarrior franchise — shipping UI for{' '}
+              on the MechWarrior franchise, designing UI for{' '}
               <Link
                 href="/case-studies/ui-mwo-product-pages"
                 className="about-page-inline-link"
@@ -281,22 +281,22 @@ export default function AboutPage() {
               >
                 MW5: Clans
               </Link>
-              , and the event design system behind{' '}
+              , and the event design system for{' '}
               <Link
                 href="/case-studies/mechcon-design-system"
                 className="about-page-inline-link"
               >
                 Mech_Con
               </Link>
-              . Outside of games I&apos;ve done identity, web and print for
+              . Outside games, I have produced identity, web and print work for
               Smartt, Connect the Doc, Columbia College and Kirkwood Carpentry.
-              These days I&apos;m at Screendragon.
+              I am currently at Screendragon.
             </p>
             <p>
-              I care about craft, legibility, and getting out of a user&apos;s
-              way. I like working across the stack — from a sketch to a design
-              system to shipping React &amp; Next.js — and tying it all
-              together.
+              I care about craft, legibility, and interfaces that stay out of
+              the user&apos;s way. I work across the whole process, from sketch
+              to design system to production React and Next.js, and I take
+              responsibility for how the pieces fit together.
             </p>
           </div>
 
@@ -322,7 +322,7 @@ export default function AboutPage() {
               />
             </svg>
             <blockquote className="about-page-bio-quote">
-              I care about craft, legibility, and getting out of a user&apos;s
+              Craft, legibility, and interfaces that stay out of the user&apos;s
               way.
             </blockquote>
             <div className="about-page-bio-rule" />
@@ -376,15 +376,14 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="about-page-finalcta" aria-label="Contact">
         <div className="about-page-finalcta-inner">
-          <h2 className="about-page-finalcta-title">
-            Got something that needs making?
-          </h2>
+          <h2 className="about-page-finalcta-title">Have a project in mind?</h2>
           <p className="about-page-finalcta-desc">
-            A product, a brand, a one-off piece. Tell me about it.
+            A product, a brand or a single piece. I would be glad to hear about
+            it.
           </p>
           <div className="about-page-cta-row">
             <Link href="/#collaborate" className="btn btn-accent btn-lg">
-              Try Paud
+              Get in touch
               <ArrowRightIcon className="icon-fwd" width={16} height={16} />
             </Link>
           </div>

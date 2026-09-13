@@ -23,9 +23,9 @@ export default function SiteFooter() {
             triangleInk="var(--color-text-primary)"
           />
           <span className="footer-tagline">
-            Three loops, one line.
+            Padraic McAteer
             <br />
-            Try Paud.
+            Design &amp; front-end
           </span>
         </Link>
         <nav className="footer-links" aria-label="Footer navigation">

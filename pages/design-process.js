@@ -12,17 +12,15 @@ export default function CaseStudy({}) {
       <section className={`container ${utilStyles.articleSection}`}>
         <h1>Design Process</h1>
         <p>
-          My Design Process aims to answer the question being asked. What's
-          missing from a business? Why do people need it? How should it be
-          presented? Is it a product, a brand identity problem, a communication
-          issue? The final deliverable is the agreed upon solution; an app, a
-          website or a brand asset. Every design solution falls under the 3
-          spheres. The subjective field of creativity is made from the
-          collaborative experience of the client / creative team relationship
-          working within the spheres; which is always unique at that moment in
-          time. Clients and creatives bring their own subjective realities to
-          every project. A good design process distills the most objective truth
-          and presents a clear path towards a successful end result.
+          The process starts with the question being asked. What is missing from
+          the business? Why do people need it? How should it be presented? Is
+          this a product, an identity problem, or a communication problem? The
+          deliverable is whatever answers that question: an app, a website or a
+          brand asset. Every solution sits within the three spheres shown below.
+          Clients and designers each bring their own perspective to a project,
+          and the work happens where those perspectives meet. A good process
+          separates what is known from what is assumed and sets out a clear path
+          to the result.
         </p>
         <Image
           className={utilStyles.articleImg}
@@ -35,10 +33,10 @@ export default function CaseStudy({}) {
 
         <h2>Design Method</h2>
         <p>
-          The Design Method below are the usual steps I employ to create a
-          design artifact. The amount of time spent on each is dependent on the
-          complexity of the problem. The final deliverables are usually myriad
-          derived from the work put in at each stage.{' '}
+          These are the steps I usually follow to produce a piece of design
+          work. The time spent on each depends on the complexity of the problem.
+          The final deliverables are often numerous, and each one draws on the
+          work done at every stage.
         </p>
         <Image
           className={utilStyles.articleImg}
@@ -51,12 +49,11 @@ export default function CaseStudy({}) {
 
         <h2>Design Loop</h2>
         <p>
-          During each step the design loop below is used. This in theory
-          prevents projects from going off track and buttresses alignment
-          between the client/ creative team. It’s important to show work often,
-          receive feedback and iterate on the feedback. After a few rounds I can
-          usually knuckle down and deliver a polished version of what’s
-          required, meeting expectations, before moving onto the next step.{' '}
+          The loop below runs inside each step. It keeps the project on track
+          and keeps the client and the design team aligned. Work is shown often,
+          feedback is gathered, and the next round responds to it. After a few
+          rounds the work is usually ready to be finished to a polished standard
+          before the next step begins.
         </p>
         <Image
           className={utilStyles.articleImg}

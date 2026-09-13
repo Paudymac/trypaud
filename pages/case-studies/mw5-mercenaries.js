@@ -6,7 +6,7 @@ export default function CaseStudy() {
     <CaseStudyTemplate
       index="02"
       title="MW5 Mercenaries"
-      description="Piranha's first stand-alone release in years — a logo, a brand system and a launch site to carry it across every platform."
+      description="A logo, brand system and launch site for Piranha's first stand-alone release in years, built to work on every platform."
       heroImage="/images/case-studies/mw5-img-lg-case-study3.webp"
       year="2021"
       client="Piranha Games"
@@ -19,15 +19,16 @@ export default function CaseStudy() {
     >
       <div>
         <h2>
-          After years of running a live-service game, Piranha was shipping a
-          boxed product again. It needed a brand built to travel.
+          After years of running a live-service game, Piranha was releasing a
+          stand-alone product again. It needed a brand that would work on every
+          platform.
         </h2>
         <p>
-          Mercenaries was the studio&apos;s shift from live-ops to a stand-alone
-          game on the major platforms. I designed a scalable logo with alternate
-          marks, wrote the brand guide, and built the site whose one job was
-          getting each player to their chosen store — for launch and for every
-          DLC after it.
+          Mercenaries marked the studio&apos;s move from live operations to a
+          stand-alone game on the major platforms. I designed a scalable logo
+          with alternate marks, wrote the brand guide, and built the website.
+          The site had one job: to direct each player to their chosen store, at
+          launch and for every DLC that followed.
         </p>
       </div>
 
@@ -44,10 +45,10 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          The logo grew into a full system — a short mark, colour schema and
-          typography. Key art and the wider campaign came from Petrol, the
-          California agency, and the partnership let Piranha&apos;s marketing
-          team reach players in ways the studio hadn&apos;t tried before.
+          The logo grew into a full system: a short mark, a colour scheme and
+          typography. Key art and the wider campaign came from Petrol, an agency
+          in California, and the partnership gave Piranha&apos;s marketing team
+          new ways to reach players.
         </p>
       </div>
 
@@ -66,9 +67,10 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          The homepage belongs to the Atlas — the game&apos;s totem Mech. I gave
-          it subtle animation to bring it to life, with the latest news sitting
-          just below. Simple hierarchy: the icon first, the updates second.
+          The homepage is given over to the Atlas, the game&apos;s signature
+          Mech. Subtle animation brings it to life, and the latest news sits
+          directly below. The hierarchy is simple: the icon first, the updates
+          second.
         </p>
       </div>
 
@@ -87,17 +89,17 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          The rule throughout was keep it simple. Most traffic arrived from
-          social posts, landed on a DLC page, and needed a fast answer to
-          &ldquo;what&apos;s in this pack?&rdquo; — so each page got video,
-          in-game screenshots and a short story setup, working just as well on a
-          phone as on desktop.
+          The rule throughout was to keep it simple. Most traffic arrived from
+          social posts, landed on a DLC page, and needed a quick answer to one
+          question: what is in this pack? Each page was given a video, in-game
+          screenshots and a short story setup, and works as well on a phone as
+          on a desktop.
         </p>
       </div>
 
       <div>
         <span className="text-secondary text-sm">
-          Calls to action, pocket-sized.
+          Calls to action on mobile.
         </span>
         <Image
           priority
