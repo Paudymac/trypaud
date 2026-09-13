@@ -46,7 +46,7 @@ const AboutMe = () => {
           <br />
           EST. 2008
           <br />
-          <span className="about-stat-open">● OPEN FOR WORK</span>
+          <span className="about-stat-open">● OPEN TO IDEAS</span>
         </div>
       </div>
     </section>

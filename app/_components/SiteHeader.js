@@ -189,10 +189,18 @@ export default function SiteHeader() {
         </nav>
 
         <div className="mobile-nav">
-          <Link href="/" className="nav-logo" aria-label="TryPaud home">
-            {/* The full mark, near desktop size — the knot alone at 32px
-                read as a favicon next to the 44px pills */}
+          <Link
+            href="/"
+            className="nav-logo mark-hover"
+            aria-label="TryPaud home"
+          >
+            {/* The full lockup, as on desktop — mark plus wordmark. It
+                clears the two 44px pills with room to spare at 360px. */}
             <TrefoilKnot size={40} />
+            <span className="nav-wordmark">
+              <span className="nav-wordmark-try">try</span>
+              <span className="nav-wordmark-paud">Paud</span>
+            </span>
           </Link>
 
           <div className="nav-actions">

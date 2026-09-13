@@ -2,11 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRightIcon, ArrowUpRightIcon } from './NavIcons';
+import { ArrowRightIcon } from './NavIcons';
 import MarginLabel from './MarginLabel';
-
-const NASA_ARTEMIS_II_ALBUM =
-  'https://www.flickr.com/photos/nasa2explore/albums/72177720307234654';
 
 /**
  * Hero — the top band of the home sheet.
@@ -38,34 +35,47 @@ export default function Hero() {
       </div>
 
       <div className="hero-plate-col">
-        {/* The porthole is a live instrument: it resolves to the NASA
-            Flickr archive the photograph belongs to. */}
-        <a
+        {/* The porthole is the person: the same portrait the about page
+            wears, so the headline has a face next to it and the plate is
+            the shortest route to the longer story. Internal, so the cue
+            points right, not out. (The Artemis II plates it replaced are
+            still in public/images/hero.) */}
+        <Link
+          href="/about"
           className="hero-plate-link"
-          href={NASA_ARTEMIS_II_ALBUM}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Artemis II photo archive on NASA's Flickr (opens in a new tab)"
+          aria-label="About Padraic McAteer"
         >
           <div className="hero-orbit">
             <div className="plate-circle hero-plate">
               <Image
-                src="/images/hero/artemis-earthset.jpg"
-                alt="Artemis II: a crescent Earth photographed from the Orion spacecraft"
+                src="/images/profile-padraic.webp"
+                alt="Padraic McAteer"
                 fill
                 priority
                 sizes="(max-width: 767px) 200px, 240px"
                 className="plate-image"
               />
+              {/* Signal acquisition, as on /about: hover sweeps a red
+                  scanline down and the colour feed resolves behind it.
+                  Same asset, so no second fetch. Styles: about-page.css. */}
+              <div className="about-scan-color" aria-hidden="true">
+                <Image
+                  src="/images/profile-padraic.webp"
+                  alt=""
+                  fill
+                  sizes="(max-width: 767px) 200px, 240px"
+                />
+              </div>
+              <div className="about-scan-line" aria-hidden="true" />
             </div>
           </div>
           <span className="plate-credit">
-            NASA / ORION / ARTEMIS II
+            PADRAIC MCATEER / IRELAND
             <br />
-            EARTHSET / 2026
-            <ArrowUpRightIcon className="icon-ext" width={10} height={10} />
+            ABOUT ME
+            <ArrowRightIcon className="icon-fwd" width={10} height={10} />
           </span>
-        </a>
+        </Link>
       </div>
     </section>
   );

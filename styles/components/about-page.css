@@ -47,80 +47,72 @@
     margin-inline: auto;
   }
 
+  /* Phones: the bezel overhangs the plate by 14% a side, so the plate
+     gives that up and the whole instrument fits inside the gutters —
+     it used to run off both edges of the screen. */
+  @media (max-width: 900px) {
+    .about-orbit {
+      width: min(calc(100% / 1.28), 380px);
+    }
+  }
+
   .about-dial {
+    /* Bezel ink: a step lighter than --color-ring in both themes. The
+       ring is a large, lone hairline against the ground, so it needs
+       more lift than the small detached orbits that token was tuned for. */
+    --dial-ink: #9c9da1;
     position: absolute;
-    inset: -20%;
-    width: 140%;
+    inset: -14%;
+    width: 128%;
     max-width: none; /* the reset clamps svg to 100% — undo it here */
-    height: 140%;
+    height: 128%;
     pointer-events: none;
     overflow: visible;
   }
 
   /* Detached instrument hardware — the same ring grey the porthole dials
      and CTA orbits wear (see --color-ring in _tokens.css). */
+  [data-theme='hull'] .about-dial,
+  [data-theme='light'] .about-dial {
+    /* Hull: one step above the structural rules (border-strong ≈ #94959a
+       on the aluminium), so the bezel sits just off the ground */
+    --dial-ink: #b3b4b8;
+  }
+
   .about-dial-arc {
-    stroke: var(--color-ring);
-    /* Same weight as the ticks — thinner and the bezel falls apart into
-       stray dashes instead of reading as one drawn instrument */
-    stroke-width: 1.5px;
+    stroke: var(--dial-ink);
+    /* User units, not px (see the circle's note in about.js): 0.31 of the
+       100-unit box is 1.5px at the 380px desktop plate and a hairline on
+       phones — the same weight as the ticks. */
+    stroke-width: 0.31;
     transition: stroke var(--duration-fast) var(--ease-default);
   }
 
   .about-dial-tick {
-    stroke: var(--color-ring);
+    stroke: var(--dial-ink);
     stroke-width: 1.5px;
     transition: stroke var(--duration-fast) var(--ease-default);
   }
 
   /* The current year: a longer tick in the ring-corrected signal red.
      A static datum, so it rests red — the "live counter" case. */
-  .about-dial-tick-now {
-    stroke: var(--color-ring-accent);
-    stroke-width: 2.5px;
-  }
-
-  .about-dial-label {
-    font-family: var(--font-mono);
-    /* SVG user units — ≈10px at the 380px plate width */
-    font-size: 2px;
-    font-weight: var(--font-medium);
-    letter-spacing: 0.2px;
-    fill: var(--color-text-tertiary);
-  }
-
-  .about-dial-label-now {
-    fill: var(--color-ring-accent);
-  }
-
-  /* Power-on: the arc sweeps clockwise from 2008 and each year tick
-     lights as the sweep reaches it. Linear, so tick delays stay in sync
-     with the arc's angular progress. */
+  /* Power-on: the ring draws clockwise from the top and each year tick
+     lights as the line reaches it, landing on NOW. Linear, so tick delays
+     stay in sync with the ring's angular progress. */
   @media (prefers-reduced-motion: no-preference) {
     .about-dial-arc {
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
+      /* 2π · 44 — one dash the length of the whole ring */
+      stroke-dasharray: 276.46;
+      stroke-dashoffset: 276.46;
       animation: about-dial-sweep 1.1s linear 0.2s forwards;
     }
 
     .about-dial-tick {
       opacity: 0;
       animation: about-dial-light 0.3s var(--ease-out) forwards;
-      /* 1.1s sweep / 18 intervals ≈ 61ms per year */
-      animation-delay: calc(0.2s + var(--tick-i) * 61ms);
-    }
-
-    .about-dial-label {
-      opacity: 0;
-      animation: about-dial-light 0.4s var(--ease-out) forwards;
-    }
-
-    .about-dial-label:first-of-type {
-      animation-delay: 0.2s;
-    }
-
-    .about-dial-label-now {
-      animation-delay: 1.3s;
+      /* 1.1s sweep / 19 ticks ≈ 58ms per year; the first tick is one
+         step past the top, so the delay starts one step in */
+      animation-delay: calc(0.2s + (var(--tick-i) + 1) * 58ms);
     }
   }
 
@@ -158,7 +150,10 @@
      scanline sweeps down, the colour feed resolves behind it with a
      breath of CRT interlace, and the bezel answers in structural blue.
      Mouse-off drops the feed back to the mono print, faster — losing
-     a signal is quicker than finding one. */
+     a signal is quicker than finding one.
+     Shared with the homepage hero plate (components/Hero.js), which
+     carries the same .about-scan-* children inside .hero-plate-link —
+     hence the :is() trigger below. */
   .about-scan-color {
     position: absolute;
     inset: 0;
@@ -196,30 +191,29 @@
     pointer-events: none;
   }
 
-  .about-orbit:hover .about-scan-color {
+  :is(.about-orbit, .hero-plate-link):is(:hover, :focus-visible)
+    .about-scan-color {
     clip-path: inset(0 0 0 0);
     transition-duration: 600ms;
   }
 
   /* The bezel answers the pointer in blue — the structure's hover
-     voice everywhere else in the system. NOW keeps its red. */
+     voice everywhere else in the system. */
   .about-orbit:hover .about-dial-arc,
   .about-orbit:hover .about-dial-tick {
     stroke: var(--color-ring-primary);
   }
 
-  .about-orbit:hover .about-dial-tick-now {
-    stroke: var(--color-ring-accent);
-  }
-
   @media (prefers-reduced-motion: no-preference) {
-    .about-orbit:hover .about-scan-line {
+    :is(.about-orbit, .hero-plate-link):is(:hover, :focus-visible)
+      .about-scan-line {
       /* Rides the clip edge: same 600ms as the reveal, fading as it
          reaches the bottom of the glass */
       animation: about-scan-sweep 600ms var(--ease-default) forwards;
     }
 
-    .about-orbit:hover .about-scan-color::after {
+    :is(.about-orbit, .hero-plate-link):is(:hover, :focus-visible)
+      .about-scan-color::after {
       animation: about-scan-interlace 900ms linear forwards;
     }
   }
@@ -232,7 +226,8 @@
       transition: opacity 350ms var(--ease-default);
     }
 
-    .about-orbit:hover .about-scan-color {
+    :is(.about-orbit, .hero-plate-link):is(:hover, :focus-visible)
+      .about-scan-color {
       opacity: 1;
     }
   }

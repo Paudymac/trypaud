@@ -57,16 +57,18 @@ const clients = [
   'Kirkwood Carpentry',
 ];
 
-/* Career gauge scale: one tick per year, 2008 → now. The 270° sweep starts
-   at 225° (clockwise from 12), leaving the instrument gap at the bottom. */
+/* Porthole bezel scale: one tick per year, 2008 → now, spaced evenly round
+   the full ring like the bolts on a cabin window. The ring draws clockwise
+   from 12 o'clock and the ticks light in order, ending back at the top.
+   All ticks read alike — a red "now" tick on its own looked like a needle
+   (it was a 270° gauge before that, which read as a speedometer). */
 const CAREER_START = 2008;
 const CAREER_NOW = 2026;
 const careerYears = Array.from(
   { length: CAREER_NOW - CAREER_START + 1 },
   (_, i) => CAREER_START + i
 );
-const DIAL_START = 225;
-const DIAL_STEP = 270 / (careerYears.length - 1);
+const DIAL_STEP = 360 / careerYears.length;
 
 export default function AboutPage() {
   return (
@@ -83,61 +85,51 @@ export default function AboutPage() {
       <section className="about-page-hero" aria-labelledby="about-title">
         <div className="about-page-hero-grid">
           <div className="about-orbit">
-            {/* The career gauge: a 270° graduated bezel around the porthole,
-                gap seated at the bottom like an instrument dial. One tick per
-                year of practice — 2008 through now, 18 intervals — with the
-                current year resting signal-red. Sweeps once on load, then
-                holds: gauges measure, they don't spin. */}
+            {/* The bezel: a full hairline ring round the porthole with one
+                tick per year of practice, evenly spaced like bolts. Draws
+                once on load — clockwise from the top, each tick lighting as
+                the line reaches it — then holds. No labels and no marked
+                tick: the meta strip below already says "Est. 2008" and
+                "18 years". */}
             <svg
               className="about-dial"
               viewBox="0 0 100 100"
               aria-hidden="true"
             >
-              <path
+              {/* A real circle, not an arc — an arc can't close on itself
+                  without leaving a seam at the join. Rotated -90 so the
+                  draw-on starts at 12 o'clock, where NOW sits. No
+                  pathLength and no non-scaling-stroke here: Chrome dashes a
+                  non-scaling stroke in screen space, which mis-scales a
+                  normalised dash and leaves the ring in pieces. The dash is
+                  the true circumference (2π·44) in user units instead, so
+                  the stroke width is in user units too — see .about-dial-arc. */}
+              <circle
                 className="about-dial-arc"
-                d="M 18.89 81.11 A 44 44 0 1 1 81.11 81.11"
+                cx="50"
+                cy="50"
+                r="44"
                 fill="none"
-                pathLength="1"
-                style={{ vectorEffect: 'non-scaling-stroke' }}
+                transform="rotate(-90 50 50)"
               />
-              {careerYears.map((year, i) => {
-                const isNow = i === careerYears.length - 1;
-                return (
-                  <line
-                    key={year}
-                    className={
-                      isNow
-                        ? 'about-dial-tick about-dial-tick-now'
-                        : 'about-dial-tick'
-                    }
-                    x1="50"
-                    y1="6"
-                    x2="50"
-                    y2={isNow ? 11.5 : 9.5}
-                    transform={`rotate(${DIAL_START + i * DIAL_STEP} 50 50)`}
-                    style={{
-                      '--tick-i': i,
-                      vectorEffect: 'non-scaling-stroke',
-                    }}
-                  />
-                );
-              })}
-              <text
-                className="about-dial-label"
-                x="15.4"
-                y="87"
-                textAnchor="middle"
-              >
-                {CAREER_START}
-              </text>
-              <text
-                className="about-dial-label about-dial-label-now"
-                x="84.6"
-                y="87"
-                textAnchor="middle"
-              >
-                NOW
-              </text>
+              {careerYears.map((year, i) => (
+                <line
+                  key={year}
+                  className="about-dial-tick"
+                  x1="50"
+                  y1="6"
+                  x2="50"
+                  /* The plate edge sits at r = 50/1.28 ≈ 39.06, i.e. y ≈ 10.94
+                     (the svg box is 128% of the plate); 11.2 runs the tick a
+                     hair under the plate's border so it reads as touching */
+                  y2="11.2"
+                  transform={`rotate(${(i + 1) * DIAL_STEP} 50 50)`}
+                  style={{
+                    '--tick-i': i,
+                    vectorEffect: 'non-scaling-stroke',
+                  }}
+                />
+              ))}
             </svg>
             <div className="about-page-hero-image">
               <Image
@@ -232,7 +224,7 @@ export default function AboutPage() {
           </div>
           <div className="about-page-meta-row">
             <dt>Availability</dt>
-            <dd>● Open for work</dd>
+            <dd>● Open to ideas</dd>
           </div>
         </dl>
       </aside>

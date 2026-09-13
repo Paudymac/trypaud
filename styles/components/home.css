@@ -280,21 +280,20 @@
 
   /* Power-on reveal. VOID rests slightly dimmed; HULL rests in the
      theme's mono print. Hover resolves both to the plain photograph. */
-  .hero-plate .plate-image {
-    filter: brightness(0.85) saturate(0.9);
-    transition: filter var(--duration-normal) var(--ease-default);
+  /* The portrait rests in the same mono print as the about page, in both
+     themes; hover acquires the colour feed via the shared scan block in
+     about-page.css (.about-scan-color / .about-scan-line live inside the
+     plate — see Hero.js). Same crop as about, so the face lands the same. */
+  .hero-plate img {
+    object-fit: cover;
+    object-position: 68% 22%;
   }
 
-  [data-theme='hull'] .hero-plate .plate-image,
-  [data-theme='light'] .hero-plate .plate-image {
-    filter: var(--image-filter);
+  .hero-plate .plate-image {
+    filter: grayscale(1) contrast(1.12) brightness(0.9);
   }
 
   /* After the theme rules — same specificity, hover must win */
-  .hero-plate-link:hover .plate-image,
-  .hero-plate-link:focus-visible .plate-image {
-    filter: none;
-  }
 
   /* ========================================================================
      WORK band — heading row, then three plates on a 2px top rule
@@ -889,29 +888,68 @@
       padding-bottom: 48px;
     }
 
+    /* Single column: the portrait can't sit to the right of the headline,
+       so it slots in UNDER the eyebrow and above "Design. Build. Ship." —
+       name, then face, then the claim. The eyebrow lives inside the copy
+       cell, so that cell dissolves (display: contents) and its children
+       become grid rows the band can order; the flex gap it carried moves
+       to the grid's row-gap and its gutter padding to each child. */
+    .hero-band {
+      row-gap: 22px;
+    }
+
     .hero-main {
+      display: contents;
+    }
+
+    .hero-main > * {
       grid-column: 1;
-      padding-right: var(--gutter);
+      padding-inline: var(--gutter);
+    }
+
+    .hero-band .band-label {
+      order: -3;
+      padding-bottom: 0; /* the row-gap is the spacing now */
+    }
+
+    .hero-main > .eyebrow {
+      order: -2;
+    }
+
+    .hero-plate-col {
+      order: -1;
+      grid-column: 1;
+      align-items: center;
+      padding-inline: var(--gutter);
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    /* Centred as a stack — eyebrow, face, claim, copy, button all on one
+       axis. The margin label stays left: it's the band's index, not part
+       of the copy, and every other band keeps it there. */
+    .hero-main > .eyebrow,
+    .hero-display,
+    .hero-body,
+    .plate-credit {
+      text-align: center;
+    }
+
+    .hero-body {
+      margin-inline: auto;
+    }
+
+    .hero-actions {
+      justify-content: center;
     }
 
     .hero-display {
       font-size: var(--step-3xl);
     }
 
-    .hero-plate-col {
-      grid-column: 1;
-      align-items: flex-start;
-      padding-left: var(--gutter);
-      margin-top: 32px;
-    }
-
     .hero-plate {
       width: 200px;
       height: 200px;
-    }
-
-    .plate-credit {
-      text-align: left;
     }
 
     /* Stacked: the title cell hands its bottom rule to the action cell, and
