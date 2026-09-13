@@ -323,7 +323,7 @@ export default function Layout({ children, home }) {
               Email
             </a>
             <a
-              href="/PadraicMcAteer_CV_2025.pdf"
+              href="/PadraicMcAteer_CV_2026.pdf"
               className="footer-link"
               target="_blank"
               rel="noopener noreferrer"
