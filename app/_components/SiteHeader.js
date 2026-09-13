@@ -190,7 +190,9 @@ export default function SiteHeader() {
 
         <div className="mobile-nav">
           <Link href="/" className="nav-logo" aria-label="TryPaud home">
-            <TrefoilKnot size={32} triangle={false} />
+            {/* The full mark, near desktop size — the knot alone at 32px
+                read as a favicon next to the 44px pills */}
+            <TrefoilKnot size={40} />
           </Link>
 
           <div className="nav-actions">
