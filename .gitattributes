@@ -1,0 +1,15 @@
+# Check out and commit every text file with LF line endings, on every OS.
+# Prettier is configured for LF; without this, core.autocrlf=true on Windows
+# writes CRLF into the working copy and lint reports every line.
+* text=auto eol=lf
+
+# Binary assets: never touch line endings.
+*.png binary
+*.ico binary
+*.webp binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
