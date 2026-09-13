@@ -1,11 +1,15 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { HullIcon, VoidIcon } from './NavIcons';
+import { SunIcon, MoonIcon } from './NavIcons';
 
 /**
- * ThemeToggle — the two-cell HULL / VOID pill.
- * Writes data-theme="void" | "hull" on <html>; the active cell is filled.
+ * ThemeToggle — the two-cell sun / moon pill.
+ * The themes are still named hull (light) and void (dark) internally —
+ * data-theme, localStorage and every token block keep those names — but
+ * the visitor sees only the universal glyphs; the words live in the
+ * aria-labels. Writes data-theme="void" | "hull" on <html>; the active
+ * cell is filled.
  * The wrapper must stay `flex: none` (see .theme-toggle) or it clips.
  */
 export default function ThemeToggle() {
@@ -34,19 +38,21 @@ export default function ThemeToggle() {
         type="button"
         className="theme-toggle-cell"
         aria-pressed={theme === 'hull'}
+        aria-label="Light theme"
+        title="Light theme"
         onClick={() => setTheme('hull')}
       >
-        <HullIcon width={9} height={9} />
-        Hull
+        <SunIcon />
       </button>
       <button
         type="button"
         className="theme-toggle-cell"
         aria-pressed={theme === 'void'}
+        aria-label="Dark theme"
+        title="Dark theme"
         onClick={() => setTheme('void')}
       >
-        <VoidIcon width={9} height={9} />
-        Void
+        <MoonIcon />
       </button>
     </div>
   );

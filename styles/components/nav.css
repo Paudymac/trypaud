@@ -187,16 +187,14 @@
     padding: 0;
   }
 
+  /* Icon-only cells: a 14px sun / moon each, the words in aria-label.
+     Height matches the Hire pill beside it. */
   .theme-toggle-cell {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    font-family: var(--font-family);
-    font-size: 9px;
-    font-weight: var(--font-bold);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 10px;
+    justify-content: center;
+    padding: 0 10px;
+    min-height: 28px;
     background: transparent;
     border: none;
     color: var(--color-text-secondary);
@@ -208,6 +206,8 @@
 
   .theme-toggle-cell svg {
     flex: none;
+    width: 14px;
+    height: 14px;
   }
 
   .theme-toggle-cell:hover,
@@ -547,10 +547,21 @@
       padding-right: 0;
     }
 
-    /* Finger-sized theme toggle — the desktop cell is ~20px tall */
+    /* The theme pill matches the Menu pill beside it: same 44px height
+       (the wrapper's 1px rule is inside it, so the cells reach 42), each
+       cell a finger-sized square around a 16px glyph. */
+    .mobile-nav .theme-toggle {
+      min-height: 44px;
+    }
+
     .mobile-nav .theme-toggle-cell {
-      font-size: 10px;
-      padding: 13px 14px;
+      min-width: 42px;
+      padding: 0;
+    }
+
+    .mobile-nav .theme-toggle-cell svg {
+      width: 16px;
+      height: 16px;
     }
 
     /* The menu's full-width CTA keeps .btn-sm type but takes a tap height */

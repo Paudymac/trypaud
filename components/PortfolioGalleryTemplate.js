@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Children, isValidElement } from 'react';
+import { Children, isValidElement, useRef } from 'react';
 import Layout, { siteTitle } from '@/components/Layout';
 import { galleryLinks, allWorkItem } from '@/components/NavData';
+import useScrollEdges from '@/components/useScrollEdges';
 
 const SWITCH_ITEMS = [allWorkItem, ...galleryLinks];
 
@@ -13,6 +14,9 @@ export default function PortfolioGalleryTemplate({
   children,
 }) {
   const router = useRouter();
+  // Same sideways-scroll edge cue as the /gallery filter row
+  const switchRef = useRef(null);
+  useScrollEdges(switchRef);
 
   // Stats for the head's data column, read straight off the PortfolioItems
   // so the numbers can never drift from the page content.
@@ -75,6 +79,7 @@ export default function PortfolioGalleryTemplate({
       {/* Porthole dials — the same instruments as the /gallery filters,
           here as links between the sibling galleries */}
       <nav
+        ref={switchRef}
         className="gallery-filters gallery-switch"
         aria-label="Browse galleries"
       >

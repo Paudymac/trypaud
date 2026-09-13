@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Head from 'next/head';
 import Layout, { siteTitle } from '@/components/Layout';
 import Lightbox from '@/components/Lightbox';
+import useScrollEdges from '@/components/useScrollEdges';
 import fs from 'fs';
 import path from 'path';
 
@@ -23,6 +24,11 @@ export async function getStaticProps() {
 }
 
 export default function Gallery({ allItems }) {
+  // On phones the dial row scrolls sideways; this flags which edge hides
+  // more dials so the CSS can fade that edge as the cue.
+  const filtersRef = useRef(null);
+  useScrollEdges(filtersRef);
+
   const [activeCategory, setActiveCategory] = useState('all');
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
   const [lightbox, setLightbox] = useState({
@@ -137,6 +143,7 @@ export default function Gallery({ allItems }) {
       <div className="gallery-page">
         {/* Porthole dials — one per category, count inside the glass */}
         <div
+          ref={filtersRef}
           className="gallery-filters"
           role="toolbar"
           aria-label="Filter by category"

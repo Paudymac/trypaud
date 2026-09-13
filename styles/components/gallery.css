@@ -433,12 +433,47 @@
   }
 
   @media (max-width: 600px) {
+    /* Six dials don't fit a phone, so the row scrolls sideways under the
+       gutters. Two cues say so: the last visible dial is always partly
+       cut (no accidental "that's all"), and the edge that hides more
+       fades out — useScrollEdges (components/) flags which edge on
+       data-scroll, so the fade lifts once you reach the end. Snapping
+       parks a whole dial at the gutter after each swipe. */
     .gallery-filters {
+      --edge-start: 0px;
+      --edge-end: 0px;
       flex-wrap: nowrap;
       overflow-x: auto;
       scrollbar-width: none;
       margin-inline: calc(-1 * var(--gutter));
       padding-inline: var(--gutter);
+      scroll-snap-type: x proximity;
+      scroll-padding-inline: var(--gutter);
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--edge-start),
+        #000 calc(100% - var(--edge-end)),
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--edge-start),
+        #000 calc(100% - var(--edge-end)),
+        transparent 100%
+      );
+      transition:
+        --edge-start var(--duration-fast) var(--ease-default),
+        --edge-end var(--duration-fast) var(--ease-default);
+    }
+
+    .gallery-filters[data-scroll~='start-hidden'] {
+      --edge-start: 56px;
+    }
+
+    .gallery-filters[data-scroll~='end-hidden'] {
+      --edge-end: 56px;
     }
 
     .gallery-filters::-webkit-scrollbar {
@@ -447,6 +482,7 @@
 
     .porthole-filter {
       flex-shrink: 0;
+      scroll-snap-align: start;
     }
   }
 

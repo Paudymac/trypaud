@@ -41,6 +41,22 @@ export default function SiteHeader() {
     return () => document.removeEventListener('keydown', onKey);
   }, []);
 
+  // Tap-outside closes the mega panel. Hover opens it, and on a touch
+  // screen wide enough for the desktop nav (iPads, iPad Pro portrait) the
+  // first tap on a trigger is the emulated hover — the panel opens, and
+  // with no mouseleave ever coming it would sit over the page until the
+  // next scroll. pointerdown, not click, so it also beats a tap that lands
+  // on something inert.
+  useEffect(() => {
+    if (openMenu === null) return undefined;
+    const onPointerDown = (e) => {
+      if (e.target.closest('.site-header, .nav-mega-panel')) return;
+      setOpenMenu(null);
+    };
+    document.addEventListener('pointerdown', onPointerDown, { passive: true });
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, [openMenu]);
+
   useEffect(
     () => () => {
       if (closeTimer.current) clearTimeout(closeTimer.current);

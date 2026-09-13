@@ -37,6 +37,15 @@
     flex: 1 0 auto;
   }
 
+  /* Anything that pokes past the right edge (the about page's orbit dial,
+     a plate mid-hover-scale) must never hand the page a sideways scroll on
+     a phone. clip, not hidden: it is not a scroll container, so the sticky
+     header and the fixed backdrop keep the viewport as their reference.
+     The app-router home does the same on .sheet (home.css). */
+  .site-shell {
+    overflow-x: clip;
+  }
+
   main#main-content {
     flex: 1 0 auto;
   }

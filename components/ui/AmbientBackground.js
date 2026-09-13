@@ -16,7 +16,10 @@ import { useEffect, useRef } from 'react';
  * Particle ink is read from the container's computed color, so both themes
  * work from one code path; a MutationObserver rebuilds the sprite when
  * [data-theme] flips. prefers-reduced-motion gets one static frame and no
- * listeners; coarse pointers skip parallax/glow but keep drift and taps.
+ * listeners. Coarse pointers (phones, tablets) have no hover, so they skip
+ * the parallax/glow layers, but the field itself still drifts and twinkles
+ * — at a capped ~30fps rather than the display rate, so a phone is not
+ * asked to composite a full-screen canvas at 120Hz for a backdrop.
  */
 
 const LENS = 'M43.2,53.93 A22,22 0 0,0 71.52,37.57 A22,22 0 0,0 43.2,53.93 Z';
@@ -27,6 +30,7 @@ const RIPPLE_SPEED = 380; // px/s ring expansion
 const RIPPLE_BAND = 110; // ring thickness
 const RIPPLE_LIFE = 1.3; // seconds
 const RIPPLE_PUSH = 14; // max radial nudge in px
+const COARSE_FRAME_MS = 1000 / 30; // touch devices: cap the idle field at ~30fps
 
 // vector-effect keeps these true screen-pixel hairlines no matter how large
 // the geometry is scaled — it must sit on each shape, not the group.
@@ -218,21 +222,19 @@ export default function AmbientBackground() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.imageSmoothingQuality = 'high';
       if (!stars.length) seed();
-      if (reduced || coarse) draw(0);
+      if (reduced) draw(0);
     };
 
     const loop = (now) => {
+      raf = window.requestAnimationFrame(loop);
+      // Touch devices: skip frames until the 30fps budget has elapsed. The
+      // field drifts at 4px/s, so half the display rate is invisible; a tap
+      // ripple is the one fast thing, and it still reads fine at 30.
+      if (coarse && now - last < COARSE_FRAME_MS) return;
       // Clamped dt: a hidden tab resumes without the field jumping ahead
       const dt = Math.min((now - last) / 1000, 0.1);
       last = now;
       draw(dt);
-      // Coarse pointers only animate while a tap ripple is live — the idle
-      // field is a static frame, not a standing rAF cost on phone batteries.
-      if (coarse && ripples.length === 0) {
-        raf = 0;
-        return;
-      }
-      raf = window.requestAnimationFrame(loop);
     };
 
     const startLoop = () => {
@@ -255,7 +257,7 @@ export default function AmbientBackground() {
     // Rebuild the particle ink when the theme flips
     const observer = new MutationObserver(() => {
       buildSprites();
-      if (reduced || (coarse && !raf)) draw(0);
+      if (reduced) draw(0);
     });
     observer.observe(document.documentElement, {
       attributes: true,
@@ -281,16 +283,13 @@ export default function AmbientBackground() {
       if (e.button !== 0) return;
       ripples.push({ x: e.clientX, y: e.clientY, t: time });
       if (ripples.length > 5) ripples.shift();
-      // On coarse pointers the loop sleeps between taps — wake it so the
-      // ripple animates, and it parks itself again when the ripple dies.
-      startLoop();
     };
 
     // A hidden tab draws nothing — resume where the field left off
     const onVisibility = () => {
       if (document.hidden) {
         stopLoop();
-      } else if (!reduced && (!coarse || ripples.length > 0)) {
+      } else if (!reduced) {
         startLoop();
       }
     };
@@ -302,7 +301,7 @@ export default function AmbientBackground() {
       }
       window.addEventListener('pointerdown', onDown, { passive: true });
       document.addEventListener('visibilitychange', onVisibility);
-      if (!coarse) startLoop();
+      startLoop();
     }
 
     return () => {
