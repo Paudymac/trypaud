@@ -48,17 +48,18 @@
     background-image:
       /* top edge, stopping at the notch */
       linear-gradient(currentColor, currentColor),
-      /* right edge, starting below the notch */ linear-gradient(currentColor, currentColor),
+      /* right edge, starting below the notch */
+        linear-gradient(currentColor, currentColor),
       /* bottom edge */ linear-gradient(currentColor, currentColor),
       /* left edge */ linear-gradient(currentColor, currentColor),
       /* the diagonal along the cut */
-      linear-gradient(
-        45deg,
-        transparent calc(50% - var(--notch-weight) / 2),
-        currentColor calc(50% - var(--notch-weight) / 2),
-        currentColor calc(50% + var(--notch-weight) / 2),
-        transparent calc(50% + var(--notch-weight) / 2)
-      );
+        linear-gradient(
+          45deg,
+          transparent calc(50% - var(--notch-weight) / 2),
+          currentColor calc(50% - var(--notch-weight) / 2),
+          currentColor calc(50% + var(--notch-weight) / 2),
+          transparent calc(50% + var(--notch-weight) / 2)
+        );
     background-repeat: no-repeat;
     background-position:
       left 0 top 0,

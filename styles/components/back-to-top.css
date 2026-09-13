@@ -9,7 +9,9 @@
     position: fixed;
     right: clamp(var(--space-4), 3vw, var(--space-8));
     /* --btt-lift (set by BackToTop.js) docks the button above the footer */
-    bottom: calc(clamp(var(--space-4), 3vw, var(--space-8)) + var(--btt-lift, 0px));
+    bottom: calc(
+      clamp(var(--space-4), 3vw, var(--space-8)) + var(--btt-lift, 0px)
+    );
     z-index: var(--z-fixed);
 
     display: inline-flex;
@@ -19,7 +21,11 @@
     height: 2.75rem;
     padding: 0;
 
-    background-color: color-mix(in srgb, var(--color-surface-2) 70%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-2) 70%,
+      transparent
+    );
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     /* Match the nav menu item idle colour so the arrow reads as a

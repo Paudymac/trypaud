@@ -179,19 +179,18 @@
       /* top edge, stopping at the notch */
       linear-gradient(var(--field-border), var(--field-border)),
       /* right edge, starting below the notch */
-      linear-gradient(var(--field-border), var(--field-border)),
+        linear-gradient(var(--field-border), var(--field-border)),
       /* bottom edge */
-      linear-gradient(var(--field-border), var(--field-border)),
-      /* left edge */
-      linear-gradient(var(--field-border), var(--field-border)),
+        linear-gradient(var(--field-border), var(--field-border)),
+      /* left edge */ linear-gradient(var(--field-border), var(--field-border)),
       /* the diagonal along the cut */
-      linear-gradient(
-        45deg,
-        transparent calc(50% - 0.5px),
-        var(--field-border) calc(50% - 0.5px),
-        var(--field-border) calc(50% + 0.5px),
-        transparent calc(50% + 0.5px)
-      );
+        linear-gradient(
+          45deg,
+          transparent calc(50% - 0.5px),
+          var(--field-border) calc(50% - 0.5px),
+          var(--field-border) calc(50% + 0.5px),
+          transparent calc(50% + 0.5px)
+        );
     background-repeat: no-repeat;
     background-position:
       left 0 top 0,
