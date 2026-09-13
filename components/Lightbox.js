@@ -4,6 +4,10 @@ import { useEffect, useCallback, useRef } from 'react';
  * Lightbox — full-screen image overlay with prev/next navigation.
  * Keyboard accessible: Arrow keys navigate, Escape closes.
  * Traps focus while open.
+ *
+ * `video` ({ type: 'youtube', id } | { type: 'file', src }) swaps the image
+ * for a player; `images` then just carries the poster so open/close logic
+ * is unchanged.
  */
 export default function Lightbox({
   images = [],
@@ -13,6 +17,7 @@ export default function Lightbox({
   onPrev,
   onNext,
   title = '',
+  video = null,
 }) {
   // Keyboard navigation
   const handleKeyDown = useCallback(
@@ -88,7 +93,7 @@ export default function Lightbox({
       className="lightbox lightbox-open"
       role="dialog"
       aria-modal="true"
-      aria-label={title || 'Image viewer'}
+      aria-label={title || (video ? 'Video player' : 'Image viewer')}
       onClick={handleBackdropClick}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
@@ -138,15 +143,34 @@ export default function Lightbox({
         </button>
       )}
 
-      {/* Image */}
+      {/* Media */}
       <div className="lightbox-content">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={images[currentIndex]}
-          alt={`${title} — image ${currentIndex + 1} of ${images.length}`}
-          className="lightbox-image"
-          loading="eager"
-        />
+        {video?.type === 'youtube' ? (
+          <iframe
+            className="lightbox-video"
+            src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
+            title={title || 'Video player'}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        ) : video?.type === 'file' ? (
+          <video
+            className="lightbox-video"
+            src={video.src}
+            poster={images[currentIndex]}
+            controls
+            autoPlay
+            playsInline
+          />
+        ) : (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={images[currentIndex]}
+            alt={`${title} — image ${currentIndex + 1} of ${images.length}`}
+            className="lightbox-image"
+            loading="eager"
+          />
+        )}
       </div>
 
       {/* Next button */}

@@ -556,6 +556,70 @@ add({
   images: ['/images/icons/smartt-icon.webp'],
 });
 
+// --- ANIMATION ---
+// Video pieces. `images` carries the poster so the card count/aria stay
+// sane; `video` tells the lightbox to play instead of showing the poster.
+add({
+  id: 'solaris-showdown-trailer',
+  title: 'Solaris Showdown Launch Trailer',
+  category: 'animation',
+  year: '2024',
+  description: 'Motion Graphics / Cards / Typography',
+  thumbnail: '/images/animation/solaris-showdown-trailer.webp',
+  images: ['/images/animation/solaris-showdown-trailer.webp'],
+  video: { type: 'youtube', id: 'fMzvadaovKo' },
+});
+add({
+  id: 'mw5-clans-teaser',
+  title: 'MechWarrior 5: Clans Teaser Trailer',
+  category: 'animation',
+  year: '2023',
+  description: 'Motion Graphics / Cards / Typography',
+  thumbnail: '/images/animation/mw5-clans-teaser.webp',
+  images: ['/images/animation/mw5-clans-teaser.webp'],
+  video: { type: 'youtube', id: 'rYZwO5f9yk4' },
+});
+add({
+  id: 'rise-of-rasalhague-trailer',
+  title: 'MechWarrior 5: Rise of Rasalhague Promo Trailer',
+  category: 'animation',
+  year: '2022',
+  description: 'Motion Graphics / Cards / Typography',
+  thumbnail: '/images/animation/rise-of-rasalhague-trailer.webp',
+  images: ['/images/animation/rise-of-rasalhague-trailer.webp'],
+  video: { type: 'youtube', id: 'XfiI-BJnP2I' },
+});
+add({
+  id: 'mechcon-logo-animation',
+  title: 'Mech_Con Logo Animation',
+  category: 'animation',
+  year: '2018',
+  description: 'Motion Graphics / Design / Branding',
+  thumbnail: '/images/animation/mechcon-logo-animation.webp',
+  images: ['/images/animation/mechcon-logo-animation.webp'],
+  video: { type: 'file', src: '/video/mechcon-logo-animation.mp4' },
+});
+add({
+  id: 'mwowc-tournament-logo',
+  title: 'MWO Tournament Logo Animation',
+  category: 'animation',
+  year: '2017',
+  description: 'Motion Graphics / Design / Branding',
+  thumbnail: '/images/animation/mwowc-tournament-logo.webp',
+  images: ['/images/animation/mwowc-tournament-logo.webp'],
+  video: { type: 'file', src: '/video/mwowc-pause-screen-2017.mp4' },
+});
+add({
+  id: 'piranha-games-bumper',
+  title: 'Piranha Games Bumper',
+  category: 'animation',
+  year: '2016',
+  description: 'Motion Graphics / Design / Branding',
+  thumbnail: '/images/animation/piranha-games-bumper.webp',
+  images: ['/images/animation/piranha-games-bumper.webp'],
+  video: { type: 'file', src: '/video/piranha-logo-sound.mp4' },
+});
+
 // Sort newest first
 const yearOf = (s) => parseInt(String(s).match(/\d{4}/g)?.pop() ?? '0', 10);
 items.sort((a, b) => yearOf(b.year) - yearOf(a.year));

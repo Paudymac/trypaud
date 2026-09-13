@@ -711,6 +711,31 @@
     }
   }
 
+  /* Play badge on video plates — bottom-left, clear of the notch corner */
+  .gallery-item-play {
+    position: absolute;
+    left: var(--space-3);
+    bottom: var(--space-3);
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    color: var(--color-text-primary);
+    background: color-mix(in srgb, var(--color-surface-0) 78%, transparent);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 50%;
+    pointer-events: none;
+    transition:
+      color var(--duration-normal) var(--ease-default),
+      border-color var(--duration-normal) var(--ease-default);
+  }
+
+  .gallery-item:hover .gallery-item-play,
+  .gallery-item:focus-visible .gallery-item-play {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
   .gallery-item-caption {
     display: flex;
     align-items: baseline;
@@ -826,6 +851,17 @@
     border-radius: 0;
     box-shadow: var(--shadow-xl);
     background-color: var(--color-surface-1);
+  }
+
+  /* Video pieces: a 16:9 player sized to the viewport instead of the image.
+     Width is capped by height so the frame never overflows short screens. */
+  .lightbox-video {
+    display: block;
+    width: min(90vw, calc(85vh * 16 / 9), 1280px);
+    aspect-ratio: 16 / 9;
+    border: 0;
+    background-color: var(--color-surface-0);
+    box-shadow: var(--shadow-xl);
   }
 
   .lightbox-close {

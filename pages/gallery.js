@@ -13,6 +13,7 @@ const CATEGORIES = [
   { key: 'ui', label: 'UI / Web' },
   { key: 'logos', label: 'Logos' },
   { key: 'branding', label: 'Branding' },
+  { key: 'animation', label: 'Animation' },
   { key: 'illustration', label: 'Illustration' },
   { key: 'icons', label: 'Icons' },
 ];
@@ -36,6 +37,7 @@ export default function Gallery({ allItems }) {
     images: [],
     index: 0,
     title: '',
+    video: null,
   });
 
   const sentinelRef = useRef(null);
@@ -82,6 +84,7 @@ export default function Gallery({ allItems }) {
       images: item.images,
       index: 0,
       title: item.title,
+      video: item.video ?? null,
     });
   }, []);
 
@@ -122,8 +125,8 @@ export default function Gallery({ allItems }) {
           <span className="eyebrow">Gallery</span>
           <h1 className="work-index-title">All work</h1>
           <p className="work-index-desc">
-            A running index of projects across UI, branding, illustration and
-            iconography — 2009 through today.
+            A running index of projects across UI, branding, animation,
+            illustration and iconography — 2009 through today.
           </p>
         </div>
         <div className="work-index-stats">
@@ -175,7 +178,11 @@ export default function Gallery({ allItems }) {
               <button
                 className="gallery-item"
                 onClick={() => openLightbox(item)}
-                aria-label={`Open ${item.title} — ${item.images.length} image${item.images.length !== 1 ? 's' : ''}`}
+                aria-label={
+                  item.video
+                    ? `Play ${item.title}`
+                    : `Open ${item.title} — ${item.images.length} image${item.images.length !== 1 ? 's' : ''}`
+                }
                 type="button"
               >
                 <span className="gallery-item-media notch">
@@ -188,14 +195,25 @@ export default function Gallery({ allItems }) {
                     width="560"
                     height="420"
                   />
+                  {item.video && (
+                    <span className="gallery-item-play" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="12" height="12">
+                        <path d="M7 4.5v15l12-7.5z" fill="currentColor" />
+                      </svg>
+                    </span>
+                  )}
                 </span>
                 <span className="gallery-item-caption">
                   <span className="gallery-item-title">{item.title}</span>
                   <span className="gallery-item-data">
-                    {item.images.length > 1 && (
-                      <span className="gallery-item-count">
-                        ×{item.images.length}
-                      </span>
+                    {item.video ? (
+                      <span className="gallery-item-count">Video</span>
+                    ) : (
+                      item.images.length > 1 && (
+                        <span className="gallery-item-count">
+                          ×{item.images.length}
+                        </span>
+                      )
                     )}
                     {item.year}
                   </span>
@@ -247,6 +265,7 @@ export default function Gallery({ allItems }) {
         onPrev={prevImage}
         onNext={nextImage}
         title={lightbox.title}
+        video={lightbox.video}
       />
     </Layout>
   );
