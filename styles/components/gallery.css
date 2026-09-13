@@ -1,0 +1,1000 @@
+@layer components {
+  /* ========================================
+     HOMEPAGE SECTION SYSTEM
+     Shared header + divider used across all homepage sections
+     for consistent rhythm and alignment.
+     ======================================== */
+
+  .home-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-8);
+    margin-bottom: clamp(var(--space-5), 2vw, var(--space-8));
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .home-section-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+  }
+
+  .home-section-eyebrow {
+    font-size: var(--step-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-primary);
+  }
+
+  .home-section-title {
+    font-size: var(--step-2xl);
+    font-weight: var(--font-extrabold);
+    text-transform: none;
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    margin: 0;
+  }
+
+  .home-section-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-size: var(--step-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-text-secondary);
+    transition: color var(--duration-fast) var(--ease-default);
+    align-self: flex-end;
+    padding-bottom: var(--space-1);
+  }
+
+  .home-section-action svg {
+    flex: none;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .home-section-action:hover,
+  .home-section-action:focus-visible {
+    color: var(--color-primary);
+  }
+
+  .home-section-action:hover svg,
+  .home-section-action:focus-visible svg {
+    transform: translateX(4px);
+  }
+
+  /* Blended horizontal rule between sections */
+  .home-rule {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--color-border-subtle) 20%,
+      var(--color-border) 50%,
+      var(--color-border-subtle) 80%,
+      transparent 100%
+    );
+    margin-block: clamp(var(--space-6), 4vw, var(--space-12));
+  }
+
+  /* ========================================
+     GALLERY — Unified grid + lightbox
+     ======================================== */
+
+  /* ====================================================================
+     PORTFOLIO GALLERY SUB-PAGES (/ui-web, /logos, /branding, etc.)
+     Full-bleed title band + wide list of projects with thumbnail grids
+     ==================================================================== */
+
+  /* ====================================================================
+     WORK INDEX HEAD — title on the sheet, data column right
+     ==================================================================== */
+  .work-index-head {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-block: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
+  }
+
+  .work-index-main {
+    grid-column: 2 / 9;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding-right: 40px;
+  }
+
+  .work-index-title {
+    font-size: var(--step-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    text-transform: none;
+    margin: 0;
+  }
+
+  .work-index-desc {
+    font-size: var(--step-base);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-normal);
+    max-width: 44ch;
+    margin: 0;
+  }
+
+  .work-index-stats {
+    grid-column: 10 / 13;
+    padding-right: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-self: end;
+  }
+
+  @media (max-width: 900px) {
+    .work-index-head {
+      grid-template-columns: 1fr;
+      row-gap: var(--space-6);
+    }
+
+    .work-index-head .band-label {
+      grid-column: 1;
+      padding: 0 var(--gutter);
+    }
+
+    .work-index-head .margin-label {
+      writing-mode: horizontal-tb;
+    }
+
+    .work-index-main {
+      grid-column: 1;
+      padding-inline: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    .work-index-stats {
+      grid-column: 1;
+      padding-inline: var(--gutter);
+    }
+  }
+
+  .portfolio-list {
+    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
+    margin-inline: auto;
+    padding-block: clamp(3rem, 6vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  /* Individual project */
+  .portfolio-project {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .portfolio-project-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 80ch;
+  }
+
+  .portfolio-project-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    font-size: var(--step-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-text-tertiary);
+  }
+
+  /* The project's timestamp is its signal datum, and the header is not a
+     link — a chip with no sleep state rests red (see _tokens.css). Blue
+     here also lied: it sat beside the real blue LAUNCH link and read as
+     one more control. */
+  .portfolio-project-year {
+    color: var(--color-accent);
+  }
+
+  /* Plate count — the same mono ×N data chip the All-work captions carry */
+  .portfolio-project-plates {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    color: var(--color-text-tertiary);
+  }
+
+  .portfolio-project-launch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    color: var(--color-primary);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  /* Fingers get a full-height row on this small launch link */
+  @media (pointer: coarse) {
+    .portfolio-project-launch {
+      padding-block: var(--space-3);
+    }
+  }
+
+  .portfolio-project-launch svg {
+    flex: none;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .portfolio-project-launch:hover,
+  .portfolio-project-launch:focus-visible {
+    color: var(--color-primary-hover);
+  }
+
+  .portfolio-project-launch:hover svg,
+  .portfolio-project-launch:focus-visible svg {
+    transform: translate(2px, -2px);
+  }
+
+  .portfolio-project-title {
+    font-size: var(--step-2xl);
+    font-weight: var(--font-bold);
+    text-transform: none;
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .portfolio-project-desc {
+    font-size: var(--step-base);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Thumbnail grid that opens the fullscreen Lightbox */
+  .portfolio-project-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--space-2);
+  }
+
+  /* 18rem columns can't fit a small phone — match .gallery-grid's floor */
+  @media (max-width: 600px) {
+    .portfolio-project-grid {
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    }
+  }
+
+  /* The button stays unclipped so its focus ring is not cut off; the notch
+     and the edge live on the inner media span. */
+  .portfolio-thumb {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .portfolio-thumb-media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: var(--color-surface-2);
+    overflow: hidden;
+  }
+
+  .portfolio-thumb:hover .portfolio-thumb-media,
+  .portfolio-thumb:focus-visible .portfolio-thumb-media {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
+  }
+
+  /* Same archival-mono treatment as the All-work plates below: thumbs stay
+     grayscale at all times, hover lifts them out of the ground (0.73 -> 1),
+     and the lightbox is the only place the work shows in colour. */
+  .portfolio-thumb-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    transition: opacity var(--duration-normal) var(--ease-default);
+  }
+
+  .portfolio-thumb:hover .portfolio-thumb-media img,
+  .portfolio-thumb:focus-visible .portfolio-thumb-media img {
+    opacity: 1;
+  }
+
+  /* Touch devices have no hover — thumbs sit at full presence */
+  @media (hover: none) {
+    .portfolio-thumb-media img {
+      opacity: 1;
+    }
+  }
+
+  /* Legacy body (children mode) — keeps existing pages working */
+  .portfolio-project-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  /* --- Icon swatch grid -------------------------------------------------
+     A wall of small square glyphs (the MWO player icons). Same archival
+     rule as every plate: mono at rest, each swatch comes to colour under
+     the pointer. */
+  .icon-swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: var(--space-2);
+  }
+
+  .icon-swatch-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--color-surface-2);
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    transition: opacity var(--duration-normal) var(--ease-default);
+  }
+
+  .icon-swatch-grid img:hover {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    .icon-swatch-grid img {
+      opacity: 1;
+    }
+  }
+
+  /* --- Video plate ------------------------------------------------------
+     A player alone on the page ground reads as a hole, so it sits on a
+     notched surface plate the same way images sit on thumb plates. The
+     plate centres itself (auto inline margins on a flex item), and the
+     player is grayscaled at rest so a wall of stills stays monochrome like
+     the rest of the system — colour returns on hover/focus, i.e. whenever
+     someone is actually about to watch it. */
+  .portfolio-video {
+    --notch-size: 14px;
+    --notch-edge: var(--color-border-strong);
+    width: min(100%, 60rem);
+    margin-inline: auto;
+    padding: clamp(0.625rem, 1.4vw, 1.125rem);
+    background: var(--color-surface-2);
+  }
+
+  .portfolio-video iframe,
+  .portfolio-video video {
+    display: block;
+    /* Overrides the 560x315 attributes — same ratio, fluid width */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: var(--color-surface-0);
+    filter: grayscale(1) contrast(1.06);
+    transition: filter var(--duration-normal) var(--ease-default);
+  }
+
+  .portfolio-video:hover iframe,
+  .portfolio-video:hover video,
+  .portfolio-video:focus-within iframe,
+  .portfolio-video:focus-within video {
+    filter: none;
+  }
+
+  .portfolio-video:hover,
+  .portfolio-video:focus-within {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
+  }
+
+  /* Fullscreen is the one state that can't rely on hover — the player is
+     lifted into the top layer and the pointer may be nowhere near the plate. */
+  .portfolio-video iframe:fullscreen,
+  .portfolio-video video:fullscreen {
+    filter: none;
+  }
+
+  .gallery-page {
+    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
+    margin-inline: auto;
+    padding-block: clamp(2rem, 5vw, 4rem);
+  }
+
+  /* --- Porthole dials: the category nav -------------------------------
+     Circular cabin-window buttons — the count sits inside the glass, a
+     mono label beneath, and a detached hairline outer ring. The active
+     dial's glass fills with ink and its outer ring goes structural blue. */
+  .gallery-filters {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(var(--space-4), 2.5vw, var(--space-8));
+    margin-bottom: clamp(var(--space-6), 3vw, var(--space-10));
+    padding-bottom: clamp(var(--space-4), 2vw, var(--space-6));
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
+  }
+
+  @media (max-width: 600px) {
+    /* Six dials don't fit a phone, so the row scrolls sideways under the
+       gutters. Two cues say so: the last visible dial is always partly
+       cut (no accidental "that's all"), and the edge that hides more
+       fades out — useScrollEdges (components/) flags which edge on
+       data-scroll, so the fade lifts once you reach the end. Snapping
+       parks a whole dial at the gutter after each swipe. */
+    .gallery-filters {
+      --edge-start: 0px;
+      --edge-end: 0px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin-inline: calc(-1 * var(--gutter));
+      padding-inline: var(--gutter);
+      /* overflow-x: auto also clips vertically. The orbit ring sits 7.5px
+         outside the dial (6px inset + 1.5px stroke) but the button pads
+         only 6px above it, so the ring's top sliver got cut — this is the
+         missing 2px, plus a little air. */
+      padding-top: 4px;
+      scroll-snap-type: x proximity;
+      scroll-padding-inline: var(--gutter);
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--edge-start),
+        #000 calc(100% - var(--edge-end)),
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--edge-start),
+        #000 calc(100% - var(--edge-end)),
+        transparent 100%
+      );
+      transition:
+        --edge-start var(--duration-fast) var(--ease-default),
+        --edge-end var(--duration-fast) var(--ease-default);
+    }
+
+    .gallery-filters[data-scroll~='start-hidden'] {
+      --edge-start: 56px;
+    }
+
+    .gallery-filters[data-scroll~='end-hidden'] {
+      --edge-end: 56px;
+    }
+
+    .gallery-filters::-webkit-scrollbar {
+      display: none;
+    }
+
+    .porthole-filter {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+  }
+
+  .porthole-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    background: transparent;
+    border: none;
+    padding: 6px 6px var(--space-2);
+    cursor: pointer;
+  }
+
+  .porthole-filter-dial {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    /* Zero-blur box-shadow rings antialias more smoothly on small circles
+       than CSS borders do. Quiet inner hardware — the detached orbit is
+       the ring that answers the pointer, exactly like the CTA orbit. */
+    border: none;
+    box-shadow: 0 0 0 1.5px var(--color-border-strong);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      background-color var(--duration-fast) var(--ease-default),
+      box-shadow var(--duration-fast) var(--ease-default);
+  }
+
+  .porthole-filter-dial::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    /* Same pattern as the CTA orbit: neutral ring grey at rest, blue on
+       hover, contracts on press. 1.5px min — 1px antialiases sub-pixel
+       on the curve. Slow inset here is the release; press below is fast. */
+    box-shadow: 0 0 0 1.5px var(--color-ring);
+    transition:
+      inset var(--duration-normal) var(--ease-out),
+      box-shadow var(--duration-fast) var(--ease-default);
+  }
+
+  .porthole-filter-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .porthole-filter:hover .porthole-filter-dial,
+  .porthole-filter:focus-visible .porthole-filter-dial {
+    color: var(--color-text-primary);
+  }
+
+  /* The orbit answers the pointer — guarded off selected dials, which
+     are identity and ignore hover entirely */
+  .porthole-filter:hover:not([aria-pressed='true']):not([aria-current='page'])
+    .porthole-filter-dial::before,
+  .porthole-filter:focus-visible:not([aria-pressed='true']):not(
+      [aria-current='page']
+    )
+    .porthole-filter-dial::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
+  }
+
+  /* Same press the CTAs have: the orbit pulls in and seats against the
+     dial edge, fast on the way in, riding back out on release. Guarded off
+     the selected dial — identity, not a control, so nothing latches. */
+  .porthole-filter:active:not([aria-pressed='true']):not([aria-current='page'])
+    .porthole-filter-dial::before {
+    /* -1.5px, not 0: the dial wears its own 1.5px edge ring, so the orbit
+       seats against that ring's outer edge — anything further out leaves a
+       slit of ground between the two */
+    inset: -1.5px;
+    box-shadow: 0 0 0 1.5px var(--color-primary);
+    transition:
+      inset 80ms var(--ease-out),
+      box-shadow 80ms var(--ease-default);
+  }
+
+  .porthole-filter:hover .porthole-filter-label,
+  .porthole-filter:focus-visible .porthole-filter-label {
+    color: var(--color-text-secondary);
+  }
+
+  /* Selected: signal-red glass (the system's "current item" colour)
+     inside the structural-blue instrument ring. aria-current carries the
+     same state on the sub-page switcher links that aria-pressed carries
+     on the /gallery filter buttons. */
+  .porthole-filter[aria-current='page'] .porthole-filter-dial,
+  .porthole-filter[aria-pressed='true'] .porthole-filter-dial {
+    background-color: var(--color-accent);
+    /* no ring on the glass itself — the detached outer ring carries it */
+    box-shadow: none;
+    color: var(--color-text-inverse);
+  }
+
+  .porthole-filter[aria-current='page'] .porthole-filter-dial::before,
+  .porthole-filter[aria-pressed='true'] .porthole-filter-dial::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-accent);
+  }
+
+  /* Selected: identity, not a control — hovering it changes nothing.
+     Keyboard focus still gets the blue ring on the detached orbit so the
+     focused dial is findable. */
+  .porthole-filter[aria-current='page']:focus-visible
+    .porthole-filter-dial::before,
+  .porthole-filter[aria-pressed='true']:focus-visible
+    .porthole-filter-dial::before {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
+  }
+
+  .porthole-filter[aria-current='page'] .porthole-filter-label,
+  .porthole-filter[aria-pressed='true'] .porthole-filter-label {
+    color: var(--color-text-primary);
+  }
+
+  /* --- Porthole switcher on sub-pages ---------------------------------
+     Same dials as the /gallery filter row, but rendered as links between
+     the sibling galleries. It sits directly on the page (no .gallery-page
+     wrapper), so it carries its own width constraint. */
+  .gallery-switch {
+    width: min(100% - var(--gutter) * 2, var(--max-width-wide));
+    margin-inline: auto;
+    padding-top: clamp(var(--space-6), 3vw, var(--space-8));
+    /* .portfolio-list brings its own top padding — no gap stacking */
+    margin-bottom: 0;
+  }
+
+  a.porthole-filter {
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .gallery-switch {
+      width: auto;
+      margin-inline: 0;
+    }
+  }
+
+  /* --- The plates: image + mono caption strip ------------------------- */
+  .gallery-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: clamp(var(--space-5), 2.5vw, var(--space-8))
+      clamp(var(--space-4), 2vw, var(--space-6));
+  }
+
+  @media (max-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    }
+  }
+
+  .gallery-item {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  /* Rectangular plate, so it carries the notch (see notch.css). The edge is
+     the ::after there; hover just repaints it blue. */
+  .gallery-item-media {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-surface-2);
+  }
+
+  .gallery-item:hover .gallery-item-media,
+  .gallery-item:focus-visible .gallery-item-media {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
+  }
+
+  /* Plates stay in archival mono at ALL times — the lightbox is the only
+     place the work shows in colour. Hover lifts the plate out of the ground
+     instead (0.73 -> 1), so the response is presence, not saturation, and
+     the grid keeps one consistent tone while you sweep across it. */
+  .gallery-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    /* No scale on hover — a zoom re-rasterizes the image every frame and
+       visibly shakes (per the design system: no scale). The lift plus the
+       blue edge is the whole effect. */
+    transition: opacity var(--duration-normal) var(--ease-default);
+  }
+
+  .gallery-item:hover .gallery-item-image,
+  .gallery-item:focus-visible .gallery-item-image {
+    opacity: 1;
+  }
+
+  /* Touch devices have no hover — plates sit at full presence */
+  @media (hover: none) {
+    .gallery-item-image {
+      opacity: 1;
+    }
+  }
+
+  /* Play badge on video plates — bottom-left, clear of the notch corner */
+  .gallery-item-play {
+    position: absolute;
+    left: var(--space-3);
+    bottom: var(--space-3);
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    color: var(--color-text-primary);
+    background: color-mix(in srgb, var(--color-surface-0) 78%, transparent);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 50%;
+    pointer-events: none;
+    transition:
+      color var(--duration-normal) var(--ease-default),
+      border-color var(--duration-normal) var(--ease-default);
+  }
+
+  .gallery-item:hover .gallery-item-play,
+  .gallery-item:focus-visible .gallery-item-play {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .gallery-item-caption {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-top: var(--space-3);
+  }
+
+  .gallery-item-title {
+    font-size: var(--step-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.01em;
+    color: var(--color-text-primary);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .gallery-item:hover .gallery-item-title,
+  .gallery-item:focus-visible .gallery-item-title {
+    color: var(--color-primary);
+  }
+
+  .gallery-item-data {
+    display: inline-flex;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  /* The grace note (defined in _tokens.css, born here): the data line
+     lights signal-red under a blue headline. The media border and title
+     have already gone blue above, so red is subordinate, never the sole
+     hover signal. The ×N count inherits so the whole readout — count and
+     year — rests tertiary and lights as one chip. */
+  .gallery-item:hover .gallery-item-data,
+  .gallery-item:focus-visible .gallery-item-data {
+    color: var(--color-accent);
+  }
+
+  /* --- Infinite scroll ------------------------------------------------ */
+  .gallery-sentinel {
+    height: 1px;
+  }
+
+  .gallery-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-10) 0;
+    color: var(--color-text-tertiary);
+  }
+
+  .gallery-loading-orbit {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .gallery-loading-orbit {
+      animation: circles-rotate 2.4s linear infinite;
+    }
+  }
+
+  .gallery-loading-text {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    text-transform: uppercase;
+  }
+
+  /* --- Lightbox / overlay --- */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-overlay);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--duration-normal) var(--ease-default),
+      visibility var(--duration-normal);
+  }
+
+  .lightbox[open],
+  .lightbox-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-image {
+    filter: none; /* the work always shows in full colour here */
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: var(--shadow-xl);
+    background-color: var(--color-surface-1);
+  }
+
+  /* Video pieces: a 16:9 player sized to the viewport instead of the image.
+     Width is capped by height so the frame never overflows short screens. */
+  .lightbox-video {
+    display: block;
+    width: min(90vw, calc(85vh * 16 / 9), 1280px);
+    aspect-ratio: 16 / 9;
+    border: 0;
+    background-color: var(--color-surface-0);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    z-index: 1;
+    /* 44px minimum tap target */
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-surface-2);
+    border-radius: var(--radius-full);
+    color: var(--color-text-primary);
+    transition:
+      background-color var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default);
+    cursor: pointer;
+  }
+
+  .lightbox-close:hover,
+  .lightbox-close:focus-visible {
+    background-color: var(--color-surface-3);
+    color: var(--color-primary);
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-2) 80%,
+      transparent
+    );
+    backdrop-filter: blur(4px);
+    border-radius: var(--radius-full);
+    color: var(--color-text-primary);
+    transition:
+      background-color var(--duration-fast),
+      transform var(--duration-fast);
+    cursor: pointer;
+  }
+
+  .lightbox-nav:hover,
+  .lightbox-nav:focus-visible {
+    background-color: var(--color-surface-3);
+  }
+
+  .lightbox-prev {
+    left: var(--space-4);
+  }
+
+  .lightbox-next {
+    right: var(--space-4);
+  }
+
+  /* aria-live position readout — literally live status, the accent's own
+     definition (see _tokens.css), so it rests red like .about-stat-open. */
+  .lightbox-counter {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-data);
+    color: var(--color-accent);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-1) 80%,
+      transparent
+    );
+    backdrop-filter: blur(4px);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+  }
+
+  /* The caption floats at a fixed height, so a landscape plate that fills
+     the viewport puts it ON the photograph — and in hull the ink is near
+     black. It rides in the same glass the counter wears, so it reads over
+     any image in either theme. */
+  .lightbox-caption {
+    position: absolute;
+    bottom: var(--space-12);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--color-text-primary);
+    /* Long titles wrap instead of running under the edge controls */
+    max-width: min(85vw, 40rem);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-pill);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-1) 85%,
+      transparent
+    );
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+
+  .lightbox-caption-title {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+  }
+
+  .lightbox-caption-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 600px) {
+    /* Tighter inset but never below the 44px tap minimum */
+    .lightbox-nav {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+
+    .lightbox-prev {
+      left: var(--space-2);
+    }
+
+    .lightbox-next {
+      right: var(--space-2);
+    }
+  }
+}

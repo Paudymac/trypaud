@@ -1,17 +1,19 @@
-import utilStyles from '@/styles/utils.module.css';
 import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
 
 export default function MotionGraphics() {
   return (
-    <PortfolioGalleryTemplate title="Animation">
+    <PortfolioGalleryTemplate
+      title="Animation"
+      description="Motion design, title sequences, and promotional trailers."
+    >
       <PortfolioItem
         date="2024"
         title="Solaris Showdown Launch Trailer"
         launchUrl="https://www.youtube.com/embed/fMzvadaovKo?si=B96t4-RfiuYRTGn5"
-        description="[ Motion Graphics / Cards / Typography ]"
+        description="Motion Graphics / Cards / Typography"
       >
-        <div className={utilStyles.video}>
+        <div className="portfolio-video notch">
           <iframe
             width="560"
             height="315"
@@ -24,14 +26,13 @@ export default function MotionGraphics() {
         </div>
       </PortfolioItem>
 
-      <br />
       <PortfolioItem
         date="2023"
-        title="Mechwarrior 5 Clans Teaser Trailer"
+        title="MechWarrior 5: Clans Teaser Trailer"
         launchUrl="https://www.youtube.com/embed/rYZwO5f9yk4?si=o8egxfFpA8oi-UhB"
-        description="[ Motion Graphics / Cards / Typography ]"
+        description="Motion Graphics / Cards / Typography"
       >
-        <div className={utilStyles.video}>
+        <div className="portfolio-video notch">
           <iframe
             width="560"
             height="315"
@@ -44,14 +45,13 @@ export default function MotionGraphics() {
         </div>
       </PortfolioItem>
 
-      <br />
       <PortfolioItem
         date="2022"
-        title="Mechwarrior 5 DLC 5 Rise of Rasalhague Promo Trailer"
+        title="MechWarrior 5: Rise of Rasalhague Promo Trailer"
         launchUrl="https://www.youtube.com/embed/XfiI-BJnP2I?si=7_CLiuvzMrflRHjj"
-        description="[ Motion Graphics / Cards / Typography ]"
+        description="Motion Graphics / Cards / Typography"
       >
-        <div className={utilStyles.video}>
+        <div className="portfolio-video notch">
           <iframe
             width="560"
             height="315"
@@ -64,40 +64,37 @@ export default function MotionGraphics() {
         </div>
       </PortfolioItem>
 
-      <br />
       <PortfolioItem
         date="2018"
-        title="MechCon Logo Animation"
-        description="[ Motion Graphics / Design / Branding]"
+        title="Mech_Con Logo Animation"
+        description="Motion Graphics / Design / Branding"
       >
-        <div className={utilStyles.video}>
-          <video width="560" height="315" controls>
+        <div className="portfolio-video notch">
+          <video width="560" height="315" controls preload="metadata">
             <source src="/video/mechcon-logo-animation.mp4" type="video/mp4" />
           </video>
         </div>
       </PortfolioItem>
 
-      <br />
       <PortfolioItem
         date="2017"
-        title="MWO Tournamnt Logo Animation"
-        description="[ Motion Graphics / Design / Branding]"
+        title="MWO Tournament Logo Animation"
+        description="Motion Graphics / Design / Branding"
       >
-        <div className={utilStyles.video}>
-          <video width="560" height="315" controls>
+        <div className="portfolio-video notch">
+          <video width="560" height="315" controls preload="metadata">
             <source src="/video/mwowc-pause-screen-2017.mp4" type="video/mp4" />
           </video>
         </div>
       </PortfolioItem>
 
-      <br />
       <PortfolioItem
         date="2016"
         title="Piranha Games Bumper"
-        description="[ Motion Graphics / Design / Branding]"
+        description="Motion Graphics / Design / Branding"
       >
-        <div className={utilStyles.video}>
-          <video width="560" height="315" controls>
+        <div className="portfolio-video notch">
+          <video width="560" height="315" controls preload="metadata">
             <source src="/video/piranha-logo-sound.mp4" type="video/mp4" />
           </video>
         </div>

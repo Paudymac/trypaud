@@ -1,0 +1,111 @@
+@layer components {
+  /* ========================================
+     BACK TO TOP
+     Fixed bottom-right circular button. Hidden below the scroll
+     threshold, fades + slides in once the user has scrolled past it.
+     ======================================== */
+
+  .back-to-top {
+    position: fixed;
+    right: clamp(var(--space-4), 3vw, var(--space-8));
+    /* --btt-lift (set by BackToTop.js) docks the button above the footer */
+    bottom: calc(
+      clamp(var(--space-4), 3vw, var(--space-8)) + var(--btt-lift, 0px)
+    );
+    z-index: var(--z-fixed);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-2) 70%,
+      transparent
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /* Match the nav menu item idle colour so the arrow reads as a
+       peer of the main nav links rather than body copy. */
+    color: var(--color-text-secondary);
+    stroke: var(--color-text-secondary);
+    border: var(--rule-structural) solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    visibility: hidden;
+    transition:
+      opacity 220ms var(--ease-out),
+      transform 220ms var(--ease-out),
+      background-color var(--duration-fast) var(--ease-default),
+      border-color var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default),
+      visibility 0s linear 220ms;
+  }
+
+  .back-to-top[data-visible='true'] {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+    transition:
+      opacity 220ms var(--ease-out),
+      transform 220ms var(--ease-out),
+      background-color var(--duration-fast) var(--ease-default),
+      border-color var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default),
+      visibility 0s linear 0s;
+  }
+
+  .back-to-top svg {
+    stroke-width: 2.75;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .back-to-top:hover svg,
+  .back-to-top:focus-visible svg {
+    transform: translateY(-2px);
+  }
+
+  .back-to-top:active svg {
+    transform: translateY(-5px);
+    transition-duration: 70ms;
+  }
+
+  .back-to-top:hover,
+  .back-to-top:focus-visible {
+    background-color: var(--color-surface-3);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    stroke: var(--color-primary);
+  }
+
+  .back-to-top:active {
+    background-color: var(--color-surface-4);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .back-to-top:hover svg,
+    .back-to-top:focus-visible svg,
+    .back-to-top:active svg {
+      transform: none;
+    }
+    .back-to-top {
+      transition:
+        opacity 120ms linear,
+        visibility 0s linear 120ms;
+      transform: none;
+    }
+    .back-to-top[data-visible='true'] {
+      transition:
+        opacity 120ms linear,
+        visibility 0s linear 0s;
+    }
+  }
+}

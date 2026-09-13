@@ -2,10 +2,17 @@
 const path = require('path');
 
 const nextConfig = {
-  // Explicitly set the workspace root to silence the warning
   outputFileTracingRoot: path.join(__dirname),
 
-  // Configure webpack to support path aliases for JavaScript files
+  // Hide the dev-tools badge — it parks itself over the footer mark
+  devIndicators: false,
+
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920, 2560],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -16,4 +23,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-

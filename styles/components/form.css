@@ -1,0 +1,57 @@
+@layer components {
+  /* ========================================================================
+     FORM — fields on the sheet. Mono labels, 2px rules, no shadows.
+     Base input/label/textarea styling lives in _base.css.
+     ======================================================================== */
+
+  .form-group {
+    margin-bottom: var(--space-6);
+  }
+
+  .form-group:last-of-type {
+    margin-bottom: var(--space-8);
+  }
+
+  /* Honeypot — visually removed, still in the accessibility tree order */
+  .form-honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .form-message {
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--step-data);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: var(--rule-structural) solid;
+  }
+
+  .form-message-success {
+    color: var(--color-success);
+    border-color: var(--color-success);
+  }
+
+  .form-message-error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+  }
+
+  /* Legacy wrappers still used on pages-router routes */
+  .form-section {
+    padding-block: var(--section-py);
+  }
+
+  .form-container {
+    max-width: var(--max-width-narrow);
+    margin-inline: auto;
+  }
+}

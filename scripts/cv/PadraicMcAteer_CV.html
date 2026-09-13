@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Padraic McAteer – CV 2026</title>
+<!--
+  Source for public/PadraicMcAteer_CV_2026.pdf.
+  Rebuild after editing (from the repo root, PowerShell):
+    & "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf="$PWD\public\PadraicMcAteer_CV_2026.pdf" "$PWD\scripts\cv\PadraicMcAteer_CV.html"
+-->
+<style>
+  /* Static Sora instances (fonts/), not the variable webfont: Chrome's PDF
+     writer embeds variable fonts as Type3 glyph outlines, which some PDF
+     readers and CV parsers handle badly. Static files embed as TrueType. */
+  @font-face { font-family: 'Sora'; font-weight: 400; src: url('fonts/Sora-400.woff') format('woff'); }
+  @font-face { font-family: 'Sora'; font-weight: 600; src: url('fonts/Sora-600.woff') format('woff'); }
+  @font-face { font-family: 'Sora'; font-weight: 800; src: url('fonts/Sora-800.woff') format('woff'); }
+  @font-face { font-family: 'Exo 2'; font-weight: 800; src: url('fonts/Exo2-800.woff') format('woff'); }
+  :root {
+    --ink: #17181c;
+    --ink-2: rgba(23, 24, 28, 0.72);
+    --ink-3: rgba(23, 24, 28, 0.55);
+    --rule: rgba(23, 24, 28, 0.18);
+    --rule-soft: rgba(23, 24, 28, 0.09);
+    --accent: #cb241d;
+    --font: 'Sora', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --mono: ui-monospace, Menlo, Consolas, 'SF Mono', monospace;
+  }
+
+  @page { size: A4; margin: 14mm 15mm 14mm; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    color: var(--ink);
+    background: #fff;
+    font-size: 9.4pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    /* A4 210mm less the 15mm @page side margins. Fixed so an over-wide
+       header can never trigger Chrome's print shrink-to-fit. */
+    width: 180mm;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 52mm;
+    column-gap: 9mm;
+    grid-template-rows: auto 1fr;
+  }
+
+  /* ---------- Header ---------- */
+  .masthead {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: end;
+    gap: 5mm;
+    padding-bottom: 5mm;
+    margin-bottom: 6mm;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .name {
+    font-size: 21pt;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin: 0 0 1.5mm;
+    white-space: nowrap;
+  }
+  .name .nick { font-weight: 400; color: var(--ink-2); }
+  .role {
+    font-size: 10.5pt;
+    font-weight: 600;
+    margin: 0 0 1mm;
+  }
+  .role-sub {
+    margin: 0;
+    color: var(--ink-2);
+  }
+  .contact {
+    text-align: right;
+    font-size: 8.4pt;
+    line-height: 1.7;
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .contact a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  .contact .tag {
+    display: block;
+    font-family: var(--mono);
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 1mm;
+  }
+  /* The site header lockup (trefoil knot + tryPaud in Exo 2), desaturated.
+     On the site the knot and "Paud" share the red, the triangle and "try"
+     the blue; here the same pairing is kept in two greys. */
+  .lockup { display: inline-flex; align-items: center; gap: 0.6mm; align-self: start; }
+  .knot { width: 9mm; height: 9mm; display: block; }
+  .knot-tri { fill: var(--ink-3); }
+  .knot-loop { fill: none; stroke: var(--ink); stroke-width: 7; stroke-linejoin: miter; stroke-miterlimit: 10; }
+  .wordmark { font-family: 'Exo 2', var(--font); font-weight: 800; font-size: 13.5pt; letter-spacing: -0.01em; line-height: 1; }
+  .wm-try { color: var(--ink-3); }
+  .wm-paud { color: var(--ink); }
+  .contact .tag::before {
+    content: '';
+    display: inline-block;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 5px;
+    vertical-align: 1px;
+  }
+
+  /* ---------- Sections ---------- */
+  h2 {
+    font-family: var(--mono);
+    font-size: 7pt;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid var(--rule);
+  }
+  h2 .n { color: var(--accent); margin-right: 2mm; }
+  section { margin-bottom: 6.5mm; }
+  section:last-child { margin-bottom: 0; }
+
+  .summary { margin: 0; font-size: 9.8pt; line-height: 1.55; }
+
+  /* ---------- Career ---------- */
+  .job { margin-bottom: 5mm; }
+  .job-head, .job-note, h2 { break-after: avoid; }
+  aside section { break-inside: avoid; }
+  .job li { break-inside: avoid; }
+  .job-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 4mm;
+    margin-bottom: 1.5mm;
+  }
+  .job-org { font-weight: 800; font-size: 10.5pt; letter-spacing: 0.01em; }
+  .job-title { font-weight: 600; color: var(--ink-2); }
+  .job-title::before { content: '·'; margin: 0 1.5mm; color: var(--ink-3); font-weight: 400; }
+  .job-dates {
+    font-family: var(--mono);
+    font-size: 7.4pt;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+  .job-note { margin: 0 0 1.5mm; color: var(--ink-2); font-size: 8.8pt; }
+  .job ul { margin: 0; padding: 0; list-style: none; }
+  .job li {
+    position: relative;
+    padding-left: 4mm;
+    margin-bottom: 0.9mm;
+  }
+  .job li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.58em;
+    width: 1.8mm; height: 1px;
+    background: var(--ink-3);
+  }
+  .job li strong { font-weight: 600; }
+
+  /* ---------- Side column ---------- */
+  aside section { margin-bottom: 6mm; }
+  .skill-group { margin-bottom: 3mm; }
+  .skill-group h3 {
+    font-size: 8.6pt;
+    font-weight: 600;
+    margin: 0 0 0.8mm;
+  }
+  .skill-group p { margin: 0; color: var(--ink-2); font-size: 8.6pt; line-height: 1.5; }
+
+  .edu { margin-bottom: 2.5mm; }
+  .edu strong { display: block; font-weight: 800; font-size: 8.8pt; }
+  .edu span { color: var(--ink-2); font-size: 8.6pt; }
+
+  .cert { display: grid; grid-template-columns: 1fr auto; gap: 3mm; margin-bottom: 1.4mm; font-size: 8.6pt; }
+  .cert span:last-child { font-family: var(--mono); font-size: 7.2pt; color: var(--ink-3); letter-spacing: 0.06em; }
+
+  .links a { color: var(--ink); text-decoration: none; }
+  .links p { margin: 0 0 1mm; font-size: 8.6pt; }
+  .links .k { font-family: var(--mono); font-size: 7.2pt; color: var(--ink-3); letter-spacing: 0.06em; display: block; }
+
+  @media screen {
+    body { background: #e9eaed; padding: 10mm 0; }
+    .page { background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,.12); box-sizing: content-box; margin: 0 auto; padding: 14mm 15mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div>
+      <h1 class="name">Padraic McAteer <span class="nick">(Paudy)</span></h1>
+      <p class="role">Senior Designer &amp; Front-end Developer</p>
+      <p class="role-sub">UI and product design, React and CSS, branding and identity. Eighteen years of practice.</p>
+    </div>
+    <div class="contact">
+      <span class="tag">Open to enquiries</span>
+      <a href="https://www.trypaud.com">trypaud.com</a><br>
+      <a href="mailto:paudy@trypaud.com">paudy@trypaud.com</a><br>
+      <a href="https://www.linkedin.com/in/padraic-mcateer-trypaud/">linkedin.com/in/padraic-mcateer-trypaud</a><br>
+      Ireland · Remote
+    </div>
+    <div class="lockup" aria-label="tryPaud">
+      <svg class="knot" viewBox="15 11 70 70" aria-hidden="true">
+        <g class="knot-tri">
+          <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 A29.5,29.5 0 0 0 44.04,30.33 Z"/>
+          <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 A29.5,29.5 0 0 0 44.04,30.33 Z" transform="rotate(120 50 50)"/>
+          <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 A29.5,29.5 0 0 0 44.04,30.33 Z" transform="rotate(240 50 50)"/>
+        </g>
+        <g class="knot-loop">
+          <path d="M43.2,53.93 A22,22 0 0,0 71.52,37.57 A22,22 0 0,0 43.2,53.93 Z"/>
+          <path d="M43.2,53.93 A22,22 0 0,0 71.52,37.57 A22,22 0 0,0 43.2,53.93 Z" transform="rotate(120 50 50)"/>
+          <path d="M43.2,53.93 A22,22 0 0,0 71.52,37.57 A22,22 0 0,0 43.2,53.93 Z" transform="rotate(240 50 50)"/>
+        </g>
+      </svg>
+      <span class="wordmark"><span class="wm-try">try</span><span class="wm-paud">Paud</span></span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2><span class="n">01</span>Profile</h2>
+      <p class="summary">
+        I design interfaces and build the front-end that delivers them. My work runs from the first sketch through
+        design systems to production React, Next.js and CSS, and I take responsibility for how the pieces fit
+        together. Behind that sits a full design background: branding and logo systems, typography, illustration,
+        motion and print. Most of the last decade was spent at Piranha Games on the MechWarrior franchise, designing
+        and building the marketing sites and the online store that funded the games.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span>Career</h2>
+
+      <article class="job">
+        <div class="job-head">
+          <div><span class="job-org">Screendragon</span><span class="job-title">Frontend Design Engineer</span></div>
+          <span class="job-dates">SEP 2025 → PRESENT</span>
+        </div>
+        <ul>
+          <li>Build workflow applications in Vue and React for the Screendragon work-management platform, from design through to production HTML, CSS, JavaScript and TypeScript.</li>
+          <li>Design and build a digital asset management application within the platform.</li>
+          <li>Provide design support across the product and fix front-end bugs, working with product and engineering in an agile process.</li>
+          <li>Use Claude Code and Claude Design day to day to write code and produce designs, and to move faster from idea to working feature.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <div><span class="job-org">Piranha Games</span><span class="job-title">Interactive Designer</span></div>
+          <span class="job-dates">AUG 2013 → JAN 2025</span>
+        </div>
+        <p class="job-note">Design lead for the marketing team. MechWarrior Online, MW5: Mercenaries and MW5: Clans.</p>
+        <ul>
+          <li><strong>Front-end.</strong> Designed and built the marketing sites and storefront for the franchise, from wireframe to production HTML, CSS and JavaScript. Desktop-first responsive layouts, scaled down carefully for mobile.</li>
+          <li><strong>MWO product pages.</strong> Owned the purchase flow for eleven years. Designed it, measured how players used it, and removed what the data showed nobody needed. Mech pack sales funded the game&rsquo;s development.</li>
+          <li><strong>MW5: Clans launch site.</strong> Rebuilt in-game UI elements as CSS components to frame the site, with a utility-first CSS setup and WebP images for a fast responsive build.</li>
+          <li><strong>Team practice.</strong> Trained developers in CSS, set the front-end conventions for the marketing sites, and ran discovery sessions for content architecture and user flows.</li>
+          <li><strong>Brand and identity.</strong> Led the logos, brand systems and brand guides for MW5: Mercenaries, MW5: Clans, five DLC releases and the 2023 MechWarrior Online Legends rebrand.</li>
+          <li><strong>Mech_Con.</strong> Created the design system for the studio&rsquo;s annual convention, applied across website, merchandise, streams, video, advertising and venue signage.</li>
+          <li><strong>Print and collateral.</strong> Designed game manuals, technical manuals and event material. Art-directed key art with external agencies.</li>
+          <li><strong>Launch and pitch.</strong> Planned launch campaigns with marketing for two games shipped on PlayStation, Xbox and PC. Produced pitch decks with the CEO and creative directors that supported investment, licence renewal and the studio&rsquo;s acquisition by EG7.</li>
+          <li>Provided UI designs and insight for in-game features, and analysed site data to direct improvements.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <div><span class="job-org">Smartt</span><span class="job-title">Web / Graphic Designer</span></div>
+          <span class="job-dates">DEC 2010 → JUN 2013</span>
+        </div>
+        <ul>
+          <li>Design lead for Connect the Doc, owning the UI and UX of a web product with a bespoke PHP back end.</li>
+          <li>Ran client design meetings in an agile process. Organised sprints, prioritised design tasks and handled quality assurance.</li>
+          <li>Rebranded the company alongside the CEO and CMO, and designed the Columbia College rebrand and brand guidelines.</li>
+          <li>Applied site analytics data to web design and client consultancy.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <div><span class="job-org">Screendragon</span><span class="job-title">UI / UX Designer</span></div>
+          <span class="job-dates">MAY 2007 → OCT 2010</span>
+        </div>
+        <ul>
+          <li>Delivered complex interactive products in Flash and ActionScript for global corporate clients.</li>
+          <li>Built prototypes and feature proposals for the development team, and refined wireframes and mockups with the Art Director for implementation.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <div><span class="job-org">Independent</span><span class="job-title">TryPaud</span></div>
+          <span class="job-dates">2025 → PRESENT</span>
+        </div>
+        <ul>
+          <li>Designed and built trypaud.com in Next.js 15 and React: layered CSS architecture, dark and light themes, an animated canvas hero and accessible components.</li>
+          <li>Identity and logo work for small businesses, including Kirkwood Carpentry.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <aside>
+    <section>
+      <h2><span class="n">03</span>Skills</h2>
+      <div class="skill-group">
+        <h3>Front-end</h3>
+        <p>HTML, CSS (grid, layers, custom properties, container queries), Sass, Tailwind CSS, JavaScript, TypeScript, React, Vue, Next.js, responsive and accessible interfaces, performance, WordPress.</p>
+      </div>
+      <div class="skill-group">
+        <h3>Design</h3>
+        <p>UI and UX, product design, design systems, wireframes and prototypes, branding and identity, logo design, typography, art direction, iconography, illustration, motion, video editing, print and email design.</p>
+      </div>
+      <div class="skill-group">
+        <h3>Tools</h3>
+        <p>Figma, Photoshop, Illustrator, InDesign, After Effects, Premiere, Git and GitHub, Perforce, Docker, Vercel, Claude Code, Claude Design.</p>
+      </div>
+      <div class="skill-group">
+        <h3>Ways of working</h3>
+        <p>Agile teams, discovery and content architecture, data-led iteration, working directly with developers, executives and external agencies.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">04</span>Education</h2>
+      <div class="edu">
+        <strong>University of Ulster</strong>
+        <span>MSc Computing and Design</span>
+      </div>
+      <div class="edu">
+        <strong>University of Ulster</strong>
+        <span>BSc (Hons) Interactive Multimedia Design</span>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">05</span>Courses</h2>
+      <div class="cert"><span>BrainStation, Artificial Intelligence</span><span>2024</span></div>
+      <div class="cert"><span>Smashing Magazine, Interface Design Patterns</span><span>2014</span></div>
+      <div class="cert"><span>Habanero, User Experience</span><span>2011</span></div>
+    </section>
+
+    <section class="links">
+      <h2><span class="n">06</span>Selected work</h2>
+      <p><span class="k">CASE STUDY</span><a href="https://www.trypaud.com/case-studies/design-of-clans">Design of Clans</a></p>
+      <p><span class="k">CASE STUDY</span><a href="https://www.trypaud.com/case-studies/mw5-mercenaries">MW5 Mercenaries</a></p>
+      <p><span class="k">CASE STUDY</span><a href="https://www.trypaud.com/case-studies/ui-mwo-product-pages">UI for MWO product pages</a></p>
+      <p><span class="k">CASE STUDY</span><a href="https://www.trypaud.com/case-studies/mechcon-design-system">Mech_Con design system</a></p>
+      <p><span class="k">LIVE</span><a href="https://mw5clans.com">mw5clans.com</a></p>
+      <p><span class="k">LIVE</span><a href="https://mw5mercs.com">mw5mercs.com</a></p>
+    </section>
+  </aside>
+
+
+</div>
+
+</body>
+</html>

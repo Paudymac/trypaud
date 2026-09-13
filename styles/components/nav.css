@@ -1,0 +1,720 @@
+@layer components {
+  /* ========================================================================
+     NAV — the top row of the sheet. Height ~62px, 2px bottom rule.
+     cols 1–4 mark + wordmark · cols 5–10 pill items · cols 10–13 actions.
+     ======================================================================== */
+
+  /* Glass: the starfield reads through the chrome */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-0) 72%,
+      transparent
+    );
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    backdrop-filter: blur(14px) saturate(1.1);
+    border-bottom: var(--rule-structural) solid var(--color-border);
+  }
+
+  .nav-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    height: var(--header-height);
+  }
+
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    /* Optically half the mark's drawn width (~16px): the svg box carries
+       ~7px of empty padding each side, so 1px of flex gap ≈ 8px visual. */
+    gap: 1px;
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .nav-container > .nav-logo {
+    grid-column: 1 / 4;
+    padding-left: var(--gutter);
+  }
+
+  .nav-wordmark {
+    font-family: var(--font-wordmark, var(--font-family));
+    font-size: 21px;
+    font-weight: var(--font-bold);
+    /* Bold mixed case at this size wants slightly negative tracking */
+    letter-spacing: -0.01em;
+    color: var(--color-text-primary);
+  }
+
+  /* TRY = structural blue, PAUD = signal red — mirrors the mark:
+     blue TRY answers the blue triangle, red PAUD the red knot */
+  .nav-wordmark-try {
+    color: var(--color-primary);
+  }
+
+  .nav-wordmark-paud {
+    color: var(--color-accent);
+  }
+
+  /* --- Pill items — centred on the sheet (cols 4–10 span the true middle) --- */
+  .nav-links {
+    grid-column: 4 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: var(--font-medium);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      background-color var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    color: var(--color-primary);
+  }
+
+  /* Current page — red is the state channel, and it is identity, not a
+     control: the pill does not answer the pointer at all. The :hover /
+     :focus-visible / :active selectors still have to be written out, though —
+     .nav-link:hover and a:hover outrank the bare class, so without them the
+     red pill would go blue on hover. Keyboard focus keeps the global outline
+     ring from _base.css.
+
+     Every blue rule below is guarded with :not(.nav-link-active) rather than
+     left to source order — .nav-dropdown-trigger[aria-expanded] and
+     .nav-dropdown-trigger:hover .nav-dropdown-chev both tie or outrank these,
+     so order alone let blue bleed onto the red pill. */
+  .nav-link-active,
+  .nav-link-active:hover,
+  .nav-link-active:focus-visible,
+  .nav-link-active:active {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverse);
+  }
+
+  /* --- Disclosure: the one place a triangle-ish glyph means state --- */
+  .nav-dropdown-trigger {
+    gap: 5px;
+  }
+
+  .nav-dropdown-chev {
+    flex: none;
+    color: var(--color-text-tertiary);
+    transition:
+      transform var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-dropdown-trigger:hover:not(.nav-link-active) .nav-dropdown-chev,
+  .nav-dropdown-trigger:focus-visible:not(.nav-link-active) .nav-dropdown-chev {
+    color: var(--color-primary);
+  }
+
+  /* While its panel is open the trigger stays lit — the pointer has moved
+     off it into the panel, so :hover has already dropped. Without this the
+     open menu's own trigger reads as inactive. */
+  .nav-dropdown-trigger[aria-expanded='true']:not(.nav-link-active) {
+    color: var(--color-primary);
+  }
+
+  .nav-dropdown-trigger[aria-expanded='true']:not(.nav-link-active)
+    .nav-dropdown-chev {
+    color: var(--color-primary);
+  }
+
+  /* Rotation is geometry, not colour, so the active pill gets it too — the
+     chevron still has to report open/closed. */
+  .nav-dropdown-trigger[aria-expanded='true'] .nav-dropdown-chev {
+    transform: rotate(180deg);
+  }
+
+  /* The chevron rides the pill's ink in every state */
+  .nav-link-active .nav-dropdown-chev,
+  .nav-link-active:hover .nav-dropdown-chev,
+  .nav-link-active:focus-visible .nav-dropdown-chev {
+    color: var(--color-text-inverse);
+  }
+
+  /* Click state — ink drops a tier and the pill catches the subtle tint,
+     the same press .btn-secondary answers with. After the aria-expanded
+     rules so an open trigger still reports the click that closes it. */
+  .nav-link:active:not(.nav-link-active) {
+    color: var(--color-primary-active);
+    background-color: var(--color-primary-subtle);
+  }
+
+  .nav-link:active:not(.nav-link-active) .nav-dropdown-chev {
+    color: var(--color-primary-active);
+  }
+
+  /* --- Actions: theme toggle + Hire pill --- */
+  .nav-actions {
+    grid-column: 10 / 13;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: var(--gutter);
+  }
+
+  /* Two-cell HULL/VOID pill. flex:none is load-bearing — it clips otherwise. */
+  .theme-toggle {
+    display: flex;
+    flex: none;
+    border: var(--rule-structural) solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+    background: transparent;
+    padding: 0;
+  }
+
+  /* Icon-only cells: a 14px sun / moon each, the words in aria-label.
+     Height matches the Hire pill beside it. */
+  .theme-toggle-cell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    min-height: 28px;
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      background-color var(--duration-fast) var(--ease-default);
+  }
+
+  .theme-toggle-cell svg {
+    flex: none;
+    width: 14px;
+    height: 14px;
+  }
+
+  .theme-toggle-cell:hover,
+  .theme-toggle-cell:focus-visible {
+    color: var(--color-primary);
+  }
+
+  /* The toggle is a segmented switch, not a content-state marker: its "on"
+     cell is a thumb, so it stays neutral. Red marks where you are in the
+     site, and three reds in one header row would stop meaning anything. */
+  .theme-toggle-cell[aria-pressed='true'],
+  .theme-toggle-cell[aria-pressed='true']:hover,
+  .theme-toggle-cell[aria-pressed='true']:focus-visible {
+    background-color: var(--color-text-primary);
+    color: var(--color-text-inverse);
+  }
+
+  /* ========================================================================
+     MEGA PANEL — a 12-column sheet under the nav, 2px rules
+     ======================================================================== */
+  .nav-mega-panel {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: var(--z-dropdown);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-0) 82%,
+      transparent
+    );
+    -webkit-backdrop-filter: blur(18px) saturate(1.1);
+    backdrop-filter: blur(18px) saturate(1.1);
+    border-bottom: var(--rule-structural) solid var(--color-border);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--duration-fast) var(--ease-default),
+      transform var(--duration-fast) var(--ease-default),
+      visibility var(--duration-fast);
+  }
+
+  .nav-mega-panel[data-open='true'] {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .nav-panel-feature {
+    grid-column: 1 / 4;
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: 28px var(--gutter);
+    border-right: var(--rule-structural) solid var(--color-border);
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  /* Feature icon sits in a porthole ring */
+  .nav-panel-feature-icon {
+    color: var(--color-primary);
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    /* Ring as zero-blur box-shadow — borders pixelate on small circles */
+    border: none;
+    box-shadow: 0 0 0 1.5px var(--color-border-strong);
+    transition: box-shadow var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-panel-feature:hover .nav-panel-feature-icon,
+  .nav-panel-feature:focus-visible .nav-panel-feature-icon {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
+  }
+
+  .nav-panel-feature:active .nav-panel-feature-icon {
+    box-shadow: 0 0 0 1.5px var(--color-primary-active);
+  }
+
+  /* The studies feature carries a count instead of a glyph — the number
+     sits inside the glass exactly like the /gallery porthole dials */
+  .nav-panel-feature-dial {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: var(--font-medium);
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    transition:
+      box-shadow var(--duration-fast) var(--ease-default),
+      color var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-panel-feature:hover .nav-panel-feature-dial,
+  .nav-panel-feature:focus-visible .nav-panel-feature-dial {
+    color: var(--color-text-primary);
+  }
+
+  .nav-panel-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nav-panel-feature-text strong {
+    font-size: 17px;
+    font-weight: var(--font-bold);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-panel-feature-text span {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  .nav-panel-feature-arrow {
+    margin-left: auto;
+    color: var(--color-primary);
+    flex: none;
+    transition: transform var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-panel-feature:hover .nav-panel-feature-arrow,
+  .nav-panel-feature:focus-visible .nav-panel-feature-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Gallery: six items, three columns, 1px row rules */
+  .nav-panel-items {
+    grid-column: 4 / 13;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-panel-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 16px var(--gutter);
+    border-bottom: var(--rule-row) solid var(--color-border-subtle);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: background-color var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-panel-item:nth-last-child(-n + 3) {
+    border-bottom: none;
+  }
+
+  .nav-panel-item:hover,
+  .nav-panel-item:focus-visible {
+    background-color: var(--color-surface-1);
+  }
+
+  /* Click state — the row presses a surface deeper */
+  .nav-panel-item:active {
+    background-color: var(--color-surface-2);
+  }
+
+  /* Category icons sit in small porthole rings */
+  .nav-panel-item-icon {
+    color: var(--color-primary);
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 0 1.5px var(--color-border-strong);
+    transition: box-shadow var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-panel-item:hover .nav-panel-item-icon,
+  .nav-panel-item:focus-visible .nav-panel-item-icon {
+    box-shadow: 0 0 0 1.5px var(--color-ring-primary);
+  }
+
+  .nav-panel-item:active .nav-panel-item-icon {
+    box-shadow: 0 0 0 1.5px var(--color-primary-active);
+  }
+
+  .nav-panel-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .nav-panel-item-text strong {
+    font-size: 14px;
+    font-weight: var(--font-bold);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-panel-item-text span {
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--color-text-tertiary);
+  }
+
+  /* Case studies: four plates in a row */
+  .nav-panel-cases {
+    grid-column: 4 / 13;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nav-panel-case {
+    padding: 16px var(--gutter) 20px;
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .nav-panel-case + .nav-panel-case {
+    border-left: var(--rule-row) solid var(--color-border-subtle);
+  }
+
+  /* Rectangular plate, so it carries the notch (see notch.css) */
+  .nav-panel-case-thumb {
+    position: relative;
+    height: 110px;
+    overflow: hidden;
+    background-color: var(--color-surface-2);
+  }
+
+  .nav-panel-case:hover .nav-panel-case-thumb,
+  .nav-panel-case:focus-visible .nav-panel-case-thumb {
+    --notch-edge: var(--color-primary);
+    --notch-weight: 2px;
+  }
+
+  /* Click state — the lit edge presses a tier deeper */
+  .nav-panel-case:active .nav-panel-case-thumb {
+    --notch-edge: var(--color-primary-active);
+  }
+
+  /* Mono at all times, both themes — matching the gallery plates. Hover
+     lifts the thumb (0.73 -> 1) rather than saturating it. */
+  .nav-panel-case-image {
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0.73;
+    transition: opacity var(--duration-normal) var(--ease-default);
+  }
+
+  .nav-panel-case:hover .nav-panel-case-image,
+  .nav-panel-case:focus-visible .nav-panel-case-image {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    .nav-panel-case-image {
+      opacity: 1;
+    }
+  }
+
+  .nav-panel-case-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 10px;
+  }
+
+  .nav-panel-case-text strong {
+    font-size: 13px;
+    font-weight: var(--font-bold);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-panel-case:hover .nav-panel-case-text strong,
+  .nav-panel-case:focus-visible .nav-panel-case-text strong {
+    color: var(--color-primary);
+  }
+
+  /* Grace note (see _tokens.css): the study number is the datum — it alone
+     lights red; the description around it is prose and never takes red. */
+  .nav-panel-case-num {
+    font-family: var(--font-mono);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-panel-case:hover .nav-panel-case-num,
+  .nav-panel-case:focus-visible .nav-panel-case-num {
+    color: var(--color-accent);
+  }
+
+  .nav-panel-case-text span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-text-tertiary);
+  }
+
+  /* ========================================================================
+     MOBILE — at 900px the nav collapses to the panel, the same boundary
+     where page content drops to a single column (gallery, case studies,
+     _utilities' .grid-12). One breakpoint, one mobile chrome.
+     ======================================================================== */
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .nav-container {
+      display: none;
+    }
+
+    .nav-mega-panel {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-height);
+      padding: 0 var(--gutter);
+    }
+
+    .mobile-nav .nav-actions {
+      padding-right: 0;
+    }
+
+    /* The theme pill matches the Menu pill beside it: same 44px height
+       (the wrapper's 1px rule is inside it, so the cells reach 42), each
+       cell a finger-sized square around a 16px glyph. */
+    .mobile-nav .theme-toggle {
+      min-height: 44px;
+    }
+
+    .mobile-nav .theme-toggle-cell {
+      min-width: 42px;
+      padding: 0;
+    }
+
+    .mobile-nav .theme-toggle-cell svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* The menu's full-width CTA keeps .btn-sm type but takes a tap height */
+    .mobile-menu .btn {
+      min-height: 44px;
+    }
+
+    .mobile-menu-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: transparent;
+      border: var(--rule-structural) solid var(--color-border-strong);
+      border-radius: var(--radius-pill);
+      color: var(--color-text-primary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: var(--font-medium);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      min-height: 44px;
+      cursor: pointer;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 16px;
+    }
+
+    .hamburger-bar {
+      height: 2px;
+      width: 100%;
+      background: currentColor;
+      transition: transform var(--duration-fast) var(--ease-default);
+    }
+
+    .hamburger-open .hamburger-bar:first-child {
+      transform: translateY(3px) rotate(45deg);
+    }
+
+    .hamburger-open .hamburger-bar:last-child {
+      transform: translateY(-3px) rotate(-45deg);
+    }
+
+    /* Rendered as a sibling of .site-header (see MobileMenu.js) — the
+       header's backdrop-filter would otherwise become this fixed panel's
+       containing block and collapse it to zero height. */
+    .mobile-menu {
+      display: block;
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: var(--z-overlay);
+      background-color: color-mix(
+        in srgb,
+        var(--color-surface-0) 86%,
+        transparent
+      );
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      overflow-y: auto;
+      overflow-x: hidden;
+      overscroll-behavior: contain;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition:
+        opacity var(--duration-fast) var(--ease-default),
+        transform var(--duration-fast) var(--ease-default),
+        visibility var(--duration-fast);
+    }
+
+    .mobile-menu-open {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+
+    .mobile-menu-list {
+      list-style: none;
+      margin: 0;
+      padding: var(--space-4) var(--gutter) var(--space-16);
+    }
+
+    .mobile-menu-group {
+      border-bottom: var(--rule-row) solid var(--color-border-subtle);
+    }
+
+    .mobile-menu-group-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: var(--space-4) 0;
+      font-size: 17px;
+      font-weight: var(--font-bold);
+      color: var(--color-text-primary);
+      cursor: pointer;
+      min-height: 44px;
+    }
+
+    .mobile-menu-group-chev {
+      font-family: var(--font-mono);
+      font-size: 17px;
+      color: var(--color-text-tertiary);
+    }
+
+    .mobile-menu-sublist {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 var(--space-4);
+    }
+
+    .mobile-menu-link {
+      display: flex;
+      align-items: center;
+      padding: var(--space-3) 0;
+      font-size: 15px;
+      font-weight: var(--font-normal);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      min-height: 44px;
+    }
+
+    .mobile-menu-sublist .mobile-menu-link {
+      padding-left: var(--space-4);
+    }
+
+    /* The current page's link is identity, not a control — no hover blue.
+       Keyboard focus keeps the global outline ring. */
+    .mobile-menu-link:not([aria-current='page']):hover,
+    .mobile-menu-link:not([aria-current='page']):focus-visible {
+      color: var(--color-primary);
+    }
+
+    .mobile-menu-link-featured {
+      color: var(--color-primary);
+      font-weight: var(--font-medium);
+    }
+
+    /* Top-level plain links (About) match group trigger weight */
+    .mobile-menu-group > .mobile-menu-link {
+      font-size: 17px;
+      font-weight: var(--font-bold);
+      color: var(--color-text-primary);
+      padding: var(--space-4) 0;
+    }
+  }
+}

@@ -1,155 +1,150 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
-import styles from '@/components/caseStudy.module.css';
 import Image from 'next/image';
 
 export default function CaseStudy() {
   return (
     <CaseStudyTemplate
+      index="01"
       title="Design of Clans"
-      description="The challenge was to create a brand and player experience to support the release of MECHWARRIOR 5: CLANS."
+      description="Brand, logo and launch site for MechWarrior 5: Clans, a new game that needed an identity of its own."
       heroImage="/images/case-studies/clans-img-lg-case-study4.webp"
+      year="2024"
+      client="Piranha Games"
+      roles={[
+        'Discovery',
+        'Competition Analysis',
+        'Branding',
+        'Logo Design',
+        'Wireframes',
+        'Mockups',
+        'Frontend Dev',
+      ]}
+      launchUrl="https://mw5clans.com"
+      nextStudy={{
+        href: '/case-studies/mw5-mercenaries',
+        title: 'MW5 Mercenaries Marketing',
+      }}
     >
-      <div className={styles.caseStudyContainer}>
+      <div>
         <h2>
-          CLANS is the latest standalone release from Piranha Games which takes
-          place in the Mechwarrior Universe however it is a completely different
-          game from MW5 Mercenaries.{' '}
+          The same universe, but a different kind of game. The brand had to say
+          both.
         </h2>
-        <h3>My Role</h3>
-        <ul>
-          <li>Discovery</li>
-          <li>Competition Analysis</li>
-          <li>Branding</li>
-          <li>Logo Design</li>
-          <li>Content</li>
-          <li>Wireframes</li>
-          <li>Mockups</li>
-          <li>Frontend Dev</li>
-        </ul>
         <p>
-          The challenge was to create a brand and marketing experience to
-          support the release of MECHWARRIOR 5: CLANS. It features a new story
-          rich campaign which you can play with 5 other friends in a more
-          immersive experience utilising the latest technology updates from
-          unreal engine.
+          Clans is a story-driven campaign for up to five players, quite
+          different from the open sandbox of MW5 Mercenaries despite the shared
+          name. I was responsible for the brand and the marketing experience at
+          launch. The first requirement was clear: nobody should mistake this
+          for the previous game.
         </p>
         <p>
-          The key differentiator from MW5: Mercs was the story and characters.
-          An emphasis was placed on creating a compelling narrative. The logo
-          and branding had to have a look separating it from the previous
-          MechWarrior 5 game. The branding aimed to highlight the story update
-          as much as possible.
+          The story and characters were the real point of difference, so the
+          branding drew on them wherever it could. The logo, site and campaign
+          all pointed back to the narrative.
         </p>
         <p>
-          Originally the branding aimed to relate the game to classic
-          MechWarrior titles of the past most notably MechWarrior 2. Box art had
-          a classic vertical slice splitting the logo with a large fire
-          background on the right and a lesser black negative strip on the
-          left.{' '}
+          My starting point was the history of the series. Early explorations
+          drew on the MechWarrior 2 box art: a vertical split through the logo,
+          fire on one side and black negative space on the other.
         </p>
       </div>
 
-      <div className={styles.caseStudyContainer}>
-        <p>
-          <Image
-            className={styles.caseStudyImg}
-            priority
-            src="/images/case-studies/case-study-4-original-clans-branding.webp"
-            height={1080}
-            width={1920}
-            alt="Logo"
-          />
-        </p>
-
-        <p>
-          This iconic box art provided the main creative impetus in developing
-          the logo. The MechWarrior 5 stencil lettering uses this recognisable
-          typographic treatment in a nod to MechWarrior 2. CLANS are the alien
-          invading force in the game subsequently its lettering has more modern
-          curves and spacing. This created the two warring factions in the
-          primary logo mirroring the game narrative.
-        </p>
-      </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
-          Clans logo features custom typography.
+      <div>
+        <span className="text-secondary text-sm">
+          The original MechWarrior box art that informed the direction.
         </span>
         <Image
-          className={styles.caseStudyImg}
+          priority
+          src="/images/case-studies/case-study-4-original-clans-branding.webp"
+          height={1080}
+          width={1920}
+          alt="Early Clans branding exploration referencing classic MechWarrior box art"
+        />
+      </div>
+
+      <div>
+        <p>
+          That artwork shaped the logo. The MechWarrior 5 half keeps the stencil
+          lettering as a reference to MechWarrior 2. The Clans half, the
+          invading force in the game, uses modern curves and wider spacing. Two
+          typographic voices stand for two opposing factions, so the mark
+          carries the premise of the story on its own.
+        </p>
+      </div>
+
+      <div>
+        <span className="text-secondary text-sm">
+          The Clans logo: custom typography, two factions in one mark.
+        </span>
+        <Image
           priority
           src="/images/case-studies/case-study-4-clans-logo-img3.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="Final MechWarrior 5 Clans logo with custom typography"
         />
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
-          Website Mockup Phase & Site flow.
+
+      <div>
+        <span className="text-secondary text-sm">
+          Website mockups and site flow.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-4-clans-website-design-img.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="Clans website mockup phase and site flow diagrams"
         />
       </div>
-      <div className={styles.caseStudyContainer}>
+
+      <div>
         <p>
-          Website design was priortised to show character videos, trailers and
-          giving players a path to their preferred game vendor. The look and
-          feel consolidated the marketing campaign with the game ui viusals to
-          create a coherent brand experience. Themed widgets from the game were
-          used in the site design as frames for content including text and
-          images were converted into css components. A colour scheme was created
-          to be used for the web based on keyart from ad agency Petrol and the
-          game UI.
+          The website had three jobs: present the character videos and trailers,
+          direct players to their preferred store, and feel like the game. I
+          rebuilt elements of the in-game UI as CSS components and used them to
+          frame the site&apos;s content, with a colour scheme taken from the key
+          art and the in-game HUD. The marketing and the game read as one
+          consistent thing.
         </p>
-        <p>
-          <Image
-            className={styles.caseStudyImg}
-            priority
-            src="/images/case-studies/case-study4-game-front-end.webp"
-            height={1080}
-            width={1920}
-            alt="Logo"
-          />
-        </p>
+        <Image
+          priority
+          src="/images/case-studies/case-study4-game-front-end.webp"
+          height={1080}
+          width={1920}
+          alt="Clans in-game front end that informed the website components"
+        />
       </div>
 
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
-          Clans website aims to showcase the new characters.
+      <div>
+        <span className="text-secondary text-sm">
+          The site leads with the new characters.
         </span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-4-clans-content-img1.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="Clans website content sections showcasing the new characters"
         />
       </div>
-      <div className={styles.caseStudyContainer}>
+
+      <div>
         <p>
-          Responsive web design techniques were used in making sure the site had
-          a seamless mobile experience. This was made easier using webp images
-          and tailwind a utility first CSS framework.
+          The mobile build received the same attention. WebP images and a
+          utility-first CSS setup kept the responsive work efficient and the
+          pages fast.
         </p>
       </div>
-      <div className={styles.caseStudyWideImgContainer}>
-        <span className={styles.caseStudyWideImgMeta}>
-          Responsive design of Clans site.
-        </span>
+
+      <div>
+        <span className="text-secondary text-sm">The site on mobile.</span>
         <Image
-          className={styles.caseStudyImg}
           priority
           src="/images/case-studies/case-study-4-clans-mobile-img2.webp"
           height={1080}
           width={1920}
-          alt="Logo"
+          alt="Responsive mobile views of the Clans website"
         />
       </div>
     </CaseStudyTemplate>

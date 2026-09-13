@@ -1,47 +1,144 @@
-import { useIntersectionObserver } from './useIntersectionObserver';
-import utilStyles from '@/styles/utils.module.css';
+'use client';
+
+import Image from 'next/image';
 import Link from 'next/link';
+import { useIntersectionObserver } from './useIntersectionObserver';
+import { ArrowRightIcon } from './NavIcons';
+import MarginLabel from './MarginLabel';
+import galleryItems from '@/data/gallery-items.json';
+
+/**
+ * The Work band — cols 1–5: triangle-clipped plate · cols 5–9: circular plate
+ * · cols 9–13: index rows + the galleries note. Shared by the home sheet and
+ * the /case-studies index.
+ */
+
+const featured = [
+  {
+    href: '/case-studies/design-of-clans',
+    title: 'Design of Clans',
+    desc: 'Brand, logo and launch site for MechWarrior 5: Clans.',
+    image: '/images/case-studies/clans-img-sm-case-study4.webp',
+    alt: 'Design of Clans — game branding and UI',
+    shape: 'triangle',
+  },
+  {
+    href: '/case-studies/mw5-mercenaries',
+    title: 'MW5 Mercenaries',
+    desc: 'Logo, brand system and launch site for MechWarrior 5: Mercenaries.',
+    image: '/images/case-studies/mw5-img-sm-case-study3.webp',
+    alt: 'MW5 Mercenaries — marketing and visual design',
+    shape: 'circle',
+  },
+];
+
+const indexRows = [
+  {
+    href: '/case-studies/ui-mwo-product-pages',
+    title: 'UI for MWO',
+    meta: '03 / 2023',
+  },
+  {
+    href: '/case-studies/mechcon-design-system',
+    title: 'Mech_Con',
+    meta: '04 / 2022',
+  },
+  // '/design-process' stays unlisted until the page is ready
+];
+
+function WorkPlate({ study, index }) {
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  return (
+    <Link
+      ref={ref}
+      href={study.href}
+      className={`work-plate animate-hidden ${isVisible ? `animate-visible delay-${index + 1}` : ''}`}
+    >
+      {study.shape === 'triangle' ? (
+        <div className="work-plate-media work-plate-media-triangle">
+          <Image
+            src={study.image}
+            alt={study.alt}
+            fill
+            sizes="(max-width: 767px) 100vw, 33vw"
+            className="plate-image plate-image-triangle"
+          />
+        </div>
+      ) : (
+        <div className="work-plate-media work-plate-media-circle">
+          <div className="plate-circle work-plate-circle">
+            <Image
+              src={study.image}
+              alt={study.alt}
+              fill
+              sizes="180px"
+              className="plate-image"
+            />
+          </div>
+        </div>
+      )}
+      <div className="work-plate-title">{study.title}</div>
+      <p className="work-plate-desc">{study.desc}</p>
+    </Link>
+  );
+}
 
 const CaseStudies = () => {
-  const [ref1, isVisible1] = useIntersectionObserver({ threshold: 0.1 });
-  const [ref2, isVisible2] = useIntersectionObserver({ threshold: 0.1 });
-  const [ref3, isVisible3] = useIntersectionObserver({ threshold: 0.1 });
-  const [ref4, isVisible4] = useIntersectionObserver({ threshold: 0.1 });
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
-    <div className={utilStyles.caseStudiesContainer}>
-      <h1>Case Studies</h1>
-      <div className={utilStyles.caseStudies}>
-        <Link
-          ref={ref1}
-          className={`${utilStyles.caseStudy} ${utilStyles.caseStudy4} ${isVisible1 ? utilStyles.visible : ''}`}
-          href="/case-studies/design-of-clans"
-        >
-          <h3>Design of Clans</h3>
-        </Link>
-        <Link
-          ref={ref2}
-          className={`${utilStyles.caseStudy} ${utilStyles.caseStudy3} ${isVisible2 ? utilStyles.visible : ''}`}
-          href="/case-studies/mw5-mercenaries"
-        >
-          <h3>MW5 Mercenaries Marketing</h3>
-        </Link>
-        <Link
-          ref={ref3}
-          className={`${utilStyles.caseStudy} ${utilStyles.caseStudy1} ${isVisible3 ? utilStyles.visible : ''}`}
-          href="/case-studies/ui-mwo-product-pages"
-        >
-          <h3>UI for MWO Product Pages</h3>
-        </Link>
-        <Link
-          ref={ref4}
-          className={`${utilStyles.caseStudy} ${utilStyles.caseStudy2} ${isVisible4 ? utilStyles.visible : ''}`}
-          href="/case-studies/mechcon-design-system"
-        >
-          <h3>Mech_Con Design System</h3>
-        </Link>
+    <section className="work-band" aria-label="Selected work">
+      <div className="work-heading-row">
+        <div className="band-label">
+          <MarginLabel code="01" text="Work" />
+        </div>
       </div>
-    </div>
+
+      <div
+        ref={ref}
+        className={`work-plates animate-hidden ${isVisible ? 'animate-visible' : ''}`}
+      >
+        {/* The heading is the first row of the same ruled box as the
+            studies it introduces — same cell padding, same rules. */}
+        <header className="work-head">
+          <h2 className="work-title">
+            Four case studies. Start with these two.
+          </h2>
+        </header>
+        <div className="work-head-action">
+          <Link href="/gallery" className="btn btn-sm btn-secondary btn-ring">
+            All {galleryItems.length}
+            <ArrowRightIcon className="icon-fwd" width={12} height={12} />
+          </Link>
+        </div>
+
+        <WorkPlate study={featured[0]} index={0} />
+        <WorkPlate study={featured[1]} index={1} />
+
+        <div className="work-index">
+          <div>
+            {indexRows.map((row) => (
+              <Link key={row.href} href={row.href} className="index-row">
+                <span className="index-row-title">{row.title}</span>
+                <span className="index-row-meta">{row.meta}</span>
+              </Link>
+            ))}
+          </div>
+          <Link href="/gallery" className="work-galleries-note">
+            <svg
+              className="nav-cue"
+              width="14"
+              height="14"
+              viewBox="0 0 100 100"
+              aria-hidden="true"
+            >
+              <polygon points="50,20 75.98,65 24.02,65" fill="currentColor" />
+            </svg>
+            <span>Six galleries of further work</span>
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 

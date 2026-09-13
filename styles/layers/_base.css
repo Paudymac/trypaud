@@ -1,0 +1,260 @@
+@layer base {
+  /* ========================================================================
+     BASE — TryPaud v3 "Hull & Void"
+     Sora only. Mono for data. Structure from rules, never shadows.
+     ======================================================================== */
+
+  html {
+    font-family: var(--font-family);
+    font-size: 16px;
+    background-color: var(--color-surface-0);
+    color: var(--color-text-primary);
+    transition:
+      background-color var(--duration-normal) var(--ease-default),
+      color var(--duration-normal) var(--ease-default);
+  }
+
+  body {
+    font-family: var(--font-family);
+    font-size: var(--step-base);
+    line-height: var(--leading-normal);
+    /* MUST stay transparent: the page ground lives on <html> (the canvas
+       background), and the fixed ambient starfield sits at z-index:-1 —
+       above the canvas, below content. An opaque body would cover it. */
+    background-color: transparent;
+    /* Sticky footer: shells stretch to the viewport, main takes the slack,
+       so short pages never leave a gap under the footer. */
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Pages-router wrapper + its Layout shell join the flex chain */
+  #__next,
+  .site-shell {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
+  /* Anything that pokes past the right edge (the about page's orbit dial,
+     a plate mid-hover-scale) must never hand the page a sideways scroll on
+     a phone. clip, not hidden: it is not a scroll container, so the sticky
+     header and the fixed backdrop keep the viewport as their reference.
+     The app-router home does the same on .sheet (home.css). */
+  .site-shell {
+    overflow-x: clip;
+  }
+
+  main#main-content {
+    flex: 1 0 auto;
+  }
+
+  /* Everything inherits Sora unless it is data — data is mono. */
+  :where(*, *::before, *::after) {
+    font-family: inherit;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre,
+  tt {
+    font-family: var(--font-mono);
+  }
+
+  /* --- Typography --- */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-text-primary);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    text-wrap: balance;
+  }
+
+  /* Large headers carry the wordmark face — the logo's voice at scale.
+     h3 and below stay Sora so body-adjacent type keeps its rhythm. */
+  h1,
+  h2 {
+    font-family: var(--font-display);
+  }
+
+  h1 {
+    font-size: var(--step-4xl);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    /* Only the display level is extruded — h2 down stay flat, or the page
+       turns into a stack of competing slabs. */
+    text-shadow: var(--display-depth);
+  }
+
+  h2 {
+    font-size: var(--step-2xl);
+  }
+
+  h3 {
+    font-size: var(--step-xl);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  h4 {
+    font-size: var(--step-lg);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* --- Links: blue is structure --- */
+  a {
+    color: var(--color-primary);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--color-primary-hover);
+  }
+
+  a:active {
+    color: var(--color-primary-active);
+  }
+
+  /* --- Focus: 2px blue ring, everywhere --- */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* --- Images --- */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  /* --- Rules --- */
+  hr {
+    border: none;
+    height: var(--rule-structural);
+    background: var(--color-border);
+    margin: 0;
+  }
+
+  /* --- Form elements --- */
+  label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--step-data);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-data);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-2);
+  }
+
+  /* Fields: translucent fill, 12px notch off the top-right corner (the
+     triangle's angle). This is where the notch started; it is now the
+     system's rectangle — see components/notch.css, which applies the same
+     cut to every rectangular plate. Inputs can't take pseudo-elements, so
+     here the border is drawn as background strips on the field itself —
+     including the diagonal along the cut — and --field-border lets :focus
+     repaint the whole outline at once. */
+  input,
+  textarea {
+    --field-border: var(--color-border);
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--step-base);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    /* Solid, matching the contact band surface — cancels the monogram
+       pattern completely inside the field */
+    background-color: var(--color-surface-1);
+    background-image:
+      /* top edge, stopping at the notch */
+      linear-gradient(var(--field-border), var(--field-border)),
+      /* right edge, starting below the notch */
+        linear-gradient(var(--field-border), var(--field-border)),
+      /* bottom edge */
+        linear-gradient(var(--field-border), var(--field-border)),
+      /* left edge */ linear-gradient(var(--field-border), var(--field-border)),
+      /* the diagonal along the cut */
+        linear-gradient(
+          45deg,
+          transparent calc(50% - 0.5px),
+          var(--field-border) calc(50% - 0.5px),
+          var(--field-border) calc(50% + 0.5px),
+          transparent calc(50% + 0.5px)
+        );
+    background-repeat: no-repeat;
+    background-position:
+      left 0 top 0,
+      right 0 top 12px,
+      left 0 bottom 0,
+      left 0 top 0,
+      right 0 top 0;
+    background-size:
+      calc(100% - 11px) 1px,
+      1px calc(100% - 12px),
+      100% 1px,
+      1px 100%,
+      12px 12px;
+    transition: background-color var(--duration-normal) var(--ease-default);
+    outline: none;
+  }
+
+  input:focus-visible,
+  textarea:focus-visible {
+    --field-border: var(--color-primary);
+    outline: none;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  textarea {
+    min-height: 10em;
+    resize: vertical;
+  }
+
+  /* --- Selection --- */
+  ::selection {
+    background-color: var(--color-primary-subtle);
+    color: var(--color-text-primary);
+  }
+
+  /* --- Scrollbar (Webkit) --- */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface-1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-4);
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-tertiary);
+  }
+}

@@ -1,19 +1,18 @@
-import '../styles/global.css';
+import '../styles/v2-global.css';
 
-import { Barlow } from 'next/font/google';
-
-const barlow = Barlow({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-});
+import { sora, exo2 } from '@/lib/fonts';
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      {/* next/font CSS is only reliably emitted where the font is used in
+          the pages bundle — declare the variable at :root here so
+          --font-family resolves to Sora on every pages-router route
+          (the app router gets it from the class on <html> in layout.js). */}
       <style jsx global>{`
-        html {
-          font-family: ${barlow.style.fontFamily};
+        :root {
+          --font-sora: ${sora.style.fontFamily};
+          --font-wordmark: ${exo2.style.fontFamily};
         }
       `}</style>
       <Component {...pageProps} />

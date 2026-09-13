@@ -1,0 +1,26 @@
+@layer components {
+  /* ========================================================================
+     THE MARK — TrefoilKnot hover behaviour.
+     On hover of a `.mark-hover` ancestor the triangle makes one 360° turn
+     over 1.6s. The knot never moves. (A full 360° means start and end states
+     are identical — the gradient-free mark can stop anywhere mid-loop.)
+     ======================================================================== */
+
+  .knot-triangle {
+    transform-origin: 50% 50%;
+    transform-box: view-box;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mark-hover:hover .knot-triangle,
+    .mark-hover:focus-visible .knot-triangle {
+      animation: mark-turn 1.6s var(--ease-default) 1;
+    }
+  }
+
+  @keyframes mark-turn {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@layer overrides {
+  /* ========================================
+     THIRD-PARTY OVERRIDES
+     Slick carousel, etc.
+     ======================================== */
+
+  /* --- Slick carousel --- */
+  .slick-slider {
+    margin: var(--space-4) 0;
+  }
+
+  .slick-slide {
+    line-height: 0;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: auto !important;
+    bottom: -50px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .slick-prev {
+    left: 40% !important;
+  }
+
+  .slick-next {
+    right: 40% !important;
+  }
+
+  @media (max-width: 1024px) {
+    .slick-next {
+      right: 30% !important;
+    }
+    .slick-prev {
+      left: 30% !important;
+    }
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px !important;
+    opacity: 1 !important;
+    color: var(--color-text-tertiary) !important;
+  }
+
+  .slick-dots {
+    bottom: auto !important;
+    top: -40px !important;
+    right: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .slick-dots {
+      top: -37px !important;
+    }
+  }
+
+  .slick-dots li {
+    margin: 0 10px 0 !important;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px !important;
+    color: var(--color-text-tertiary) !important;
+    opacity: 1 !important;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: var(--color-primary) !important;
+    opacity: 1 !important;
+  }
+}

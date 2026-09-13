@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TryPaud Mark Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; font-family: ui-monospace, Menlo, monospace; }
+  .pane { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 64px; padding: 48px; }
+  .void { background: #0b0b0d; color: rgba(211,214,220,0.55); --try: #f23d31; --paud: #52a9de; --try-shade: #b52d24; }
+  .hull { background: #dfe0e3; color: rgba(23,24,28,0.55); --try: #cb241d; --paud: #2b78b3; --try-shade: #981b15; }
+  .label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .lockup { display: flex; align-items: center; }
+  .word { font-family: 'Exo 2', sans-serif; font-weight: 800; letter-spacing: 0.05em; }
+  .try { color: var(--try); } .paud { color: var(--paud); }
+  /* Header ratio: 30px mark, 7px gap, 14px word — scaled ×6 for the large lockup */
+  .lockup-lg { gap: 42px; }
+  .lockup-lg .word { font-size: 84px; }
+  .lockup-sm { gap: 7px; }
+  .lockup-sm .word { font-size: 14px; }
+  @media (max-width: 800px) { body { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 100 100">
+    <g fill="var(--try)">
+      <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 A29.5,29.5 0 0 0 44.04,30.33 Z"/>
+      <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 A29.5,29.5 0 0 0 44.04,30.33 Z" transform="rotate(120 50 50)"/>
+      <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 A29.5,29.5 0 0 0 44.04,30.33 Z" transform="rotate(240 50 50)"/>
+    </g>
+    <g fill="var(--try-shade)">
+      <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 Z"/>
+      <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 Z" transform="rotate(120 50 50)"/>
+      <path d="M50,20 L55.96,30.33 A29.5,29.5 0 0 0 50,32.94 Z" transform="rotate(240 50 50)"/>
+    </g>
+    <g stroke="var(--paud)" stroke-width="7" fill="none" stroke-linejoin="miter" stroke-miterlimit="10">
+      <path d="M43.2,53.93 A22,22 0 0,0 71.52,37.57 A22,22 0 0,0 43.2,53.93 Z"/>
+      <path d="M43.2,53.93 A22,22 0 0,0 71.52,37.57 A22,22 0 0,0 43.2,53.93 Z" transform="rotate(120 50 50)"/>
+      <path d="M43.2,53.93 A22,22 0 0,0 71.52,37.57 A22,22 0 0,0 43.2,53.93 Z" transform="rotate(240 50 50)"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="pane void">
+  <span class="label">Void · lockup ×6 header scale</span>
+  <div class="lockup lockup-lg">
+    <svg width="180" height="180" viewBox="0 0 100 100"><use href="#mark"/></svg>
+    <span class="word"><span class="try">Try</span><span class="paud">Paud</span></span>
+  </div>
+  <div class="lockup lockup-sm">
+    <svg width="30" height="30" viewBox="0 0 100 100"><use href="#mark"/></svg>
+    <span class="word"><span class="try">Try</span><span class="paud">Paud</span></span>
+  </div>
+  <span class="label">actual header size</span>
+
+  <div style="display:flex; gap:44px; align-items:center;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><use href="#mark"/></svg>
+      <span class="label">0° current</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><g transform="rotate(30 50 50)"><use href="#mark"/></g></svg>
+      <span class="label">30°</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><g transform="rotate(60 50 50)"><use href="#mark"/></g></svg>
+      <span class="label">60° — petal up</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><g transform="rotate(90 50 50)"><use href="#mark"/></g></svg>
+      <span class="label">90°</span>
+    </div>
+  </div>
+</div>
+
+<div class="pane hull">
+  <span class="label">Hull · lockup ×6 header scale</span>
+  <div class="lockup lockup-lg">
+    <svg width="180" height="180" viewBox="0 0 100 100"><use href="#mark"/></svg>
+    <span class="word"><span class="try">Try</span><span class="paud">Paud</span></span>
+  </div>
+  <div class="lockup lockup-sm">
+    <svg width="30" height="30" viewBox="0 0 100 100"><use href="#mark"/></svg>
+    <span class="word"><span class="try">Try</span><span class="paud">Paud</span></span>
+  </div>
+  <span class="label">actual header size</span>
+
+  <div style="display:flex; gap:44px; align-items:center;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><use href="#mark"/></svg>
+      <span class="label">0° current</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><g transform="rotate(30 50 50)"><use href="#mark"/></g></svg>
+      <span class="label">30°</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><g transform="rotate(60 50 50)"><use href="#mark"/></g></svg>
+      <span class="label">60° — petal up</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <svg width="120" height="120" viewBox="0 0 100 100"><g transform="rotate(90 50 50)"><use href="#mark"/></g></svg>
+      <span class="label">90°</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
