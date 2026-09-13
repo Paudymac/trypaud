@@ -447,6 +447,11 @@
       scrollbar-width: none;
       margin-inline: calc(-1 * var(--gutter));
       padding-inline: var(--gutter);
+      /* overflow-x: auto also clips vertically. The orbit ring sits 7.5px
+         outside the dial (6px inset + 1.5px stroke) but the button pads
+         only 6px above it, so the ring's top sliver got cut — this is the
+         missing 2px, plus a little air. */
+      padding-top: 4px;
       scroll-snap-type: x proximity;
       scroll-padding-inline: var(--gutter);
       -webkit-mask-image: linear-gradient(
@@ -907,6 +912,10 @@
     border-radius: var(--radius-full);
   }
 
+  /* The caption floats at a fixed height, so a landscape plate that fills
+     the viewport puts it ON the photograph — and in hull the ink is near
+     black. It rides in the same glass the counter wears, so it reads over
+     any image in either theme. */
   .lightbox-caption {
     position: absolute;
     bottom: var(--space-12);
@@ -916,6 +925,15 @@
     color: var(--color-text-primary);
     /* Long titles wrap instead of running under the edge controls */
     max-width: min(85vw, 40rem);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-pill);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-1) 85%,
+      transparent
+    );
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
 
   .lightbox-caption-title {
