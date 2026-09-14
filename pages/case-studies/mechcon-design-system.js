@@ -6,6 +6,7 @@ export default function CaseStudy() {
     <CaseStudyTemplate
       index="04"
       title="Mech_Con Design System"
+      seoTitle="Mech_Con 2018 design system"
       description="The design system behind Mech_Con 2018, built on a single hexagon and applied across the whole convention."
       heroImage="/images/case-studies/mechcon-img-lg-case-study2.webp"
       year="2016 – 2018"

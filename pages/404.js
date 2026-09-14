@@ -4,7 +4,7 @@ import { ArrowLeftIcon } from '@/components/NavIcons';
 
 export default function Custom404() {
   return (
-    <Layout>
+    <Layout seo={{ title: '404', noindex: true }}>
       <div
         className="container"
         style={{

@@ -6,6 +6,7 @@ export default function CaseStudy() {
     <CaseStudyTemplate
       index="03"
       title="UI for MWO Product Pages"
+      seoTitle="MechWarrior Online product page UI"
       description="Eleven years of product pages for MechWarrior Online: designing, measuring and simplifying the store that funds the game."
       heroImage="/images/case-studies/mwo-product-img-lg-art-case-study1.webp"
       year="2013 – 2024"

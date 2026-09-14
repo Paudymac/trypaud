@@ -2,23 +2,20 @@
 // Front matter for the academic sheets: the same index head as /gallery,
 // then a numbered ledger — one hairline row per study, mono meta, notched
 // mono thumbnail. Deliberately not the homepage plates band.
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Layout, { siteTitle } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import { caseStudyLinks } from '@/components/NavData';
 
 const CaseStudiesPage = () => {
   return (
-    <Layout>
-      <Head>
-        <title>{`Case Studies - ${siteTitle}`}</title>
-        <meta
-          name="description"
-          content="Four detailed design case studies covering branding, UI and marketing across the MechWarrior franchise, from brief to delivered result."
-        />
-      </Head>
-
+    <Layout
+      seo={{
+        title: 'Case Studies',
+        description:
+          'Four detailed design case studies covering branding, UI and marketing across the MechWarrior franchise, from brief to delivered result.',
+      }}
+    >
       <header className="work-index-head">
         <div className="band-label">
           <span className="margin-label">CS / Index</span>

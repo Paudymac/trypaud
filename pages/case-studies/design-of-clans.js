@@ -6,6 +6,7 @@ export default function CaseStudy() {
     <CaseStudyTemplate
       index="01"
       title="Design of Clans"
+      seoTitle="MechWarrior 5: Clans brand and launch site"
       description="Brand, logo and launch site for MechWarrior 5: Clans, a new game that needed an identity of its own."
       heroImage="/images/case-studies/clans-img-lg-case-study4.webp"
       year="2024"

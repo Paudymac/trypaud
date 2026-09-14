@@ -2,15 +2,24 @@ import '../styles/v2-global.css';
 import { Analytics } from '@vercel/analytics/react';
 import BackToTop from '@/components/BackToTop';
 import { sora, exo2 } from '@/lib/fonts';
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+} from '@/lib/site';
 
 export const metadata = {
-  metadataBase: new URL('https://trypaud.com'),
+  /* www is the canonical host — the bare domain 301s to it on Vercel.
+     The pages-router pages get the same tags from components/Seo.js. */
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'tryPaud — Design portfolio of Padraic McAteer',
-    template: '%s / tryPaud',
+    default: SITE_TITLE,
+    template: `%s / ${SITE_NAME}`,
   },
-  description:
-    'Portfolio of Padraic McAteer, a senior designer and front-end developer with eighteen years of experience across UI, branding, illustration and motion.',
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: '/' },
   icons: {
     icon: [
       { url: '/favicon.svg?v=2', type: 'image/svg+xml' },
@@ -20,12 +29,17 @@ export const metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'tryPaud',
-    images: ['/images/logos/trypaud-black-logo-example.webp'],
+    siteName: SITE_NAME,
+    url: '/',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/logos/trypaud-black-logo-example.webp'],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE.url],
   },
   robots: { index: true, follow: true },
 };

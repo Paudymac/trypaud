@@ -1,7 +1,6 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Layout, { siteTitle } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import { caseStudyLinks } from '@/components/NavData';
 import {
   ArrowLeftIcon,
@@ -19,6 +18,10 @@ import {
 export default function CaseStudyTemplate({
   index,
   title,
+  /* Search-facing title — the full product name where the on-page title
+     is the short form ("MW5 Mercenaries" → "MechWarrior 5: Mercenaries
+     brand and launch site"). Falls back to title. */
+  seoTitle,
   description,
   heroImage,
   year,
@@ -35,11 +38,7 @@ export default function CaseStudyTemplate({
     : null;
 
   return (
-    <Layout>
-      <Head>
-        <title>{title ? `${title} - ${siteTitle}` : siteTitle}</title>
-      </Head>
-
+    <Layout seo={{ title: seoTitle || title, description, image: heroImage }}>
       {/* BANNER */}
       <section className="cs-hero" aria-labelledby="cs-title">
         <Image

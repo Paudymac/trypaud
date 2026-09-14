@@ -6,6 +6,7 @@ export default function CaseStudy() {
     <CaseStudyTemplate
       index="02"
       title="MW5 Mercenaries"
+      seoTitle="MechWarrior 5: Mercenaries brand and launch site"
       description="A logo, brand system and launch site for Piranha's first stand-alone release in years, built to work on every platform."
       heroImage="/images/case-studies/mw5-img-lg-case-study3.webp"
       year="2021"

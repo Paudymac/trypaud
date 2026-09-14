@@ -1,7 +1,6 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Layout, { siteTitle } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import {
   ArrowRightIcon,
   UIWebIcon,
@@ -72,15 +71,13 @@ const DIAL_STEP = 360 / careerYears.length;
 
 export default function AboutPage() {
   return (
-    <Layout>
-      <Head>
-        <title>{`About - ${siteTitle}`}</title>
-        <meta
-          name="description"
-          content="Portfolio of Padraic McAteer, a senior designer and front-end developer with eighteen years of experience across UI, branding, illustration and motion."
-        />
-      </Head>
-
+    <Layout
+      seo={{
+        title: 'About Padraic McAteer',
+        description:
+          'Padraic McAteer is a senior designer and front-end developer in Ireland. Eighteen years across UI, branding, illustration and motion, much of it on the MechWarrior franchise.',
+      }}
+    >
       {/* HERO */}
       <section className="about-page-hero" aria-labelledby="about-title">
         <div className="about-page-hero-grid">

@@ -6,6 +6,7 @@ import { useScrollToCollaborate } from '@/lib/scrollToCollaborate';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ThemeToggle from './ThemeToggle';
 import ThemeScript from './ThemeScript';
+import Seo from './Seo';
 import TrefoilKnot from './TrefoilKnot';
 import NavMegaPanel from './NavMegaPanel';
 import MobileMenu from './MobileMenu';
@@ -21,9 +22,7 @@ import {
   FileTextIcon,
 } from './NavIcons';
 
-export const siteTitle = 'tryPaud Portfolio';
-
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, seo }) {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -111,20 +110,12 @@ export default function Layout({ children, home }) {
 
   return (
     <div className="site-shell">
+      {/* Title, description, canonical and social tags — see Seo.js */}
+      <Seo {...seo} />
       <Head>
         <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico?v=2" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
-        <meta
-          name="description"
-          content="Portfolio of Padraic McAteer, a senior designer and front-end developer with eighteen years of experience across UI, branding, illustration and motion."
-        />
-        <meta
-          property="og:image"
-          content="/images/logos/trypaud-black-logo-example.webp"
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="googlebot" content="notranslate" />
         <meta name="google" content="notranslate" />
         <meta charSet="UTF-8" />

@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import Head from 'next/head';
-import Layout, { siteTitle } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import Lightbox from '@/components/Lightbox';
 import useScrollEdges from '@/components/useScrollEdges';
 import fs from 'fs';
@@ -107,15 +106,13 @@ export default function Gallery({ allItems }) {
   }, []);
 
   return (
-    <Layout>
-      <Head>
-        <title>{`Gallery - ${siteTitle}`}</title>
-        <meta
-          name="description"
-          content="Browse the complete portfolio — UI design, logos, branding, icons, animation, and illustration."
-        />
-      </Head>
-
+    <Layout
+      seo={{
+        title: 'Gallery',
+        description:
+          'Browse the complete portfolio — UI design, logos, branding, icons, animation, and illustration.',
+      }}
+    >
       {/* Index head — on the sheet, with the data column right */}
       <header className="work-index-head">
         <div className="band-label">

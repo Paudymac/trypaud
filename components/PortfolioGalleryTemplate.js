@@ -1,8 +1,7 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Children, isValidElement, useRef } from 'react';
-import Layout, { siteTitle } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import { galleryLinks, allWorkItem } from '@/components/NavData';
 import useScrollEdges from '@/components/useScrollEdges';
 
@@ -38,12 +37,7 @@ export default function PortfolioGalleryTemplate({
   }
 
   return (
-    <Layout>
-      <Head>
-        <title>{title ? `${title} - ${siteTitle}` : siteTitle}</title>
-        {description && <meta name="description" content={description} />}
-      </Head>
-
+    <Layout seo={{ title, description }}>
       <header className="work-index-head">
         <div className="band-label">
           <span className="margin-label">W / Gallery</span>

@@ -1,14 +1,17 @@
-import Head from 'next/head';
 import utilStyles from '@/styles/utils.module.css';
-import Layout, { siteTitle } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import Image from 'next/image';
 
 export default function CaseStudy({}) {
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+    <Layout
+      seo={{
+        title: 'Design Process',
+        description:
+          'How a design project is framed and worked through, from the question being asked to the delivered result.',
+        noindex: true,
+      }}
+    >
       <section className={`container ${utilStyles.articleSection}`}>
         <h1>Design Process</h1>
         <p>
