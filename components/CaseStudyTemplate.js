@@ -38,15 +38,30 @@ export default function CaseStudyTemplate({
     : null;
 
   return (
-    <Layout seo={{ title: seoTitle || title, description, image: heroImage }}>
+    <Layout
+      seo={{
+        title: seoTitle || title,
+        description,
+        // heroImage is a static import ({ src, width, height, blurDataURL })
+        image: typeof heroImage === 'string' ? heroImage : heroImage.src,
+      }}
+    >
       {/* BANNER */}
       <section className="cs-hero" aria-labelledby="cs-title">
+        {/* The only priority image on the page: the article images below
+            the fold load lazily so they don't share bandwidth with this one.
+            placeholder="blur" paints the import's tiny inline preview at
+            once, so the banner is never a blank plate while it downloads.
+            quality 60 — it runs mono under an overlay, so the saving is
+            free. */}
         <Image
           className="cs-hero-image"
           src={heroImage}
           alt={`${title} case study`}
           fill
           priority
+          placeholder="blur"
+          quality={60}
           sizes="100vw"
         />
         <div className="cs-hero-overlay" aria-hidden="true" />

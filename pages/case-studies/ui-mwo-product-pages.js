@@ -1,5 +1,7 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import Image from 'next/image';
+/* Static import so Next can inline a blur placeholder for the banner */
+import hero from '@/public/images/case-studies/mwo-product-img-lg-art-case-study1.webp';
 
 export default function CaseStudy() {
   return (
@@ -8,7 +10,7 @@ export default function CaseStudy() {
       title="UI for MWO Product Pages"
       seoTitle="MechWarrior Online product page UI"
       description="Eleven years of product pages for MechWarrior Online: designing, measuring and simplifying the store that funds the game."
-      heroImage="/images/case-studies/mwo-product-img-lg-art-case-study1.webp"
+      heroImage={hero}
       year="2013 – 2024"
       client="Piranha Games"
       roles={['UI Design', 'UX', 'E-commerce', 'Frontend Dev']}
@@ -61,7 +63,7 @@ export default function CaseStudy() {
           The product page across a decade.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study1-mwo-product-page-comparison-img.webp"
           height={1080}
           width={1920}
@@ -98,7 +100,7 @@ export default function CaseStudy() {
           The Legends battlepass page.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study1-mwo-product-legends-img.webp"
           height={1080}
           width={1920}

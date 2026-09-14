@@ -9,6 +9,10 @@ const nextConfig = {
 
   images: {
     formats: ['image/avif', 'image/webp'],
+    /* Optimized images are served to the browser with max-age=0 by default,
+       so every visit revalidates every image. The sources are versioned by
+       content hash on Vercel's side, so let browsers keep them for 31 days. */
+    minimumCacheTTL: 2678400,
     deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920, 2560],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },

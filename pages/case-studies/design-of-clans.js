@@ -1,5 +1,7 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import Image from 'next/image';
+/* Static import so Next can inline a blur placeholder for the banner */
+import hero from '@/public/images/case-studies/clans-img-lg-case-study4.webp';
 
 export default function CaseStudy() {
   return (
@@ -8,7 +10,7 @@ export default function CaseStudy() {
       title="Design of Clans"
       seoTitle="MechWarrior 5: Clans brand and launch site"
       description="Brand, logo and launch site for MechWarrior 5: Clans, a new game that needed an identity of its own."
-      heroImage="/images/case-studies/clans-img-lg-case-study4.webp"
+      heroImage={hero}
       year="2024"
       client="Piranha Games"
       roles={[
@@ -55,7 +57,7 @@ export default function CaseStudy() {
           The original MechWarrior box art that informed the direction.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-4-original-clans-branding.webp"
           height={1080}
           width={1920}
@@ -78,7 +80,7 @@ export default function CaseStudy() {
           The Clans logo: custom typography, two factions in one mark.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-4-clans-logo-img3.webp"
           height={1080}
           width={1920}
@@ -91,7 +93,7 @@ export default function CaseStudy() {
           Website mockups and site flow.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-4-clans-website-design-img.webp"
           height={1080}
           width={1920}
@@ -109,7 +111,7 @@ export default function CaseStudy() {
           consistent thing.
         </p>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study4-game-front-end.webp"
           height={1080}
           width={1920}
@@ -122,7 +124,7 @@ export default function CaseStudy() {
           The site leads with the new characters.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-4-clans-content-img1.webp"
           height={1080}
           width={1920}
@@ -141,7 +143,7 @@ export default function CaseStudy() {
       <div>
         <span className="text-secondary text-sm">The site on mobile.</span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-4-clans-mobile-img2.webp"
           height={1080}
           width={1920}

@@ -1,5 +1,7 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import Image from 'next/image';
+/* Static import so Next can inline a blur placeholder for the banner */
+import hero from '@/public/images/case-studies/mw5-img-lg-case-study3.webp';
 
 export default function CaseStudy() {
   return (
@@ -8,7 +10,7 @@ export default function CaseStudy() {
       title="MW5 Mercenaries"
       seoTitle="MechWarrior 5: Mercenaries brand and launch site"
       description="A logo, brand system and launch site for Piranha's first stand-alone release in years, built to work on every platform."
-      heroImage="/images/case-studies/mw5-img-lg-case-study3.webp"
+      heroImage={hero}
       year="2021"
       client="Piranha Games"
       roles={['Marketing', 'Visual Design', 'Web Design', 'Frontend Dev']}
@@ -36,7 +38,7 @@ export default function CaseStudy() {
       <div>
         <span className="text-secondary text-sm">The Mercenaries logo.</span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-3-mercs-logo-img3.webp"
           height={1080}
           width={1920}
@@ -58,7 +60,7 @@ export default function CaseStudy() {
           Pieces of the Mercs design system.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-3-mercs-brand-guide-img4.webp"
           height={1080}
           width={1920}
@@ -80,7 +82,7 @@ export default function CaseStudy() {
           Homepage and the first DLC page.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-3-mercs-content-img1.webp"
           height={1080}
           width={1920}
@@ -103,7 +105,7 @@ export default function CaseStudy() {
           Calls to action on mobile.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-3-mercs-mobile-img2.webp"
           height={1080}
           width={1920}

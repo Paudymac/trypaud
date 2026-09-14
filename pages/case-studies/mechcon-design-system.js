@@ -1,5 +1,7 @@
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import Image from 'next/image';
+/* Static import so Next can inline a blur placeholder for the banner */
+import hero from '@/public/images/case-studies/mechcon-img-lg-case-study2.webp';
 
 export default function CaseStudy() {
   return (
@@ -8,7 +10,7 @@ export default function CaseStudy() {
       title="Mech_Con Design System"
       seoTitle="Mech_Con 2018 design system"
       description="The design system behind Mech_Con 2018, built on a single hexagon and applied across the whole convention."
-      heroImage="/images/case-studies/mechcon-img-lg-case-study2.webp"
+      heroImage={hero}
       year="2016 – 2018"
       client="Piranha Games"
       roles={['Event Branding', 'Design System', 'Web Design', 'Frontend Dev']}
@@ -37,7 +39,7 @@ export default function CaseStudy() {
           Brand elements from Mech_Con 2018.
         </span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study2-mechcon-branding-elements.webp"
           height={1080}
           width={1920}
@@ -48,7 +50,7 @@ export default function CaseStudy() {
       <div>
         <span className="text-secondary text-sm">The Mech_Con website.</span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study2-mechcon-website-elements.webp"
           height={1080}
           width={1920}
@@ -76,7 +78,7 @@ export default function CaseStudy() {
       <div>
         <span className="text-secondary text-sm">Style guide components.</span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/mechcon-styleguide-case-study2.webp"
           height={1080}
           width={1920}
@@ -87,7 +89,7 @@ export default function CaseStudy() {
       <div>
         <span className="text-secondary text-sm">Event components.</span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study2-mechcon-event-elements.webp"
           height={1080}
           width={1920}
@@ -98,7 +100,7 @@ export default function CaseStudy() {
       <div>
         <span className="text-secondary text-sm">Tournament competitors.</span>
         <Image
-          priority
+          sizes="(max-width: 900px) 100vw, 84vw"
           src="/images/case-studies/case-study-2-team-tees.webp"
           height={1080}
           width={1920}
