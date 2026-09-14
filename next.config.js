@@ -9,10 +9,10 @@ const nextConfig = {
 
   images: {
     formats: ['image/avif', 'image/webp'],
-    /* Optimized images are served to the browser with max-age=0 by default,
-       so every visit revalidates every image. The sources are versioned by
-       content hash on Vercel's side, so let browsers keep them for 31 days. */
-    minimumCacheTTL: 2678400,
+    /* No minimumCacheTTL: on Vercel it only governs remote images. Local
+       (public/) images are always sent to browsers with max-age=0,
+       must-revalidate, and the CDN keeps the transforms for 31 days
+       regardless — verified against the live headers, 2026-09-14. */
     deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920, 2560],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
