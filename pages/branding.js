@@ -1,5 +1,6 @@
 import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
+import imageMap from '@/lib/image-imports/branding';
 import fs from 'fs';
 import path from 'path';
 
@@ -55,6 +56,7 @@ export default function Branding({ imageData }) {
 
   return (
     <PortfolioGalleryTemplate
+      imageMap={imageMap}
       title="Branding"
       description="Identity systems, game manuals, event design and print collateral."
     >

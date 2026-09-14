@@ -1,5 +1,6 @@
 import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
+import imageMap from '@/lib/image-imports/ui-web';
 
 const mw5ClansImages = [
   '/images/ui/mw5-clans-homepage.webp',
@@ -62,6 +63,7 @@ const legendsImages = [
 export default function Websites() {
   return (
     <PortfolioGalleryTemplate
+      imageMap={imageMap}
       title="UI / Web"
       description="Product screens, marketing sites, and interface systems from 2009 through today."
     >

@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
-import { staticImage, placeholderFor } from '@/lib/staticImage';
+import { resolveStatic, placeholderFor } from '@/lib/staticImage';
+import imageMap from '@/lib/image-imports/gallery';
 import Lightbox from '@/components/Lightbox';
 import useScrollEdges from '@/components/useScrollEdges';
 import fs from 'fs';
@@ -216,9 +217,11 @@ export default function Gallery({ allItems }) {
               >
                 <span className="gallery-item-media notch">
                   <Image
-                    src={staticImage(item.thumbnail)}
+                    src={resolveStatic(imageMap, item.thumbnail)}
                     alt={plateAlt(item)}
-                    placeholder={placeholderFor(staticImage(item.thumbnail))}
+                    placeholder={placeholderFor(
+                      resolveStatic(imageMap, item.thumbnail)
+                    )}
                     className="gallery-item-image"
                     width={560}
                     height={420}

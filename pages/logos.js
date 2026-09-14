@@ -1,5 +1,6 @@
 import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
+import imageMap from '@/lib/image-imports/logos';
 import fs from 'fs';
 import path from 'path';
 
@@ -29,6 +30,7 @@ export default function Logos({ imageData }) {
   } = imageData;
   return (
     <PortfolioGalleryTemplate
+      imageMap={imageMap}
       title="Logos"
       description="Marks, monograms, and logotypes spanning games, DLC, clients, and personal work."
     >

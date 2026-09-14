@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
+import imageMap from '@/lib/image-imports/icons';
 import fs from 'fs';
 import path from 'path';
 
@@ -25,6 +26,7 @@ export async function getStaticProps() {
 export default function Icons({ images }) {
   return (
     <PortfolioGalleryTemplate
+      imageMap={imageMap}
       title="Icons"
       description="Glyph systems, player icons, and pictogram sets."
     >

@@ -1,5 +1,6 @@
 import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
+import imageMap from '@/lib/image-imports/illustration';
 
 const clansArt = [
   '/images/illustration/MW5C_KA_16x9_v02_240717_Profile-edit-ibrahim.webp',
@@ -13,6 +14,7 @@ const clansArt = [
 export default function Illustration() {
   return (
     <PortfolioGalleryTemplate
+      imageMap={imageMap}
       title="Illustration"
       description="Hand-drawn work, painting, and concept art — from personal pieces to game key art."
     >

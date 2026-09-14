@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
-import { staticImage, placeholderFor } from '@/lib/staticImage';
+import { useStaticImage, placeholderFor } from '@/lib/staticImage';
 import Lightbox from './Lightbox';
 import { ArrowUpRightIcon } from './NavIcons';
 
@@ -27,6 +27,9 @@ export default function PortfolioItem({
   children,
 }) {
   const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 });
+  // Thumbnails resolve to the page's static imports (see lib/staticImage);
+  // the lightbox below keeps the plain paths and loads the originals
+  const staticImage = useStaticImage();
   const hasImages = Array.isArray(images) && images.length > 0;
 
   const openAt = useCallback(
