@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/gen-image-imports.js",
     "build": "next build",
+    "predev": "node scripts/gen-image-imports.js",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",

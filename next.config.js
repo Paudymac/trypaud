@@ -8,7 +8,11 @@ const nextConfig = {
   devIndicators: false,
 
   images: {
-    formats: ['image/avif', 'image/webp'],
+    /* WebP only. AVIF encodes several times slower, so it was the format
+       that made every first-request (cold) transform feel long, and it
+       doubled the number of variants the CDN cache has to fill. The
+       sources are WebP already; the AVIF byte saving was ~20%. */
+    formats: ['image/webp'],
     /* No minimumCacheTTL: on Vercel it only governs remote images. Local
        (public/) images are always sent to browsers with max-age=0,
        must-revalidate, and the CDN keeps the transforms for 31 days

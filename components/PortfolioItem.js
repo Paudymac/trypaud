@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
+import { staticImage, placeholderFor } from '@/lib/staticImage';
 import Lightbox from './Lightbox';
 import { ArrowUpRightIcon } from './NavIcons';
 
@@ -91,8 +92,9 @@ export default function PortfolioItem({
                   {/* The button's aria-label is the accessible name; the
                       alt is for image search */}
                   <Image
-                    src={img}
+                    src={staticImage(img)}
                     alt={`${title} (${i + 1} of ${images.length})`}
+                    placeholder={placeholderFor(staticImage(img))}
                     width={640}
                     height={400}
                     sizes={THUMB_SIZES}
