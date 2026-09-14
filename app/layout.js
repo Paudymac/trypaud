@@ -6,8 +6,8 @@ import { sora, exo2 } from '@/lib/fonts';
 export const metadata = {
   metadataBase: new URL('https://trypaud.com'),
   title: {
-    default: 'TryPaud — Design portfolio of Padraic McAteer',
-    template: '%s / TryPaud',
+    default: 'tryPaud — Design portfolio of Padraic McAteer',
+    template: '%s / tryPaud',
   },
   description:
     'Portfolio of Padraic McAteer, a senior designer and front-end developer with eighteen years of experience across UI, branding, illustration and motion.',
@@ -20,7 +20,7 @@ export const metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'TryPaud',
+    siteName: 'tryPaud',
     images: ['/images/logos/trypaud-black-logo-example.webp'],
   },
   twitter: {

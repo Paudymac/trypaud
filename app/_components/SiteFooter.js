@@ -15,7 +15,7 @@ export default function SiteFooter() {
         <Link
           href="/"
           className="footer-mark mark-hover"
-          aria-label="TryPaud home"
+          aria-label="tryPaud home"
         >
           <TrefoilKnot
             size={44}

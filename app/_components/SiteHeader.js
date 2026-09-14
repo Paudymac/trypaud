@@ -111,7 +111,7 @@ export default function SiteHeader() {
           <Link
             href="/"
             className="nav-logo mark-hover"
-            aria-label="TryPaud home"
+            aria-label="tryPaud home"
           >
             <TrefoilKnot size={45} />
             <span className="nav-wordmark">
@@ -192,7 +192,7 @@ export default function SiteHeader() {
           <Link
             href="/"
             className="nav-logo mark-hover"
-            aria-label="TryPaud home"
+            aria-label="tryPaud home"
           >
             {/* The full lockup, as on desktop — mark plus wordmark. It
                 clears the two 44px pills with room to spare at 360px. */}

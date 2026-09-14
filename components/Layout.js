@@ -21,7 +21,7 @@ import {
   FileTextIcon,
 } from './NavIcons';
 
-export const siteTitle = 'TryPaud Portfolio';
+export const siteTitle = 'tryPaud Portfolio';
 
 export default function Layout({ children, home }) {
   const router = useRouter();
@@ -149,7 +149,7 @@ export default function Layout({ children, home }) {
           <Link
             href="/"
             className="nav-logo mark-hover"
-            aria-label="TryPaud home"
+            aria-label="tryPaud home"
           >
             <TrefoilKnot size={45} />
             <span className="nav-wordmark">
@@ -231,7 +231,7 @@ export default function Layout({ children, home }) {
           <Link
             href="/"
             className="nav-logo mark-hover"
-            aria-label="TryPaud home"
+            aria-label="tryPaud home"
           >
             {/* The full lockup, as on desktop — mark plus wordmark. It
                 clears the two 44px pills with room to spare at 360px. */}
@@ -301,7 +301,7 @@ export default function Layout({ children, home }) {
           <Link
             href="/"
             className="footer-mark mark-hover"
-            aria-label="TryPaud home"
+            aria-label="tryPaud home"
           >
             <TrefoilKnot
               size={44}

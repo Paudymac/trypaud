@@ -49,7 +49,7 @@ export default function Logos({ imageData }) {
 
       <PortfolioItem
         date="2025"
-        title="TryPaud"
+        title="tryPaud"
         description="Design / Development / Art Direction"
         images={tryPaud}
       />
