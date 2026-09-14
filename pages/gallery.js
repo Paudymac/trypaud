@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import Image from 'next/image';
 import Layout from '@/components/Layout';
 import Lightbox from '@/components/Lightbox';
 import useScrollEdges from '@/components/useScrollEdges';
@@ -19,6 +20,15 @@ const CATEGORY_NOUN = {
   illustration: 'illustration',
   ui: 'UI design',
 };
+/* Plates sit in an auto-fill grid of 16rem columns (12rem under 600px),
+   so a plate is never wider than about a fifth of a desktop viewport or a
+   third of a tablet. Telling the optimizer that is what turns a 3840px
+   source into a ~600px thumbnail. */
+const PLATE_SIZES = '(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 20vw';
+/* The first row is the page's largest paint; the rest lazy-load as the
+   grid scrolls */
+const EAGER_PLATES = 6;
+
 const plateAlt = (item) => {
   const noun = CATEGORY_NOUN[item.category] || '';
   // Titles that already end in the noun ("MechWarrior 5: Clans Logo") don't
@@ -191,7 +201,7 @@ export default function Gallery({ allItems }) {
 
         {/* Plates */}
         <ul className="gallery-grid" role="list">
-          {visibleItems.map((item) => (
+          {visibleItems.map((item, i) => (
             <li key={item.id}>
               <button
                 className="gallery-item"
@@ -204,14 +214,15 @@ export default function Gallery({ allItems }) {
                 type="button"
               >
                 <span className="gallery-item-media notch">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={item.thumbnail}
                     alt={plateAlt(item)}
                     className="gallery-item-image"
-                    loading="lazy"
-                    width="560"
-                    height="420"
+                    width={560}
+                    height={420}
+                    sizes={PLATE_SIZES}
+                    priority={i < EAGER_PLATES}
+                    unoptimized={item.thumbnail.endsWith('.svg')}
                   />
                   {item.video && (
                     <span className="gallery-item-play" aria-hidden="true">

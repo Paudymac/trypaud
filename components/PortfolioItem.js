@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import Image from 'next/image';
 import Lightbox from './Lightbox';
 import { ArrowUpRightIcon } from './NavIcons';
 
@@ -10,6 +11,12 @@ import { ArrowUpRightIcon } from './NavIcons';
  *   - children (legacy): renders whatever is passed in — used for videos,
  *     custom grids, or BackgroundImage compositions.
  */
+/* Thumbnails sit in an auto-fill grid of 18rem columns (12rem under
+   600px) — never wider than about a fifth of a desktop viewport, so the
+   optimizer serves ~600px files instead of the full-size originals. The
+   originals still open in the lightbox. */
+const THUMB_SIZES = '(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 20vw';
+
 export default function PortfolioItem({
   date,
   title,
@@ -83,11 +90,13 @@ export default function PortfolioItem({
                 <span className="portfolio-thumb-media notch">
                   {/* The button's aria-label is the accessible name; the
                       alt is for image search */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={img}
                     alt={`${title} (${i + 1} of ${images.length})`}
-                    loading="lazy"
+                    width={640}
+                    height={400}
+                    sizes={THUMB_SIZES}
+                    unoptimized={img.endsWith('.svg')}
                   />
                 </span>
               </button>
