@@ -7,6 +7,27 @@ import path from 'path';
 
 const ITEMS_PER_PAGE = 18;
 
+/* Alt text for the plate thumbnails: the item title plus what kind of work
+   it is ("KirkWood Carpentry logo"). The button around each plate carries
+   its own aria-label, so screen readers hear that, not this — the alt is
+   for image search, which otherwise sees a hundred unlabelled pictures. */
+const CATEGORY_NOUN = {
+  logos: 'logo',
+  branding: 'branding',
+  icons: 'icon set',
+  animation: 'animation',
+  illustration: 'illustration',
+  ui: 'UI design',
+};
+const plateAlt = (item) => {
+  const noun = CATEGORY_NOUN[item.category] || '';
+  // Titles that already end in the noun ("MechWarrior 5: Clans Logo") don't
+  // get it twice
+  const first = noun.split(' ')[0];
+  const dup = first && item.title.toLowerCase().endsWith(first);
+  return dup ? item.title : `${item.title} ${noun}`.trim();
+};
+
 const CATEGORIES = [
   { key: 'all', label: 'All' },
   { key: 'ui', label: 'UI / Web' },
@@ -186,7 +207,7 @@ export default function Gallery({ allItems }) {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={item.thumbnail}
-                    alt=""
+                    alt={plateAlt(item)}
                     className="gallery-item-image"
                     loading="lazy"
                     width="560"

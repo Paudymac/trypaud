@@ -44,7 +44,7 @@ export default function CaseStudyTemplate({
         <Image
           className="cs-hero-image"
           src={heroImage}
-          alt=""
+          alt={`${title} case study`}
           fill
           priority
           sizes="100vw"

@@ -63,7 +63,7 @@ const CaseStudiesPage = () => {
               <span className="cs-index-thumb notch">
                 <Image
                   src={study.image}
-                  alt=""
+                  alt={`${study.label} case study`}
                   fill
                   sizes="(max-width: 900px) 100vw, 25vw"
                   className="cs-index-image"

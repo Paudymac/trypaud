@@ -113,7 +113,7 @@ function CaseStudiesContent({ onItemClick }) {
             <div className="nav-panel-case-thumb notch notch-sm">
               <Image
                 src={link.image}
-                alt=""
+                alt={`${link.label} case study`}
                 fill
                 sizes="280px"
                 className="nav-panel-case-image"

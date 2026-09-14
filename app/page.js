@@ -5,10 +5,45 @@ import ContactForm from '@/components/ContactForm';
 import AmbientBackground from '@/components/ui/AmbientBackground';
 import SiteHeader from './_components/SiteHeader';
 import SiteFooter from './_components/SiteFooter';
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, absoluteUrl } from '@/lib/site';
+
+/* Structured data for a name search: who the site belongs to and what
+   they do. Only facts already on the page — the same portrait, role,
+   email and LinkedIn link — so nothing here can drift from the copy. */
+const person = {
+  '@type': 'Person',
+  '@id': `${SITE_URL}/#person`,
+  name: 'Padraic McAteer',
+  url: SITE_URL,
+  image: absoluteUrl('/images/profile-padraic.webp'),
+  jobTitle: 'Senior designer and front-end developer',
+  email: 'mailto:paudy@trypaud.com',
+  address: { '@type': 'PostalAddress', addressCountry: 'IE' },
+  sameAs: ['https://www.linkedin.com/in/padraic-mcateer-trypaud/'],
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    person,
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      author: { '@id': person['@id'] },
+    },
+  ],
+};
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>

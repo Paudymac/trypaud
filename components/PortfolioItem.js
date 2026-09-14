@@ -81,8 +81,14 @@ export default function PortfolioItem({
                 aria-label={`Open image ${i + 1} of ${title}`}
               >
                 <span className="portfolio-thumb-media notch">
+                  {/* The button's aria-label is the accessible name; the
+                      alt is for image search */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={img} alt="" loading="lazy" />
+                  <img
+                    src={img}
+                    alt={`${title} (${i + 1} of ${images.length})`}
+                    loading="lazy"
+                  />
                 </span>
               </button>
             </li>
