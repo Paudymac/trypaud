@@ -518,10 +518,13 @@
     font-size: 14px;
     font-weight: var(--font-medium);
     color: var(--color-text-secondary);
+    /* box-shadow rides the orbit's release beat: after a press the edge
+       ring fades back in over the same 250ms the orbit takes to ride out,
+       so it only reappears as the orbit clears it */
     transition:
       color var(--duration-fast) var(--ease-default),
       background-color var(--duration-fast) var(--ease-default),
-      box-shadow var(--duration-fast) var(--ease-default);
+      box-shadow var(--duration-normal) var(--ease-out);
   }
 
   .porthole-filter-dial::before {
@@ -565,15 +568,25 @@
     box-shadow: 0 0 0 1.5px var(--color-ring-primary);
   }
 
-  /* Same press the CTAs have: the orbit pulls in and seats against the
-     dial edge, fast on the way in, riding back out on release. Guarded off
-     the selected dial — identity, not a control, so nothing latches. */
+  /* Same press the CTAs have: the orbit pulls in and takes the place of
+     the dial's own edge ring, fast on the way in, riding back out on
+     release. The grey edge fades out on the same 80ms beat the orbit seats
+     on, so the two never overlap: by the time the orbit arrives the edge
+     is gone and the press reads as one blue rim. Guarded off the selected
+     dial — identity, not a control, so nothing latches. */
+  .porthole-filter:active:not([aria-pressed='true']):not([aria-current='page'])
+    .porthole-filter-dial {
+    box-shadow: 0 0 0 1.5px transparent;
+    transition:
+      color var(--duration-fast) var(--ease-default),
+      background-color var(--duration-fast) var(--ease-default),
+      box-shadow 80ms var(--ease-default);
+  }
+
   .porthole-filter:active:not([aria-pressed='true']):not([aria-current='page'])
     .porthole-filter-dial::before {
-    /* -1.5px, not 0: the dial wears its own 1.5px edge ring, so the orbit
-       seats against that ring's outer edge — anything further out leaves a
-       slit of ground between the two */
-    inset: -1.5px;
+    /* inset: 0 lands the orbit exactly where the (now faded) edge ring sat */
+    inset: 0;
     box-shadow: 0 0 0 1.5px var(--color-primary);
     transition:
       inset 80ms var(--ease-out),

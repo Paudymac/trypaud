@@ -120,6 +120,31 @@
       box-shadow 80ms var(--ease-default);
   }
 
+  /* The secondary pill already wears a 1px inset outline, so a ring seated
+     against it would stack two blue strokes. Instead the outline fades out
+     on the same 80ms beat the orbit seats on, and the orbit docks one
+     outline-width in to take its place — the press ends as one 1.5px blue
+     rim with nothing underneath it. On release the outline fades back in
+     over the orbit's ride-out, so it only returns as the orbit clears it. */
+  .btn-secondary.btn-ring {
+    transition:
+      background-color var(--duration-fast) var(--ease-default),
+      box-shadow var(--duration-normal) var(--ease-out),
+      color var(--duration-fast) var(--ease-default);
+  }
+
+  .btn-secondary.btn-ring:active:not(:disabled) {
+    box-shadow: inset 0 0 0 var(--rule-structural) transparent;
+    transition:
+      background-color var(--duration-fast) var(--ease-default),
+      box-shadow 80ms var(--ease-default),
+      color var(--duration-fast) var(--ease-default);
+  }
+
+  .btn-secondary.btn-ring:active:not(:disabled)::before {
+    inset: var(--rule-structural);
+  }
+
   /* The small header pills orbit tighter — 5px crowds the nav row.
      The press rule above already seats them at inset: 0. */
   .btn-sm.btn-accent::before,
