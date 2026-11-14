@@ -21,10 +21,11 @@ export default function Hero() {
         <span className="eyebrow">
           Padraic McAteer / designer &amp; front-end developer / Ireland
         </span>
-        <h1 className="hero-display">Design. Build. Ship.</h1>
+        <h1 className="hero-display">I design it. Then I build it.</h1>
         <p className="hero-body">
-          Interfaces, identities, illustration and motion. Eighteen years of
-          practice, much of it on the MechWarrior franchise.
+          A designer at heart who writes the front-end. Eighteen years of
+          interfaces, identities, illustration and motion, a good few of them
+          spent on giant robots for the MechWarrior franchise.
         </p>
         <div className="hero-actions">
           <Link href="/gallery" className="btn btn-accent">

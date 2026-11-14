@@ -28,7 +28,7 @@ export default function Icons({ images }) {
     <PortfolioGalleryTemplate
       imageMap={imageMap}
       title="Icons"
-      description="Glyph systems, player icons, and pictogram sets."
+      description="Glyph systems, player icons and pictogram sets. A lot of work for very small pictures."
     >
       <PortfolioItem
         date="2014 - 2024"

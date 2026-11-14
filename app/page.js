@@ -66,7 +66,8 @@ export default function HomePage() {
             <div className="contact-copy">
               <h2 className="contact-title">Get in touch.</h2>
               <p className="contact-sub">
-                Tell me about the project. I usually reply within a day.{' '}
+                Tell me what you need. I usually reply within a day, sooner if
+                it sounds like fun.{' '}
                 <a href="mailto:paudy@trypaud.com">paudy@trypaud.com</a>
               </p>
             </div>

@@ -36,7 +36,7 @@ export default function ContactForm() {
     if (timeSpent < 3000) {
       setStatusMessage({
         type: 'error',
-        text: 'Please take a moment to check your message, then send again.',
+        text: 'That was quick. Give it a second, then send again.',
       });
       return;
     }
@@ -61,7 +61,7 @@ export default function ContactForm() {
       if (response.ok) {
         setStatusMessage({
           type: 'success',
-          text: 'Thank you. Your message has been sent, and I usually reply within a day.',
+          text: 'Sent. I usually reply within a day.',
         });
         setFormData({ name: '', email: '', message: '', website: '' });
         setFormLoadTime(Date.now());
@@ -70,13 +70,13 @@ export default function ContactForm() {
           type: 'error',
           text:
             data.message ||
-            'The message could not be sent. Please try again, or email paudy@trypaud.com.',
+            'That did not send. Try again, or skip the form and email paudy@trypaud.com.',
         });
       }
     } catch {
       setStatusMessage({
         type: 'error',
-        text: 'The message could not be sent. Please try again, or email paudy@trypaud.com.',
+        text: 'That did not send. Try again, or skip the form and email paudy@trypaud.com.',
       });
     } finally {
       setIsSubmitting(false);
@@ -137,7 +137,7 @@ export default function ContactForm() {
           required
           minLength="10"
           maxLength="5000"
-          placeholder="Tell me about the project."
+          placeholder="What are you making, and when was it due?"
         />
       </div>
 

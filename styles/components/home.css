@@ -602,6 +602,12 @@
     margin: 0;
   }
 
+  /* One sentence per line (see AboutMe.js) */
+  .pull-quote > span {
+    display: block;
+    text-wrap: balance;
+  }
+
   .about-para {
     font-size: var(--step-sm);
     line-height: var(--leading-normal);

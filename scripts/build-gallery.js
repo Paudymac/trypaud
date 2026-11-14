@@ -57,6 +57,20 @@ const add = (x) => items.push(x);
 
 // --- UI / WEB ---
 add({
+  id: 'kwc-ui',
+  title: 'Kirkwood Carpentry',
+  category: 'ui',
+  year: '2026',
+  description: 'UI / UX / Front End',
+  thumbnail: '/images/ui/kwc-img1.webp',
+  images: [
+    '/images/ui/kwc-img1.webp',
+    '/images/ui/kwc-img3.webp',
+    '/images/ui/kwc-img2.webp',
+  ],
+  url: 'https://www.kirkwoodcarpentry.com',
+});
+add({
   id: 'mw5-clans-ui',
   title: 'MechWarrior 5: Clans',
   category: 'ui',
@@ -620,9 +634,108 @@ add({
   video: { type: 'file', src: '/video/piranha-logo-sound.mp4' },
 });
 
-// Sort newest first
+// Order: biggest work first, not newest first. The gallery shows items in
+// exactly this sequence, and each category filter keeps the same relative
+// order. Projects are grouped so one project's UI, logo, print, art, icon and
+// trailer sit together, leading with its strongest piece. To move something,
+// move its id here and re-run this script. An id missing from the list is not
+// lost: it drops to the end, newest first, and the script warns about it.
+const ORDER = [
+  // MechWarrior 5: Clans
+  'mw5-clans-ui',
+  'mw5-clans-logo',
+  'mw5c-art',
+  'clans-manual',
+  'mw5-clans-teaser',
+  'mw5c-tow-art',
+  'mw5c-icon',
+
+  // MechWarrior 5: Mercenaries
+  'mw5-mercs-ui',
+  'mw5-mercs-logo',
+  'mercs-manual',
+  'technical-manual',
+  'mw5-box',
+  'mw5-vector',
+  'mw5-dev-tee',
+  'mercs-tee-art',
+  'mw5-icon',
+
+  // Kirkwood Carpentry: site and logo together, ahead of the DLC run so a
+  // complete client project (identity plus build) sits in the top tier
+  'kwc-ui',
+  'kwc-logo',
+
+  // MW5 DLC, newest first
+  'solaris-showdown-trailer',
+  'ss-logo',
+  'ss-icon',
+  'tdg-logo',
+  'tdg-icon',
+  'rise-of-rasalhague-trailer',
+  'ror-logo',
+  'ror-icon',
+  'lotkl-logo',
+  'lotkl-icon',
+  'hotis-logo',
+
+  // MechWarrior Online
+  'mwo-product-ui',
+  'mwol-moonwalker-ui',
+  'mwol-logo',
+  'mwol-art',
+  'mwo-player-icons',
+  'mwo-atlas-icon',
+  'mwowc-tournament-logo',
+
+  // Mech_Con
+  'mechcon-event',
+  'mechcon-ui',
+  'mechcon-logo',
+  'mechcon-logo-animation',
+
+  // Other Piranha Games work
+  'pgi-ui',
+  'piranha-games-bumper',
+  'transverse-ui',
+  'pr-logo',
+
+  // Columbia College
+  'columbia-brand',
+  'columbia-logo',
+
+  // Smartt
+  'smartt-brand',
+  'smartt-logo',
+  'smartt-a',
+
+  // Personal
+  'trypaud-logo',
+  'xmas-2021',
+  'xmas-2020',
+
+  // Other clients
+  'ctd-ui',
+  'ctd-logo',
+  'sierra-wireless',
+  'hs-bb-ui',
+];
+
+const known = new Set(items.map((i) => i.id));
+const stale = ORDER.filter((id) => !known.has(id));
+if (stale.length) console.warn('ORDER lists ids that do not exist:', stale);
+const unranked = items.filter((i) => !ORDER.includes(i.id)).map((i) => i.id);
+if (unranked.length)
+  console.warn('Not in ORDER, placed last by year:', unranked);
+
+const rank = (id) => {
+  const i = ORDER.indexOf(id);
+  return i === -1 ? ORDER.length : i;
+};
 const yearOf = (s) => parseInt(String(s).match(/\d{4}/g)?.pop() ?? '0', 10);
-items.sort((a, b) => yearOf(b.year) - yearOf(a.year));
+items.sort(
+  (a, b) => rank(a.id) - rank(b.id) || yearOf(b.year) - yearOf(a.year)
+);
 
 fs.writeFileSync(
   path.join(root, 'data/gallery-items.json'),

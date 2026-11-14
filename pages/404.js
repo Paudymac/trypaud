@@ -24,7 +24,7 @@ export default function Custom404() {
           className="text-secondary text-lg"
           style={{ marginBottom: 'var(--space-8)' }}
         >
-          There is no page at this address.
+          Nothing here. Either the link is wrong or I broke something.
         </p>
         <Link href="/" className="btn btn-accent">
           <ArrowLeftIcon className="icon-back" width={14} height={14} />

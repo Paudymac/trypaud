@@ -9,7 +9,7 @@ export default function CaseStudy() {
       index="04"
       title="Mech_Con Design System"
       seoTitle="Mech_Con 2018 design system"
-      description="The design system behind Mech_Con 2018, built on a single hexagon and applied across the whole convention."
+      description="One hexagon, stretched across an entire convention: website, signage, shirts, streams and a world tournament."
       heroImage={hero}
       year="2016 – 2018"
       client="Piranha Games"
@@ -21,16 +21,15 @@ export default function CaseStudy() {
     >
       <div>
         <h2>
-          A convention is a brand experienced in person. Every surface is a
-          touchpoint.
+          A convention is a brand you can walk into. Every surface is a chance
+          to get it wrong.
         </h2>
         <p>
-          Mech_Con was Piranha&apos;s two-day BattleTech convention, held from
-          2016 to 2018 and attended by fans from around the world. This study
-          covers the 2018 system: one identity applied across a website,
-          merchandise, game streams, video, advertising, venue signage and a
-          MechWarrior Online world tournament, in digital and physical form at
-          the same time.
+          Mech_Con was Piranha&apos;s two-day BattleTech convention. It ran from
+          2016 to 2018, and fans travelled from all over the world for it. This
+          is the 2018 system: one identity across a website, merchandise, game
+          streams, video, advertising, venue signage and a MechWarrior Online
+          world tournament. Digital and physical, all due at the same time.
         </p>
       </div>
 
@@ -60,18 +59,16 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          The first step was to update the 2017 logo and write a style guide.
-          Sketching led to a hexagon. It could adapt to almost any use, and it
-          echoed its surroundings: the stage rigs holding the lights and
-          cameras, and the BattleTech board game itself, which is played on a
-          hex map.
+          First job: update the 2017 logo and write a style guide. The sketching
+          kept landing on a hexagon. It bends to almost any use, and it was
+          already all over the room: in the stage rigs holding the lights and
+          cameras, and in BattleTech itself, a board game played on a hex map.
         </p>
         <p>
-          The website launched first so that attendees could register, with
-          print collateral following over the months before the event. The style
-          guide carried much of the load. Printers, the staging firm and the
-          marketing team all worked from the same document, so everything
-          arrived looking like part of one system.
+          The website went up first so people could register. Print followed
+          over the months before the event. The style guide did the heavy
+          lifting. Printers, the staging firm and the marketing team all worked
+          from one document, so everything turned up looking related.
         </p>
       </div>
 
@@ -110,21 +107,21 @@ export default function CaseStudy() {
 
       <div>
         <p>
-          Each tournament team received custom shirts built around its own logo,
-          a separate design problem sitting between the event brand and the
-          tournament brand. Every shirt still carried a hex pattern, drawn to
-          resemble worn chainmail, to keep it within the family.
+          Each tournament team got custom shirts built around its own logo. That
+          is a separate design problem, wedged between the event brand and the
+          tournament brand. Every shirt still carries a hex pattern, drawn to
+          look like worn chainmail, so it stays in the family.
         </p>
         <p>
-          The tournament identity swapped the event&apos;s electric blue for
-          orange and wrapped the hexagons into a globe, a reference to
-          MWO&apos;s worldwide player base. A one-off Mech, designed by
-          Piranha&apos;s senior concept artist, appeared on the event shirts.
+          The tournament identity traded the event&apos;s electric blue for
+          orange and wrapped the hexagons into a globe, for MWO&apos;s worldwide
+          player base. Piranha&apos;s senior concept artist designed a one-off
+          Mech for the event shirts.
         </p>
         <p>
-          Mech_Con was demanding, with everything converging in the final week,
-          and the hexagon proved its worth. One strong geometric anchor meant
-          fewer decisions and more production at the point where it mattered.
+          Everything landed in the final week, as it always does. That is when
+          the hexagon paid for itself. One strong shape meant fewer decisions
+          and more output, right when there was no time left for deciding.
         </p>
       </div>
     </CaseStudyTemplate>

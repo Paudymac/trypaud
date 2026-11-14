@@ -32,7 +32,7 @@ export default function Logos({ imageData }) {
     <PortfolioGalleryTemplate
       imageMap={imageMap}
       title="Logos"
-      description="Marks, monograms, and logotypes spanning games, DLC, clients, and personal work."
+      description="Marks, monograms and logotypes for games, DLC, clients and, once, myself."
     >
       <PortfolioItem
         date="2024"

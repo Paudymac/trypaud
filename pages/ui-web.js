@@ -2,6 +2,12 @@ import PortfolioItem from '@/components/PortfolioItem';
 import PortfolioGalleryTemplate from '@/components/PortfolioGalleryTemplate';
 import imageMap from '@/lib/image-imports/ui-web';
 
+const kirkwoodImages = [
+  '/images/ui/kwc-img1.webp',
+  '/images/ui/kwc-img3.webp',
+  '/images/ui/kwc-img2.webp',
+];
+
 const mw5ClansImages = [
   '/images/ui/mw5-clans-homepage.webp',
   '/images/ui/mw5-clans-news.webp',
@@ -65,8 +71,16 @@ export default function Websites() {
     <PortfolioGalleryTemplate
       imageMap={imageMap}
       title="UI / Web"
-      description="Product screens, marketing sites, and interface systems from 2009 through today."
+      description="Product screens, marketing sites and interface systems, 2009 to now."
     >
+      <PortfolioItem
+        date="2026"
+        title="Kirkwood Carpentry"
+        launchUrl="https://www.kirkwoodcarpentry.com"
+        description="UI / UX / Front End"
+        images={kirkwoodImages}
+      />
+
       <PortfolioItem
         date="2024"
         title="MechWarrior 5: Clans"

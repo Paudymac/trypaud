@@ -15,32 +15,32 @@ const capabilities = [
   {
     Icon: UIWebIcon,
     label: 'UI / Web',
-    desc: 'Product screens, marketing sites and interface systems, from wireframe to production.',
+    desc: 'Product screens, marketing sites and interface systems. Wireframe to production, including the error states nobody wants to draw.',
   },
   {
     Icon: BrandingIcon,
     label: 'Branding & Logos',
-    desc: 'Identity systems, marks and logotypes, along with game manuals and event collateral.',
+    desc: 'Identity systems, marks and logotypes. Also game manuals and event collateral, because somebody has to.',
   },
   {
     Icon: IllustrationIcon,
     label: 'Illustration',
-    desc: 'Hand-drawn work, painting, vector art and concept pieces.',
+    desc: 'Pencil, paint, vectors and concept pieces. Where all of this started.',
   },
   {
     Icon: IconsGridIcon,
     label: 'Icons',
-    desc: 'Glyph systems, player icons and pictogram sets.',
+    desc: 'Glyph systems, player icons and pictogram sets. Very small pictures, very long arguments.',
   },
   {
     Icon: AnimationIcon,
     label: 'Animation',
-    desc: 'Motion graphics, title sequences and promotional trailers.',
+    desc: 'Motion graphics, title sequences and trailers. Things that move for a reason.',
   },
   {
     Icon: CodeIcon,
     label: 'Front-end',
-    desc: 'React, Next.js and design systems. The code that delivers the work above.',
+    desc: 'HTML, CSS, JavaScript, TypeScript and design systems. Where most of my time goes now. I build what I design, so I have learned to design things that can be built.',
   },
 ];
 
@@ -56,19 +56,6 @@ const clients = [
   'Kirkwood Carpentry',
 ];
 
-/* Porthole bezel scale: one tick per year, 2008 → now, spaced evenly round
-   the full ring like the bolts on a cabin window. The ring draws clockwise
-   from 12 o'clock and the ticks light in order, ending back at the top.
-   All ticks read alike — a red "now" tick on its own looked like a needle
-   (it was a 270° gauge before that, which read as a speedometer). */
-const CAREER_START = 2008;
-const CAREER_NOW = 2026;
-const careerYears = Array.from(
-  { length: CAREER_NOW - CAREER_START + 1 },
-  (_, i) => CAREER_START + i
-);
-const DIAL_STEP = 360 / careerYears.length;
-
 export default function AboutPage() {
   return (
     <Layout
@@ -82,51 +69,24 @@ export default function AboutPage() {
       <section className="about-page-hero" aria-labelledby="about-title">
         <div className="about-page-hero-grid">
           <div className="about-orbit">
-            {/* The bezel: a full hairline ring round the porthole with one
-                tick per year of practice, evenly spaced like bolts. Draws
-                once on load — clockwise from the top, each tick lighting as
-                the line reaches it — then holds. No labels and no marked
-                tick: the meta strip below already says "Est. 2008" and
-                "18 years". */}
+            {/* The bezel: one detached ring round the porthole, the same
+                device the buttons wear. It draws on once at load, clockwise
+                from 12 o'clock. Where a button's ring seats on press, this
+                one seats on hover: it closes onto the glass and turns blue,
+                then rides back out when the pointer leaves (see
+                .about-dial-ring). The -90 rotation sits on the group so the
+                circle's own transform stays free for the hover scale. No
+                pathLength and no non-scaling-stroke: Chrome dashes a
+                non-scaling stroke in screen space and breaks the draw-on,
+                so the dash is the true circumference in user units. */}
             <svg
               className="about-dial"
               viewBox="0 0 100 100"
               aria-hidden="true"
             >
-              {/* A real circle, not an arc — an arc can't close on itself
-                  without leaving a seam at the join. Rotated -90 so the
-                  draw-on starts at 12 o'clock, where NOW sits. No
-                  pathLength and no non-scaling-stroke here: Chrome dashes a
-                  non-scaling stroke in screen space, which mis-scales a
-                  normalised dash and leaves the ring in pieces. The dash is
-                  the true circumference (2π·44) in user units instead, so
-                  the stroke width is in user units too — see .about-dial-arc. */}
-              <circle
-                className="about-dial-arc"
-                cx="50"
-                cy="50"
-                r="44"
-                fill="none"
-                transform="rotate(-90 50 50)"
-              />
-              {careerYears.map((year, i) => (
-                <line
-                  key={year}
-                  className="about-dial-tick"
-                  x1="50"
-                  y1="6"
-                  x2="50"
-                  /* The plate edge sits at r = 50/1.28 ≈ 39.06, i.e. y ≈ 10.94
-                     (the svg box is 128% of the plate); 11.2 runs the tick a
-                     hair under the plate's border so it reads as touching */
-                  y2="11.2"
-                  transform={`rotate(${(i + 1) * DIAL_STEP} 50 50)`}
-                  style={{
-                    '--tick-i': i,
-                    vectorEffect: 'non-scaling-stroke',
-                  }}
-                />
-              ))}
+              <g transform="rotate(-90 50 50)" fill="none">
+                <circle className="about-dial-ring" cx="50" cy="50" r="41.3" />
+              </g>
             </svg>
             <div className="about-page-hero-image">
               <Image
@@ -159,9 +119,10 @@ export default function AboutPage() {
               Senior designer &amp; front-end developer / 18 years
             </p>
             <p className="about-page-intro">
-              Most people call me Paudy. I take ideas from first sketch to
-              finished interface, and I build the front-end that delivers them.
-              Based in Ireland, working with teams wherever they are.
+              Most people call me Paudy. I am a designer at heart who codes. I
+              design the thing, then I write the front-end for the thing, which
+              saves a lot of meetings. Based in Ireland. The internet reaches
+              here now, so I work with teams anywhere.
             </p>
             <div className="about-page-cta-row">
               <Link href="/#collaborate" className="btn btn-accent">
@@ -237,18 +198,21 @@ export default function AboutPage() {
         <div className="about-page-bio-layout">
           <div className="about-page-bio-body">
             <p className="about-page-lead">
-              Every piece of work starts with an idea. Drawing has always been
-              the quickest way to test one, and I have drawn for as long as I
-              can remember.
+              I have been curious about why things are the way they are for as
+              long as I can remember. It is a tiring way to live and a decent
+              way to become a designer.
             </p>
             <p>
-              Eighteen years of practice have grown around that habit: layout,
-              identity, motion, illustration, and the code that delivers them.
-              The principle underneath is simple. Good design is easy to use,
-              and well-made design is easy to come back to.
+              That curiosity is the whole career. Good design gets me going, and
+              so does finding out how a thing works, and I have never managed to
+              keep them apart. Eighteen years of it so far: layout, identity,
+              motion, illustration, and then code. I took up code to get my own
+              designs built properly, and found out that code is design as well.
+              So is the backend. A data model is a layout. An API is an
+              interface with worse typography.
             </p>
             <p>
-              I spent most of the last decade with{' '}
+              I spent most of a decade at{' '}
               <a
                 href="https://piranhagames.com"
                 target="_blank"
@@ -257,7 +221,9 @@ export default function AboutPage() {
               >
                 Piranha Games
               </a>{' '}
-              on the MechWarrior franchise, designing UI for{' '}
+              on the MechWarrior franchise. That is giant robots shooting each
+              other, taken very seriously by everyone involved, me included. I
+              designed the UI for{' '}
               <Link
                 href="/case-studies/ui-mwo-product-pages"
                 className="about-page-inline-link"
@@ -285,15 +251,21 @@ export default function AboutPage() {
               >
                 Mech_Con
               </Link>
-              . Outside games, I have produced identity, web and print work for
+              . Away from the robots I have done identity, web and print for
               Smartt, Connect the Doc, Columbia College and Kirkwood Carpentry.
-              I am currently at Screendragon.
+              These days I am at Screendragon.
             </p>
             <p>
-              I care about craft, legibility, and interfaces that stay out of
-              the user&apos;s way. I work across the whole process, from sketch
-              to design system to production React and Next.js, and I take
-              responsibility for how the pieces fit together.
+              Now most of my time goes on the front-end: HTML, CSS, JavaScript
+              and TypeScript. I have worked around PHP and .NET for long enough
+              to read them without flinching. Python and Rust are next on the
+              list. So is database design, MySQL and PostgreSQL to start with,
+              because I cannot leave a machine alone until I know how it works.
+              The design years sit under all of it. This is why I will argue
+              about type you can read, pages that load, and components that do
+              one job. The person using the thing does not care who designed it
+              and who coded it. They only notice when it is bad, and I take bad
+              design personally.
             </p>
           </div>
 
@@ -319,8 +291,7 @@ export default function AboutPage() {
               />
             </svg>
             <blockquote className="about-page-bio-quote">
-              Craft, legibility, and interfaces that stay out of the user&apos;s
-              way.
+              Choose a grid. Choose a typeface. Then stop choosing and build it.
             </blockquote>
             <div className="about-page-bio-rule" />
             <span className="about-page-bio-attribution">My approach</span>
@@ -373,10 +344,10 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="about-page-finalcta" aria-label="Contact">
         <div className="about-page-finalcta-inner">
-          <h2 className="about-page-finalcta-title">Have a project in mind?</h2>
+          <h2 className="about-page-finalcta-title">Got a project?</h2>
           <p className="about-page-finalcta-desc">
-            A product, a brand or a single piece. I would be glad to hear about
-            it.
+            A product, a brand, or one small thing that has been annoying you
+            for a year. Send it over.
           </p>
           <div className="about-page-cta-row">
             <Link href="/#collaborate" className="btn btn-accent btn-lg">

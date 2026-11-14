@@ -155,8 +155,8 @@ export default function Gallery({ allItems }) {
           <span className="eyebrow">Gallery</span>
           <h1 className="work-index-title">All work</h1>
           <p className="work-index-desc">
-            A running index of projects across UI, branding, animation,
-            illustration and iconography — 2009 through today.
+            Everything, more or less. UI, branding, animation, illustration and
+            icons, 2009 to now.
           </p>
         </div>
         <div className="work-index-stats">
@@ -286,7 +286,7 @@ export default function Gallery({ allItems }) {
             className="text-secondary text-center"
             style={{ padding: 'var(--space-16) 0' }}
           >
-            No items in this category yet.
+            Nothing in this one yet.
           </p>
         )}
       </div>

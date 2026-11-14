@@ -23,11 +23,16 @@ const AboutMe = () => {
         className={`about-main animate-hidden ${isVisible ? 'animate-visible' : ''}`}
       >
         <p className="pull-quote">
-          Good design is easy to use. Well-made design is easy to come back to.
+          {/* One sentence per line: each span is a block, so the second
+              sentence always starts a new line, and on narrow screens each
+              wraps on its own. */}
+          <span>I want to know why things are the way they are.</span>{' '}
+          <span>Then I want to make them better.</span>
         </p>
         <p className="about-para">
-          Every project here began as a sketch. The design, and the code that
-          delivers it, followed from there.
+          I started in design and ended up in the code. It turns out the code is
+          design too, only with more ways to be wrong. These days I build the
+          front-end, and the design years decide how I build it.
         </p>
         <Link href="/about" className="about-more">
           More about me

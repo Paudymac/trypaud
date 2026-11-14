@@ -16,7 +16,7 @@ export default function Illustration() {
     <PortfolioGalleryTemplate
       imageMap={imageMap}
       title="Illustration"
-      description="Hand-drawn work, painting, and concept art — from personal pieces to game key art."
+      description="Drawing, painting and concept art, from Christmas cards to game key art."
     >
       <PortfolioItem
         date="2025"

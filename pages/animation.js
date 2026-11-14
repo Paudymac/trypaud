@@ -5,7 +5,7 @@ export default function MotionGraphics() {
   return (
     <PortfolioGalleryTemplate
       title="Animation"
-      description="Motion design, title sequences, and promotional trailers."
+      description="Motion design, title sequences and trailers. Best with the sound on."
     >
       <PortfolioItem
         date="2024"

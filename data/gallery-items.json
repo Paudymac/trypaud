@@ -1,27 +1,31 @@
 [
   {
-    "id": "trypaud-logo",
-    "title": "tryPaud",
-    "category": "logos",
-    "year": "2025",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/trypaud-colour-logo-example.webp",
+    "id": "mw5-clans-ui",
+    "title": "MechWarrior 5: Clans",
+    "category": "ui",
+    "year": "2024",
+    "description": "UI / UX / Front End",
+    "thumbnail": "/images/ui/mw5-clans-homepage.webp",
     "images": [
-      "/images/logos/trypaud-colour-logo-example.webp",
-      "/images/logos/trypaud-black-logo-example.webp"
-    ]
+      "/images/ui/mw5-clans-homepage.webp",
+      "/images/ui/mw5-clans-news.webp",
+      "/images/ui/mw5-clans-dlc.webp",
+      "/images/ui/mw5-clans-purchase.webp"
+    ],
+    "url": "https://mw5clans.com"
   },
   {
-    "id": "kwc-logo",
-    "title": "KirkWood Carpentry",
+    "id": "mw5-clans-logo",
+    "title": "MechWarrior 5: Clans Logo",
     "category": "logos",
-    "year": "2025",
+    "year": "2024",
     "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/kwc-logo-colour-example.webp",
+    "thumbnail": "/images/logos/mw5-clans-logo-example.webp",
     "images": [
-      "/images/logos/kwc-logo-colour-example.webp",
-      "/images/logos/kwc-logo-longform-colour-example.webp"
-    ]
+      "/images/logos/mw5-clans-logo-example.webp",
+      "/images/icons/mw5-clans-icon.webp"
+    ],
+    "url": "https://mw5clans.com/"
   },
   {
     "id": "mw5c-art",
@@ -40,19 +44,326 @@
     ]
   },
   {
-    "id": "mw5-clans-ui",
-    "title": "MechWarrior 5: Clans",
-    "category": "ui",
+    "id": "clans-manual",
+    "title": "MW5: Clans Game Manual",
+    "category": "branding",
     "year": "2024",
-    "description": "UI / UX / Front End",
-    "thumbnail": "/images/ui/mw5-clans-homepage.webp",
+    "description": "Design / Development",
+    "thumbnail": "/images/branding/Mechwarrior5-CLANS-game-manual-1.webp",
     "images": [
-      "/images/ui/mw5-clans-homepage.webp",
-      "/images/ui/mw5-clans-news.webp",
-      "/images/ui/mw5-clans-dlc.webp",
-      "/images/ui/mw5-clans-purchase.webp"
+      "/images/branding/Mechwarrior5-CLANS-game-manual-1.webp",
+      "/images/branding/Mechwarrior5-CLANS-game-manual-3.webp",
+      "/images/branding/Mechwarrior5-CLANS-game-manual-5.webp"
+    ]
+  },
+  {
+    "id": "mw5-clans-teaser",
+    "title": "MechWarrior 5: Clans Teaser Trailer",
+    "category": "animation",
+    "year": "2023",
+    "description": "Motion Graphics / Cards / Typography",
+    "thumbnail": "/images/animation/mw5-clans-teaser.webp",
+    "images": [
+      "/images/animation/mw5-clans-teaser.webp"
     ],
-    "url": "https://mw5clans.com"
+    "video": {
+      "type": "youtube",
+      "id": "rYZwO5f9yk4"
+    }
+  },
+  {
+    "id": "mw5c-tow-art",
+    "title": "MW5 Clans: Trials of War",
+    "category": "illustration",
+    "year": "2024",
+    "description": "Key Art / Art Direction",
+    "thumbnail": "/images/illustration/MW5C_TOW_KA_16x9.webp",
+    "images": [
+      "/images/illustration/MW5C_TOW_KA_16x9.webp"
+    ],
+    "url": "https://mw5clans.com/dlc/trials-of-war"
+  },
+  {
+    "id": "mw5c-icon",
+    "title": "MW5: Clans Icon",
+    "category": "icons",
+    "year": "2024",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/icons/mw5-clans-icon.webp",
+    "images": [
+      "/images/icons/mw5-clans-icon.webp"
+    ]
+  },
+  {
+    "id": "mw5-mercs-ui",
+    "title": "MechWarrior 5: Mercenaries",
+    "category": "ui",
+    "year": "2021",
+    "description": "UI / UX / Front End",
+    "thumbnail": "/images/ui/mw5-mercs-homepage.webp",
+    "images": [
+      "/images/ui/mw5-mercs-homepage.webp",
+      "/images/ui/mw5-mercs-dlc1.webp",
+      "/images/ui/mw5-mercs-dlc2.webp",
+      "/images/ui/mw5-mercs-media.webp"
+    ],
+    "url": "https://mw5mercs.com"
+  },
+  {
+    "id": "mw5-mercs-logo",
+    "title": "MechWarrior 5",
+    "category": "logos",
+    "year": "2019",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/mw5-logo-example.webp",
+    "images": [
+      "/images/logos/mw5-logo-example.webp",
+      "/images/icons/mw5-icon.webp"
+    ]
+  },
+  {
+    "id": "mercs-manual",
+    "title": "MW5: Mercs Game Manual",
+    "category": "branding",
+    "year": "2021",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/branding/GameManual_v2_5_Page_01.webp",
+    "images": [
+      "/images/branding/GameManual_v2_5_Page_01.webp",
+      "/images/branding/GameManual_v2_5_Page_04.webp",
+      "/images/branding/GameManual_v2_5_Page_08.webp",
+      "/images/branding/GameManual_v2_5_Page_13.webp"
+    ]
+  },
+  {
+    "id": "technical-manual",
+    "title": "MW5: Mercs Technical Manual",
+    "category": "branding",
+    "year": "2021",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/branding/technical-manual-2024-v01_Page_01.webp",
+    "images": [
+      "/images/branding/technical-manual-2024-v01_Page_01.webp",
+      "/images/branding/technical-manual-2024-v01_Page_02.webp",
+      "/images/branding/technical-manual-2024-v01_Page_66.webp"
+    ]
+  },
+  {
+    "id": "mw5-box",
+    "title": "MW5 Mercenaries Classic Box",
+    "category": "branding",
+    "year": "2018",
+    "description": "Design / Print",
+    "thumbnail": "/images/branding/mw5-box-art.webp",
+    "images": [
+      "/images/branding/mw5-box-art.webp"
+    ]
+  },
+  {
+    "id": "mw5-vector",
+    "title": "MechWarrior 5 Branding Illustration",
+    "category": "illustration",
+    "year": "2018",
+    "description": "Vector / Art Direction",
+    "thumbnail": "/images/illustration/vector-art-mw5.svg",
+    "images": [
+      "/images/illustration/vector-art-mw5.svg"
+    ]
+  },
+  {
+    "id": "mw5-dev-tee",
+    "title": "MW5 Mercenaries Tees",
+    "category": "branding",
+    "year": "2020",
+    "description": "Design / Print / Art Direction",
+    "thumbnail": "/images/branding/mw5-dev-tee.webp",
+    "images": [
+      "/images/branding/mw5-dev-tee.webp",
+      "/images/branding/mw5-dev-tee2.webp",
+      "/images/branding/mw5-dev-tee-back.webp"
+    ]
+  },
+  {
+    "id": "mercs-tee-art",
+    "title": "MW5 Mercs Dev Tee",
+    "category": "illustration",
+    "year": "2020",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/illustration/mw5mercs-tee-design.webp",
+    "images": [
+      "/images/illustration/mw5mercs-tee-design.webp"
+    ]
+  },
+  {
+    "id": "mw5-icon",
+    "title": "MechWarrior 5",
+    "category": "icons",
+    "year": "2019",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/icons/mw5-icon.webp",
+    "images": [
+      "/images/icons/mw5-icon.webp"
+    ]
+  },
+  {
+    "id": "kwc-ui",
+    "title": "Kirkwood Carpentry",
+    "category": "ui",
+    "year": "2026",
+    "description": "UI / UX / Front End",
+    "thumbnail": "/images/ui/kwc-img1.webp",
+    "images": [
+      "/images/ui/kwc-img1.webp",
+      "/images/ui/kwc-img3.webp",
+      "/images/ui/kwc-img2.webp"
+    ],
+    "url": "https://www.kirkwoodcarpentry.com"
+  },
+  {
+    "id": "kwc-logo",
+    "title": "KirkWood Carpentry",
+    "category": "logos",
+    "year": "2025",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/kwc-logo-colour-example.webp",
+    "images": [
+      "/images/logos/kwc-logo-colour-example.webp",
+      "/images/logos/kwc-logo-longform-colour-example.webp"
+    ]
+  },
+  {
+    "id": "solaris-showdown-trailer",
+    "title": "Solaris Showdown Launch Trailer",
+    "category": "animation",
+    "year": "2024",
+    "description": "Motion Graphics / Cards / Typography",
+    "thumbnail": "/images/animation/solaris-showdown-trailer.webp",
+    "images": [
+      "/images/animation/solaris-showdown-trailer.webp"
+    ],
+    "video": {
+      "type": "youtube",
+      "id": "fMzvadaovKo"
+    }
+  },
+  {
+    "id": "ss-logo",
+    "title": "Solaris Showdown",
+    "category": "logos",
+    "year": "2024",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/ss-logo-example.webp",
+    "images": [
+      "/images/logos/ss-logo-example.webp",
+      "/images/icons/mw5-dlc6-icon.webp"
+    ],
+    "url": "https://mw5mercs.com/dlc/solaris-showdown"
+  },
+  {
+    "id": "ss-icon",
+    "title": "Solaris Icon",
+    "category": "icons",
+    "year": "2024",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/icons/mw5-dlc6-icon.webp",
+    "images": [
+      "/images/icons/mw5-dlc6-icon.webp"
+    ]
+  },
+  {
+    "id": "tdg-logo",
+    "title": "The Dragons Gambit",
+    "category": "logos",
+    "year": "2023",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/tdg-logo-example.webp",
+    "images": [
+      "/images/logos/tdg-logo-example.webp",
+      "/images/icons/mw5-dlc5-icon.webp"
+    ]
+  },
+  {
+    "id": "tdg-icon",
+    "title": "The Dragons Gambit Dragon",
+    "category": "icons",
+    "year": "2023",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/icons/mw5-dlc5-icon.webp",
+    "images": [
+      "/images/icons/mw5-dlc5-icon.webp"
+    ]
+  },
+  {
+    "id": "rise-of-rasalhague-trailer",
+    "title": "MechWarrior 5: Rise of Rasalhague Promo Trailer",
+    "category": "animation",
+    "year": "2022",
+    "description": "Motion Graphics / Cards / Typography",
+    "thumbnail": "/images/animation/rise-of-rasalhague-trailer.webp",
+    "images": [
+      "/images/animation/rise-of-rasalhague-trailer.webp"
+    ],
+    "video": {
+      "type": "youtube",
+      "id": "XfiI-BJnP2I"
+    }
+  },
+  {
+    "id": "ror-logo",
+    "title": "Rise of Rasalhague",
+    "category": "logos",
+    "year": "2022",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/ror-logo-example.webp",
+    "images": [
+      "/images/logos/ror-logo-example.webp",
+      "/images/icons/mw5-dlc4-icon.webp"
+    ]
+  },
+  {
+    "id": "ror-icon",
+    "title": "Rise of Rasalhague Serpent",
+    "category": "icons",
+    "year": "2022",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/icons/mw5-dlc4-icon.webp",
+    "images": [
+      "/images/icons/mw5-dlc4-icon.webp"
+    ]
+  },
+  {
+    "id": "lotkl-logo",
+    "title": "Legends of the Kestrel Lancers",
+    "category": "logos",
+    "year": "2021",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/lotkl-logo-example.webp",
+    "images": [
+      "/images/logos/lotkl-logo-example.webp",
+      "/images/icons/mw5-dlc2-icon.webp"
+    ]
+  },
+  {
+    "id": "lotkl-icon",
+    "title": "Legends of the Kestrel Lancers Bird",
+    "category": "icons",
+    "year": "2021",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/icons/mw5-dlc2-icon.webp",
+    "images": [
+      "/images/icons/mw5-dlc2-icon.webp"
+    ]
+  },
+  {
+    "id": "hotis-logo",
+    "title": "Heroes of the Innersphere",
+    "category": "logos",
+    "year": "2020",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/hotis-logo-example.webp",
+    "images": [
+      "/images/logos/hotis-logo-example.webp"
+    ]
   },
   {
     "id": "mwo-product-ui",
@@ -72,53 +383,41 @@
     ]
   },
   {
-    "id": "mw5-clans-logo",
-    "title": "MechWarrior 5: Clans Logo",
-    "category": "logos",
-    "year": "2024",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/mw5-clans-logo-example.webp",
+    "id": "mwol-moonwalker-ui",
+    "title": "MWO Legends Product Page",
+    "category": "ui",
+    "year": "2023",
+    "description": "UI / UX / Front End",
+    "thumbnail": "/images/ui/mwomercs-legends-moonwalker.webp",
     "images": [
-      "/images/logos/mw5-clans-logo-example.webp",
-      "/images/icons/mw5-clans-icon.webp"
+      "/images/ui/mwomercs-legends-moonwalker.webp",
+      "/images/ui/mwomercs-legends-moonwalker2.webp"
     ],
-    "url": "https://mw5clans.com/"
+    "url": "https://mwomercs.com/legends/moonwalker"
   },
   {
-    "id": "ss-logo",
-    "title": "Solaris Showdown",
+    "id": "mwol-logo",
+    "title": "MechWarrior Online Legends",
     "category": "logos",
-    "year": "2024",
+    "year": "2023",
     "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/ss-logo-example.webp",
+    "thumbnail": "/images/logos/mwol-logo-example.webp",
     "images": [
-      "/images/logos/ss-logo-example.webp",
-      "/images/icons/mw5-dlc6-icon.webp"
+      "/images/logos/mwol-logo-example.webp",
+      "/images/icons/mwo-icon.webp"
     ],
-    "url": "https://mw5mercs.com/dlc/solaris-showdown"
+    "url": "https://mwomercs.com/"
   },
   {
-    "id": "clans-manual",
-    "title": "MW5: Clans Game Manual",
-    "category": "branding",
-    "year": "2024",
-    "description": "Design / Development",
-    "thumbnail": "/images/branding/Mechwarrior5-CLANS-game-manual-1.webp",
-    "images": [
-      "/images/branding/Mechwarrior5-CLANS-game-manual-1.webp",
-      "/images/branding/Mechwarrior5-CLANS-game-manual-3.webp",
-      "/images/branding/Mechwarrior5-CLANS-game-manual-5.webp"
-    ]
-  },
-  {
-    "id": "mw5c-tow-art",
-    "title": "MW5 Clans: Trials of War",
+    "id": "mwol-art",
+    "title": "MWO Legends Art",
     "category": "illustration",
-    "year": "2024",
-    "description": "Key Art / Art Direction",
-    "thumbnail": "/images/illustration/MW5C_TOW_KA_16x9.webp",
-    "images": ["/images/illustration/MW5C_TOW_KA_16x9.webp"],
-    "url": "https://mw5clans.com/dlc/trials-of-war"
+    "year": "2023",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/illustration/mwo-legends-art-atlas.webp",
+    "images": [
+      "/images/illustration/mwo-legends-art-atlas.webp"
+    ]
   },
   {
     "id": "mwo-player-icons",
@@ -246,321 +545,30 @@
     ]
   },
   {
-    "id": "mw5c-icon",
-    "title": "MW5: Clans Icon",
-    "category": "icons",
-    "year": "2024",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/icons/mw5-clans-icon.webp",
-    "images": ["/images/icons/mw5-clans-icon.webp"]
-  },
-  {
-    "id": "ss-icon",
-    "title": "Solaris Icon",
-    "category": "icons",
-    "year": "2024",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/icons/mw5-dlc6-icon.webp",
-    "images": ["/images/icons/mw5-dlc6-icon.webp"]
-  },
-  {
-    "id": "solaris-showdown-trailer",
-    "title": "Solaris Showdown Launch Trailer",
-    "category": "animation",
-    "year": "2024",
-    "description": "Motion Graphics / Cards / Typography",
-    "thumbnail": "/images/animation/solaris-showdown-trailer.webp",
-    "images": ["/images/animation/solaris-showdown-trailer.webp"],
-    "video": {
-      "type": "youtube",
-      "id": "fMzvadaovKo"
-    }
-  },
-  {
-    "id": "mwol-moonwalker-ui",
-    "title": "MWO Legends Product Page",
-    "category": "ui",
-    "year": "2023",
-    "description": "UI / UX / Front End",
-    "thumbnail": "/images/ui/mwomercs-legends-moonwalker.webp",
-    "images": [
-      "/images/ui/mwomercs-legends-moonwalker.webp",
-      "/images/ui/mwomercs-legends-moonwalker2.webp"
-    ],
-    "url": "https://mwomercs.com/legends/moonwalker"
-  },
-  {
-    "id": "mwol-logo",
-    "title": "MechWarrior Online Legends",
-    "category": "logos",
-    "year": "2023",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/mwol-logo-example.webp",
-    "images": [
-      "/images/logos/mwol-logo-example.webp",
-      "/images/icons/mwo-icon.webp"
-    ],
-    "url": "https://mwomercs.com/"
-  },
-  {
-    "id": "tdg-logo",
-    "title": "The Dragons Gambit",
-    "category": "logos",
-    "year": "2023",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/tdg-logo-example.webp",
-    "images": [
-      "/images/logos/tdg-logo-example.webp",
-      "/images/icons/mw5-dlc5-icon.webp"
-    ]
-  },
-  {
-    "id": "mwol-art",
-    "title": "MWO Legends Art",
-    "category": "illustration",
-    "year": "2023",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/illustration/mwo-legends-art-atlas.webp",
-    "images": ["/images/illustration/mwo-legends-art-atlas.webp"]
-  },
-  {
-    "id": "tdg-icon",
-    "title": "The Dragons Gambit Dragon",
-    "category": "icons",
-    "year": "2023",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/icons/mw5-dlc5-icon.webp",
-    "images": ["/images/icons/mw5-dlc5-icon.webp"]
-  },
-  {
     "id": "mwo-atlas-icon",
     "title": "MWO Atlas Icon",
     "category": "icons",
     "year": "2023",
     "description": "Design / Art Direction",
     "thumbnail": "/images/icons/mwo-icon.webp",
-    "images": ["/images/icons/mwo-icon.webp"]
+    "images": [
+      "/images/icons/mwo-icon.webp"
+    ]
   },
   {
-    "id": "mw5-clans-teaser",
-    "title": "MechWarrior 5: Clans Teaser Trailer",
+    "id": "mwowc-tournament-logo",
+    "title": "MWO Tournament Logo Animation",
     "category": "animation",
-    "year": "2023",
-    "description": "Motion Graphics / Cards / Typography",
-    "thumbnail": "/images/animation/mw5-clans-teaser.webp",
-    "images": ["/images/animation/mw5-clans-teaser.webp"],
-    "video": {
-      "type": "youtube",
-      "id": "rYZwO5f9yk4"
-    }
-  },
-  {
-    "id": "ror-logo",
-    "title": "Rise of Rasalhague",
-    "category": "logos",
-    "year": "2022",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/ror-logo-example.webp",
+    "year": "2017",
+    "description": "Motion Graphics / Design / Branding",
+    "thumbnail": "/images/animation/mwowc-tournament-logo.webp",
     "images": [
-      "/images/logos/ror-logo-example.webp",
-      "/images/icons/mw5-dlc4-icon.webp"
-    ]
-  },
-  {
-    "id": "ror-icon",
-    "title": "Rise of Rasalhague Serpent",
-    "category": "icons",
-    "year": "2022",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/icons/mw5-dlc4-icon.webp",
-    "images": ["/images/icons/mw5-dlc4-icon.webp"]
-  },
-  {
-    "id": "rise-of-rasalhague-trailer",
-    "title": "MechWarrior 5: Rise of Rasalhague Promo Trailer",
-    "category": "animation",
-    "year": "2022",
-    "description": "Motion Graphics / Cards / Typography",
-    "thumbnail": "/images/animation/rise-of-rasalhague-trailer.webp",
-    "images": ["/images/animation/rise-of-rasalhague-trailer.webp"],
-    "video": {
-      "type": "youtube",
-      "id": "XfiI-BJnP2I"
-    }
-  },
-  {
-    "id": "mw5-mercs-ui",
-    "title": "MechWarrior 5: Mercenaries",
-    "category": "ui",
-    "year": "2021",
-    "description": "UI / UX / Front End",
-    "thumbnail": "/images/ui/mw5-mercs-homepage.webp",
-    "images": [
-      "/images/ui/mw5-mercs-homepage.webp",
-      "/images/ui/mw5-mercs-dlc1.webp",
-      "/images/ui/mw5-mercs-dlc2.webp",
-      "/images/ui/mw5-mercs-media.webp"
+      "/images/animation/mwowc-tournament-logo.webp"
     ],
-    "url": "https://mw5mercs.com"
-  },
-  {
-    "id": "lotkl-logo",
-    "title": "Legends of the Kestrel Lancers",
-    "category": "logos",
-    "year": "2021",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/lotkl-logo-example.webp",
-    "images": [
-      "/images/logos/lotkl-logo-example.webp",
-      "/images/icons/mw5-dlc2-icon.webp"
-    ]
-  },
-  {
-    "id": "mercs-manual",
-    "title": "MW5: Mercs Game Manual",
-    "category": "branding",
-    "year": "2021",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/branding/GameManual_v2_5_Page_01.webp",
-    "images": [
-      "/images/branding/GameManual_v2_5_Page_01.webp",
-      "/images/branding/GameManual_v2_5_Page_04.webp",
-      "/images/branding/GameManual_v2_5_Page_08.webp",
-      "/images/branding/GameManual_v2_5_Page_13.webp"
-    ]
-  },
-  {
-    "id": "technical-manual",
-    "title": "MW5: Mercs Technical Manual",
-    "category": "branding",
-    "year": "2021",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/branding/technical-manual-2024-v01_Page_01.webp",
-    "images": [
-      "/images/branding/technical-manual-2024-v01_Page_01.webp",
-      "/images/branding/technical-manual-2024-v01_Page_02.webp",
-      "/images/branding/technical-manual-2024-v01_Page_66.webp"
-    ]
-  },
-  {
-    "id": "xmas-2021",
-    "title": "Xmas Card 2021",
-    "category": "illustration",
-    "year": "2021",
-    "description": "Personal Illustration",
-    "thumbnail": "/images/illustration/xmas-card-2.webp",
-    "images": ["/images/illustration/xmas-card-2.webp"]
-  },
-  {
-    "id": "lotkl-icon",
-    "title": "Legends of the Kestrel Lancers Bird",
-    "category": "icons",
-    "year": "2021",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/icons/mw5-dlc2-icon.webp",
-    "images": ["/images/icons/mw5-dlc2-icon.webp"]
-  },
-  {
-    "id": "hotis-logo",
-    "title": "Heroes of the Innersphere",
-    "category": "logos",
-    "year": "2020",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/hotis-logo-example.webp",
-    "images": ["/images/logos/hotis-logo-example.webp"]
-  },
-  {
-    "id": "pr-logo",
-    "title": "Project Revenant",
-    "category": "logos",
-    "year": "2020",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/pr-logo-example.webp",
-    "images": ["/images/logos/pr-logo-example.webp"]
-  },
-  {
-    "id": "mw5-dev-tee",
-    "title": "MW5 Mercenaries Tees",
-    "category": "branding",
-    "year": "2020",
-    "description": "Design / Print / Art Direction",
-    "thumbnail": "/images/branding/mw5-dev-tee.webp",
-    "images": [
-      "/images/branding/mw5-dev-tee.webp",
-      "/images/branding/mw5-dev-tee2.webp",
-      "/images/branding/mw5-dev-tee-back.webp"
-    ]
-  },
-  {
-    "id": "mercs-tee-art",
-    "title": "MW5 Mercs Dev Tee",
-    "category": "illustration",
-    "year": "2020",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/illustration/mw5mercs-tee-design.webp",
-    "images": ["/images/illustration/mw5mercs-tee-design.webp"]
-  },
-  {
-    "id": "xmas-2020",
-    "title": "Xmas Card 2020",
-    "category": "illustration",
-    "year": "2020",
-    "description": "Personal Illustration",
-    "thumbnail": "/images/illustration/xmas-card-1.jpg",
-    "images": ["/images/illustration/xmas-card-1.jpg"]
-  },
-  {
-    "id": "mw5-mercs-logo",
-    "title": "MechWarrior 5",
-    "category": "logos",
-    "year": "2019",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/mw5-logo-example.webp",
-    "images": [
-      "/images/logos/mw5-logo-example.webp",
-      "/images/icons/mw5-icon.webp"
-    ]
-  },
-  {
-    "id": "mw5-icon",
-    "title": "MechWarrior 5",
-    "category": "icons",
-    "year": "2019",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/icons/mw5-icon.webp",
-    "images": ["/images/icons/mw5-icon.webp"]
-  },
-  {
-    "id": "mechcon-ui",
-    "title": "Mech_Con",
-    "category": "ui",
-    "year": "2018",
-    "description": "UI / UX / Front End",
-    "thumbnail": "/images/ui/mechcon-homepage.webp",
-    "images": [
-      "/images/ui/mechcon-homepage.webp",
-      "/images/ui/mechcon-about.webp",
-      "/images/ui/mechcon-tickets.webp"
-    ],
-    "url": "https://mechwarrior.com/mechcon"
-  },
-  {
-    "id": "mechcon-logo",
-    "title": "MechCon",
-    "category": "logos",
-    "year": "2018",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/mc-logo-example.webp",
-    "images": ["/images/logos/mc-logo-example.webp"]
-  },
-  {
-    "id": "mw5-box",
-    "title": "MW5 Mercenaries Classic Box",
-    "category": "branding",
-    "year": "2018",
-    "description": "Design / Print",
-    "thumbnail": "/images/branding/mw5-box-art.webp",
-    "images": ["/images/branding/mw5-box-art.webp"]
+    "video": {
+      "type": "file",
+      "src": "/video/mwowc-pause-screen-2017.mp4"
+    }
   },
   {
     "id": "mechcon-event",
@@ -590,13 +598,29 @@
     ]
   },
   {
-    "id": "mw5-vector",
-    "title": "MechWarrior 5 Branding Illustration",
-    "category": "illustration",
+    "id": "mechcon-ui",
+    "title": "Mech_Con",
+    "category": "ui",
     "year": "2018",
-    "description": "Vector / Art Direction",
-    "thumbnail": "/images/illustration/vector-art-mw5-thumb.webp",
-    "images": ["/images/illustration/vector-art-mw5.svg"]
+    "description": "UI / UX / Front End",
+    "thumbnail": "/images/ui/mechcon-homepage.webp",
+    "images": [
+      "/images/ui/mechcon-homepage.webp",
+      "/images/ui/mechcon-about.webp",
+      "/images/ui/mechcon-tickets.webp"
+    ],
+    "url": "https://mechwarrior.com/mechcon"
+  },
+  {
+    "id": "mechcon-logo",
+    "title": "MechCon",
+    "category": "logos",
+    "year": "2018",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/mc-logo-example.webp",
+    "images": [
+      "/images/logos/mc-logo-example.webp"
+    ]
   },
   {
     "id": "mechcon-logo-animation",
@@ -605,7 +629,9 @@
     "year": "2018",
     "description": "Motion Graphics / Design / Branding",
     "thumbnail": "/images/animation/mechcon-logo-animation.webp",
-    "images": ["/images/animation/mechcon-logo-animation.webp"],
+    "images": [
+      "/images/animation/mechcon-logo-animation.webp"
+    ],
     "video": {
       "type": "file",
       "src": "/video/mechcon-logo-animation.mp4"
@@ -626,26 +652,15 @@
     "url": "https://piranhagames.com/"
   },
   {
-    "id": "mwowc-tournament-logo",
-    "title": "MWO Tournament Logo Animation",
-    "category": "animation",
-    "year": "2017",
-    "description": "Motion Graphics / Design / Branding",
-    "thumbnail": "/images/animation/mwowc-tournament-logo.webp",
-    "images": ["/images/animation/mwowc-tournament-logo.webp"],
-    "video": {
-      "type": "file",
-      "src": "/video/mwowc-pause-screen-2017.mp4"
-    }
-  },
-  {
     "id": "piranha-games-bumper",
     "title": "Piranha Games Bumper",
     "category": "animation",
     "year": "2016",
     "description": "Motion Graphics / Design / Branding",
     "thumbnail": "/images/animation/piranha-games-bumper.webp",
-    "images": ["/images/animation/piranha-games-bumper.webp"],
+    "images": [
+      "/images/animation/piranha-games-bumper.webp"
+    ],
     "video": {
       "type": "file",
       "src": "/video/piranha-logo-sound.mp4"
@@ -667,32 +682,15 @@
     ]
   },
   {
-    "id": "ctd-ui",
-    "title": "Connect the Doc",
-    "category": "ui",
-    "year": "2012",
-    "description": "UI / UX / Front End",
-    "thumbnail": "/images/ui/ctd-img1.webp",
-    "images": ["/images/ui/ctd-img1.webp", "/images/ui/ctd-img2.webp"],
-    "url": "https://connectthedoc.com/"
-  },
-  {
-    "id": "columbia-logo",
-    "title": "Columbia College",
+    "id": "pr-logo",
+    "title": "Project Revenant",
     "category": "logos",
-    "year": "2012",
+    "year": "2020",
     "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/cc-logo-example.webp",
-    "images": ["/images/logos/cc-logo-example.webp"]
-  },
-  {
-    "id": "smartt-logo",
-    "title": "Smartt",
-    "category": "logos",
-    "year": "2012",
-    "description": "Design / Art Direction",
-    "thumbnail": "/images/logos/smartt-logo-example.webp",
-    "images": ["/images/logos/smartt-logo-example.webp"]
+    "thumbnail": "/images/logos/pr-logo-example.webp",
+    "images": [
+      "/images/logos/pr-logo-example.webp"
+    ]
   },
   {
     "id": "columbia-brand",
@@ -709,13 +707,15 @@
     ]
   },
   {
-    "id": "sierra-wireless",
-    "title": "Sierra Wireless Ad",
-    "category": "branding",
+    "id": "columbia-logo",
+    "title": "Columbia College",
+    "category": "logos",
     "year": "2012",
     "description": "Design / Art Direction",
-    "thumbnail": "/images/branding/sierra-wireless-ad.webp",
-    "images": ["/images/branding/sierra-wireless-ad.webp"]
+    "thumbnail": "/images/logos/cc-logo-example.webp",
+    "images": [
+      "/images/logos/cc-logo-example.webp"
+    ]
   },
   {
     "id": "smartt-brand",
@@ -734,13 +734,73 @@
     ]
   },
   {
+    "id": "smartt-logo",
+    "title": "Smartt",
+    "category": "logos",
+    "year": "2012",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/smartt-logo-example.webp",
+    "images": [
+      "/images/logos/smartt-logo-example.webp"
+    ]
+  },
+  {
     "id": "smartt-a",
     "title": "Smartt A",
     "category": "icons",
     "year": "2012",
     "description": "Design / Art Direction",
     "thumbnail": "/images/icons/smartt-icon.webp",
-    "images": ["/images/icons/smartt-icon.webp"]
+    "images": [
+      "/images/icons/smartt-icon.webp"
+    ]
+  },
+  {
+    "id": "trypaud-logo",
+    "title": "TryPaud",
+    "category": "logos",
+    "year": "2025",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/logos/trypaud-colour-logo-example.webp",
+    "images": [
+      "/images/logos/trypaud-colour-logo-example.webp",
+      "/images/logos/trypaud-black-logo-example.webp"
+    ]
+  },
+  {
+    "id": "xmas-2021",
+    "title": "Xmas Card 2021",
+    "category": "illustration",
+    "year": "2021",
+    "description": "Personal Illustration",
+    "thumbnail": "/images/illustration/xmas-card-2.webp",
+    "images": [
+      "/images/illustration/xmas-card-2.webp"
+    ]
+  },
+  {
+    "id": "xmas-2020",
+    "title": "Xmas Card 2020",
+    "category": "illustration",
+    "year": "2020",
+    "description": "Personal Illustration",
+    "thumbnail": "/images/illustration/xmas-card-1.jpg",
+    "images": [
+      "/images/illustration/xmas-card-1.jpg"
+    ]
+  },
+  {
+    "id": "ctd-ui",
+    "title": "Connect the Doc",
+    "category": "ui",
+    "year": "2012",
+    "description": "UI / UX / Front End",
+    "thumbnail": "/images/ui/ctd-img1.webp",
+    "images": [
+      "/images/ui/ctd-img1.webp",
+      "/images/ui/ctd-img2.webp"
+    ],
+    "url": "https://connectthedoc.com/"
   },
   {
     "id": "ctd-logo",
@@ -749,7 +809,20 @@
     "year": "2011",
     "description": "Design / Development",
     "thumbnail": "/images/logos/ctd-logo-example.webp",
-    "images": ["/images/logos/ctd-logo-example.webp"]
+    "images": [
+      "/images/logos/ctd-logo-example.webp"
+    ]
+  },
+  {
+    "id": "sierra-wireless",
+    "title": "Sierra Wireless Ad",
+    "category": "branding",
+    "year": "2012",
+    "description": "Design / Art Direction",
+    "thumbnail": "/images/branding/sierra-wireless-ad.webp",
+    "images": [
+      "/images/branding/sierra-wireless-ad.webp"
+    ]
   },
   {
     "id": "hs-bb-ui",

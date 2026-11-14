@@ -24,8 +24,8 @@ const CaseStudiesPage = () => {
           <span className="eyebrow">Case Studies</span>
           <h1 className="work-index-title">Case studies</h1>
           <p className="work-index-desc">
-            Four detailed studies from one franchise: the brief, the design
-            work, and what was delivered.
+            Four long ones from one franchise: what was asked for, what I did,
+            and what shipped.
           </p>
         </div>
         <div className="work-index-stats">

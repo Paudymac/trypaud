@@ -58,7 +58,7 @@ export default function Branding({ imageData }) {
     <PortfolioGalleryTemplate
       imageMap={imageMap}
       title="Branding"
-      description="Identity systems, game manuals, event design and print collateral."
+      description="Identity systems, game manuals, event design and print. The work you can hold."
     >
       <PortfolioItem
         date="2024"
