@@ -101,9 +101,7 @@ const CaseStudies = () => {
         {/* The heading is the first row of the same ruled box as the
             studies it introduces — same cell padding, same rules. */}
         <header className="work-head">
-          <h2 className="work-title">
-            Four case studies. Start with these two.
-          </h2>
+          <h2 className="work-title">Case studies</h2>
         </header>
         <div className="work-head-action">
           <Link href="/gallery" className="btn btn-sm btn-secondary btn-ring">

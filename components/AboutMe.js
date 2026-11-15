@@ -30,9 +30,9 @@ const AboutMe = () => {
           <span>Then I want to make them better.</span>
         </p>
         <p className="about-para">
-          I started in design and ended up in the code. It turns out the code is
-          design too, only with more ways to be wrong. These days I build the
-          front-end, and the design years decide how I build it.
+          I started in design. Then I realised that if I wanted a say in the
+          design, I had to start deciding how it was built. So now I write the
+          front-end too.
         </p>
         <Link href="/about" className="about-more">
           More about me
